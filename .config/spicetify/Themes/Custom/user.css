@@ -4,9 +4,10 @@
     --encore-body-font-stack: "CaskaydiaCove Nerd Font Propo";
 }
 
-/* Window control padding */
-#global-nav-bar .main-globalNav-historyButtonsContainer .Kgjmt7IX5samBYUpbkBu {
-    display: none;
+/* Remove weird window control padding from left */
+#global-nav-bar .main-globalNav-historyButtonsContainer .Kgjmt7IX5samBYUpbkBu,
+#global-nav-bar .OPsY6bKl1_FfA8jFpq1V {
+    display: none !important;
 }
 
 /* Hide spicetify update button */

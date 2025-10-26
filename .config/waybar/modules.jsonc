@@ -121,7 +121,7 @@
     },
 
     "clock": {
-        "timezone": "America/Argentina/Buenos_Aires",
+        "timezone": "America/Argentina/Buenos_Aires", // Ooops, leaked location.
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%H:%M %d %B %Y}",
         "on-click-right": "hyprctl dispatch exec '[float; size 500 270] alacritty -e peaclock'",
