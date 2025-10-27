@@ -132,6 +132,11 @@ if [ -n "$(which powerprofilesctl 2>/dev/null)" ]; then
     done
 fi
 
+# Change timezone in waybar clock module
+TIMEZONE=$(readlink -f /etc/localtime | sed 's|.*/zoneinfo/||')
+sed -i "s/\"timezone\": *\"[^\"]*\"/\"timezone\": \"${TIMEZONE//\//\\/}\"/" \
+    "$DEST/.config/waybar/modules.jsonc"
+
 # Install papirus icon theme
 green "Installing icon theme..."
 ICON_THEME_TAR="$DEST/.local/share/icons/papirus-icon-theme-bluegrey-folders.tar.xz"
