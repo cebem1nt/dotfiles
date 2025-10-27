@@ -1,0 +1,145 @@
+#!/bin/bash
+
+SRC=$(dirname "$0")
+DEST=$HOME
+
+red() {
+    printf '\033[31m%s\033[0m\n' "$*";
+}
+
+yellow() {
+    printf '\033[33m%s\033[0m\n' "$*";
+}
+
+green() {
+    printf '\033[32m%s\033[0m\n' "$*";
+}
+
+prompt() {
+    read -r -p $'\033[35m'"$1"$'\033[32m [Y/n] \033[0m' CHOICE
+    if [ -z "$CHOICE" ]; then
+        echo 1
+    else
+        case "$CHOICE" in
+            y|Y ) echo 1;;
+            n|N ) echo 0;;
+        esac
+    fi
+}
+
+OLD_DIRS=( "$HOME"/.local/old*/ )
+
+if [ ${#OLD_DIRS[@]} -eq 1 ]; then
+    if [ "${OLD_DIRS[0]}" = "$HOME/.local/old*" ]; then
+        red "No backup directory found at "$HOME"/.local . Nothing to restore."
+        exit 1
+    elif [ "${OLD_DIRS[0]}" = "$HOME/.local/old/" ]; then
+        OLD_DIR="$HOME/.local/old"
+    fi
+else
+    for DIR_ITR in ${OLD_DIRS[@]}; do
+        if command -v tree > /dev/null ; then
+            tree $DIR_ITR
+        else 
+            ls $DIR_ITR
+        fi
+    done
+
+    echo ""
+    PS3="Choose backup directory: "
+    select CHOSEN in "${OLD_DIRS[@]}"; do
+        [ -n "$CHOSEN" ] && break
+        echo "Invalid choice."
+    done
+
+    OLD_DIR="${CHOSEN%/}"
+fi
+
+green "This script will restore previous config files from $OLD_DIR into $DEST"
+
+if [ $(prompt "Continue?") = 0 ]; then
+    exit 1
+fi
+
+# Restore .config items that were moved to OLD_DIR/.config
+if [ -d "$OLD_DIR/.config" ]; then
+    green "Restoring .config..."
+
+    for ITEM in "$OLD_DIR"/.config/*; do
+        NAME=$(basename "$ITEM")
+        green "Restoring $NAME to $DEST/.config/"
+
+        rm -rf "$DEST/.config/$NAME"
+        mv "$ITEM" "$DEST/.config/"
+    done
+else
+    yellow "No .config backup found in $OLD_DIR"
+fi
+
+# Restore zen theme directory if present
+if [ -d "$OLD_DIR/.zen/chrome" ]; then
+    green "Restoring .zen..."
+
+    rm -rf "$DEST/.zen/chrome"
+    mv "$OLD_DIR/.zen/chrome" "$DEST/.zen/"
+fi
+
+# Restore .local (bin and share)
+if [ -d "$OLD_DIR/.local" ]; then
+    green "Restoring .local..."
+
+    # bin
+    if [ -d "$OLD_DIR/.local/bin" ]; then
+        green "Restoring bin..."
+
+        rm -rf "$DEST/.local/bin"
+        mv "$OLD_DIR/.local/bin" "$DEST/.local/"
+    fi
+
+    # share
+    if [ -d "$OLD_DIR/.local/share" ]; then
+        for ITEM in "$OLD_DIR/.local/share/"*; do
+            NAME=$(basename "$ITEM")
+            green "Restoring $NAME to $DEST/.local/share/"
+
+            rm -rf "$DEST/.local/share/$NAME"
+            mv "$ITEM" "$DEST/.local/share/"
+        done
+    fi
+else
+    yellow "No .local backup found in $OLD_DIR"
+fi
+
+if [ $(prompt "Uninstall zsh & oh-my-zsh?") = 1 ]; then
+    if [ -e "$OLD_DIR/.zshenv" ]; then
+        green "Restoring .zshenv..."
+        mv "$OLD_DIR/.zshenv" "$DEST/"
+    else
+        rm "$DEST/.zshenv"
+    fi
+
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/uninstall.sh)"
+fi
+
+if [ -n "$(which spicetify 2>/dev/null)" ] && [ $(prompt "Restore spotify theme?") = 1 ]; then
+    spicetify restore
+fi
+
+if [ -n "$(which vscodium 2>/dev/null)" ] && [ $(prompt "Remove vscodium theme?") = 1 ]; then
+    EXT_ID=Venage5603.tokyo-night-dark-enhanced
+    vscodium --uninstall-extension $EXT_ID
+fi
+
+if [ $(prompt "Remove wallpapers? ($DEST/media/pictures/wallpapers)") = 1 ]; then
+    rm -rf $DEST/media/pictures/wallpapers
+fi
+
+# Cleanup: if OLD_DIR is empty, remove it
+if [ -d "$OLD_DIR" ] && [ -z "$(ls -A "$OLD_DIR")" ]; then
+    rmdir "$OLD_DIR"
+    green "Removed empty $OLD_DIR"
+else
+    yellow "Some items remain in $OLD_DIR; check and remove manually if desired."
+fi
+
+green "Restore complete! See you next time."

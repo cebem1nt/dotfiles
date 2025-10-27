@@ -87,6 +87,10 @@ cp -r "$SRC/.local/bin" "$DEST/.local/"
 
 green "Moving applications & files templates from $SRC/.local ..."
 
+# Save previous anyways
+cp -r "$SRC/.local/share/applications/" "$OLD_DIR/.local/share/"
+cp -r "$SRC/.local/share/templates/" "$OLD_DIR/.local/share/"
+
 cp "$SRC"/.local/share/applications/* "$DEST"/.local/share/applications
 cp "$SRC"/.local/share/templates/* "$DEST"/.local/share/templates
 
@@ -115,7 +119,7 @@ mkdir -p $DEST/media/pictures/
 cp -r $SRC/wallpapers $DEST/media/pictures/
 
 # If there is powerprofilesctl installed, replace waybar arch module with power-profiles module
-if [ $(which powerprofilesctl) ]; then
+if [ -n "$(which powerprofilesctl 2>/dev/null)" ]; then
     WAYBAR_FILES=(
         "$DEST/.config/waybar/layouts/with_music.jsonc"
         "$DEST/.config/waybar/layouts/with_window.jsonc"
@@ -136,7 +140,7 @@ if tar -xJf $ICON_THEME_TAR -C "$DEST/.local/share/icons"; then
     gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
     rm $ICON_THEME_TAR
 else
-    red "Could not install $ICON_THEME_TAR? Please install manually at $DEST/.local/share/icons/$ICON_THEME_TAR"
+    red "Could not install? Please install manually at $ICON_THEME_TAR"
 fi
 
 # Install Kripton GTK theme
@@ -148,11 +152,11 @@ if tar -xJf $GTK_THEME_TAR -C "$DEST/.local/share/themes"; then
     gsettings set org.gnome.desktop.wm.preferences theme "Kripton"  
     rm $GTK_THEME_TAR
 else
-    red "Could not install $GTK_THEME_TAR? Please install manually at $DEST/.local/share/themes/$GTK_THEME_TAR"
+    red "Could not install? Please install manually at $GTK_THEME_TAR"
 fi
 
 # Apply spicetify theme
-if [ $(which spicetify) ]; then
+if [ -n "$(which spicetify 2>/dev/null)" ]; then
     spicetify backup apply
     spicetify config current_theme "Custom"
     spicetify apply
@@ -161,13 +165,10 @@ else
 fi
 
 # If vscodium is installed, lets apply theme
-if [ $(which vscodium) ]; then
+if [ -n "$(which vscodium 2>/dev/null)" ]; then
     EXT_ID=Venage5603.tokyo-night-dark-enhanced
     vscodium --install-extension $EXT_ID
 fi
-
-green "Setting zsh as default shell..."
-chsh -s $(which zsh)
 
 green "Installing oh-my-zsh..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -194,3 +195,5 @@ if [ $(prompt "Would you like to install custom zen-browser theme?") = 1 ]; then
         cp -r "$SRC/.zen/chrome/"* "$ZEN_DIR/chrome"
     fi
 fi
+
+green "Installation finished! Hope you enjoy."

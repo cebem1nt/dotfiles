@@ -7,7 +7,9 @@
 - Notifications: swaync
 - Terminal: alacritty
 - Shell: zsh
+- Font: Cascadia Code
 - GTK theme: [kripton](https://github.com/EliverLara/Kripton)
+- Icon theme: [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 - fetch: [mine :)](https://github.com/cebem1nt/sillyfetch)
 
 Big thanks to this [collection of rofi themes](https://github.com/adi1090x/rofi)
@@ -83,13 +85,19 @@ For more detailed info see `.config/hypr/configs/binds.conf`
 
 This installation assumes you have a minimal working system! Firstly install all the necessary packages acording to your distribution. On arch you can copy these:
 
+> [!NOTE]  
+> Installation script already installs papirus icon theme and Kripton GTK theme. But does not install the cascadia code font. You should install it manually in case if you are not on archlinux.
+
 ```sh
-sudo pacman -S hyprland hyprlock hypridle waybar swaync alacritty cava rofi peaclock pavucontrol thunar zsh
+sudo pacman -S hyprland hyprlock hypridle waybar swaync alacritty cava rofi peaclock pavucontrol thunar zsh ttf-cascadia-code ttf-cascadia-code-nerd
 ```
 
 For spotify theme install [spicetify](), browser is [zen]() by default, you can change it in `.config/hypr/configs/binds.conf`.
 
 Now clone & run the installer:
+
+> [!WARNING]  
+> My dotfiles are __laptop specific__. Despite trying to make a flexible installation script, some of the things might not work! You better install everything manually based on your needs, or use this repository as an inspiration.
 
 ```sh
 git clone https://github.com/cebem1nt/dotfiles.git
@@ -98,7 +106,11 @@ cd dotfiles
 ```
 
 ## Uninstallation
-WIP
+Just run `restore` script, it will restore all your previous config files stored at `~/.local/old`.
+
+```sh
+./restore
+```
 
 ## Something doesnt work? 
 Feel free to post an issue or contribute!
