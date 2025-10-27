@@ -12,6 +12,20 @@
 
 Big thanks to this [collection of rofi themes](https://github.com/adi1090x/rofi)
 
+## Previews
+
+![Image 1](previews/1.png)
+
+![Image 2](previews/2.png)
+
+![Image 3](previews/3.png)
+
+![Image 4](previews/4.png)
+
+![Image 5](previews/5.png)
+
+![Image 6](previews/6.png)
+
 ## Structure
 ```
 hypr # Hyprland configuration
@@ -88,17 +102,3 @@ WIP
 
 ## Something doesnt work? 
 Feel free to post an issue or contribute!
-
-## Previews
-
-![Image 1](previews/1.png)
-
-![Image 2](previews/2.png)
-
-![Image 3](previews/3.png)
-
-![Image 4](previews/4.png)
-
-![Image 5](previews/5.png)
-
-![Image 6](previews/6.png)
