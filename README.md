@@ -58,6 +58,7 @@ hypr # Hyprland configuration
 - `SUPER + t` -> Notification center
 - `SUPER + v` -> Clipboard
 - `SUPER + y` -> Wallpaper menu
+- `SUPER + ESCAPE` -> Logout menu
 - `SUPER + e` -> Filebrowser
 - `SUPER SHIFT + r` -> Shell commands runner
 - `SUPER SHIFT + e` -> Bookmarks menu
