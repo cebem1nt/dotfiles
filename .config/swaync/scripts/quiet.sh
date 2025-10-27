@@ -1,11 +1,11 @@
 #!/bin/bash
 
-if ! asusctl profile -p | grep -q "Active profile is Quiet"; 
+if ! powerprofilesctl get | grep -q "balanced"; 
 then
-    notify-send "Setting quiet mode..." asusctl -i asus_notif_white -a asusctl
-    asusctl profile -P Quiet
+    notify-send "Setting quiet mode..." powerprofilesctl -i battery-profile-powersave -a powerprofilesctl
+    powerprofilesctl set power-saver
 else
-    notify-send "Setting balanced mode..." asusctl -i asus_notif_white -a asusctl
-    asusctl profile -P Balanced
+    notify-send "Setting balanced mode..." powerprofilesctl -i battery-profile-balanced -a powerprofilesctl
+    powerprofilesctl set balanced
 fi
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if asusctl profile -p | grep -q "Active profile is Quiet"; 
+if powerprofilesctl get | grep -q "power-saver"; 
     then 
         echo true
     else 

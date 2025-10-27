@@ -1,10 +1,10 @@
 # My dotfiles
 
-### Quick info
+## Info
 
 - Panel: waybar
 - All the menus (except notifications): rofi
-- Notifications: swaync (0.11!)
+- Notifications: swaync
 - Terminal: alacritty
 - Shell: zsh
 - GTK theme: [kripton](https://github.com/EliverLara/Kripton)

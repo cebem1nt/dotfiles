@@ -155,10 +155,15 @@
         }
     },
 
+    "custom/start": {
+        "format": "",
+        "on-click": "~/.config/rofi/bin/drun &"
+    },
+
     "custom/ctlcenter" : {
         "tooltip" : false,
         "format" : "",
-        "on-click" : "swaync-client -t",
+        "on-click": "swaync-client -t",
         "menu": "on-click-right",
         "menu-file": "~/.config/waybar/context/ctlcenter.xml",
         "menu-actions": {

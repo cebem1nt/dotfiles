@@ -131,9 +131,14 @@ tooltip label {
     padding: 0 12px;
 }
 
+#custom-start,
 #power-profiles-daemon {
     margin-left: 5px;
     padding: 0 12px;
+}
+
+#custom-start {
+    color: @blue;
 }
 
 #power-profiles-daemon.performance {

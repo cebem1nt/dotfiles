@@ -15,17 +15,17 @@
   font-weight: 700;
 }
 
+.notification {
+  padding: 0 5px;
+  border-radius: 15px;
+  border: 2px solid @background;
+}
+
 .notification-background {
   background: @background;
   box-shadow: none;
   border-radius: 15px;
   margin: 8px;
-}
-
-.notification {
-  padding: 0 5px;
-  border-radius: 15px;
-  border: 2px solid @background;
 }
 
 .notification-row .inline-reply-entry {
@@ -102,8 +102,6 @@
   background: @selected;
 }
 
-/* ---------------------------CONTROL CENTER------------------------------------- */
-
 .control-center {
   background: @background;
   border-radius: 15px;
@@ -116,19 +114,13 @@
   margin: 7px 0;
 }
 
-
 /* I dont want to see close buttons in notification center */
-.control-center .notification-background .close-button {
+.control-center .notification-background .close-button,
+.notification-group-close-button{
   opacity: 0;
 }
 
-/* Avoid 'annoying' backgroud */
-.blank-window {  
-  background: transparent;  
-}
-
 /* Notifications expanded-group */
-
 .notification-group {
   margin: 0px 8px;
 }
@@ -153,13 +145,11 @@
   padding: 4px;
 }
 
-/* WIDGETS --------------------------------------------------------------------------- */
-
 /* Do not disturb */
 .widget-dnd {
-  padding: 10px 16px; 
+  padding: 15px 16px; 
   border-radius: 12px;
-  margin: 11px 0 0;
+  margin: 12px 0 0;
   color: @text;
   background: @background-alt;
 }
@@ -195,16 +185,57 @@
   padding: 0 10px; 
 }
 
+.mpris-overlay {
+	background: @background-alt;
+}
+
 .widget-mpris-player {
   background: @background-alt;
   color: @text;
   margin: 0 5px;
-  padding: 5px 0 0 0 ; 
+  padding: 10px 0 15px; 
+}
+
+/* Control buttons for mpris widget */
+.widget-mpris-player .image-button:hover {
+  border-radius: 8px;
+  background: @hover;
+}
+
+.widget-mpris-player button {
+  padding: 5px;
+  margin: 0 2.5px;
+}
+
+.widget-mpris-player .mpris-overlay > box:last-child {
+  border-radius: 16px;
+  padding: 0 5px;
+  background: alpha(@hover, .3);
+}
+
+.widget-mpris-album-art {
+  border-radius: 16px;
+  margin: 6px 4px;
+}
+
+.widget-mpris-title,
+.widget-mpris-subtitle {
+  font-weight: 700;
+  margin: 0 3px;
+} 
+
+.widget-mpris-title {
+  font-size: 1.2rem;
+}
+ 
+.widget-mpris-subtitle {
+  font-size: 0.9rem;
+  color: @text-alt;
 }
 
 .widget-buttons-grid {
   border-radius: 12px;
-  padding: 6px 12px; 
+  padding: 6px 15px;
   background: @background-alt;
 }
 
@@ -232,38 +263,12 @@
   color: @background;
 }
 
-/* Control buttons for mpris widget */
-.widget-mpris-player .image-button:hover {
-  border-radius: 8px;
-  background: @hover;
-}
-
-.widget-mpris-album-art {
-  border-radius: 16px;
-  margin: 6px 4px;
-}
-
-.widget-mpris-title,
-.widget-mpris-subtitle {
-  font-weight: 700;
-  margin: 0 3px;
-} 
-
-.widget-mpris-title {
-  font-size: 1.2rem;
-}
- 
-.widget-mpris-subtitle {
-  font-size: 0.9rem;
-  color: @text-alt;
-}
-
-/* Carousel indicators for mpris player */
-carouselindicatordots {
-  opacity: 0;
-}
-
 /* Change color for plaseholder when no notifications */
 .control-center-list-placeholder {
   color: @text;
+}
+
+/* Avoid 'annoying' backgroud */
+.blank-window {  
+  background: transparent;  
 }

@@ -33,7 +33,7 @@
         ]
     },
 
-    "modules-left"   : ["power-profiles-daemon", "group/gleft1", "group/gleft2"],
+    "modules-left"   : ["custom/start", "group/gleft1", "group/gleft2"],
     "modules-center" : ["clock"],
     "modules-right"  : [ "group/gright2", "group/gright1", "custom/ctlcenter"],
 

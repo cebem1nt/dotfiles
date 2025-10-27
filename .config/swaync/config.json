@@ -1,5 +1,5 @@
 {
-    "$schema": "/etc/xdg/swaync/configSchema.json",
+    "$schema": "/etc/xdg/swaync/configschema.json",
     "positionX": "right",
     "positionY": "top",
     "cssPriority": "user",
@@ -37,8 +37,9 @@
         },
 
         "mpris": {
-            "image-size": 106,
-            "image-radius": 1000
+            "image-size": 110,
+            "image-radius": 12,
+            "blacklist": ["org.mpris.MediaPlayer2.playerctld"]
         },
 
         "buttons-grid": {
