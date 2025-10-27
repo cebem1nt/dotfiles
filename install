@@ -166,6 +166,12 @@ if [ $(which vscodium) ]; then
     vscodium --install-extension $EXT_ID
 fi
 
+green "Setting zsh as default shell..."
+chsh -s $(which zsh)
+
+green "Installing oh-my-zsh..."
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 # Zen theme
 if [ $(prompt "Would you like to install custom zen-browser theme?") = 1 ]; then
     ZEN_DIR=$(find "$DEST/.zen/" -name '*(release)' -type d)
@@ -187,9 +193,4 @@ if [ $(prompt "Would you like to install custom zen-browser theme?") = 1 ]; then
         mkdir -p "$ZEN_DIR/chrome"
         cp -r "$SRC/.zen/chrome/"* "$ZEN_DIR/chrome"
     fi
-fi
-
-if [ $(prompt "Set zsh as default shell?") = 1 ]; then
-    green "Setting zsh as default shell..."
-    chsh -s $(which zsh)
 fi
