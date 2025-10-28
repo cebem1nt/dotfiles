@@ -19,6 +19,8 @@
   padding: 0 5px;
   border-radius: 15px;
   border: 2px solid @background;
+  font-size: 13px;
+  color: @text;
 }
 
 .notification-background {
@@ -46,6 +48,11 @@
 
 .notification .notification-content {
   margin: 8px 10px;
+}
+
+.notification .summary .time {
+  font-weight: 800;
+  margin: 5px 0;
 }
 
 .notification .summary {
