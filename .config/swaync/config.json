@@ -7,7 +7,7 @@
     "fit-to-screen": true,
 
     "notification-window-width": 400,
-    "notification-icon-size": 40,
+    "notification-icon-size": 45,
     "notification-body-image-height": 500,
     "notification-body-image-width": 500,
     "notification-inline-replies": true,
@@ -39,6 +39,7 @@
         "mpris": {
             "image-size": 110,
             "image-radius": 12,
+            "autohide": false,
             "blacklist": ["org.mpris.MediaPlayer2.playerctld"]
         },
 

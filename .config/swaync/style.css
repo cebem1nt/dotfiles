@@ -47,27 +47,29 @@
 }
 
 .notification .notification-content {
-  margin: 8px 10px;
+  margin: 10px;
 }
 
-.notification .summary .time {
+.notification-content .text-box {
+  margin: 0 0 0 15px;
+}
+
+.notification-content .time {
+  font-size: 0.95rem;
+  padding: 2px 0;
   font-weight: 800;
-  margin: 5px 0;
 }
 
 .notification .summary {
   font-weight: 800;
   margin-bottom: 2px;
+  padding: 2px 0;
   font-size: 1rem;
 }
 
 .notification .body {
   color: @text-alt;
   font-size: 0.8rem;
-}
-  
-.notification .image {
-  margin: 10px 20px 10px 0px;
 }
 
 .notification.critical {
@@ -134,9 +136,12 @@
 
 .notification-group-headers {
   font-weight: bold;
-  font-size: 2rem;
   color: @text;
-  letter-spacing: 2px;
+}
+
+.notification-group-headers > label {
+  margin: 0 3px;
+  font-size: 1rem;
 }
 
 .notification-group-icon {
@@ -156,7 +161,7 @@
 .widget-dnd {
   padding: 15px 16px; 
   border-radius: 12px;
-  margin: 12px 0 0;
+  margin: 12px 0 5px;
   color: @text;
   background: @background-alt;
 }
@@ -193,7 +198,7 @@
 }
 
 .mpris-overlay {
-	background: @background-alt;
+  background: @background-alt;
 }
 
 .widget-mpris-player {
