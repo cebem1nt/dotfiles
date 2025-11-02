@@ -7,7 +7,7 @@
     "fit-to-screen": true,
 
     "notification-window-width": 400,
-    "notification-icon-size": 45,
+    "notification-icon-size": 40,
     "notification-body-image-height": 500,
     "notification-body-image-width": 500,
     "notification-inline-replies": true,
@@ -26,12 +26,24 @@
 
     "widgets": [
       "mpris",
-      "dnd",
+      "volume",
       "notifications",
       "buttons-grid"
     ],
    
     "widget-config": {
+        "backlight": {
+            "device": "amdgpu_bl1",
+            "label": "󰃠",
+            "slider": true,
+            "min": 10
+        },
+        "volume": {
+            "device": "default",
+            "label": "",
+            "slider": true
+        },
+
         "dnd": {
             "text": "Do not disturb"
         },
@@ -40,7 +52,7 @@
             "image-size": 110,
             "image-radius": 12,
             "autohide": false,
-            "blacklist": ["org.mpris.MediaPlayer2.playerctld"]
+            "blacklist": [ "org.mpris.MediaPlayer2.playerctld"]
         },
 
         "buttons-grid": {

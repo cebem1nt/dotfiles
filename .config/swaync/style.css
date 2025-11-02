@@ -9,7 +9,7 @@
 * {
   color: @text;
   all: unset;
-  font-size: 14px;
+  font-size: 0.95rem;
   font-family: "CaskaydiaCove Nerd Font Propo";
   transition: 200ms;
   font-weight: 700;
@@ -19,7 +19,6 @@
   padding: 0 5px;
   border-radius: 15px;
   border: 2px solid @background;
-  font-size: 13px;
   color: @text;
 }
 
@@ -159,9 +158,9 @@
 
 /* Do not disturb */
 .widget-dnd {
-  padding: 15px 16px; 
+  padding: 8px 14px; 
   border-radius: 12px;
-  margin: 12px 0 5px;
+  margin: 5px 0;
   color: @text;
   background: @background-alt;
 }
@@ -182,6 +181,44 @@
   border-radius: 8px;
 }
 
+.widget-volume,
+.widget-backlight {
+  padding: 8px 14px;
+  margin: 5px 0;
+  border-radius: 12px;
+  color: @text;
+  font-weight: 800;
+  background: @background-alt;
+}
+
+.widget-volume label,
+.widget-backlight label {
+  font-size: 1.1rem;
+}
+
+.widget-volume slider,
+.widget-backlight slider {
+  border-radius: 24px;
+  margin: -8px;
+  background: @text;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.15), 0 4px 4px rgba(0, 0, 0, 0.4);
+  opacity: 1;
+}
+
+.widget-volume trough,
+.widget-backlight trough {
+  background: @hover;
+  margin-left: 8px;
+  border-radius: 12px;  
+}
+
+.widget-volume highlight,
+.widget-backlight highlight {
+  padding: 3.5px;
+  border-radius: 12px;  
+  background: @text;  
+}
+
 .widget-dnd switch:hover,
 .widget-buttons-grid button:hover,
 .control-center .notification-group-collapse-button:hover,
@@ -193,7 +230,7 @@
 .widget-mpris {
   background: @background-alt;
   border-radius: 15px;
-  margin: 5px 0 0 0;
+  margin: 5px 0;
   padding: 0 10px; 
 }
 
