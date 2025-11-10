@@ -26,7 +26,7 @@
 
     "widgets": [
       "mpris",
-      "volume",
+      "dnd",
       "notifications",
       "buttons-grid"
     ],
