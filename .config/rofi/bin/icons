@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cat $HOME/.config/rofi/bin/icons.txt \
+    | rofi -dmenu -theme ~/.config/rofi/themes/clipboard.rasi -p "Select icon:" \
+    | awk '{printf "%s", $1}' \
+    | wtype -

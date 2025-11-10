@@ -73,11 +73,12 @@ hypr # Hyprland configuration
 - `SUPER + r` -> Drun (app runner)
 - `SUPER + t` -> Notification center
 - `SUPER + v` -> Clipboard
-- `SUPER + y` -> Wallpaper menu
-- `SUPER + ESCAPE` -> Logout menu
+- `SUPER + y` -> Wallpapers
+- `SUPER + ESCAPE` -> Logout
 - `SUPER + e` -> Filebrowser
+- `SUPER SHIFT + v` -> Glyphs selector
 - `SUPER SHIFT + r` -> Shell commands runner
-- `SUPER SHIFT + e` -> Bookmarks menu
+- `SUPER SHIFT + e` -> Bookmarks
 
 For more detailed info see `.config/hypr/configs/binds.conf`
 
