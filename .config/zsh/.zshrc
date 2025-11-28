@@ -1,5 +1,4 @@
 export ZSH="$HOME/.config/oh-my-zsh"
-
 ZSH_THEME="lukerandall"
 
 plugins=(
@@ -27,6 +26,8 @@ export EDITOR="nvim"
 export TERMINAL="alacritty"
 export BROWSER="zen"
 
+export LESS="--ignore-case"
+
 export CARGO_HOME="$HOME/.config/rust-cargo"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc":"$XDG_CONFIG_HOME/gtk-2.0/gtkrc.mine"
@@ -53,10 +54,12 @@ alias ls='eza -a --git --icons=automatic --group-directories-first'
 alias ll='eza -al'
 alias lt='eza -a --tree --level=2 --group-directories-first --icons=automatic'
 
+alias man="COLUMNS=100 man"
 alias vim='nvim'
 alias ht='htop'
 alias code='codium'
 alias g='grep'
+alias pacget='pacget --storage-dir="~/.local/src/"'
 
 alias vimzshrc="vim $XDG_CONFIG_HOME/zsh/.zshrc"
 alias vimsudo='sudo -E nvim /etc/sudoers'
