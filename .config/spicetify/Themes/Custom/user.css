@@ -17,17 +17,17 @@ button[aria-label="Update Spicetify"][title="Update Spicetify"] {
 }
 
 /* Set transparent background but not setting it transparent on hover */
-header.main-yourLibraryX-header button.main-useDropTarget-base:not(:hover) {
+div.YourLibraryX button.main-useDropTarget-base:not(:hover) {
     background: transparent;
 }
 
 /* Remove annoying big "Create" span inside of the library bar */
-header.main-yourLibraryX-header button.main-useDropTarget-base span.e-9890-text {
-    display: none;
+div.YourLibraryX button[aria-label="Create"] > span.e-91000-text {
+    display: none !important;
 }
 
 /* Remove paddings left for better view with "Create" label */
-header.main-yourLibraryX-header button.main-useDropTarget-base {
+div.YourLibraryX button.main-useDropTarget-base {
     padding: 0;
 }
 

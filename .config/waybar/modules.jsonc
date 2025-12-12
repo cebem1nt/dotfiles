@@ -88,7 +88,8 @@
         "menu-actions": {
   			"action-1": "hyprctl dispatch exec ~/.local/bin/network_disconnect",
   			"action-2": "hyprctl dispatch exec ~/.local/bin/network_reconnect",
-  			"action-3": "hyprctl dispatch exec nm-connection-editor"
+            "action-3": "hyprctl dispatch exec '[float] alacritty -e nmtui'",
+            "action-4": "hyprctl dispatch exec nm-connection-editor"
   		}
     },
 

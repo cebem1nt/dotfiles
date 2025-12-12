@@ -4,24 +4,30 @@
 
     <child>
       <object class="GtkMenuItem" id="action-1">
-        <property name="label">Dissconect</property>
+        <property name="label">Disconnect</property>
       </object>
     </child>
 
     <child>
       <object class="GtkMenuItem" id="action-2">
-        <property name="label">Reconnect</property>
+        <property name="label">Connect</property>
+      </object>
+    </child>
+
+    <child>
+      <object class="GtkMenuItem" id="action-3">
+        <property name="label">nmtui</property>
       </object>
     </child>
 
     <child><object class="GtkSeparatorMenuItem" id="separator"/></child>
 
     <child>
-      <object class="GtkMenuItem" id="action-3">
+      <object class="GtkMenuItem" id="action-4">
         <property name="label"> Network settings</property>
       </object>
     </child>
-   
+
   </object>
 </interface>
 
