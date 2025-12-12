@@ -1,8 +1,12 @@
 [keyboard]
-
 bindings = [
   { key = ";", mods = "Control", action = "CreateNewWindow" },
+  { key = ":", mods = "Control | Shift", command = "thunar" },
   { key = "ArrowUp", mods = "Control", action = "ScrollLineUp" },
   { key = "ArrowDown", mods = "Control", action = "ScrollLineDown" },
-  { key = ":", mods = "Control | Shift", command = "thunar" },
+
+  { key = "F", mods = "Control | Shift", action = "None" },
+  { key = "F", mods = "Control", action = "SearchForward" }, 
+  { key = "F", mods = "Control", mode = "~Search", action = "SearchForward" },  
+  { key = "F", mods = "Control", mode = "Search", action = "SearchCancel" }
 ]

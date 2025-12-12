@@ -67,6 +67,7 @@ alias vimsudo='sudo -E nvim /etc/sudoers'
 alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
 
 bindkey '^H' backward-kill-word
+bindkey -r '^S'
 
 # Set-up FZF key bindings (CTRL R for fuzzy history finder)
 source <(fzf --zsh)
