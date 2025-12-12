@@ -1,4 +1,3 @@
 #!/bin/bash
 
-swaync-client -C
-notify-send "Notifications cleared" "History cleared" -i view-list-compact -a swaync
+swaync-client -C && notify-send "Notifications cleared" "History cleared" -i view-list-compact -a swaync

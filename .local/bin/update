@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pacman -Syu
+pacman -Syu "$@"
 
 i_dont_need_those=(
     "/usr/share/applications/lstopo.desktop"
@@ -12,6 +12,14 @@ i_dont_need_those=(
     "/usr/share/applications/qdbusviewer.desktop"
     "/usr/share/applications/linguist.desktop"
     "/usr/share/applications/designer.desktop"
+    "/usr/share/applications/xgps.desktop"
+    "/usr/share/applications/xgpsspeed.desktop"
+    "/usr/share/applications/qvidcap.desktop"
+    "/usr/share/applications/qv4l2.desktop"
+    "/usr/share/applications/rofi.desktop"
+    "/usr/share/applications/rofi-theme-selector.desktop"
+    "/usr/share/applications/org.flameshot.Flameshot.desktop"
+    "/usr/share/applications/cmake-gui.desktop"
 )
 
 for path in "${i_dont_need_those[@]}"; do

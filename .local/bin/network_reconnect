@@ -1,9 +1,0 @@
-#!/bin/bash
-
-# Connect to the last used Wi-Fi network
-IS_CONNECTED=$(nmcli -t -f ACTIVE device wifi | grep yes)
-
-if [ "$IS_CONNECTED" != "yes" ]; then
-    LAST=$(nmcli -t -f NAME connection show | sed -n '2p')
-    nmcli connection up "$LAST"
-fi

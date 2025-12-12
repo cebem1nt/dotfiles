@@ -18,6 +18,7 @@ setopt autocd
 export PATH="$HOME/.local/bin/:$HOME/.config/npm/bin:$PATH"
 
 export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_SRC_HOME="$HOME/.local/src"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -59,7 +60,7 @@ alias vim='nvim'
 alias ht='htop'
 alias code='codium'
 alias g='grep'
-alias pacget='pacget --storage-dir="~/.local/src/"'
+alias aur="pacget --storage-dir $XDG_SRC_HOME"
 
 alias vimzshrc="vim $XDG_CONFIG_HOME/zsh/.zshrc"
 alias vimsudo='sudo -E nvim /etc/sudoers'

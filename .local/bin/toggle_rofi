@@ -2,19 +2,15 @@
 
 # A script to toggle rofi based menus. Will execute passed arguments 
 # If rofi is not running. Else, will kill it
-#
-
-# F*CK, THIS TINY SCRIPT WAS SO GOD DAMN HARD TO DO
 
 if [ "$#" -lt 1 ]; then
-    echo "Usage: $0 app [args...]"
     exit 1
 fi
 
 script_name=$(realpath "$0")
 args="$*"
 
-if pgrep -af "$script_name" | grep -vq "$args" ; then
+if pgrep -af "$script_name" | grep -v "$args" ; then
     pkill -x rofi
     "$@"
 elif pgrep -x rofi > /dev/null; then
