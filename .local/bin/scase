@@ -1,0 +1,84 @@
+#!/bin/bash
+
+show_help() {
+    echo "Usage: $0 [-f|--file] [--case=\"snake,camel,kebab\"|-c <case>] <operand>"
+    exit 1
+}
+
+convert_case() {
+    case "$CASE" in
+        kebab) printf '%s\n' "${s//[[:space:]]/-}" ;;
+        snake) printf '%s\n' "${s//[[:space:]]/_}" ;;
+        camel)
+            local out="" first=true WORD head tail
+            for WORD in $s; do
+                if $first; then
+                    out="$(printf '%s' "$WORD" | tr '[:upper:]' '[:lower:]')"
+                    first=false
+                else
+                    head="${WORD:0:1}"
+                    tail="${WORD:1}"
+                    out+="${head^^}${tail}"
+                fi
+            done
+            printf '%s\n' "$out"
+            ;;
+        *)
+            printf 'Error: use kebab|snake|camel\n' >&2
+            return 2
+            ;;
+    esac
+}
+
+IS_FILE=0
+CASE="snake"
+OPERAND=""
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --case=*) CASE="${1#*=}" ;;
+        -f|--file) IS_FILE=1 ;;
+        -h|--help) show_help ;;
+        -c|--case)
+            if [ -n "$2" ] && [ "${2#-}" = "$2" ]; then
+                CASE="$2"; shift
+            else
+                echo "Error: --case requires a value." >&2; show_help
+            fi
+            ;;
+
+        *)
+            if [[ -z "$OPERAND" ]]; then
+                OPERAND="$1"
+            else
+                OPERAND="$OPERAND $1"
+            fi
+            ;;
+    esac
+    shift
+done
+
+if [[ -z "$OPERAND" ]]; then
+    show_help
+fi
+
+if [[ $IS_FILE -eq 1 ]]; then
+    [[ -f "$OPERAND" ]] || { echo "File \"$OPERAND\" doesn't exist" >&2; exit 1; }
+
+    dir="${OPERAND%/*}"
+    base="${OPERAND##*/}"
+    [[ "$dir" == "$OPERAND" ]] && dir=""
+
+    s="$base"
+    newbase="$(convert_case)"
+    newbase="${newbase%%$'\n'}"
+    target=${dir:+$dir/}$newbase
+
+    [[ "$target" == "$OPERAND" ]] && { printf '%s\n' "$target"; exit 0; }
+    [[ -e "$target" ]] && { echo "Target already exists: $target" >&2; exit 1; }
+
+    mv -v "$OPERAND" "$target" || { echo "Failed to rename \"$OPERAND\" -> \"$target\"" >&2; exit 1; }
+else
+    s="$OPERAND"
+    convert_case
+fi
