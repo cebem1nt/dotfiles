@@ -90,7 +90,7 @@ This installation assumes you have a minimal working system! Firstly install all
 > Installation script already installs papirus icon theme and Kripton GTK theme. But does not install the cascadia code font. You should install it manually in case if you are not on archlinux.
 
 ```sh
-sudo pacman -S hyprland hyprlock hypridle waybar swaync alacritty cava rofi peaclock pavucontrol thunar zsh ttf-cascadia-code ttf-cascadia-code-nerd swww, python-psutil
+sudo pacman -S hyprland hyprlock hypridle waybar swaync alacritty cava rofi peaclock pavucontrol thunar zsh ttf-cascadia-code ttf-cascadia-code-nerd swww python-psutil
 ```
 
 For spotify theme install [spicetify](), browser is [zen]() by default, you can change it in `.config/hypr/configs/binds.conf`.

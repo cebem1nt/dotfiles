@@ -65,6 +65,7 @@ alias aur="pacget --storage-dir $XDG_SRC_HOME"
 alias vimzshrc="vim $XDG_CONFIG_HOME/zsh/.zshrc"
 alias vimsudo='sudo -E nvim /etc/sudoers'
 alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
+alias mv='mv -v'
 
 bindkey '^H' backward-kill-word
 bindkey -r '^S'

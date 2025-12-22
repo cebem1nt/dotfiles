@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+# Pretty print json. Takes input from stdin.
+
+import json, sys
+
+try:
+    obj = json.loads(sys.stdin.read())
+    pretty = json.dumps(obj, indent=4)
+    print(pretty)
+
+except (KeyboardInterrupt, EOFError):
+    pass
+
+except Exception as e:
+    sys.stderr.write(f"Malformed json: {str(e)}\n")
+

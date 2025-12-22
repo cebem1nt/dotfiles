@@ -36,6 +36,28 @@
 	<image-files/>
 </action>
 <action>
+	<icon>ffmpeg</icon>
+	<name>Reduce quality</name>
+	<submenu></submenu>
+	<unique-id>1758511085564080-3</unique-id>
+	<command>ffmpeg -i %f -c:v libx264 -preset medium -crf 24 -pix_fmt yuv420p -c:a aac -b:a 96k -movflags +faststart %d/reduced-%n</command>
+	<description>Reduce video quality</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<video-files/>
+</action>
+<action>
+	<icon>git</icon>
+	<name>Quick pull</name>
+	<submenu></submenu>
+	<unique-id>1757638961953653-1</unique-id>
+	<command>git -C %d pull</command>
+	<description>Pull changes from remote</description>
+	<range></range>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
 	<icon>pgp-keys</icon>
 	<name>Open as root</name>
 	<submenu></submenu>
@@ -48,7 +70,7 @@
 </action>
 <action>
 	<icon>clipboard</icon>
-	<name>Copy directory</name>
+	<name>Copy path</name>
 	<submenu></submenu>
 	<unique-id>1730572291852956-2</unique-id>
 	<command>wl-copy %f ; notify-send &quot;Copied to Clipboard&quot; %f -i clipboard</command>
@@ -74,14 +96,34 @@
 	<image-files/>
 </action>
 <action>
-	<icon>git</icon>
-	<name>Quick pull</name>
+	<icon>link</icon>
+	<name>Create symlink</name>
 	<submenu></submenu>
-	<unique-id>1757638961953653-1</unique-id>
-	<command>git -C %d pull</command>
-	<description>Pull changes from remote</description>
-	<range></range>
+	<unique-id>1758831930937907-1</unique-id>
+	<command>ln -s %f Link\ to\ %n</command>
+	<description>Creates new symbolic link to selected item</description>
+	<range>*</range>
 	<patterns>*</patterns>
 	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon></icon>
+	<name>Filename to snake case</name>
+	<submenu></submenu>
+	<unique-id>1765940212176490-1</unique-id>
+	<command>~/.local/bin/scase -f %f</command>
+	<description>Convert given filename to snake cased name</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
 </action>
 </actions>

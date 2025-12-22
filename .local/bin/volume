@@ -27,5 +27,5 @@ else
 fi
 
 notify-send --app-name $0 --icon $ICON \
-            "Volume: $NEW_VOL%"  \
+            "Volume changed" "Current volume: $NEW_VOL%"  \
             -h "string:x-canonical-private-synchronous:$0"
