@@ -107,7 +107,6 @@
         "on-click-right": "hyprctl dispatch exec blueman-manager"
     },
 
-
     "battery": {
         "interval": 20,
         "full-at": 100,
@@ -124,10 +123,10 @@
     },
 
     "clock": {
-        "timezone": "America/Argentina/Buenos_Aires", // Ooops, leaked location.
+        "timezone": "America/Argentina/Buenos_Aires",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%H:%M %d %B %Y}",
-        "on-click-right": "hyprctl dispatch exec '[float; size 500 270] alacritty -e peaclock'",
+        "on-click-right": "hyprctl dispatch exec 'alacritty --class=peaclock -e peaclock'",
         "calendar": {
             "mode": "month",
             "format": {
