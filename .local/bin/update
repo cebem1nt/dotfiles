@@ -29,10 +29,15 @@ for path in "${i_dont_need_those[@]}"; do
     fi
 done
 
-
 orphaned_packages=$(pacman -Qdtq)
 
 if [[ -n "$orphaned_packages" ]]; then
     echo "Removing orphaned packages..."
     pacman -Rns $orphaned_packages
 fi
+
+read -r -p "Reboot? [y/N] " response
+if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+    reboot
+fi
+

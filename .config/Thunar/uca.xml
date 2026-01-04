@@ -47,17 +47,6 @@
 	<video-files/>
 </action>
 <action>
-	<icon>git</icon>
-	<name>Quick pull</name>
-	<submenu></submenu>
-	<unique-id>1757638961953653-1</unique-id>
-	<command>git -C %d pull</command>
-	<description>Pull changes from remote</description>
-	<range></range>
-	<patterns>*</patterns>
-	<directories/>
-</action>
-<action>
 	<icon>pgp-keys</icon>
 	<name>Open as root</name>
 	<submenu></submenu>
@@ -113,11 +102,11 @@
 </action>
 <action>
 	<icon></icon>
-	<name>Filename to snake case</name>
+	<name>Snake case file name</name>
 	<submenu></submenu>
 	<unique-id>1765940212176490-1</unique-id>
 	<command>~/.local/bin/scase -f %f</command>
-	<description>Convert given filename to snake cased name</description>
+	<description>Rename filename to snake cased name</description>
 	<range>*</range>
 	<patterns>*</patterns>
 	<audio-files/>
@@ -125,5 +114,16 @@
 	<other-files/>
 	<text-files/>
 	<video-files/>
+</action>
+<action>
+	<icon></icon>
+	<name>Mark as executable</name>
+	<submenu></submenu>
+	<unique-id>1767547969518283-1</unique-id>
+	<command>chmod +x %f</command>
+	<description>Mark selected script/file as executable (chmod +x)</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<other-files/>
 </action>
 </actions>
