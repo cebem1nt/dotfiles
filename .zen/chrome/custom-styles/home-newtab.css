@@ -12,7 +12,9 @@
         --newtab-element-hover-color: rgba(8, 8, 11, 0.1) !important;
         --newtab-weather-background-color: rgba(8, 8, 11, 0.1) !important;
         --newtab-button-static-hover-background: #787c99 !important;
+        --newtab-wordmark-color: #08080b !important;
         --newtab-button-text: #fff !important;
+        --newtab-contextual-text-primary-color: #fff !important;
         --size-item-large: 38px !important;
     }   
 
@@ -35,7 +37,7 @@
     }
 
     div.card-text {
-        color: #787c99 !important;
+        color: #fff !important;
     }   
 
     .shortcuts-refresh .top-site-outer .icon-pin-small {
@@ -75,6 +77,11 @@
         color: #ffffff;
     }
 
+    .logo, 
+    .wallpaper-attribution {
+        display: none !important;
+    }
+
     @media (max-width: 1200px) {
         .search-wrapper .search-inner-wrapper{
             padding-left: 5% !important;
@@ -83,21 +90,14 @@
 }
 
 @-moz-document url("about:home") {
+    /* Home page only */
     .compact-cards .card-outer .card-details {
         border-bottom-right-radius: 10px;
         border-bottom-left-radius: 10px;
     }
-    
-    .logo, .wallpaper-attribution {
-        display: none !important;
-    }
 
     .top-site-outer .rich-icon {
         background-size: contain !important;
-    }
-
-    .top-site-inner:hover span.title-label {
-        color: #08080b;
     }
 
     .top-site-outer .context-menu-button,
@@ -112,12 +112,14 @@
 }
 
 @-moz-document url("about:newtab") {
+    /* Newtab only */
+
     .layout-variant-b.no-recommended-stories .search-wrapper {
         padding-bottom: 51.5vh !important;
     }
 
-    .logo, .ds-top-sites, .ds-highlights,
-    .wallpaper-attribution {
+    .ds-top-sites, 
+    .ds-highlights {
         display: none !important;
     }
 }
