@@ -1,4 +1,3 @@
-
 /* Change default font */
 :root {
     --encore-body-font-stack: "CaskaydiaCove Nerd Font Propo";
@@ -6,6 +5,24 @@
 
 body.encore-dark-theme.encore-layout-themes {
     --background-base: #0a0a0d !important;
+    --text-bright-accent: #acb0d0 !important;
+    --essential-bright-accent: #acb0d0 !important;
+}
+
+.encore-dark-theme .encore-bright-accent-set {
+    --background-base: #787c99 !important;
+    --background-highlight: #acb0d0 !important;
+    --background-press: #787d99 !important;
+    --background-elevated-base: #acb0d0 !important;
+    --background-elevated-highlight: #acb0d0 !important;
+    --background-elevated-press: #acb0d0 !important;
+    --background-tinted-base: #acb0d0 !important;
+    --background-tinted-highlight: #acb0d0 !important;
+    --background-tinted-press: #acb0d0 !important;
+}
+
+div[data-testid="progress-bar"] {
+    --is-active-fg-color: #acb0d0 !important;
 }
 
 /* Remove weird window control padding from left */
@@ -21,17 +38,20 @@ button[aria-label="Update Spicetify"][title="Update Spicetify"] {
 }
 
 /* Set transparent background but not setting it transparent on hover */
-div.YourLibraryX button.main-useDropTarget-base:not(:hover) {
+div.YourLibraryX 
+button.main-useDropTarget-base:not(:hover) {
     background: transparent;
 }
 
 /* Remove annoying big "Create" span inside of the library bar */
-div.YourLibraryX button[aria-label="Create"] > span.e-91000-text {
+div.YourLibraryX 
+button[aria-label="Create"] > span.e-91000-text {
     display: none !important;
 }
 
 /* Remove paddings left for better view with "Create" label */
-div.YourLibraryX button.main-useDropTarget-base {
+div.YourLibraryX 
+button.main-useDropTarget-base {
     padding: 0;
 }
 
@@ -39,11 +59,30 @@ article.TlMFkwANLJrFHUsnTOQf {
     display: none !important;
 }
 
-div.YourLibraryX button.CjGVphOR96me80esGFpV {
+div.YourLibraryX 
+button.CjGVphOR96me80esGFpV {
     background-color: var(--background-elevated-base) !important;
 }
 
+/* Margin there was to small */
 .contentSpacing > section.Y89c1_2SAoZFkICK7WVp {
     margin-bottom: 8px !important;
     margin-top: 18px !important;
+}
+
+/* Make mini equalizers match colors*/
+img.H70qcBekoGWOlskuON5R,
+img.X_HqPouENflGygaUXNus {
+    filter: invert(85%) sepia(2%) saturate(50%) hue-rotate(290deg) brightness(98%) contrast(92%);
+}
+
+div.Y6soMMBElF7EQDbJv8Xb
+button[aria-pressed="true"]
+svg[data-encore-id="icon"] {
+    fill: #acb0d0 !important;
+}
+
+div.Y6soMMBElF7EQDbJv8Xb
+button[data-encore-id="buttonTertiary"]::after {
+    background-color: #acb0d0 !important;
 }
