@@ -1,1 +1,1 @@
-../../../.local/bin/toggle_caffeine
+../../../.local/bin/caffeine
