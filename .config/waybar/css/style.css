@@ -91,7 +91,7 @@ tooltip label {
 
 #memory.critical, #cpu.critical,
 #temperature.critical, #battery.critical,
-#network.disconnected{
+#network.disconnected, #network.disabled {
 	color: @red;
 }
 

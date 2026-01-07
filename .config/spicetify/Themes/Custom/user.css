@@ -4,6 +4,10 @@
     --encore-body-font-stack: "CaskaydiaCove Nerd Font Propo";
 }
 
+body.encore-dark-theme.encore-layout-themes {
+    --background-base: #0a0a0d !important;
+}
+
 /* Remove weird window control padding from left */
 #global-nav-bar .main-globalNav-historyButtonsContainer .Kgjmt7IX5samBYUpbkBu,
 #global-nav-bar .OPsY6bKl1_FfA8jFpq1V {
@@ -33,4 +37,13 @@ div.YourLibraryX button.main-useDropTarget-base {
 
 article.TlMFkwANLJrFHUsnTOQf {
     display: none !important;
+}
+
+div.YourLibraryX button.CjGVphOR96me80esGFpV {
+    background-color: var(--background-elevated-base) !important;
+}
+
+.contentSpacing > section.Y89c1_2SAoZFkICK7WVp {
+    margin-bottom: 8px !important;
+    margin-top: 18px !important;
 }

@@ -22,9 +22,21 @@
         box-shadow: none !important;
     }
 
+    .personalize-button > div > img {
+        color: #fff !important;
+    }
+
+    .personalize-button:hover {
+        background-color: #787c9943 !important;
+    }
+
     .fake-caret {
         opacity: 0 !important;
     }
+
+    div.card-text {
+        color: #787c99 !important;
+    }   
 
     .shortcuts-refresh .top-site-outer .icon-pin-small {
         inset-block-start: 0.5rem !important;

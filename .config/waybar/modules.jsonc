@@ -80,6 +80,7 @@
 
     "network": {
         "interval": 10,
+        "format-disabled": "",
         "format-wifi": "  {essid} ({signalStrength} )",
         "format-ethernet": "󱓞 Wired connection",
         "format-disconnected": "",

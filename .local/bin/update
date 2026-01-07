@@ -36,8 +36,8 @@ if [[ -n "$orphaned_packages" ]]; then
     pacman -Rns $orphaned_packages
 fi
 
-read -r -p "Reboot? [y/N] " response
-if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+read -r -p "Reboot? [Y/n] " response
+if ! [[ "$response" =~ ^([nN][oO]|[nN])$ ]]; then
     reboot
 fi
 
