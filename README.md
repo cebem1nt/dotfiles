@@ -16,17 +16,20 @@ Big thanks to this [collection of rofi themes](https://github.com/adi1090x/rofi)
 
 ## Previews
 
-![Image 1](previews/1.png)
-
-![Image 2](previews/2.png)
-
-![Image 3](previews/3.png)
-
-![Image 4](previews/4.png)
-
-![Image 5](previews/5.png)
-
-![Image 6](previews/6.png)
+<table>
+  <tr>
+    <td><img src="previews/1.png" width="400"/></td>
+    <td><img src="previews/2.png" width="400"/></td>
+  </tr>
+  <tr>
+    <td><img src="previews/3.png" width="400"/></td>
+    <td><img src="previews/4.png" width="400"/></td>
+  </tr>
+  <tr>
+    <td><img src="previews/5.png" width="400"/></td>
+    <td><img src="previews/6.png" width="400"/></td>
+  </tr>
+</table>
 
 ## Structure
 ```
