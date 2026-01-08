@@ -91,6 +91,43 @@ Big thanks to this [collection of rofi themes](https://github.com/adi1090x/rofi)
 ### Misc
 You can find some usefull scripts in `~/.local/bin` they are added to path by default in `~/.config/zsh/.zshrc`. If you have a keyboard with backlight, you can setup auto_walls to automatically set best matching color, see `.config/auto_walls/config.json`  
 
+## Installation
+
+The installation script assumes you have a minimal working system! Firstly lets install all the necessary packages. On arch based distros you can copy & paste this command:
+
+```sh
+sudo pacman -S hyprland hyprlock hypridle waybar swaync alacritty cava rofi peaclock pavucontrol thunar zsh ttf-cascadia-code ttf-cascadia-code-nerd swww python-psutil eza fzf htop jq neovim xdg-desktop-portal-gtk xdg-desktop-portal-hyprland grim slurp nvtop nwg-look mission-center powertop qt6ct kvantum noto-fonts noto-fonts-emoji bibata-cursor-theme flameshot
+```
+
+And run this with your AUR helper (example with yay):
+
+```sh
+yay -S spicetify-cli vscodium-bin zen-browser-bin 
+```
+
+> [!NOTE]  
+> Installation script will install papirus icon theme and Kripton GTK theme from a .tar archive. But does not install cascadia code font. You should install it manually __in case if you are not on archlinux__.
+
+For spotify theme install [spicetify](), browser is [zen]() by default, you can change it in `.config/hypr/configs/binds.conf`.
+
+Now clone the repo & run the installer:
+
+> [!WARNING]  
+> My dotfiles are __laptop specific__. Despite trying to make a flexible installation script, some of the things might not work! You better install everything manually based on your needs, or use this repository as an inspiration.
+
+```sh
+git clone https://github.com/cebem1nt/dotfiles.git
+cd dotfiles
+./install # Dont run as super user!
+```
+
+## Uninstallation
+Just run `restore` script, it will restore all your previous config files stored at `~/.local/old`. If your files were not restored, take look at `~/.local/` there might be multiple `old` directories if you were running installer more than once
+
+```sh
+./restore
+```
+
 ## Binds
 
 | Bind                  | Description              |
@@ -128,43 +165,6 @@ You can find some usefull scripts in `~/.local/bin` they are added to path by de
 
 > [!NOTE]
 > For more detailed info see `.config/hypr/configs/binds.conf`. It's well commented, you can find more fancy keybinds like: next/prev song, hide waybar, record video, increase/decrease volume or change them
-
-## Installation
-
-The installation script assumes you have a minimal working system! Firstly lets install all the necessary packages. On arch based distros you can copy & paste this command:
-
-```sh
-sudo pacman -S hyprland hyprlock hypridle waybar swaync alacritty cava rofi peaclock pavucontrol thunar zsh ttf-cascadia-code ttf-cascadia-code-nerd swww python-psutil eza fzf htop jq neovim xdg-desktop-portal-gtk xdg-desktop-portal-hyprland grim slurp nvtop nwg-look mission-center powertop qt6ct kvantum noto-fonts noto-fonts-emoji bibata-cursor-theme flameshot
-```
-
-And run this with your AUR helper (example with yay):
-
-```sh
-yay -S spicetify-cli vscodium-bin zen-browser-bin 
-```
-
-> [!NOTE]  
-> Installation script will install papirus icon theme and Kripton GTK theme from a .tar archive. But does not install cascadia code font. You should install it manually __in case if you are not on archlinux__.
-
-For spotify theme install [spicetify](), browser is [zen]() by default, you can change it in `.config/hypr/configs/binds.conf`.
-
-Now clone the repo & run the installer:
-
-> [!WARNING]  
-> My dotfiles are __laptop specific__. Despite trying to make a flexible installation script, some of the things might not work! You better install everything manually based on your needs, or use this repository as an inspiration.
-
-```sh
-git clone https://github.com/cebem1nt/dotfiles.git
-cd dotfiles
-./install # Dont run as super user!
-```
-
-## Uninstallation
-Just run `restore` script, it will restore all your previous config files stored at `~/.local/old`. If your files were not restored, take look at `~/.local/` there might be multiple `old` directories if you were running installer more than once
-
-```sh
-./restore
-```
 
 ## Something doesn't work/missing ? 
 Feel free to post an issue or contribute!
