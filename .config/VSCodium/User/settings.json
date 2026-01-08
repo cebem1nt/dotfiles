@@ -1,0 +1,95 @@
+{
+    "window.dialogStyle": "custom",
+    "editor.fontFamily": "'CaskaydiaCove Nerd Font Propo'",
+    "editor.codeLensFontFamily": "'CaskaydiaCove Nerd Font Propo'",
+    "editor.inlayHints.fontFamily": "'CaskaydiaCove Nerd Font Propo'",
+    "debug.console.fontFamily": "'CaskaydiaCove Nerd Font Propo'",
+    "terminal.integrated.fontFamily": "'CaskaydiaCove Nerd Font'",
+    "chat.editor.fontFamily": "'CaskaydiaCove Nerd Font Propo'",
+    "notebook.output.fontFamily": "'CaskaydiaCove Nerd Font Propo'",
+    "editor.experimentalInlineEdit.fontFamily": "'CaskaydiaCove Nerd Font Propo'",
+    "editor.inlineSuggest.fontFamily": "'CaskaydiaCove Nerd Font Propo'",
+    "scm.inputFontFamily": "'CaskaydiaCove Nerd Font Propo'",
+    "window.menuBarVisibility": "compact",
+    "window.experimentalControlOverlay": false,
+    "explorer.confirmDelete": false,
+    "window.confirmSaveUntitledWorkspace": false,
+    "[css]": {
+        "editor.suggest.insertMode": "replace"
+    },
+
+    "css.validate": false,
+    "css.lint.unknownAtRules": "ignore",
+    "git.enableSmartCommit": true,
+    "editor.fontWeight": "700",
+    "window.zoomLevel": 1,
+    "terminal.integrated.fontWeight": "700",
+    "terminal.integrated.gpuAcceleration": "on",
+    "chat.commandCenter.enabled": false,
+    "symbols.hidesExplorerArrows": false,
+    "editor.cursorSmoothCaretAnimation": "on",
+    "explorer.confirmDragAndDrop": false,
+    "Lua.diagnostics.disable": [
+        "undefined-global",
+        "trailing-space"
+    ],
+    "git.confirmSync": false,
+    "window.customTitleBarVisibility": "never",
+    "window.density.editorTabHeight": "compact",
+    "window.doubleClickIconToClose": true,
+    "window.titleBarStyle": "custom",
+    "workbench.layoutControl.enabled": false,
+    "editor.inlayHints.enabled": "off",
+    "python.createEnvironment.trigger": "off",
+    "git.openRepositoryInParentFolders": "never",
+    "explorer.confirmPasteNative": false,
+    "editor.fontSize": 13.5,
+    "color-highlight.markerType": "dot-before",
+    "color-highlight.hslWithNoFunctionLanguages": [
+        "*",
+        "!css"
+    ],
+    "color-highlight.languages": [
+        "*",
+        "!css",
+        "!c",
+        "!rasi"
+    ],
+    "files.associations": {
+        "*.h": "c",
+        "*.c": "c",
+        "*.conf": "properties"
+    },
+    "workbench.editorAssociations": {
+        "{hexdiff}:/**/*.*": "hexEditor.hexedit",
+        "*.pyc": "hexEditor.hexedit"
+    },
+    "clangd.fallbackFlags": [
+        "-I/usr/include/gtk-3.0",
+        "-I/usr/include/pango-1.0",
+        "-I/usr/include/cloudproviders",
+        "-I/usr/include/cairo",
+        "-I/usr/include/gdk-pixbuf-2.0",
+        "-I/usr/include/at-spi2-atk/2.0",
+        "-I/usr/include/at-spi-2.0",
+        "-I/usr/include/atk-1.0",
+        "-I/usr/include/dbus-1.0",
+        "-I/usr/lib/dbus-1.0/include",
+        "-I/usr/include/fribidi",
+        "-I/usr/include/pixman-1",
+        "-I/usr/include/harfbuzz",
+        "-I/usr/include/freetype2",
+        "-I/usr/include/libpng16",
+        "-I/usr/include/gio-unix-2.0",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/libmount",
+        "-I/usr/include/blkid",
+        "-I/usr/include/sysprof-6",
+        "-I./include"
+    ],
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "workbench.colorTheme": "Tokyo Night Dark Enhanced",
+    "window.controlsStyle": "hidden"
+}

@@ -82,7 +82,6 @@ inputbar {
 entry {
     background-color:            inherit;
     text-color:                  inherit;
-    placeholder:                 "Search clipboard:";
 }
 
 /*****----- Listview -----*****/
