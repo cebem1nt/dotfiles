@@ -96,19 +96,17 @@ You can find some usefull scripts in `~/.local/bin` they are added to path by de
 The installation script assumes you have a minimal working system! Firstly lets install all the necessary packages. On arch based distros you can copy & paste this command:
 
 ```sh
-sudo pacman -S hyprland hyprlock hypridle waybar swaync alacritty cava rofi peaclock pavucontrol thunar zsh ttf-cascadia-code ttf-cascadia-code-nerd swww python-psutil eza fzf htop jq neovim xdg-desktop-portal-gtk xdg-desktop-portal-hyprland grim slurp nvtop nwg-look mission-center powertop qt6ct kvantum noto-fonts noto-fonts-emoji bibata-cursor-theme flameshot wtype
+sudo pacman -S hyprland hyprlock hypridle waybar swaync alacritty cava rofi pavucontrol thunar zsh ttf-cascadia-code ttf-cascadia-code-nerd swww python-psutil eza fzf htop jq neovim xdg-desktop-portal-gtk xdg-desktop-portal-hyprland grim slurp nvtop nwg-look mission-center powertop qt6ct kvantum noto-fonts noto-fonts-emoji flameshot wtype
 ```
 
 And run this with your AUR helper (example with yay):
 
 ```sh
-yay -S spicetify-cli vscodium-bin zen-browser-bin 
+yay -S spicetify-cli vscodium-bin zen-browser-bin peaclock bibata-cursor-theme
 ```
 
 > [!NOTE]  
 > Installation script will install papirus icon theme and Kripton GTK theme from a .tar archive. But does not install cascadia code font. You should install it manually __in case if you are not on archlinux__.
-
-For spotify theme install [spicetify](), browser is [zen]() by default, you can change it in `.config/hypr/configs/binds.conf`.
 
 Now clone the repo & run the installer:
 
