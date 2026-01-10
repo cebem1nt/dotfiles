@@ -90,7 +90,7 @@ Now clone the repo & run the installer:
 > My dotfiles are __laptop specific__. Despite trying to make a flexible installation script, some of the things might not work! You better install everything manually based on your needs, or use this repository as an inspiration.
 
 ```sh
-git clone https://github.com/cebem1nt/dotfiles.git
+git clone https://github.com/cebem1nt/dotfiles.git --depth=1
 cd dotfiles
 ./install # Dont run as super user!
 ```
