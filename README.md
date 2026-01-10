@@ -62,30 +62,6 @@ Big thanks to this [collection of rofi themes](https://github.com/adi1090x/rofi)
 │   └── with_window.jsonc  # Layout with current window title  
 ├── modules.jsonc # Modules configuration
 └── style.css
-
-~/.config/rofi # Rofi configuration files
-├── bin # Different scripts
-│   ├── clipboard
-│   ├── drun
-│   ├── filebrowser
-│   ├── icons
-│   ├── icons.txt
-│   ├── logout
-│   └── run
-├── config.rasi # Main config file
-└── themes # Different themes
-    ├── colors
-    │   ├── black.rasi
-    │   └── tokyonight.rasi
-    ├── fonts
-    │   └── cascadia.rasi
-    ├── bookmarks.rasi
-    ├── clipboard.rasi
-    ├── filebrowser.rasi
-    ├── launcher.rasi
-    ├── logout_menu.rasi
-    ├── theme_select.rasi
-    └── wallpapers.rasi
 ```
 
 ### Misc
