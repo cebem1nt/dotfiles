@@ -1,0 +1,1 @@
+Configuration files for `/etc`. These won't be installed.  
