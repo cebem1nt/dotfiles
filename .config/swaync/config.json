@@ -61,13 +61,13 @@
                     "label": "󰌪",
                     "type": "toggle",
                     "command": "bash -c $HOME/.config/swaync/scripts/quiet.sh",
-                    "update-command": "bash -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && $HOME/.config/swaync/scripts/update_quiet.sh'"
+                    "update-command": "bash -c $HOME/.config/swaync/scripts/update_quiet.sh"
                 },
                 {
                     "label": "",
                     "type": "toggle",
                     "command": "bash -c $HOME/.config/swaync/scripts/inhibit.sh",
-                    "update-command": "bash -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && $HOME/.config/swaync/scripts/update_inhibit.sh'"
+                    "update-command": "sh -c $HOME/.config/swaync/scripts/update_inhibit.sh"
                 },
                 {
                     "label": "",

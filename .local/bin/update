@@ -20,6 +20,11 @@ i_dont_need_those=(
     "/usr/share/applications/rofi-theme-selector.desktop"
     "/usr/share/applications/org.flameshot.Flameshot.desktop"
     "/usr/share/applications/cmake-gui.desktop"
+    "/usr/share/applications/codium-wayland.desktop"
+    "/usr/share/applications/avahi-discover.desktop"
+    "/usr/share/applications/bssh.desktop"
+    "/usr/share/applications/bvnc.desktop"
+    "/usr/share/applications/gammastep-indicator.desktop"
 )
 
 for path in "${i_dont_need_those[@]}"; do
