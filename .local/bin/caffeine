@@ -26,7 +26,7 @@ start() {
         return
     fi
 
-     notify-send  -i caffeine-cup-full -a caffeine \
+    notify-send  -i caffeine-cup-full -a caffeine \
         "Preventing sleep..." "Enabled inhibiting for $WHAT"
 
     nohup bash -c "$GREP" >/dev/null 2>&1 &
