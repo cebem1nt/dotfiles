@@ -1,0 +1,55 @@
+window {
+    background: rgba(8, 8, 11, 0.9);
+    border-radius: 55px;
+}
+
+#box {
+	padding: 20px 10px;
+}
+
+button, image {
+	background: none;
+	box-shadow: none;
+}
+
+button {
+    border-radius: 100%;
+    padding: 7px;
+    background: #101010;
+    margin: 5px; 
+}
+
+button:hover {
+	background: #acb0d0;
+}
+
+button:focus {
+    background: #101010;
+}
+
+tooltip {
+    padding: 6px;
+    border-radius: 15px;
+    background: rgba(8, 8, 11, 0.9);
+}
+
+tooltip label {
+    padding: 8px;
+	font-weight: bold;
+}
+
+menu {
+    border-radius: 10px;
+    font-weight: 700;
+    color: #acb0d0;
+}
+
+menu > * {
+    padding: 3px 0px;
+}
+
+menu > *:hover {
+    border-radius: 10px;
+    background-color: #787c99;
+}
+

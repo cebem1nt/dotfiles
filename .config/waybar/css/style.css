@@ -19,7 +19,7 @@
 }
 
 tooltip {
-    padding: 8px;
+    padding: 6px;
     border-radius: 15px;
     background: @tooltip-bg;
 }
@@ -38,6 +38,7 @@ tooltip label {
     border-radius: 10px;
     font-weight: 700;
     color: @fg;
+    background: @tooltip-bg;
 }
 
 #tray menu > *, menu > * {

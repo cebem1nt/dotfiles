@@ -109,6 +109,10 @@
         top: 0 !important;
         fill: #08080b !important;
     }
+
+    .newtab-main {
+        margin-top: 4rem !important;
+    }
 }
 
 @-moz-document url("about:newtab") {
