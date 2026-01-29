@@ -3,3 +3,11 @@
         outline: none !important;
     }
 }
+
+
+@-moz-document domain("mail.google.com") {
+    .Tm.aeJ * { /*Why tf are class names encrypted?*/
+        font-family: sans-serif !important;
+        font: medium sans-serif !important;
+    }
+}
