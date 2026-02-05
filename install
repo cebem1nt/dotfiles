@@ -118,17 +118,15 @@ green "Installing wallpapers ..."
 mkdir -p $DEST/media/pictures/
 cp -r $SRC/wallpapers $DEST/media/pictures/
 
-# If there is powerprofilesctl installed, replace waybar arch module with power-profiles module
-if [ -n "$(which powerprofilesctl 2>/dev/null)" ]; then
+# If there is powerprofilesctl installed, replace waybar start module with power-profiles module
+if which powerprofilesctl >/dev/null 2>&1; then
     WAYBAR_FILES=(
         "$DEST/.config/waybar/layouts/with_music.jsonc"
         "$DEST/.config/waybar/layouts/with_window.jsonc"
     )
     
     for FILE in "${WAYBAR_FILES[@]}"; do
-        sed -E -e 's#"modules-left"[[:space:]]*:[[:space:]]*$$[^]]*"custom/start"([^]]*)$$#"modules-left": ["power-profiles-daemon"\1]#' \
-            -e 's#"custom/start"#"power-profiles-daemon"#g' \
-            -i "$FILE"
+        sed -i 's|custom/start|power-profiles-daemon|g' "$FILE"
     done
 fi
 
@@ -137,31 +135,14 @@ TIMEZONE=$(readlink -f /etc/localtime | sed 's|.*/zoneinfo/||')
 sed -i "s/\"timezone\": *\"[^\"]*\"/\"timezone\": \"${TIMEZONE//\//\\/}\"/" \
     "$DEST/.config/waybar/modules.jsonc"
 
-# Install papirus icon theme
-green "Installing icon theme..."
-ICON_THEME_TAR="$DEST/.local/share/icons/papirus-icon-theme-bluegrey-folders.tar.xz"
-
-if tar -xJf $ICON_THEME_TAR -C "$DEST/.local/share/icons"; then
-    gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
-    rm $ICON_THEME_TAR
-else
-    red "Could not install? Please install manually at $ICON_THEME_TAR"
-fi
-
-# Install Kripton GTK theme
-green "Installing GTK theme..."
-GTK_THEME_TAR="$DEST/.local/share/themes/Kripton.tar.xz"
-
-if tar -xJf $GTK_THEME_TAR -C "$DEST/.local/share/themes"; then
-    gsettings set org.gnome.desktop.interface gtk-theme "Kripton"
-    gsettings set org.gnome.desktop.wm.preferences theme "Kripton"  
-    rm $GTK_THEME_TAR
-else
-    red "Could not install? Please install manually at $GTK_THEME_TAR"
+if which papirus-folders >/dev/null 2>&1; then                                                                                                          130 ↵
+    green "Setting bluegrey folders for icon theme..."
+    papirus-folders -C bluegrey
 fi
 
 # Apply spicetify theme
-if [ -n "$(which spicetify 2>/dev/null)" ]; then
+if which spicetify >/dev/null 2>&1; then
+    green "Installing spicetify theme..."
     spicetify backup apply
     spicetify config current_theme "Custom"
     spicetify apply
@@ -170,7 +151,8 @@ else
 fi
 
 # If vscodium is installed, lets apply theme
-if [ -n "$(which vscodium 2>/dev/null)" ]; then
+if which vscodium >/dev/null 2>&1 ; then
+    green "Installing vscodium theme..."
     EXT_ID=Venage5603.tokyo-night-dark-enhanced
     vscodium --install-extension $EXT_ID
 fi

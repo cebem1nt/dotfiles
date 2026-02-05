@@ -100,7 +100,7 @@ border_error = "#e0af68"
 
 [colors.button.primary]
 background = "#08080b"
-foreground = "#787c99"
+foreground = "#acb0d0"
 hover = { background = "#14141b" }
 focus = { outline = "colors.core.accent" }
 
@@ -114,12 +114,12 @@ background = "#14141b"
 foreground = "#acb0d0"
 
 [colors.list.item.selection]
-background = "#14141b"          # Selected item on main background
-foreground = "#acb0d0"
-secondary_background = "#08080b" # Selected item on secondary surfaces (popups, panels)
+background = "#787c99"          # Selected item on main background
+foreground = "#08080b"
+secondary_background = "#acb0d0" # Selected item on secondary surfaces (popups, panels)
                                  # Light themes: lighter than primary selection
                                  # Dark themes: lighter/brighter than primary selection
-secondary_foreground = "#acb0d0"
+secondary_foreground = "#08080b"
 
 # ============================================================================
 # Grid Items
@@ -136,7 +136,7 @@ selection = { outline = "#acb0d0" }
 # ============================================================================
 
 [colors.scrollbars]
-background = "#08080b"
+background = "#acb0d0"
 
 # ============================================================================
 # Loading Indicators

@@ -69,30 +69,45 @@ You can find some usefull scripts in `~/.local/bin` they are added to path by de
 
 ## Installation
 
+> [!WARNING]  
+> My dotfiles are __*laptop specific*__. Despite trying to make a flexible installation script, some of the things might not work! You better install everything manually based on your needs, or use this repository as an inspiration.
+
 The installation script assumes you have a minimal working system! Firstly lets install all the necessary packages. On arch based distros you can copy & paste this command:
 
 ```sh
-sudo pacman -S hyprland hyprlock hypridle waybar swaync alacritty cava rofi pavucontrol thunar zsh ttf-cascadia-code ttf-cascadia-code-nerd swww python-psutil eza fzf htop jq neovim xdg-desktop-portal-gtk xdg-desktop-portal-hyprland grim slurp nvtop nwg-look mission-center powertop qt6ct kvantum noto-fonts noto-fonts-emoji flameshot wtype
+sudo pacman -S hyprland hyprlock hypridle waybar swaync alacritty cava rofi pavucontrol thunar zsh ttf-cascadia-code ttf-cascadia-code-nerd swww python-psutil eza fzf htop jq neovim xdg-desktop-portal-gtk xdg-desktop-portal-hyprland grim slurp nvtop nwg-look mission-center powertop qt6ct kvantum noto-fonts noto-fonts-emoji flameshot wtype papirus-icon-theme
 ```
 
 And run this with your AUR helper (example with yay):
 
 ```sh
-yay -S spicetify-cli vscodium-bin zen-browser-bin peaclock bibata-cursor-theme
+yay -S spicetify-cli vscodium-bin zen-browser-bin peaclock bibata-cursor-theme kripton-theme-git
 ```
 
-> [!NOTE]  
-> Installation script will install papirus icon theme and Kripton GTK theme from a .tar archive. But does not install cascadia code font. You should install it manually __in case if you are not on archlinux__.
+### Bluegrey folders
+For this, install `papirus-folders` cli tool, or download and install icon pack with bluegrey folders [directly](https://www.gnome-look.org/p/1166289)
+
+```sh
+yay -S papirus-folders-git
+```
+
+```sh
+# Apply the color theme
+papirus-folders -C bluegrey
+```
+
+After successful installation, you can safely uninstall the script
+
+```sh
+yay -Rns papirus-folders-git
+```
 
 Now clone the repo & run the installer:
-
-> [!WARNING]  
-> My dotfiles are __laptop specific__. Despite trying to make a flexible installation script, some of the things might not work! You better install everything manually based on your needs, or use this repository as an inspiration.
 
 ```sh
 git clone https://github.com/cebem1nt/dotfiles.git --depth=1
 cd dotfiles
-./install # Dont run as super user!
+./install # Do not run as super user!
 ```
 
 ## Uninstallation
