@@ -32,6 +32,30 @@ Big thanks to this [collection of rofi themes](https://github.com/adi1090x/rofi)
   </tr>
 </table>
 
+<details>
+  <summary><h2>Waybar</h2></summary>
+  
+![waybar](https://github.com/user-attachments/assets/3a5448ef-9d76-4b15-ad61-57bcdd3549dc)
+
+</details>
+
+<details>
+  <summary><h2>Rofi</h2></summary>
+
+### filebrowser
+<img width="1919" height="38" alt="2026-02-05_16-42-07" src="https://github.com/user-attachments/assets/4ccf0ed5-10af-4b2a-8632-50a5da3c337e" />
+
+<table>
+  <tr>
+    <td><h3>bookmarks</h3><img width="869" height="359" alt="2026-02-05_16-44-10" src="https://github.com/user-attachments/assets/fc6da599-ccc3-4c0d-a48f-9354ed35af55" /></td>
+    <td><h3>wallpaper picker</h3><img width="805" height="526" alt="2026-02-05_16-41-02" src="https://github.com/user-attachments/assets/4579f741-37a7-4679-a4d8-9a671f3d09f3" /></td>
+    <td><h3>nf icons picker / clipboard</h3><img src="https://github.com/user-attachments/assets/e74875ad-9352-4fb9-831a-1189a173064b" /></td>
+  </tr>
+  
+</table>
+
+</details>
+
 ## Structure
 ```
 ~/.config/hypr # Hyprland configuration
