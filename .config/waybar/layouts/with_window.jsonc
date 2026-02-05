@@ -1,41 +1,60 @@
 {
-    "layer" : "top",
-    "position" : "top",
-    "width" : 1920,
-    "margin" : "5 0",
+    "layer": "top",
+    "position": "top",
+    "width": 1910,
+    "margin": "5 0",
 
-    "group/gleft1" : {
-        "orientation": "horizontal",
-        "modules" : [
-            "battery", "cpu", "backlight" 
-        ]
-    },
-
-    "group/gleft2" : {
+    "group/left" : {
         "orientation": "horizontal",
         "modules" : [
             "hyprland/workspaces", "hyprland/window"
         ]
     },
 
-
-    "group/gright1" : {
+    "group/left-hidden" : {
         "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 500,
+            "transition-left-to-right": false,
+            "click-to-reveal": true
+        },
         "modules" : [
-            "memory", "temperature", "tray"
+            "custom/arrow-right", "battery", "cpu", "backlight"
         ]
     },
 
-    "group/gright2" : {
+    "group/left-hidden-top" : {
+        "orientation": "horizontal",
+        "modules" : [ "custom/start", "group/left-hidden" ]
+    },
+
+    "group/right" : {
         "orientation": "horizontal",
         "modules" : [
-            "pulseaudio", "bluetooth", "network"
+            "pulseaudio", "network", "bluetooth", "tray"
         ]
     },
 
-    "modules-left"   : ["custom/start", "group/gleft1", "group/gleft2"],
+    "group/right-hidden" : {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 500,
+            "transition-left-to-right": true,
+            "click-to-reveal": true
+        },
+        "modules" : [
+            "custom/arrow-left", "memory", "temperature"
+        ]
+    },
+
+    "group/right-hidden-top" : {
+        "orientation": "horizontal",
+        "modules" : [ "group/right-hidden",  "custom/ctlcenter" ]
+    },
+
+    "modules-left"   : ["group/left-hidden-top", "group/left"],
     "modules-center" : ["clock"],
-    "modules-right"  : [ "group/gright2", "group/gright1", "custom/ctlcenter"],
+    "modules-right"  : [ "group/right",  "group/right-hidden-top"],
 
     "include": [ "~/.config/waybar/modules.jsonc" ]
 }

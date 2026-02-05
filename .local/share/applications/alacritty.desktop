@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Alacritty
+Exec=alacritty %u
+Type=Application
+MimeType=x-scheme-handler/terminal;
+NoDisplay=true
+

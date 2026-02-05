@@ -69,21 +69,17 @@
         "tooltip": false,
         "format-muted": "{icon}",
         "format-icons": {
-            "headphone": "",
-            "headset": "",
-            "headphone-muted": "󰟎",
-            "headset-muted": "󰟎",
-            "default": ["", ""],
-            "default-muted": "󰖁"
+            "default": ["", "", ""],
+            "default-muted": ""
         }
     },
 
     "network": {
         "interval": 10,
         "format-disabled": "",
-        "format-wifi": "  {essid} ({signalStrength} )",
-        "format-ethernet": "󱓞 Wired connection",
         "format-disconnected": "",
+        "format-wifi": "  {essid}",
+        "format-ethernet": "󱓞 Wired connection",
         "menu": "on-click-right",
         "menu-file": "~/.config/waybar/context/network.xml",
         "menu-actions": {
@@ -100,10 +96,10 @@
         "format-off": "󰂲",
         "format-disabled": "󰂲",
         "format-connected": "{device_alias}",
-        "format-connected-battery": "{device_alias}   {device_battery_percentage}%",
+        "format-connected-battery": "{device_alias}",
         "tooltip-format": "{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}",
-        "tooltip-format-enumerate-connected-battery": "{device_alias}\t {device_battery_percentage}%",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}   {device_battery_percentage}%",
         "on-click": "~/.local/bin/toggle_bluetooth &",
         "on-click-right": "hyprctl dispatch exec blueman-manager"
     },
@@ -190,5 +186,8 @@
             "action-5": "hyprctl dispatch exec ~/.local/bin/powersafe",
             "action-6": "hyprctl reload"
   		}
-    }
+    },
+
+    "custom/arrow-left":  { "format": "", "tooltip": false },
+    "custom/arrow-right": { "format": "",  "tooltip": false }
 }

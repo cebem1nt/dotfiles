@@ -31,6 +31,9 @@ tooltip {
     padding: 6px;
     border-radius: 15px;
     background: rgba(8, 8, 11, 0.9);
+    border: none;
+    outline: none;
+    box-shadow: none;
 }
 
 tooltip label {

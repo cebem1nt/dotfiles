@@ -1,0 +1,148 @@
+# Example Theme Configuration
+# This file demonstrates all available theme configuration options for Vicinae.
+# You don't need to define all of these - only override what you want to customize.
+# Undefined colors will be automatically derived from core colors or inherited from base themes.
+#
+# Where a color name is expected, you can use the following hex formats:
+# #RGB
+# #RRGGBB
+# #AARRGGBB (with alpha)
+# 'transparent' (no color)
+# <color_ref> (e.g 'colors.accents.red'): references this theme's definition if available, the parent's otherwise
+#
+# Where a color is expected, you can either use a simple string for the color name or the following table syntax:
+# [colors.core]
+# accent = "accents.color.red"
+# OR:
+# accent = { name = "accents.color.red", opacity = 0.5 }
+# OR:
+# accent = { name = "accents.color.red", lighter = 100 }
+# OR:
+# accent = { name = "accents.color.red", darker = 150 }
+
+[meta]
+name = "Tokyo Night Enhanced"                         # Display name shown in theme picker
+description = "Tokyo Night Dark Enhanced Theme"  # Description shown in theme picker
+variant = "dark"                              # Theme variant: "dark" or "light". Every dark theme inherits from vicinae-dark and every light theme from vicinae-light. 
+inherits = "vicinae-dark"                     # Optional: inherit from another theme (e.g., "vicinae-dark")
+
+# ============================================================================
+# Core Colors
+# ============================================================================
+# These are the most important colors that define your theme's overall look.
+# Most other colors can be automatically derived from these if not specified.
+
+[colors.core]
+accent = "#787c99"              # Primary accent color (used for input borders, text selection background...)
+accent_foreground = "#acb0d0"   # Text color on accent-colored backgrounds
+background = "#08080b"          # Main application background
+foreground = "#acb0d0"          # Primary text color
+secondary_background = "#14141b" # Background for surfaces elevated above main (popups, tooltips, panels)
+border = "#08080b"              # Default border color throughout the UI
+
+# ============================================================================
+# Window-Specific Colors
+# ============================================================================
+# Override border colors for specific window types
+
+[colors.main_window]
+border = "#08080b"
+
+[colors.settings_window]
+border = "#08080b"
+
+# ============================================================================
+# Accent Colors
+# ============================================================================
+# Your color palette, central to your theme's identity
+
+[colors.accents]
+blue = "#7aa2f7"
+green = "#41a6b5"
+magenta = "#bb9af7"
+orange = "#ff9e64"
+red = "#f7768e"
+yellow = "#e0af68"
+cyan = "#7dcfff"
+purple = "#9d7cd8"
+
+# ============================================================================
+# Text Colors
+# ============================================================================
+# Colors for various text states and meanings
+
+[colors.text]
+default = "#acb0d0"             # Usually same as core.foreground
+muted = "#acb0d0"               # Secondary text: hints, less important info
+danger = "#e0af68"              # Errors or warnings
+success = "#41a6b5"             # Success or positive states
+placeholder = "#787c99"			# input placeholder, search placeholder...
+selection = { background = "#515c7e", foreground = "#acb0d0" }
+
+[colors.text.links]
+default = "#7aa2f7"
+visited = "#bb9af7"
+
+# ============================================================================
+# Input Fields
+# ============================================================================
+# Colors for text inputs, search boxes, etc.
+
+[colors.input]
+border = "#08080b"
+border_focus = "#acb0d0"
+border_error = "#e0af68"
+
+# ============================================================================
+# Buttons
+# ============================================================================
+# Colors for button states
+
+[colors.button.primary]
+background = "#08080b"
+foreground = "#787c99"
+hover = { background = "#14141b" }
+focus = { outline = "colors.core.accent" }
+
+# ============================================================================
+# Lists
+# ============================================================================
+# Colors for list items (horizontal list views)
+
+[colors.list.item.hover]
+background = "#14141b"
+foreground = "#acb0d0"
+
+[colors.list.item.selection]
+background = "#14141b"          # Selected item on main background
+foreground = "#acb0d0"
+secondary_background = "#08080b" # Selected item on secondary surfaces (popups, panels)
+                                 # Light themes: lighter than primary selection
+                                 # Dark themes: lighter/brighter than primary selection
+secondary_foreground = "#acb0d0"
+
+# ============================================================================
+# Grid Items
+# ============================================================================
+# Colors for grid-based layouts (icon grids, tiles, etc.)
+
+[colors.grid.item]
+background = "#242424"
+hover = { outline = "#acb0d0" }
+selection = { outline = "#acb0d0" }
+
+# ============================================================================
+# Scrollbars
+# ============================================================================
+
+[colors.scrollbars]
+background = "#08080b"
+
+# ============================================================================
+# Loading Indicators
+# ============================================================================
+
+[colors.loading]
+bar = "#acb0d0"     # shown right below the search bar when something is loading
+spinner = "#acb0d0" # used by dynamic toasts
+
