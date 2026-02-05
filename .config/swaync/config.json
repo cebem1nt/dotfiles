@@ -73,7 +73,7 @@
                     "label": "",
                     "type": "toggle",
                     "command": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
-                    "update-command": "bash -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && $HOME/.config/swaync/scripts/update_mic.sh'"
+                    "update-command": "sh -c $HOME/.config/swaync/scripts/update_mic.sh"
                 },
                 {
                     "label": "",
