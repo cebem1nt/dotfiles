@@ -35,7 +35,7 @@ Big thanks to this [collection of rofi themes](https://github.com/adi1090x/rofi)
 <details>
   <summary><h2>Waybar</h2></summary>
   
-![waybar](https://github.com/user-attachments/assets/3a5448ef-9d76-4b15-ad61-57bcdd3549dc)
+  ![waybar](https://github.com/user-attachments/assets/a2ef6bd9-8166-491d-a854-924b423b55ec)
 
 </details>
 <details>
