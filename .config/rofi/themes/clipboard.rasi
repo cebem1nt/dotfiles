@@ -8,22 +8,16 @@
  **/
 
 /*****----- Configuration -----*****/
+
+@import "colors/tokyonight.rasi"
+
+
 configuration {
     show-icons:                 false;
 }
 
 * {
-    font: "CaskaydiaCove Nerd Font Propo, bold 12";
-    background:     #08080BFE;
-    background-alt: #101010FF;
-    background-sec: #787c99ff;
-    foreground:     #acb0d0ff;
-    selected:       #acb0d0ff;
-    active:         #98C379FF;
-    urgent:         #E06B74FF;
-}
-
-* {
+    font: "CaskaydiaCove Nerd Font, bold 12";
     border-colour:               var(selected);
     handle-colour:               var(foreground);
     background-colour:           var(background);

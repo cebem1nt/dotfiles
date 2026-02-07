@@ -17,8 +17,9 @@
     },
 
     "cpu": {
-        "interval": 10,
+        "interval": 30,
         "format":" {usage}%",
+        "cursor": true,
         "states": {
             "warning": 80,
             "critical": 90
@@ -27,13 +28,13 @@
 
     "tray" : {
         "icon-size": 13,
-        "spacing": 10,
+        "spacing": 12,
         "cursor": true
     },
 
     "load": {
-        "interval": 10,
-        "format": " {load1}",
+        "interval": 30,
+        "format": " {load1}%",
         "cursor": true
     },
 
@@ -55,31 +56,53 @@
 
     "backlight": {
         "scroll-step" : 2,
-        "format": "{icon} {percent}%",
+        "format": "{icon}",
         "tooltip-format" : "{percent}%",
-        "format-icons": ["","","","","","","","","","","","","","",""]
+        "format-icons": [ "󰃞", "󰃝", "󰃟", "󰃠" ]
     },
 
     "pulseaudio": {
-        "format": "{icon}  {volume}%",
-        "format-bluetooth": "{icon}  {volume}%",
+        "format": "{icon}",
+        "format-bluetooth": "{icon}",
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "on-click-right": "hyprctl dispatch exec -- pavucontrol -t 4",
+        "tooltip-format": "{volume}%",
+        "format-muted": "<span size='12pt'>󰝟</span>",
         "scroll-step": 2,
-        "tooltip": false,
-        "format-muted": "{icon}",
         "format-icons": {
-            "default": ["", "", ""],
-            "default-muted": ""
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "<span size='12pt'>󰕿</span>",
+                "<span size='12pt'>󰖀</span>",
+                "<span size='12pt'>󰕾</span>"
+            ]
         }
+    },
+
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "cursor": true
+    },
+
+    "backlight/slider": {
+        "min": 5,
+        "max": 100,
+        "cursor": true
     },
 
     "network": {
         "interval": 10,
         "format-disabled": "",
         "format-disconnected": "",
-        "format-wifi": "  {essid}",
-        "format-ethernet": "󱓞 Wired connection",
+        "format-wifi": "",
+        "format-ethernet": "",
+        "tooltip-format": "{essid}\n\nFrequency: {frequency}GHz\nStrength: {signalStrength}%\n\n{bandwidthUpBytes}   {bandwidthDownBytes}",
         "menu": "on-click-right",
         "menu-file": "~/.config/waybar/context/network.xml",
         "menu-actions": {
@@ -92,7 +115,7 @@
 
     "bluetooth": {
         "format": "{}",
-        "format-on": "󰂰  <i>Active...</i>",
+        "format-on": "󰂰",
         "format-off": "󰂲",
         "format-disabled": "󰂲",
         "format-connected": "{device_alias}",
@@ -125,12 +148,16 @@
         "format-alt": "{:%H:%M %d %B %Y}",
         "on-click-right": "hyprctl dispatch exec 'alacritty --class=peaclock -e peaclock'",
         "calendar": {
-            "mode": "month",
+            "mode": "year",
+            "weeks-pos": "right",
+            "mode-mon-col": 3,
             "format": {
-                "months": "<b>{}</b>",
+                "months": "<span color='#acb0d0'><b>{}</b></span>",
                 "days": "<span color='#acb0d0'><b>{}</b></span>",
+                "weeks": "<span color='#7aa2f7'><b>W{}</b></span>",
+                "weekdays": "<span color='#e0af68'><b>{}</b></span>",
                 "today": "<span color='#41a6b5'><b><u>{}</u></b></span>"
-		    }
+            }
         }
     },
 
@@ -188,6 +215,37 @@
   		}
     },
 
-    "custom/arrow-left":  { "format": "", "tooltip": false },
-    "custom/arrow-right": { "format": "",  "tooltip": false }
+    "custom/arrow-left":  { 
+        "format": "", 
+        "tooltip": false, 
+        "cursor": true
+    },
+    
+    "custom/arrow-right": { 
+        "format": "",  
+        "tooltip": false,
+        "cursor": true
+    },
+
+    "group/group-volume": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 600,
+            "transition-left-to-right": true
+        },
+        "modules" : [
+            "pulseaudio", "pulseaudio/slider"
+        ]
+    },
+
+    "group/group-backlight": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 600,
+            "transition-left-to-right": true
+        },
+        "modules" : [
+            "backlight", "backlight/slider"
+        ]
+    }
 }

@@ -13,8 +13,8 @@
     "notification-inline-replies": true,
     "notification-2fa-action": false,
   
-    "timeout": 4,
-    "timeout-low": 4,
+    "timeout": 3,
+    "timeout-low": 2,
     "timeout-critical": 6,
     
     "keyboard-shortcuts": true,
@@ -49,8 +49,8 @@
         },
 
         "mpris": {
-            "image-size": 110,
-            "image-radius": 12,
+            "image-size": 100,
+            "image-radius": 10,
             "autohide": false,
             "blacklist": [ "org.mpris.MediaPlayer2.playerctld"]
         },

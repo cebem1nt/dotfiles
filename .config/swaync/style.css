@@ -1,3 +1,4 @@
+@define-color center-bg       rgba(8, 8, 11, 0.9);
 @define-color background      #08080b;
 @define-color text            #acb0d0;
 @define-color text-alt        #787c99;
@@ -23,7 +24,7 @@
 }
 
 .notification-background {
-  background: @background;
+  background: @center-bg;
   box-shadow: none;
   border-radius: 15px;
   margin: 8px;
@@ -111,7 +112,7 @@
 }
 
 .control-center {
-  background: @background;
+  background: @center-bg;
   border-radius: 15px;
   margin: 5px;
   padding: 12px;

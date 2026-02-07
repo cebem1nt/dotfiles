@@ -38,7 +38,6 @@ Big thanks to this [collection of rofi themes](https://github.com/adi1090x/rofi)
 ![waybar](https://github.com/user-attachments/assets/3a5448ef-9d76-4b15-ad61-57bcdd3549dc)
 
 </details>
-
 <details>
   <summary><h2>Rofi</h2></summary>
 
