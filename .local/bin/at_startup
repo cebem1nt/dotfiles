@@ -1,9 +1,9 @@
 #!/bin/bash
 
-STARTUP_SCRIPTS="$SCRIPTS/hook/startup"
+STARTUP_SCRIPTS="$HOME/.local/bin/hook/startup"
 
 for SCRIPT in $STARTUP_SCRIPTS/*; do
     if [[ -f "$SCRIPT" ]] && [[ -x "$SCRIPT" ]]; then 
-        "$SCRIPT" &
+        "$SCRIPT" > /dev/null 2>&1 &
     fi 
 done
