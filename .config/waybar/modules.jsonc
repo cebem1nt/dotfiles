@@ -12,6 +12,18 @@
          }
     },
 
+    "niri/workspaces": {
+        "format": "{icon}",
+        "cursor" : true,
+        "on-scroll-up": "niri msg action focus-workspace-up",
+        "on-scroll-down": "niri msg action focus-workspace-down",
+        "format-icons": {
+            "active": "󰮯",
+            "default": "",
+            "empty": ""
+        }
+    },
+
     "hyprland/window" : {
         "max-length": 45
     },

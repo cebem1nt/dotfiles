@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import subprocess
 from time import sleep
+from os.path import exists, expanduser
 
 def run(command: str) -> str:
     proc = subprocess.run(
@@ -37,12 +38,21 @@ else:
     
     out = run("bluetoothctl devices Paired")
     last_device = ""
+    prefered = expanduser("~/.config/.auto-connect")
 
-    for line in out.splitlines():
-        if not line.startswith("Device"):
-            continue
+    if exists(prefered):
+        f = open(prefered)
+        last_device = f.read()
+        f.close()
+
+    else:
+        for line in out.splitlines():
+            if not line.startswith("Device"):
+                continue
             
-        last_device = line
+            last_device = line
+            break
 
     device_mac = last_device.split()[1]
+    print(device_mac)
     subprocess.run(['bluetoothctl', 'connect', device_mac])

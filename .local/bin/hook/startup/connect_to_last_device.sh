@@ -1,14 +1,12 @@
 #!/bin/bash
 
 if [[ -e "$XDG_CONFIG_HOME/.auto-connect" ]]; then
-    MAC=$(<"$XDG_CONFIG_HOME/.auto-connect")
+    LAST_DEVICE=$(<"$XDG_CONFIG_HOME/.auto-connect")
 else 
     LAST_DEVICE=$(bluetoothctl devices Paired | grep "Device" | head -n 1)
-    MAC=${LAST_DEVICE:7:17} 
 fi
 
-echo $MAC
-exit 0
+MAC=${LAST_DEVICE:7:17} 
 
 # Check if a device was not found/empty
 if [ -z "$MAC" ]; then
