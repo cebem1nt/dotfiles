@@ -16,7 +16,11 @@ while IFS= read -r line; do
 
         profile=$(printf "%s\n" "$line" | awk -F"<'|'>" '/ActiveProfile/{print $2}')
         
-        [ "$profile" = "power-saver" ] && "$CAFFEINE" --off &
+        if [[ "$profile" == "power-saver" ]]; then 
+            "$CAFFEINE" --off &
+        else
+            "$CAFFEINE" --on &
+        fi
         ;;
     esac
 done
