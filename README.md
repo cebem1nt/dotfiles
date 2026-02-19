@@ -142,6 +142,7 @@ Just run `restore` script, it will restore all your previous config files stored
 
 ## Binds
 
+### General
 | Bind                  | Description              |
 |---------------------- |--------------------------|
 | `SUPER + ;`           | Open terminal            |
@@ -155,12 +156,14 @@ Just run `restore` script, it will restore all your previous config files stored
 | `SUPER SHIFT + f`     | fullscreen window        |
 | `SUPER + u`           | pin window               |
 | `SUPER + o`           | toggle windows grouping  |
-| `SUPER + arrow keys`  | move focus in direction  |
-| `SUPER + 1...6`       | go to workspace          |
-| `SUPER SHIFT + 1...6` | move to workspace        |
-| `SUPER CTRL + 1...6`  | move & go to workspace   |
-| `SUPER + s`           | toggle special workspace |
-| `SUPER SHIFT + s`     | move to special workspace|
+| `SUPER CTRL  + r`     | Reload hyprland config   |
+| `SUPER SHIFT + >`     | Cycle next wallpaper     |
+| `SUPER SHIFT + <`     | Cycle prev wallpaper     |
+| `SUPER SHIFT + /`     | Toggle wallpapes cycle   |
+
+### Menus
+| Bind                  | Description              |
+|---------------------- |--------------------------|
 | `SUPER + r`           | Drun (app runner)        |
 | `SUPER + t`           | Notification center      |
 | `SUPER + v`           | Clipboard                |
@@ -170,10 +173,17 @@ Just run `restore` script, it will restore all your previous config files stored
 | `SUPER SHIFT + v`     | Glyphs selector          |
 | `SUPER SHIFT + r`     | Shell commands runner    |
 | `SUPER SHIFT + e`     | Bookmarks                |
-| `SUPER CTRL  + r`     | Reload hyprland config   |
-| `SUPER SHIFT + >`     | Cycle next wallpaper     |
-| `SUPER SHIFT + <`     | Cycle prev wallpaper     |
-| `SUPER SHIFT + /`     | Toggle auto wallpapes cycle|
+
+### Navigation
+| Bind                  | Description              |
+|---------------------- |--------------------------|
+| `SUPER + arrow keys`  | move focus in direction  |
+| `SUPER + 1...6`       | go to workspace          |
+| `SUPER SHIFT + 1...6` | move to workspace        |
+| `SUPER CTRL + 1...6`  | move & go to workspace   |
+| `SUPER + s`           | toggle special workspace |
+| `SUPER SHIFT + s`     | move to special workspace|
+
 
 > [!NOTE]
 > For more detailed info see `.config/hypr/configs/binds.conf`. It's well commented, you can find more fancy keybinds like: next/prev song, hide waybar, record video, increase/decrease volume or change them
