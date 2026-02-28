@@ -7,7 +7,7 @@ layout = subprocess.run("hyprctl getoption general:layout".split(),
 is_dwindle = "str: dwindle" in layout.stdout
 
 if is_dwindle:
-    subprocess.run("hyprctl keyword general:layout master".split())
+    subprocess.run("hyprctl keyword general:layout scrolling".split())
 
 else: 
     subprocess.run("hyprctl keyword general:layout dwindle".split())
