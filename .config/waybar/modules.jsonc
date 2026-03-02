@@ -3,7 +3,7 @@
         "format": "{icon}",
         "on-scroll-down": "hyprctl dispatch workspace e+1",
         "on-scroll-up": "hyprctl dispatch workspace e-1",
-        "persistent-workspaces": { "*": 6 },
+        "persistent-workspaces": { "*": 5 },
         "cursor" : true,
         "format-icons": {
             "active": "󰮯",
@@ -77,7 +77,7 @@
         "format": "{icon}",
         "format-bluetooth": "{icon}",
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-click-right": "hyprctl dispatch exec -- pavucontrol -t 4",
+        "on-click-right": "hyprctl dispatch exec 'pavucontrol -t 4'",
         "tooltip-format": "{volume}%",
         "format-muted": "<span size='12pt'>󰝟</span>",
         "scroll-step": 2,
@@ -99,7 +99,8 @@
     "pulseaudio/slider": {
         "min": 0,
         "max": 100,
-        "cursor": true
+        "cursor": true,
+        "on-click-right": "hyprctl dispatch exec 'pavucontrol -t 4'"
     },
 
     "backlight/slider": {
@@ -219,10 +220,10 @@
   			"action-3-2": "hyprctl keyword monitor 'eDP-1,1920x1080@90, auto,1'",
   			"action-3-3": "hyprctl keyword monitor 'eDP-1,1920x1080@144,auto,1'",
 
-            "action-4-1": "hyprctl dispatch exec ~/.local/bin/caffeine shutdown",
-            "action-4-2": "hyprctl dispatch exec ~/.local/bin/caffeine handle-lid-switch",
+            "action-4-1": "~/.local/bin/caffeine shutdown",
+            "action-4-2": "~/.local/bin/caffeine handle-lid-switch",
 
-            "action-5": "hyprctl dispatch exec ~/.local/bin/powersafe",
+            "action-5": "~/.local/bin/powersafe",
             "action-6": "hyprctl reload"
   		}
     },
