@@ -63,7 +63,7 @@
     .search-wrapper .search-inner-wrapper {
         min-height: 48px !important;
         margin: 0 !important;
-        margin-left: 5vh !important;
+        margin-left: 2rem !important;
     }
 
     .search-wrapper .search-handoff-button {
@@ -82,10 +82,8 @@
         display: none !important;
     }
 
-    @media (max-width: 1200px) {
-        .search-wrapper .search-inner-wrapper{
-            padding-left: 5% !important;
-        }
+    button.search-handoff-button {
+        padding-inline-start: 15px !important;
     }
 }
 
