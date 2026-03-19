@@ -3,6 +3,11 @@ import subprocess
 from time import sleep
 from os.path import exists, expanduser
 
+# Preferred device to connect to.
+# run `bluetoothctl devices Paired`
+# put line with preferred device into this file.
+PREFERRED = "~/.config/.toggle-bluetooth.pref"
+
 def run(command: str) -> str:
     proc = subprocess.run(
         command.split(), 
@@ -36,22 +41,21 @@ else:
     sleep(1)
     run("bluetoothctl power on")
     
-    out = run("bluetoothctl devices Paired")
-    last_device = ""
-    prefered = expanduser("~/.config/.auto-connect")
+    last_device = None
+    prefered = expanduser(PREFERRED)
 
     if exists(prefered):
         f = open(prefered)
         last_device = f.read()
         f.close()
-
     else:
-        for line in out.splitlines():
-            if not line.startswith("Device"):
-                continue
+        out = run("bluetoothctl devices Paired")
+        out_lines = out.splitlines()
+
+        if not len(out_lines):
+            exit(1)
             
-            last_device = line
-            break
+        last_device = out_lines[0]
 
     device_mac = last_device.split()[1]
     print(device_mac)
