@@ -1,7 +1,7 @@
 #!/bin/bash
 
-if [[ -e "$XDG_CONFIG_HOME/.auto-connect" ]]; then
-    LAST_DEVICE=$(<"$XDG_CONFIG_HOME/.auto-connect")
+if [[ -e "$XDG_CONFIG_HOME/.toggle-bluetooth.pref" ]]; then
+    LAST_DEVICE=$(<"$XDG_CONFIG_HOME/.toggle-bluetooth.pref")
 else 
     LAST_DEVICE=$(bluetoothctl devices Paired | grep "Device" | head -n 1)
 fi
