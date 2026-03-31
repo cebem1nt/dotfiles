@@ -1,5 +1,25 @@
 #!/bin/bash
 
+do_reboot=false
+do_not_reboot=false
+
+while (( "$#" )); do
+  case "$1" in
+    -r|--reboot)
+      do_reboot=true
+      shift
+      ;;
+    -n|--no-reboot)
+      do_not_reboot=true
+      shift
+      ;;
+    --)
+      shift
+      break
+      ;;
+  esac
+done
+
 pacman -Syu "$@"
 
 i_dont_need_those=(
@@ -25,6 +45,7 @@ i_dont_need_those=(
     "/usr/share/applications/bssh.desktop"
     "/usr/share/applications/bvnc.desktop"
     "/usr/share/applications/gammastep-indicator.desktop"
+    "/usr/share/applications/kvantummanager.desktop"
 )
 
 for path in "${i_dont_need_those[@]}"; do
@@ -41,8 +62,11 @@ if [[ -n "$orphaned_packages" ]]; then
     pacman -Rns $orphaned_packages
 fi
 
-read -r -p "Reboot? [Y/n] " response
-if ! [[ "$response" =~ ^([nN][oO]|[nN])$ ]]; then
+if [[ "$do_reboot" = true ]]; then
     reboot
+elif [[ "$do_not_reboot" = false ]]; then
+    read -r -p "Reboot? [Y/n] " response
+    if ! [[ "$response" =~ ^([nN][oO]|[nN])$ ]]; then
+        reboot
+    fi
 fi
-
