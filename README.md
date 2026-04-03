@@ -19,20 +19,18 @@ Big thanks to this [collection of rofi themes](https://github.com/adi1090x/rofi)
 
 <table>
   <tr>
-    <td><img src="previews/1.png" width="400"/></td>
-    <td><img src="previews/2.png" width="400"/></td>
+    <td><img width="400" alt="1" src="https://github.com/user-attachments/assets/123c84fe-f7f1-4166-9097-dc5a8cc135fd" /></td>
+    <td><img width="400" alt="2" src="https://github.com/user-attachments/assets/77863272-fe9b-4a0d-9463-60a9f5e94523" /></td>
   </tr>
   <tr>
-    <td><img src="previews/3.png" width="400"/></td>
-    <td><img src="previews/4.png" width="400"/></td>
+    <td><img width="400" alt="3" src="https://github.com/user-attachments/assets/f5e5ea6a-d045-4c43-9ce8-9a57c223602b" /></td>
+    <td><img width="400" alt="4" src="https://github.com/user-attachments/assets/f44a8b82-fb4c-43a2-b5f6-bba86b34f110" /></td>
   </tr>
   <tr>
-    <td><img src="previews/5.png" width="400"/></td>
-    <td><img src="previews/6.png" width="400"/></td>
+    <td><img width="400" alt="5" src="https://github.com/user-attachments/assets/57499cbe-eeba-4026-9a20-78ccb7283a5e" /></td>
+    <td><img width="400" alt="6" src="https://github.com/user-attachments/assets/4748a1d1-7a63-4dc6-ac25-af9ea1812bad" /></td>
   </tr>
 </table>
-
-
 
 <details>
   <summary><h2>Light theme (flashbang warning!)</h2></summary>
