@@ -19,18 +19,38 @@ Big thanks to this [collection of rofi themes](https://github.com/adi1090x/rofi)
 
 <table>
   <tr>
-    <td><img src="previews/1.png" width="400"/></td>
-    <td><img src="previews/2.png" width="400"/></td>
+    <td><img width="400" alt="1" src="https://github.com/user-attachments/assets/123c84fe-f7f1-4166-9097-dc5a8cc135fd" /></td>
+    <td><img width="400" alt="2" src="https://github.com/user-attachments/assets/77863272-fe9b-4a0d-9463-60a9f5e94523" /></td>
   </tr>
   <tr>
-    <td><img src="previews/3.png" width="400"/></td>
-    <td><img src="previews/4.png" width="400"/></td>
+    <td><img width="400" alt="3" src="https://github.com/user-attachments/assets/f5e5ea6a-d045-4c43-9ce8-9a57c223602b" /></td>
+    <td><img width="400" alt="4" src="https://github.com/user-attachments/assets/f44a8b82-fb4c-43a2-b5f6-bba86b34f110" /></td>
   </tr>
   <tr>
-    <td><img src="previews/5.png" width="400"/></td>
-    <td><img src="previews/6.png" width="400"/></td>
+    <td><img width="400" alt="5" src="https://github.com/user-attachments/assets/57499cbe-eeba-4026-9a20-78ccb7283a5e" /></td>
+    <td><img width="400" alt="6" src="https://github.com/user-attachments/assets/4748a1d1-7a63-4dc6-ac25-af9ea1812bad" /></td>
   </tr>
 </table>
+
+<details>
+  <summary><h2>Light theme (flashbang warning!)</h2></summary>
+  
+<table>
+  <tr>
+    <td><img width="400" alt="2026-04-03_19-08-08" src="https://github.com/user-attachments/assets/75ad6021-a5da-4a4b-b91d-bfb198ca837f" /></td>
+    <td><img width="400" alt="2026-04-03_19-10-48" src="https://github.com/user-attachments/assets/266b55ff-e570-4b63-a1cd-d0bca158d00a" /></td>
+  </tr>
+  <tr>
+    <td><img width="400" alt="2026-04-03_19-14-03" src="https://github.com/user-attachments/assets/e0c4dfbe-e9b2-4cb7-8efd-199e87d7e0d1" /></td>
+    <td><img width="400" alt="2026-04-03_19-16-09" src="https://github.com/user-attachments/assets/066e945a-e638-4411-ab4d-3dc913a80d97" /></td>
+  </tr>
+  <tr>
+    <td><img width="400" alt="2026-04-03_19-18-33" src="https://github.com/user-attachments/assets/14287c46-ecb3-4d73-8b00-3190c5603641" /></td>
+    <td><img width="400" alt="2026-04-03_19-26-21" src="https://github.com/user-attachments/assets/2753e15f-ef7c-401a-808e-a64c1b36ee49" /></td>
+  </tr>
+</table>
+
+</details>
 
 <details>
   <summary><h2>Waybar</h2></summary>
