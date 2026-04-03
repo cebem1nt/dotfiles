@@ -1,3 +1,5 @@
+local colors = require("colors.colors")
+
 require('mason').setup({
     ui = {
         icons = {
@@ -8,11 +10,10 @@ require('mason').setup({
     }
 })
 
-
 require('lualine').setup {
   options = {
+    theme = colors.lualine(),
     icons_enabled = true,
-    theme = 'iceberg_dark',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {

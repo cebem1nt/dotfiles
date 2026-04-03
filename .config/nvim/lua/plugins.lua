@@ -1,4 +1,5 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local colors = require("colors.colors")
 
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   vim.fn.system({
@@ -10,7 +11,13 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	"tiagovla/tokyodark.nvim",
+	{
+		"tiagovla/tokyodark.nvim",
+		opts = {
+			transparent_background = true,
+			custom_palette = colors.palete,
+		}
+	},
 	"brenoprata10/nvim-highlight-colors",
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",

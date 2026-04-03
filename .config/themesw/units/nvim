@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cd $HOME/.config/nvim/lua/colors
+
+if [[ "$1" == "dark" ]]; then
+    ln -fs colors.dark.lua colors.lua
+else
+    ln -fs colors.light.lua colors.lua
+fi
