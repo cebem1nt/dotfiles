@@ -1,6 +1,3 @@
 [submodule ".local/bin/auto_walls"]
 	path = .local/bin/auto_walls
 	url = https://github.com/cebem1nt/auto_walls.git
-[submodule ".local/share/nvim/lazy/tokyodark.nvim"]
-	path = .local/share/nvim/lazy/tokyodark.nvim
-	url = https://github.com/cebem1nt/tokyodark.nvim.git
