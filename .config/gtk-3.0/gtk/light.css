@@ -1,1 +1,20 @@
+@define-color theme_fg_color #343B58;
 
+@define-color theme_selected_bg_color #acb0bf;
+@define-color theme_selected_fg_color #343B58;
+@define-color theme_unfocused_selected_bg_color #acb0bf;
+@define-color theme_unfocused_selected_fg_color #343B58;
+
+.thunar .shortcuts-pane treeview {
+	background-color: @white;
+}
+
+.thunar .shortcuts-pane treeview:selected {
+	background: @theme_selected_bg_color;
+    color: @theme_fg_color;
+}
+
+.thunar .standard-view.frame *:hover,
+.thunar .standard-view.frame *:selected {
+	color: @theme_fg_color;
+}
