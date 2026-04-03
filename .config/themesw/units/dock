@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cd $HOME/.config/nwg-dock-hyprland/colors
+
+if [[ "$1" == "dark" ]]; then
+    ln -fs colors.dark.css colors.css
+else
+    ln -fs colors.light.css colors.css
+fi
+
+killall nwg-dock-hyprland
+
+nwg-dock-hyprland -p left -d -w 5 -nolauncher -ml 5 -l top -hl bottom &

@@ -1,0 +1,28 @@
+#!/bin/bash
+
+GTK_3="$HOME/.config/gtk-3.0"
+GTK_4="$HOME/.config/gtk-4.0"
+
+if [[ "$1" == "dark" ]]; then
+    ln -fs "$GTK_3"/settings/dark.ini "$GTK_3"/settings.ini
+    ln -fs "$GTK_3"/gtk/dark.css "$GTK_3"/gtk.css
+    
+    ln -fs "$GTK_4"/settings/dark.ini "$GTK_4"/settings.ini
+   
+    GTK_THEME="Kripton" # TODO Yeah, hardcoded for now, I wont parse ini files
+    ICONS="Papirus-Dark"
+    PREFER="prefer-dark"
+else
+    ln -fs "$GTK_3"/settings/light.ini "$GTK_3"/settings.ini
+    ln -fs "$GTK_3"/gtk/light.css "$GTK_3"/gtk.css
+
+    ln -fs "$GTK_4"/settings/light.ini "$GTK_4"/settings.ini
+
+    GTK_THEME="Tokyonight-Light"
+    ICONS="Papirus-Light"
+    PREFER="prefer-light"
+fi
+
+gsettings set org.gnome.desktop.interface gtk-theme "$GTK_THEME"
+gsettings set org.gnome.desktop.interface icon-theme "$ICONS"
+gsettings set org.gnome.desktop.interface color-scheme "$PREFER"

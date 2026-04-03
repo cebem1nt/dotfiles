@@ -9,6 +9,7 @@
         "orientation": "horizontal",
         "modules" : [
             "hyprland/workspaces", "hyprland/window"
+//            "niri/workspaces", "niri/window"
         ]
     },
 

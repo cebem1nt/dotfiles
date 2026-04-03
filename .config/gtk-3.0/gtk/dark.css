@@ -1,0 +1,34 @@
+.thunar,
+.thunar .view, 
+.thunar toolbar,
+.thunar scrolledwindow.sidebar treeview.view {
+    background-color: #0a0a0d;
+}
+
+.thunar .view widget:selected,
+.thunar treeview *:selected
+{
+    background-color: #9ea1b9;
+}
+
+
+.thunar .view .rubberband, 
+.thunar treeview rubberband,
+.thunar scrolledwindow.sidebar treeview.view .rubberband {
+    background-color: rgba(10, 10, 13, 0.9);
+}
+
+
+/* #lutris .titlebar,
+#lutris .frame .lutris-sidebar,
+#lutrs .horizontal .vertical .view,
+#lutrs .horizontal 
+{
+    background-color: #0a0a0d ;
+} */
+
+
+/* 
+rubberband{
+  border: 1px solid #7cabab;
+  background-color: rgba(255, 0, 0, 1); } */

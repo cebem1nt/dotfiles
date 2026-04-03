@@ -1,0 +1,15 @@
+#!/bin/bash
+
+cd $HOME/.config/VSCodium/User/
+
+if [[ "$1" == "dark" ]]; then
+    THEME="Tokyo Night Dark Enhanced"
+else
+    THEME="Tokyo Night Light"
+fi
+
+TMP=$(mktemp)
+
+jq --arg theme "$THEME" \
+    '.["workbench.colorTheme"] = $theme' \
+    "settings.json" > "$TMP" && mv "$TMP" "settings.json"

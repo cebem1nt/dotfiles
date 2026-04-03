@@ -1,0 +1,12 @@
+#!/bin/bash
+
+cd $HOME/.config/waybar/colors
+
+if [[ "$1" == "dark" ]]; then
+    ln -fs colors.dark.css colors.css
+else
+    ln -fs colors.light.css colors.css
+fi
+
+killall waybar ; waybar &
+

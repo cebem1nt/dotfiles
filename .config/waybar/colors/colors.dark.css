@@ -1,0 +1,12 @@
+/* Tokyo night dark enhanced color theme */
+
+@define-color module-bg     rgba(8, 8, 11, 0.9);
+@define-color tooltip-bg    @module-bg;
+@define-color inactive      #787c99;
+@define-color fg            #acb0d0;
+@define-color workspace-fg  @fg;
+
+@define-color red           #f7768e;
+@define-color blue          #7aa2f7;
+@define-color yellow        #e0af68;
+@define-color green         #41a6b5;

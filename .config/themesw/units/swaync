@@ -1,0 +1,11 @@
+#!/bin/bash
+
+cd $HOME/.config/swaync/colors
+
+if [[ "$1" == "dark" ]]; then
+    ln -fs colors.dark.css colors.css
+else
+    ln -fs colors.light.css colors.css
+fi
+
+swaync-client -rs

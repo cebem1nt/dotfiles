@@ -1,5 +1,13 @@
+@import "colors/colors.css";
+
+* {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
 window {
-    background: rgba(8, 8, 11, 0.9);
+    background: @background;
     border-radius: 55px;
 }
 
@@ -14,45 +22,52 @@ button, image {
 
 button {
     border-radius: 100%;
-    padding: 7px;
-    background: #101010;
-    margin: 5px; 
+    padding: 6px;
+    background: @button-bg;
+    margin: 2px; 
 }
 
 button:hover {
-	background: #acb0d0;
+	background: @button-highlight;
 }
 
 button:focus {
-    background: #101010;
+    background: @button-bg;
 }
 
 tooltip {
-    padding: 6px;
     border-radius: 15px;
-    background: rgba(8, 8, 11, 0.9);
+    background: @background;
     border: none;
     outline: none;
     box-shadow: none;
 }
 
 tooltip label {
-    padding: 8px;
+    padding: 2px 10px;
 	font-weight: bold;
+    color: @fg;
+    border: none;
+    outline: none;
 }
 
 menu {
     border-radius: 10px;
     font-weight: 700;
-    color: #acb0d0;
+    background: @menu-bg;
+    color: @fg;
+    padding: 0;
 }
 
-menu > * {
+menu * {
     padding: 3px 0px;
+    color: @fg;
 }
 
-menu > *:hover {
+menu *:hover {
     border-radius: 10px;
-    background-color: #787c99;
+    background-color: @highlight;
+    border: none;
+    outline: none;
+    box-shadow: none;
 }
-

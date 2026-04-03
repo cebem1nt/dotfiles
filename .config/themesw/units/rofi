@@ -1,0 +1,10 @@
+#!/bin/bash
+
+cd $HOME/.config/rofi/themes/colors
+
+if [[ "$1" == "dark" ]]; then
+    ln -fs colors.dark.rasi colors.rasi
+else
+    ln -fs colors.light.rasi colors.rasi
+fi
+

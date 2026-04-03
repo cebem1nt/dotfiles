@@ -1,4 +1,4 @@
-@import "colors/tokyonight.rasi"
+@import "colors/colors.rasi"
 
 * {
     font: "CaskaydiaCove Nerd Font, bold 12";

@@ -1,0 +1,62 @@
+#!/bin/bash
+shopt -s nullglob dotglob
+
+# Basically a simple script that will be used to switch between 
+# the dark and light theme. By it self just manages other scripts 
+# that switch theme for some apps. Such scripts are called units
+
+THEMESW_DIR="$HOME/.config/themesw/"
+THEMESW_NEXT="$THEMESW_DIR/next"
+
+if [[ ! -d "$THEMESW_DIR" ]]; then
+    mkdir -p $THEMESW_DIR
+    mkdir -p "$THEMESW_DIR/units"
+
+    notify-send --icon state-information \
+                --app-name $0 \
+                "themesw was not set up, please add units into" "$THEMESW_DIR/units"
+
+    exit 1
+fi
+
+if [[ ! -f "$THEMESW_NEXT" || ! -s "$THEMESW_NEXT" ]]; then 
+    echo "dark" > $THEMESW_NEXT
+fi
+
+NEXT_THEME=$(<$THEMESW_NEXT)
+i=0
+
+for UNIT in "$THEMESW_DIR"/units/*; do
+    UNIT_NAME="${UNIT##*/}"
+
+    if [[ $UNIT_NAME =~ \.bak$ ]]; then
+        echo "Ignoring $UNIT_NAME"
+        continue
+    fi
+
+    if [[ -f "$UNIT" && -x "$UNIT" ]]; then 
+        "$UNIT" "$NEXT_THEME" &
+
+        PID=$!
+        wait "$PID"
+
+        if [[ $? -ne 0 ]]; then
+            notify-send --icon state-information \
+                        --app-name $0 \
+                        "Unit failed!" "$UNIT"
+            exit 1
+        fi
+    fi
+
+    i+=1
+done
+
+if [[ $i == 0 ]]; then 
+    notify-send --icon state-information \
+                --app-name $0 \
+                "No units, could not change theme" "$THEMESW_DIR/units"
+else
+    [[ "$NEXT_THEME" == "dark" ]] && NEXT="light" || NEXT="dark"
+
+    echo $NEXT > $THEMESW_NEXT
+fi
