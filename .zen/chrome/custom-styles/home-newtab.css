@@ -1,123 +1,67 @@
 @-moz-document url("about:newtab"), url("about:home") {
-    /* 
-    Styles for both newtab and home page .
-    */
+    /* Styles for both newtab and home page */
+
+    :root[lwt-newtab-brighttext] {
+        --newtab-background-color: #08080b !important;
+        --newtab-background-color-secondary: #08080b !important;
+        --newtab-weather-background-color: #08080b !important;
+
+        --newtab-button-static-active-background: rgba(8, 8, 11, 0.85) !important; 
+        --newtab-background-card: rgba(8, 8, 11, 0.85) !important;
+        --newtab-button-static-hover-background: rgba(8, 8, 11, 0.85) !important;
+    }
 
     body {
-        --newtab-search-icon: none !important;
-        --newtab-button-static-background: #08080b !important;
-        --newtab-background-card: #08080b !important;
-        --newtab-background-color-secondary: #08080b !important;
-        --icon-color: #08080b !important ;
-        --newtab-element-hover-color: rgba(8, 8, 11, 0.1) !important;
-        --newtab-weather-background-color: rgba(8, 8, 11, 0.1) !important;
-        --newtab-button-static-hover-background: #787c99 !important;
-        --newtab-wordmark-color: #08080b !important;
-        --newtab-button-text: #fff !important;
-        --newtab-contextual-text-primary-color: #fff !important;
+        --border-radius-medium: 14px !important;
         --size-item-large: 38px !important;
-    }   
-
-    .search-wrapper.fake-focus:not(.search.disabled) .search-handoff-button {
-        border: 2.5px solid #acb0d0 !important;
-        border-radius: 3vh !important;
-        box-shadow: none !important;
+        --space-xsmall: 0.200rem !important;
     }
 
-    .personalize-button > div > img {
-        color: #fff !important;
-    }
-
-    .personalize-button:hover {
-        background-color: #787c9943 !important;
-    }
-
-    .fake-caret {
-        opacity: 0 !important;
-    }
-
-    div.card-text {
-        color: #fff !important;
-    }   
-
-    .shortcuts-refresh .top-site-outer .icon-pin-small {
-        inset-block-start: 0.5rem !important;
-        inset-inline-start: 0.5rem !important;
-    }
-
-    .shortcuts-refresh .top-site-outer .context-menu-button {
-        height: 30px !important;
-        width: 30px !important;
-    }
-
-    .search-wrapper {
-        display: flex !important;
-        align-items: center;
-        justify-content: center;
+    .search-handoff-button {
+        border: none !important;
     }
 
     .search-wrapper .logo-and-wordmark {
-        margin-bottom: 0 !important;
-    }
-
-    .search-wrapper .search-inner-wrapper {
-        min-height: 48px !important;
-        margin: 0 !important;
-        margin-left: 2rem !important;
-    }
-
-    .search-wrapper .search-handoff-button {
-        padding-inline-start: 15px !important;
-        border-radius: 17px !important;
-    }
-
-    .search-wrapper .search-handoff-button,  
-    .search-wrapper .search-handoff-button > * {
-        background-color: rgb(9, 8, 8) !important;
-        color: #ffffff;
-    }
-
-    .logo, 
-    .wallpaper-attribution {
         display: none !important;
-    }
-
-    button.search-handoff-button {
-        padding-inline-start: 15px !important;
     }
 }
 
 @-moz-document url("about:home") {
     /* Home page only */
-    .compact-cards .card-outer .card-details {
-        border-bottom-right-radius: 10px;
-        border-bottom-left-radius: 10px;
+
+    .section-top-bar {
+        margin-block-end: 1.2rem !important;
     }
 
     .top-site-outer .rich-icon {
         background-size: contain !important;
     }
 
-    .top-site-outer .context-menu-button,
-    .top-site-outer .context-menu-button:hover {
-        background-color: rgba(255, 255, 255, 0) !important;
-    }
-
     .top-site-outer .context-menu-button {
-        top: 0 !important;
-        fill: #08080b !important;
+        inset-block-start: 0 !important;
+        fill: var(--newtab-background-card) !important;
     }
 
-    .newtab-main {
-        margin-top: 4rem !important;
+    .search-wrapper {
+        margin-block-end: calc(0.5rem + var(--space-xxlarge)) !important;
+    }
+
+    .icon.icon-pin-small {
+        color: var(--newtab-background-card) !important;
+    }
+
+    @media (min-width: 1122px) {
+        .search-wrapper .search-inner-wrapper {
+            width: 920px !important;
+        }
     }
 }
 
 @-moz-document url("about:newtab") {
     /* Newtab only */
 
-    .layout-variant-b.no-recommended-stories .search-wrapper {
-        padding-bottom: 51.5vh !important;
+    .search-wrapper {
+        margin-bottom: 6rem !important;
     }
 
     .ds-top-sites, 
