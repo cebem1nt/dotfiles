@@ -173,21 +173,22 @@ menu > *:hover, menu > *:hover{
     background-color: @inactive;
 }
 
-#backlight-slider slider,
-#pulseaudio-slider slider {
-  opacity: 0;
+/* Sliders */
+
+slider {
+    opacity: 0;
+    box-shadow: none;
 }
 
-#backlight-slider trough,
-#pulseaudio-slider trough {
+trough {
     min-width: 50px;
     min-height: 5px;
     border-radius: 8px;
     background: @inactive;
 }
 
-#backlight-slider highlight,
-#pulseaudio-slider highlight {
+trough highlight {
     border-radius: 8px;
     background-color: @fg;
+    background-image: none;
 }
