@@ -1,30 +1,21 @@
-@import "colors/colors.rasi"
-@import "fonts/cascadia.rasi"
-
 /**
  *
- * Author : Aditya Shakya (adi1090x)
- * Github : @adi1090x
+ * Authors:  Aditya Shakya (github: @adi1090x),
+ *           CebeM1nt      (github: @cebem1nt)
  * 
- * Rofi Theme File
- * Rofi Version: 1.7.3
  **/
 
-/*****----- Configuration -----*****/
+@import "colors/colors.rasi"
 
 configuration {
     show-icons:                 false;
 }
 
-/*****----- Global Properties -----*****/
+* {
+    font:                        "CaskaydiaCove Nerd Font, bold 14";
+}
 
-/*
-USE_BUTTONS=YES
-*/
-
-/*****----- Main Window -----*****/
 window {
-    /* properties for window widget */
     transparency:                "real";
     location:                    east;
     anchor:                      east;
@@ -32,38 +23,27 @@ window {
     width:                       80px;
     x-offset:                    -7px;
     y-offset:                    0px;
-
-    /* properties for all widgets */
-    enabled:                     true;
     margin:                      0px;
     padding:                     0px;
-    border:                      0px solid;
     border-radius:               0px;
-    border-color:                @selected;
-    cursor:                      "default";
     background-color:            transparent;
 }
 
-/*****----- Main Box -----*****/
 mainbox {
     enabled:                     true;
     spacing:                     15px;
     margin:                      0px;
     padding:                     0px;
-    border:                      0px solid;
     border-radius:               0px;
-    border-color:                @selected;
     background-color:            transparent;
     children:                    [ "listview" ];
 }
 
-/*****----- Inputbar -----*****/
 inputbar {
     enabled:                     true;
     spacing:                     15px;
     margin:                      0px;
     padding:                     0px;
-    border:                      0px;
     border-radius:               0px;
     border-color:                @selected;
     background-color:            transparent;
@@ -83,6 +63,7 @@ textbox-prompt-colon {
     background-color:            @urgent;
     text-color:                  @background;
 }
+
 prompt {
     enabled:                     true;
     padding:                     12px;
@@ -91,7 +72,6 @@ prompt {
     text-color:                  @background;
 }
 
-/*****----- Message -----*****/
 message {
     enabled:                     true;
     margin:                      0px;
@@ -102,6 +82,7 @@ message {
     background-color:            @background-alt;
     text-color:                  @foreground;
 }
+
 textbox {
     background-color:            inherit;
     text-color:                  inherit;
@@ -120,7 +101,6 @@ error-message {
     text-color:                  @foreground;
 }
 
-/*****----- Listview -----*****/
 listview {
     enabled:                     true;
     columns:                     1;
@@ -143,7 +123,6 @@ listview {
     cursor:                      "default";
 }
 
-/*****----- Elements -----*****/
 element {
     enabled:                     true;
     margin:                      0px;
@@ -155,6 +134,7 @@ element {
     text-color:                  @foreground;
     cursor:                      pointer;
 }
+
 element-text {
     font: "CaskaydiaCove Nerd Font Propo, bold 19";
     background-color:            transparent;
@@ -163,7 +143,8 @@ element-text {
     vertical-align:              0.5;
     horizontal-align:            0.5;
 }
+
 element selected.normal {
-    background-color:            var(selected);
-    text-color:                  var(background);
+    background-color:            @foreground;
+    text-color:                  @background;
 }

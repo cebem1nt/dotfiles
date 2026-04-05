@@ -1,77 +1,80 @@
+/**
+ *
+ * Author: CebeM1nt (github: @cebem1nt)
+ * 
+ **/
+
 @import "colors/colors.rasi"
 
 * {
-    font: "CaskaydiaCove Nerd Font, bold 12";
-    background-color: transparent;
-    margin: 0px;
-    padding: 0px;
-    spacing: 0px;
+    font:                   "CaskaydiaCove Nerd Font, bold 12";
+    margin:                 0px;
+    padding:                0px;
+    spacing:                0px;
+    background-color:       transparent;
 }
 
 window {
-    location: north;
-    y-offset: -37px;
-    width: 750px;
-    border-radius: 0px 0px 15px 15px;
-    background-color: @background;
+    location:               north;
+    y-offset:               -35px;
+    width:                  750px;
+    border-radius:          0px 0px 15px 15px;
+    background-color:       @background;
 }
 
 mainbox {
-    padding: 12px;
-    children: ["listview", "inputbar"];
+    padding:                12px;
+    children:               ["listview", "inputbar"];
 }
 
 inputbar {
-    background-color: @background-alt;
-    border: 2px;
-    border-radius: 15px;
-    padding: 8px 16px;
-    spacing: 8px;
-    children: [entry];
+    border-radius:          15px;
+    padding:                10px 18px;
+    spacing:                8px;
+    children:               [entry];
+    background-color:       @background-alt;
 }
 
 entry {
-    placeholder: "Search bookmark:";
-    text-color: @foreground; 
+    placeholder:            "Search:";
+    text-color:             @foreground; 
 }
 
 textbox {
-    padding: 24px;
+    padding:                24px;
 }
 
 listview {
-    margin: 0 0 10px 0;
-    lines: 5;
-    columns: 1;
-    fixed-height: false;
-    scrollbar: true;
+    margin:                 0 0 10px 0;
+    columns:                1;
+    lines:                  5;
+    fixed-height:           false;
+    scrollbar:              true;
 }
 
 scrollbar {
-    handle-width:  2px;
-    handle-color:  @background-sec;
-    border-radius: 20px;
+    handle-width:           3px;
+    border-radius:          12px;
+    handle-color:           @background-sec;
+    background-color:       @background;
 }
 
 element {
-    padding: 0;
-    border-radius: 4px;
-    margin: 2px;
+    padding:                0;
+    border-radius:          4px;
+    margin:                 2px;
 }
 
 element-text { 
-    padding: 20px 0;
-    color: @foreground; 
+    padding:                20px 0;
+    color:                  @foreground; 
 }
 
-element-icon {
-    size: 1em;
-}
-
-element-text selected normal,
 element selected normal,
-element-text selected active,
-element selected active {
-    background-color: @foreground;
-    color: @background;
+element selected active,
+element-text selected normal,
+element-text selected active 
+{
+    background-color:       @foreground;
+    color:                  @background;
 }
