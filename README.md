@@ -27,8 +27,8 @@ Big thanks to this [collection of rofi themes](https://github.com/adi1090x/rofi)
     <td><img width="400" alt="4" src="https://github.com/user-attachments/assets/f44a8b82-fb4c-43a2-b5f6-bba86b34f110" /></td>
   </tr>
   <tr>
-    <td><img width="400" alt="5" src="https://github.com/user-attachments/assets/57499cbe-eeba-4026-9a20-78ccb7283a5e" /></td>
-    <td><img width="400" alt="6" src="https://github.com/user-attachments/assets/4748a1d1-7a63-4dc6-ac25-af9ea1812bad" /></td>
+    <td><img width="400" alt="5" src="https://github.com/user-attachments/assets/37ce0c4f-5b6d-4d30-af42-5eb6a9f80823" /></td>
+    <td><img width="400" alt="6" src="https://github.com/user-attachments/assets/a85ae20f-ce46-48b3-9d75-197e465115dd" /></td>
   </tr>
 </table>
 
