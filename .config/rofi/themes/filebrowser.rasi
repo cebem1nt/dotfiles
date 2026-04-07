@@ -83,7 +83,7 @@ element {
     margin:                      0;
     padding:                     2px 15px;
     border-radius:               15px;
-    background-color:            transparent;
+    background-color:            @background;
     color:                       @foreground;
     cursor:                      pointer;
 }
@@ -97,7 +97,6 @@ element selected.normal {
     background-color:            @foreground;
     text-color:                  @background;
 }
-
 
 element-text {
     background-color:            transparent;

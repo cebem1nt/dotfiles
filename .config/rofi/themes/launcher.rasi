@@ -84,11 +84,6 @@ element {
     cursor:                      pointer;
 }
 
-element normal.normal {
-    background-color:            @background;
-    text-color:                  @foreground;
-}
-
 element selected.normal {
     background-color:            @foreground;
     text-color:                  @background;
