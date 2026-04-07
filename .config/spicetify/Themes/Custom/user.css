@@ -1,6 +1,8 @@
 /* Change default font */
 :root {
     --encore-body-font-stack: "CaskaydiaCove Nerd Font Propo";
+    --encore-title-font-stack: "CaskaydiaCove Nerd Font Propo";
+    --encore-variable-font-stack: "CaskaydiaCove Nerd Font Propo";
 }
 
 body.encore-dark-theme.encore-layout-themes {
@@ -11,8 +13,8 @@ body.encore-dark-theme.encore-layout-themes {
 
 .encore-dark-theme .encore-bright-accent-set {
     --background-base: #787c99 !important;
-    --background-highlight: #acb0d0 !important;
     --background-press: #787d99 !important;
+    --background-highlight: #acb0d0 !important;
     --background-elevated-base: #acb0d0 !important;
     --background-elevated-highlight: #acb0d0 !important;
     --background-elevated-press: #acb0d0 !important;
@@ -85,4 +87,16 @@ svg[data-encore-id="icon"] {
 div.Y6soMMBElF7EQDbJv8Xb
 button[data-encore-id="buttonTertiary"]::after {
     background-color: #acb0d0 !important;
+}
+
+/* Colors for additional control elements (lyrics, queue)  */
+div.main-nowPlayingBar-extraControls
+button.main-genericButton-buttonActive {
+    color: #787d99 !important;
+}
+
+/* Dot after additional controls */
+div.main-nowPlayingBar-extraControls
+button.main-genericButton-buttonActive::after {
+    background-color: #787d99 !important;
 }
