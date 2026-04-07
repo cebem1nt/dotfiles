@@ -100,3 +100,15 @@ div.main-nowPlayingBar-extraControls
 button.main-genericButton-buttonActive::after {
     background-color: #787d99 !important;
 }
+
+div#context-menu .main-contextMenu-menuItem svg {
+    --encore-icon-fill: #787c99 !important;
+}
+
+div#context-menu .main-contextMenu-menuItem button[aria-checked="true"] .e-91000-text {
+    color: #787c99 !important;
+}
+
+div#context-menu .main-contextMenu-menu {
+    background-color: #101014;
+}
