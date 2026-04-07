@@ -3,12 +3,11 @@
     --encore-body-font-stack: "CaskaydiaCove Nerd Font Propo";
     --encore-title-font-stack: "CaskaydiaCove Nerd Font Propo";
     --encore-variable-font-stack: "CaskaydiaCove Nerd Font Propo";
-}
-
-body.encore-dark-theme.encore-layout-themes {
     --background-base: #0a0a0d !important;
     --text-bright-accent: #acb0d0 !important;
     --essential-bright-accent: #acb0d0 !important;
+    --chevrons-button-color: #a1a5c0 !important;
+    --chevrons-button-hover-color: #a1a5c0c4 !important;
 }
 
 .encore-dark-theme .encore-bright-accent-set {
@@ -74,8 +73,14 @@ button.CjGVphOR96me80esGFpV {
 
 /* Make mini equalizers match colors*/
 img.H70qcBekoGWOlskuON5R,
-img.X_HqPouENflGygaUXNus {
-    filter: invert(85%) sepia(2%) saturate(50%) hue-rotate(290deg) brightness(98%) contrast(92%);
+img.X_HqPouENflGygaUXNus,
+.main-trackList-rowMarker img {
+    filter: invert(85%) 
+            sepia(2%) 
+            saturate(50%) 
+            hue-rotate(290deg) 
+            brightness(98%) 
+            contrast(92%);
 }
 
 div.Y6soMMBElF7EQDbJv8Xb
@@ -105,10 +110,30 @@ div#context-menu .main-contextMenu-menuItem svg {
     --encore-icon-fill: #787c99 !important;
 }
 
-div#context-menu .main-contextMenu-menuItem button[aria-checked="true"] .e-91000-text {
+div.main-yourLibraryX-libraryRootlist, p[aria-hidden="true"] .e-91000-text,
+div#context-menu .main-contextMenu-menuItem button[aria-checked="true"] .e-91000-text,
+button.main-contextMenu-menuItemButton[role=menuitemradio][aria-checked=true]  {
     color: #787c99 !important;
 }
 
 div#context-menu .main-contextMenu-menu {
     background-color: #101014;
+}
+
+div.main-yourLibraryX-libraryRootlist .e-10180-box svg[data-encore-id="icon"][aria-hidden="false"] {
+    --encore-icon-fill: #787c99 !important;
+}
+
+div.YourLibraryX button.main-useDropTarget-base {
+    padding: 8px !important;
+}
+
+/* Settings page */
+input:checked~.x-toggle-indicatorWrapper {
+    background-color: #787c99 !important;
+}
+
+.x-settings-zoomButtonIcon[data-selected=true] {
+    color: #787c99 !important;
+    background-color: #787c99 !important;
 }
