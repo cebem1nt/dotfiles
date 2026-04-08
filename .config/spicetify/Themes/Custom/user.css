@@ -74,6 +74,7 @@ button.CjGVphOR96me80esGFpV {
 /* Make mini equalizers match colors*/
 img.H70qcBekoGWOlskuON5R,
 img.X_HqPouENflGygaUXNus,
+.view-homeShortcutsGrid-equaliser img,
 .main-trackList-rowMarker img {
     filter: invert(85%) 
             sepia(2%) 
