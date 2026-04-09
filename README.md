@@ -77,34 +77,32 @@ Big thanks to this [collection of rofi themes](https://github.com/adi1090x/rofi)
 
 ## Structure
 ```
-~/.config/hypr # Hyprland configuration
+~/.config/hypr                        # Hyprland configuration
 ├── configs
 │   ├── animations.conf 
 │   ├── binds.conf
-│   ├── environ.conf # Environment variables
-│   ├── exec.conf # Startup scripts
-│   ├── rules.conf # Window/layer rules
-│   └── settings.conf # Misc settings
+│   ├── environ.conf                  # Environment variables
+│   ├── exec.conf                     # Startup chores 
+│   ├── rules.conf                    # Window/layer rules
+│   └── settings.conf                 # Misc settings
 ├── hypridle.conf
-├── hyprland.conf # Monitor configuration is here
-├── hyprlock.conf
-└── scripts
-    ├── resize_gaps
-    └── switch_layout
+├── hyprland.conf                     # Monitor configuration is here
+└── hyprlock.conf
 
-~/.config/waybar # Waybar configuration files
-├── config.jsonc
-├── context # Context menus
+~/.config/waybar                      # Waybar configuration files
+├── colors                            # Color paletes
+│   ├── colors.css -> colors.dark.css # Symlink to current palete
+│   ├── colors.dark.css
+│   └── colors.light.css
+├── context                           # Context menus for some modules
 │   ├── ctlcenter.xml
 │   └── network.xml
-├── css
-│   ├── colors.css
-│   └── style.css # Main css
-├── layouts
-│   ├── with_music.jsonc   # Layout with mpris at left
-│   └── with_window.jsonc  # Layout with current window title  
-├── modules.jsonc # Modules configuration
-└── style.css
+├── layouts                           # Different waybar layouts
+│   ├── with_music.jsonc
+│   └── with_window.jsonc
+├── config.jsonc                      # Main config file
+├── modules.jsonc                     # Wabar module configs
+└── style.css                         # Main css
 ```
 
 ### Misc
