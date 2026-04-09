@@ -1,0 +1,16 @@
+#!/bin/bash
+
+WALLPAPER_LIGHT="$HOME/media/pictures/wallpapers/dragons_lake_fog_white_boat_person.jpg"
+WALLPAPER_DARK="$HOME/media/pictures/wallpapers/rain_road_tree_foggy_bush_flowers_girl_umbrela_grey_outside_mountain.jpg"
+
+if [[ $1 == "dark" ]]; then
+    WALLPAPER=$WALLPAPER_DARK
+else
+    WALLPAPER=$WALLPAPER_LIGHT
+fi
+
+CURRENT_WALLPAPER=$(awww query -j | jq -r '.[""][].displaying.image')
+
+if [[ $CURRENT_WALLPAPER != $WALLPAPER ]]; then
+    python "$SCRIPTS/auto_walls/set_exact.py" $WALLPAPER &
+fi
