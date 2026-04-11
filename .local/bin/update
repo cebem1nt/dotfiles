@@ -17,6 +17,10 @@ while (( "$#" )); do
       shift
       break
       ;;
+    *)
+      echo "Unknown option \"$1\""
+      exit 1
+      ;;
   esac
 done
 
