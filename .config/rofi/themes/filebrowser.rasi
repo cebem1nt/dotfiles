@@ -31,8 +31,8 @@ mainbox {
     width:                      inherit;
     spacing:                    5px;
     padding:                    5px;
-    background-color:           transparent;
     orientation:                horizontal;
+    background-color:           @background;
     children:                   [ "prompt", "entry", "listview" ];
 }
 
@@ -54,7 +54,7 @@ prompt {
 
 entry {
     expand:                     false;
-    padding:                    2px 0;
+    padding:                    0;
     horizontal-align:           0.5;
     margin:                     0 10px;
     border-radius:              15px;
@@ -74,14 +74,14 @@ listview {
     margin:                      0;
     padding:                     0;
     border-radius:               0;
-    background-color:            transparent;
+    background-color:            @background;
     color:                       @foreground;
 }
 
 element {
     spacing:                     10px;
     margin:                      0;
-    padding:                     2px 15px;
+    padding:                     0 15px;
     border-radius:               15px;
     background-color:            @background;
     color:                       @foreground;

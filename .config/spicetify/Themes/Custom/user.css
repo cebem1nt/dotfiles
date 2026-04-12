@@ -138,3 +138,7 @@ input:checked~.x-toggle-indicatorWrapper {
     color: #787c99 !important;
     background-color: #787c99 !important;
 }
+
+div.search-searchCategory-carouselButton svg.e-10180-icon {
+    --text-base: #000;
+}
