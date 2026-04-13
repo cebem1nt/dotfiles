@@ -81,7 +81,7 @@ listview {
 element {
     spacing:                     10px;
     margin:                      0;
-    padding:                     0 15px;
+    padding:                     2px 15px;
     border-radius:               15px;
     background-color:            @background;
     color:                       @foreground;
