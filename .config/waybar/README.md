@@ -2,7 +2,7 @@
 
 These are the configuration files for waybar.
 
-## Structure overview
+## Structure
 ```
 ~/.config/waybar                        # Waybar configuration files
 ├── colors                              # Color palettes
@@ -24,18 +24,19 @@ These are the configuration files for waybar.
 - The modules configs are defined in `./modules.jsonc`
 - The `config.jsonc` includes current layout (see note below)
 
-## What is `./layouts` used for?
+
+### What is `./layouts` used for?
 
 I have script to toggle between the two modes, the one that gives control over the current track (mpris module) and the one showing current window title. [You can find the script here](https://github.com/cebem1nt/dotfiles/blob/main/.local/bin/change_waybar_layout).
 
-## Context menus? 
+### Context menus? 
 
 Take a look at `./context`, these are GTK builder xml definitions. For more info [check this waybar wiki page](https://github.com/Alexays/Waybar/wiki/Module:-Custom:-Menu) 
 
-## What is `./colors` used for?
+### What is `./colors` used for?
 
 This directory contains different gtk css colors definitions the `style.css` uses. `style.css` by default imports `./colors/colors.css`, which currently is a symlink to `./colors/colors.dark.css`. You can remove symlinks, and use the one you like directly. Why there are two color schemes? [I have a script to switch between the light and dark theme](https://github.com/cebem1nt/dotfiles/blob/main/.local/bin/themesw)
 
-## Expanding drawers? 
+### Expanding drawers? 
 
 You can take a look at their definitions in [./layouts/with_music.jsonc](https://github.com/cebem1nt/dotfiles/blob/main/.config/waybar/layouts/with_music.jsonc#L41) or [./layouts/with_window.jsonc](https://github.com/cebem1nt/dotfiles/blob/main/.config/waybar/layouts/with_window.jsonc#L40) (they are equal)
