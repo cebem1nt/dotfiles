@@ -26,6 +26,11 @@ fi
 NEXT_THEME=$(<$THEMESW_NEXT)
 i=0
 
+if [[ $1 == "--current" ]]; then
+    [[ "$NEXT_THEME" == "dark" ]] && echo "light" || echo "dark"
+    exit 0
+fi
+
 for UNIT in "$THEMESW_DIR"/units/*; do
     UNIT_NAME="${UNIT##*/}"
 
@@ -35,7 +40,7 @@ for UNIT in "$THEMESW_DIR"/units/*; do
     fi
 
     if [[ -f "$UNIT" && -x "$UNIT" ]]; then 
-        "$UNIT" "$NEXT_THEME" &
+        "$UNIT" "$NEXT_THEME" >/dev/null 2>&1 & 
 
         PID=$!
         wait "$PID"

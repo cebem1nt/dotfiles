@@ -80,8 +80,10 @@
                     "command": "hyprctl dispatch exec alacritty -- -e htop ; swaync-client -cp"
                 },
                 {
-                    "label": "",
-                    "command": "hyprctl dispatch exec alacritty -- -e nvtop ; swaync-client -cp"
+                    "label": "󰃟",
+                    "type": "toggle",
+                    "command": "sh -c $HOME/.local/bin/themesw",
+                    "update-command": "sh -c $HOME/.config/swaync/scripts/update_themesw.sh"
                 },
                 {
                     "label": "",
