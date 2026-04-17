@@ -1,81 +1,98 @@
 /* Change default font */
 :root {
+    /* Custom colors */
+    --accent: #787c99;
+    --accent-alternative: #acb0d0;
+    --background: #0a0a0d;
+    --background-elevated: #101014;
+
+    /* Spotify related tweaks */
     --encore-body-font-stack: "CaskaydiaCove Nerd Font Propo";
     --encore-title-font-stack: "CaskaydiaCove Nerd Font Propo";
     --encore-variable-font-stack: "CaskaydiaCove Nerd Font Propo";
-    --background-base: #0a0a0d !important;
-    --text-bright-accent: #acb0d0 !important;
-    --essential-bright-accent: #acb0d0 !important;
+    --background-base: var(--background) !important;
+    --text-bright-accent: var(--accent-alternative) !important;
+    --essential-bright-accent: var(--accent-alternative) !important;
+
+    /* Chevrons colors */
     --chevrons-button-color: #a1a5c0 !important;
     --chevrons-button-hover-color: #a1a5c0c4 !important;
 }
 
 .encore-dark-theme .encore-bright-accent-set {
-    --background-base: #787c99 !important;
-    --background-press: #787d99 !important;
-    --background-highlight: #acb0d0 !important;
-    --background-elevated-base: #acb0d0 !important;
-    --background-elevated-highlight: #acb0d0 !important;
-    --background-elevated-press: #acb0d0 !important;
-    --background-tinted-base: #acb0d0 !important;
-    --background-tinted-highlight: #acb0d0 !important;
-    --background-tinted-press: #acb0d0 !important;
+    --background-base: var(--accent) !important;
+    --background-press: var(--accent) !important;
+    --background-highlight: var(--accent-alternative) !important;
+    --background-elevated-base: var(--accent-alternative) !important;
+    --background-elevated-highlight: var(--accent-alternative) !important;
+    --background-elevated-press: var(--accent-alternative) !important;
+    --background-tinted-base: var(--accent-alternative) !important;
+    --background-tinted-highlight: var(--accent-alternative) !important;
+    --background-tinted-press: var(--accent-alternative) !important;
+}
+
+.encore-dark-theme {
+    --text-bright-accent: var(--accent-alternative) !important;
 }
 
 div[data-testid="progress-bar"] {
-    --is-active-fg-color: #acb0d0 !important;
-}
-
-/* Remove weird window control padding from left */
-#global-nav-bar .main-globalNav-historyButtonsContainer .Kgjmt7IX5samBYUpbkBu,
-#global-nav-bar .OPsY6bKl1_FfA8jFpq1V {
-    display: none !important;
+    --is-active-fg-color: var(--accent-alternative) !important;
 }
 
 /* Hide spicetify update button */
-#global-nav-bar .main-globalNav-historyButtons
-button[aria-label="Update Spicetify"][title="Update Spicetify"] {
+#global-nav-bar .main-globalNav-historyButtons button[aria-label="Update Spicetify"] {
     display: none;
 }
 
-/* Set transparent background but not setting it transparent on hover */
-div.YourLibraryX 
-button.main-useDropTarget-base:not(:hover) {
+/* Remove annoying big "Create" span inside of the library bar */
+.main-yourLibraryX-header button[aria-label="Create"] > span {
+    display: none;
+}
+
+/* Control buttons: set transparent background but not on hover */
+.main-yourLibraryX-header button:not(:hover) {
     background: transparent;
 }
 
-/* Remove annoying big "Create" span inside of the library bar */
-div.YourLibraryX 
-button[aria-label="Create"] > span.e-91000-text {
-    display: none !important;
+/* Fix paddings for buttons in library header */
+.main-yourLibraryX-header .main-useDropTarget-base {
+    padding: 8px;
 }
 
-/* Remove paddings left for better view with "Create" label */
-div.YourLibraryX 
-button.main-useDropTarget-base {
-    padding: 0;
+/* Remove paddings for the search / library layout bar */
+.main-yourLibraryX-rootListHeader .main-yourLibraryX-libraryFilter {
+    padding: 2px 0;
 }
 
-article.TlMFkwANLJrFHUsnTOQf {
-    display: none !important;
+/* Bigger search input width */
+.x-filterBox-expandedOrHasFilter input.x-filterBox-filterInput {
+    width: fit-content;
+    padding: 8px 34px;
 }
 
-div.YourLibraryX 
-button.CjGVphOR96me80esGFpV {
-    background-color: var(--background-elevated-base) !important;
+/* Remove extra right/left  paddings, margins from top library elements  */
+.YourLibraryX .main-yourLibraryX-header {
+    padding: 16px 0px 8px;
 }
 
-/* Margin there was to small */
-.contentSpacing > section.Y89c1_2SAoZFkICK7WVp {
-    margin-bottom: 8px !important;
-    margin-top: 18px !important;
+/* Remove extra right/left  paddings, margins from top library elements  */
+.YourLibraryX .main-yourLibraryX-filterArea {
+    margin: var(--encore-spacing-tighter-2) 8px;
 }
 
-/* Make mini equalizers match colors*/
-img.H70qcBekoGWOlskuON5R,
-img.X_HqPouENflGygaUXNus,
-.view-homeShortcutsGrid-equaliser img,
-.main-trackList-rowMarker img {
+/* Fix margin when library is collapsed */
+.main-yourLibraryX-headerIsCollapsed .main-yourLibraryX-collapseButton {
+    margin-inline-end: 0;
+}
+
+/* Hide scrollbar in the library */
+.YourLibraryX .os-scrollbar {
+    display: none;
+}
+
+/* Make mini equalizers match color scheme */
+.view-homeShortcutsGrid-equaliser img, .main-trackList-rowMarker img,
+img.H70qcBekoGWOlskuON5R, img.X_HqPouENflGygaUXNus {
     filter: invert(85%) 
             sepia(2%) 
             saturate(50%) 
@@ -84,59 +101,45 @@ img.X_HqPouENflGygaUXNus,
             contrast(92%);
 }
 
-div.Y6soMMBElF7EQDbJv8Xb
-button[aria-pressed="true"]
-svg[data-encore-id="icon"] {
-    fill: #acb0d0 !important;
-}
-
-div.Y6soMMBElF7EQDbJv8Xb
-button[data-encore-id="buttonTertiary"]::after {
-    background-color: #acb0d0 !important;
-}
-
 /* Colors for additional control elements (lyrics, queue)  */
-div.main-nowPlayingBar-extraControls
-button.main-genericButton-buttonActive {
-    color: #787d99 !important;
+div.main-nowPlayingBar-extraControls button.main-genericButton-buttonActive {
+    color: var(--accent);
 }
 
 /* Dot after additional controls */
-div.main-nowPlayingBar-extraControls
-button.main-genericButton-buttonActive::after {
-    background-color: #787d99 !important;
+div.main-nowPlayingBar-extraControls button.main-genericButton-buttonActive::after {
+    background-color: var(--accent);
 }
 
-div#context-menu .main-contextMenu-menuItem svg {
-    --encore-icon-fill: #787c99 !important;
+/* Focus, active and hover colors for control buttons */
+div.main-nowPlayingBar-extraControls button.main-genericButton-buttonActive:hover,
+div.main-nowPlayingBar-extraControls button.main-genericButton-buttonActive:focus,
+div.main-nowPlayingBar-extraControls button.main-genericButton-buttonActive:active:focus {
+    color: var(--accent-alternative);
 }
 
-div.main-yourLibraryX-libraryRootlist, p[aria-hidden="true"] .e-91000-text,
-div#context-menu .main-contextMenu-menuItem button[aria-checked="true"] .e-91000-text,
-button.main-contextMenu-menuItemButton[role=menuitemradio][aria-checked=true]  {
-    color: #787c99 !important;
+/* Highlight color for selected text in context menus */
+.main-contextMenu-menuItemButton[aria-checked=true] span,
+.main-contextMenu-menuItemButton[role=menuitemradio][aria-checked=true],
+.encore-internal-color-text-bright-accent {
+    color: var(--accent) !important;
 }
 
-div#context-menu .main-contextMenu-menu {
-    background-color: #101014;
+/* Context menu tweaks */
+#context-menu .main-contextMenu-menu {
+    background-color: var(--background-elevated);
+    border-radius: 15px;
 }
 
-div.main-yourLibraryX-libraryRootlist .e-10180-box svg[data-encore-id="icon"][aria-hidden="false"] {
-    --encore-icon-fill: #787c99 !important;
-}
-
-div.YourLibraryX button.main-useDropTarget-base {
-    padding: 8px !important;
-}
 
 /* Settings page */
 input:checked~.x-toggle-indicatorWrapper {
-    background-color: #787c99 !important;
+    background-color: var(--accent) !important;
 }
 
 .x-settings-zoomButtonIcon[data-selected=true] {
-    color: #787c99 !important;
-    background-color: #787c99 !important;
+    color: var(--accent) !important;
+    background-color: var(--accent) !important;
 }
 
 div.search-searchCategory-carouselButton svg.e-10180-icon {
