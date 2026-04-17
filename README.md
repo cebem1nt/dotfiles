@@ -19,7 +19,7 @@ Big thanks to this [collection of rofi themes](https://github.com/adi1090x/rofi)
 
 <table>
   <tr>
-    <td><img width="400" alt="1" src="https://github.com/user-attachments/assets/123c84fe-f7f1-4166-9097-dc5a8cc135fd" /></td>
+    <td><img width="400" alt="1" src="https://github.com/user-attachments/assets/2342eb64-6afc-4cba-b7b4-4ef87644c829" /></td>
     <td><img width="400" alt="2" src="https://github.com/user-attachments/assets/77863272-fe9b-4a0d-9463-60a9f5e94523" /></td>
   </tr>
   <tr>
@@ -37,7 +37,7 @@ Big thanks to this [collection of rofi themes](https://github.com/adi1090x/rofi)
   
 <table>
   <tr>
-    <td><img width="400" alt="2026-04-03_19-08-08" src="https://github.com/user-attachments/assets/75ad6021-a5da-4a4b-b91d-bfb198ca837f" /></td>
+    <td><img width="400" height="1080" alt="2026-04-17_00-59-13" src="https://github.com/user-attachments/assets/fe7372cf-1623-4558-845f-bd2bf571172a" /></td>
     <td><img width="400" alt="2026-04-03_19-10-48" src="https://github.com/user-attachments/assets/266b55ff-e570-4b63-a1cd-d0bca158d00a" /></td>
   </tr>
   <tr>
