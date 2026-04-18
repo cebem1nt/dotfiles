@@ -37,7 +37,7 @@ Big thanks to this [collection of rofi themes](https://github.com/adi1090x/rofi)
   
 <table>
   <tr>
-    <td><img width="400" height="1080" alt="2026-04-17_00-59-13" src="https://github.com/user-attachments/assets/fe7372cf-1623-4558-845f-bd2bf571172a" /></td>
+    <td><img width="400" alt="2026-04-17_00-59-13" src="https://github.com/user-attachments/assets/fe7372cf-1623-4558-845f-bd2bf571172a" /></td>
     <td><img width="400" alt="2026-04-03_19-10-48" src="https://github.com/user-attachments/assets/266b55ff-e570-4b63-a1cd-d0bca158d00a" /></td>
   </tr>
   <tr>
