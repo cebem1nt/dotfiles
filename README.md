@@ -33,7 +33,7 @@ Big thanks to this [collection of rofi themes](https://github.com/adi1090x/rofi)
 </table>
 
 <details>
-  <summary><h2>Light theme (flashbang warning!)</h2></summary>
+  <summary><h2>Light theme (flashbang!)</h2></summary>
   <table>
     <tr>
       <td><img width="400" alt="2026-04-17_00-59-13" src="https://github.com/user-attachments/assets/fe7372cf-1623-4558-845f-bd2bf571172a" /></td>
@@ -45,7 +45,7 @@ Big thanks to this [collection of rofi themes](https://github.com/adi1090x/rofi)
     </tr>
     <tr>
       <td><img width="400" alt="2026-04-03_19-18-33" src="https://github.com/user-attachments/assets/14287c46-ecb3-4d73-8b00-3190c5603641" /></td>
-      <td><img width="400" alt="2026-04-05_15-43-25" src="https://github.com/user-attachments/assets/93136c28-9cd4-4522-9b73-0fe3e7272bd9" /></td>
+      <td><img width="400" alt="2026-04-18_15-50-04" src="https://github.com/user-attachments/assets/d8092246-eff8-4a3d-b379-a9e74217e1a8" /></td>
     </tr>
   </table>
 </details>
