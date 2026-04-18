@@ -34,45 +34,20 @@ Big thanks to this [collection of rofi themes](https://github.com/adi1090x/rofi)
 
 <details>
   <summary><h2>Light theme (flashbang warning!)</h2></summary>
-  
-<table>
-  <tr>
-    <td><img width="400" alt="2026-04-17_00-59-13" src="https://github.com/user-attachments/assets/fe7372cf-1623-4558-845f-bd2bf571172a" /></td>
-    <td><img width="400" alt="2026-04-03_19-10-48" src="https://github.com/user-attachments/assets/266b55ff-e570-4b63-a1cd-d0bca158d00a" /></td>
-  </tr>
-  <tr>
-    <td><img width="400" alt="2026-04-03_19-14-03" src="https://github.com/user-attachments/assets/e0c4dfbe-e9b2-4cb7-8efd-199e87d7e0d1" /></td>
-    <td><img width="400" alt="2026-04-05_15-45-57" src="https://github.com/user-attachments/assets/8add4fd4-f36b-4c91-8738-ecc5886f33e1" /></td>
-  </tr>
-  <tr>
-    <td><img width="400" alt="2026-04-03_19-18-33" src="https://github.com/user-attachments/assets/14287c46-ecb3-4d73-8b00-3190c5603641" /></td>
-    <td><img width="400" alt="2026-04-05_15-43-25" src="https://github.com/user-attachments/assets/93136c28-9cd4-4522-9b73-0fe3e7272bd9" /></td>
-  </tr>
-</table>
-
-</details>
-
-<details>
-  <summary><h2>Waybar</h2></summary>
-  
-  ![waybar](https://github.com/user-attachments/assets/a2ef6bd9-8166-491d-a854-924b423b55ec)
-
-</details>
-<details>
-  <summary><h2>Rofi</h2></summary>
-
-### filebrowser
-<img width="1919" height="38" alt="2026-02-05_16-42-07" src="https://github.com/user-attachments/assets/4ccf0ed5-10af-4b2a-8632-50a5da3c337e" />
-
-<table>
-  <tr>
-    <td><h3>bookmarks</h3><img width="869" height="359" alt="2026-02-05_16-44-10" src="https://github.com/user-attachments/assets/fc6da599-ccc3-4c0d-a48f-9354ed35af55" /></td>
-    <td><h3>wallpaper picker</h3><img width="805" height="526" alt="2026-02-05_16-41-02" src="https://github.com/user-attachments/assets/4579f741-37a7-4679-a4d8-9a671f3d09f3" /></td>
-    <td><h3>nf icons picker / clipboard</h3><img src="https://github.com/user-attachments/assets/e74875ad-9352-4fb9-831a-1189a173064b" /></td>
-  </tr>
-  
-</table>
-
+  <table>
+    <tr>
+      <td><img width="400" alt="2026-04-17_00-59-13" src="https://github.com/user-attachments/assets/fe7372cf-1623-4558-845f-bd2bf571172a" /></td>
+      <td><img width="400" alt="2026-04-03_19-10-48" src="https://github.com/user-attachments/assets/266b55ff-e570-4b63-a1cd-d0bca158d00a" /></td>
+    </tr>
+    <tr>
+      <td><img width="400" alt="2026-04-03_19-14-03" src="https://github.com/user-attachments/assets/e0c4dfbe-e9b2-4cb7-8efd-199e87d7e0d1" /></td>
+      <td><img width="400" alt="2026-04-05_15-45-57" src="https://github.com/user-attachments/assets/8add4fd4-f36b-4c91-8738-ecc5886f33e1" /></td>
+    </tr>
+    <tr>
+      <td><img width="400" alt="2026-04-03_19-18-33" src="https://github.com/user-attachments/assets/14287c46-ecb3-4d73-8b00-3190c5603641" /></td>
+      <td><img width="400" alt="2026-04-05_15-43-25" src="https://github.com/user-attachments/assets/93136c28-9cd4-4522-9b73-0fe3e7272bd9" /></td>
+    </tr>
+  </table>
 </details>
 
 ## Structure
