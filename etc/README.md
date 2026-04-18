@@ -1,1 +1,1 @@
-Configuration files for `/etc`. These won't be installed.  
+Configuration files for `/etc/`, `/usr/`. These won't be installed.  

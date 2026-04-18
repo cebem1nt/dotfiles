@@ -1,0 +1,284 @@
+/* Change default font */
+:root {
+    /* Custom colors */
+    --accent: #787c99;
+    --accent-alternative: #acb0d0;
+    --background: #dcdee3;
+    --background-secondary: #d6d8df;
+    --background-elevated: #e6e7ed;
+    --text-alpha: #343B5899;
+
+    /* Spotify related color definitions  */
+    --background-elevated-highlight: #f4f5f8 !important;
+    --background-elevated-press: var(--background-elevated-highlight) !important;
+    --background-press: var(--background) !important;
+
+    /* Spotify related tweaks */
+    --encore-body-font-stack: "CaskaydiaCove Nerd Font Propo";
+    --encore-title-font-stack: "CaskaydiaCove Nerd Font Propo";
+    --encore-variable-font-stack: "CaskaydiaCove Nerd Font Propo";
+    --background-base: var(--background) !important;
+    --text-bright-accent: var(--accent-alternative) !important;
+    --essential-bright-accent: var(--accent-alternative) !important;
+
+    /* Chevrons colors */
+    --chevrons-button-color: #a1a5c0 !important;
+    --chevrons-button-hover-color: #a1a5c0c4 !important;
+
+    /* Base image placeholders bg colors */
+    --image-placeholder-bg-color: var(--accent-alternative);
+}
+
+.encore-dark-theme .encore-bright-accent-set {
+    --background-base: var(--accent-alternative) !important;
+    --background-press: var(--accent-alternative) !important;
+    --background-highlight: var(--accent-alternative) !important;
+    --background-elevated-base: var(--accent-alternative) !important;
+    --background-elevated-highlight: var(--accent-alternative) !important;
+    --background-elevated-press: var(--accent-alternative) !important;
+    --background-tinted-base: var(--accent-alternative) !important;
+    --background-tinted-highlight: var(--accent-alternative) !important;
+    --background-tinted-press: var(--accent-alternative) !important;
+}
+
+.encore-dark-theme {
+    --text-bright-accent: var(--accent-alternative) !important;
+
+    /* Text color */
+    --text-base: #343B58 !important;
+    --text-subdued: #363c4d !important;
+    --sort-box-text-color: var(--text-base) !important;
+
+    --background-highlight: #979db87f !important;
+    --encore-icon-fill: var(--text-base);
+    --background-elevated-base: var(--background-elevated) !important;
+}
+
+.Root__globalNav, 
+.Root__now-playing-bar, 
+.Root__top-container {
+    background-color: var(--background-secondary);
+}
+
+/* Fix main page, main view gradients */
+.main-view-container .main-home-homeHeader {
+    background-image: linear-gradient(#fff9 0%, var(--background-base) 100%), var(--background-noise);
+}
+
+/* Main gradient fix (current album/playlist top bar) */
+.main-view-container .main-entityHeader-backgroundColor {
+    background-image: linear-gradient(#fff9 100%, #00000080 0%, transparent 100%), var(--background-noise);
+}
+
+.main-view-container .main-actionBarBackground-background {
+    opacity: 0.6;
+    background-image: linear-gradient(#fff9 0%, var(--background-base) 100%), var(--background-noise);
+}
+
+.main-view-container .main-entityHeader-overlay,
+.main-view-container .playlist-playlist-actionBarBackground-background {
+    opacity: 0.4;
+}
+
+.main-topBar-container .main-topBar-background {
+    background-image: linear-gradient(#fff9 100%, #00000080 0%, transparent 100%), var(--background-noise);
+}
+
+/* Main page carousels gradients */
+.main-view-container .main-home-content {
+    --carousel-start-chevron-gradient: #12121220 !important;
+    --carousel-end-chevron-gradient: #12121210 !important;
+}
+
+.main-entityHeader-headerText span,
+.main-entityHeader-title h1 {
+    color: var(--text-base);
+}
+
+/* N more releases album page button */
+.main-view-container .contentSpacing .ntFavMVp184DyweP button {
+    background-color: var(--background-elevated)
+}
+
+/* Track entities fix shadows */
+.x-entityImage-imageContainer {
+    box-shadow: 0 4px 60px #ffffff80 !important;
+}
+
+.e-10180-legacy-list-row__header-side-flex > div > span:last-child,
+.e-10180-legacy-list-row__header-side-flex > div > div:last-child {
+    background: #fff9;
+}
+
+.main-trackList-rowMainContentTitle,
+a:not([data-encore-id]) {
+    color: var(--text-base) !important;
+}
+
+.main-nowPlayingView-mainWrapper {
+    --text-subdued: #363c4d !important;
+}
+
+.main-topBar-topbarContentContainer .main-entityHeader-topbarTitle {
+    color: var(--text-base) !important;
+}
+
+.main-entityHeader-metaDataText {
+    color: var(--text-base) !important;
+}
+
+button.main-contextMenu-menuItemButton {
+    color: var(--text-alpha) !important;
+}
+
+.x-sortBox-sortDropdown:focus, .x-sortBox-sortDropdown:hover {
+    color: var(--text-subdued) !important;
+}
+
+.main-topBar-background .main-topBar-overlay {
+    background-color: transparent;
+}
+
+.main-trackList-rowSectionVariable > div {
+    color: var(--text-subdued) !important;
+}
+
+.main-nowPlayingView-onTourTimeCard .main-nowPlayingView-onTourTimeMonth,
+.main-nowPlayingView-onTourTimeCard .main-nowPlayingView-onTourTimeDate,
+.main-nowPlayingView-onTourItemTime {
+    color: #000 !important;
+}
+
+/* Hide anoying shadow */
+.main-nowPlayingView-panel .main-nowPlayingView-contextItemInfo:before {
+    background: none;
+}
+
+.YourLibraryX > div:first-child,
+.Root__right-sidebar .main-nowPlayingView-headerContainer {
+    box-shadow: 0 6px 80px #0000000f;
+}
+
+div[data-testid="progress-bar"] {
+    --is-active-fg-color: var(--accent-alternative) !important;
+    --fg-color: #343B58 !important;
+}
+
+/* Hide spicetify update button */
+#global-nav-bar .main-globalNav-historyButtons button[aria-label="Update Spicetify"] {
+    display: none;
+}
+
+/* Remove annoying big "Create" span inside of the library bar */
+.main-yourLibraryX-header button[aria-label="Create"] > span {
+    display: none;
+}
+
+/* Control buttons: set transparent background but not on hover */
+.main-yourLibraryX-header button:not(:hover) {
+    background: transparent;
+}
+
+/* Fix paddings for buttons in library header */
+.main-yourLibraryX-header .main-useDropTarget-base {
+    padding: 8px;
+}
+
+/* Remove paddings for the search / library layout bar */
+.main-yourLibraryX-rootListHeader .main-yourLibraryX-libraryFilter {
+    padding: 5px 0 0 0;
+}
+
+/* Bigger search input width */
+.x-filterBox-expandedOrHasFilter input.x-filterBox-filterInput {
+    width: fit-content;
+    padding: 8px 34px;
+}
+
+/* Remove extra right/left  paddings, margins from top library elements  */
+.YourLibraryX .main-yourLibraryX-header {
+    padding: 16px 0px 8px;
+}
+
+/* Remove extra right/left  paddings, margins from top library elements  */
+.YourLibraryX .main-yourLibraryX-filterArea {
+    margin: var(--encore-spacing-tighter-2) 8px;
+}
+
+/* Fix margin when library is collapsed */
+.main-yourLibraryX-headerIsCollapsed .main-yourLibraryX-collapseButton {
+    margin-inline-end: 0;
+}
+
+/* Hide scrollbar in the library */
+.YourLibraryX .os-scrollbar {
+    display: none;
+}
+
+/* Make mini equalizers match color scheme */
+.view-homeShortcutsGrid-equaliser img, .main-trackList-rowMarker img,
+img.H70qcBekoGWOlskuON5R, img.X_HqPouENflGygaUXNus {
+    filter: invert(85%) 
+            sepia(2%) 
+            saturate(50%) 
+            hue-rotate(290deg) 
+            brightness(98%) 
+            contrast(92%);
+}
+
+/* Colors for additional control elements (lyrics, queue)  */
+div.main-nowPlayingBar-extraControls button.main-genericButton-buttonActive {
+    color: var(--accent);
+}
+
+/* Dot after additional controls */
+div.main-nowPlayingBar-extraControls button.main-genericButton-buttonActive::after {
+    background-color: var(--accent);
+}
+
+/* Focus, active and hover colors for control buttons */
+div.main-nowPlayingBar-extraControls button.main-genericButton-buttonActive:hover,
+div.main-nowPlayingBar-extraControls button.main-genericButton-buttonActive:focus,
+div.main-nowPlayingBar-extraControls button.main-genericButton-buttonActive:active:focus {
+    color: var(--accent-alternative);
+}
+
+/* Highlight color for selected text in context menus */
+.main-contextMenu-menuItemButton[aria-checked=true] span,
+.main-contextMenu-menuItemButton[role=menuitemradio][aria-checked=true],
+.encore-internal-color-text-bright-accent {
+    color: var(--accent) !important;
+    font-weight: 800;
+}
+
+/* Context menu tweaks */
+#context-menu .main-contextMenu-menu {
+    background-color: var(--background-elevated);
+    box-shadow: 0 16px 31px #00000000, 0 6px 8px #0003;
+    border-radius: 15px;
+}
+
+/* Make bold respect text color in context menu */
+#context-menu span.encore-text-marginal-bold,
+#context-menu span.x-filterBox-searchIconContainer,
+#context-menu input, #context-menu ::placeholder  {
+    color: var(--text-base);
+}
+
+/* Settings page */
+input:checked~.x-toggle-indicatorWrapper {
+    background-color: var(--accent) !important;
+}
+
+.x-settings-zoomButtonIcon[data-selected=true] {
+    color: var(--accent) !important;
+    background-color: var(--accent) !important;
+}
+
+.main-genericButton-button {
+    color: var(--text-base) !important;
+}
+
+div.search-searchCategory-carouselButton svg.e-10180-icon {
+    --text-base: #000;
+}
