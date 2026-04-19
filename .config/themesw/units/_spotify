@@ -1,0 +1,15 @@
+#!/bin/bash
+
+cd "$HOME/.config/spicetify/Themes/Custom/"
+
+if [[ "$1" == "dark" ]]; then
+    ln -fs css/dark.css user.css
+else
+    ln -fs css/light.css user.css
+fi
+
+spicetify refresh
+
+if pgrep -x "spotify" ; then
+    spicetify restart &
+fi
