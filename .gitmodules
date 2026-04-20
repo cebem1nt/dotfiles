@@ -1,3 +1,3 @@
-[submodule ".local/bin/auto_walls"]
-	path = .local/bin/auto_walls
+[submodule "auto_walls"]
+	path = .local/share/auto_walls
 	url = https://github.com/cebem1nt/auto_walls.git
