@@ -15,13 +15,15 @@ source $ZSH/oh-my-zsh.sh
 zstyle ':completion:*' special-dirs true
 setopt autocd
 
-export PATH="$HOME/.local/bin/:$HOME/.config/npm/bin:$PATH"
+export PATH="$HOME/.local/bin/:$HOME/.config/npm/bin:$HOME/.local/share/go/bin:$PATH"
+export SCRIPTS="$HOME/.local/bin"
 
 export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_SRC_HOME="$HOME/.local/src"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_PICTURES_DIR="$HOME/med/pictures"
 
 export LESS="--ignore-case"
 
@@ -33,6 +35,8 @@ export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export MYSQL_HISTFILE="$XDG_DATA_HOME/mysql/history"
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 
+export GOPATH="$XDG_DATA_HOME/go"
+export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
 
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export PYTHON_HISTORY="$XDG_STATE_HOME/python_history"
@@ -56,6 +60,7 @@ alias vim='nvim'
 alias ht='htop'
 alias code='codium'
 alias g='grep'
+alias y='yazi'
 alias aur="pacget --storage-dir $XDG_SRC_HOME"
 
 alias vimzshrc="vim $XDG_CONFIG_HOME/zsh/.zshrc"
