@@ -1,6 +1,6 @@
 #!/bin/bash
 
-STARTUP_SCRIPTS="$HOME/.local/bin/hook/startup"
+STARTUP_SCRIPTS="$HOME/.local/bin/startup"
 
 for SCRIPT in $STARTUP_SCRIPTS/*; do
     SCRIPT_NAME="${SCRIPT##*/}"
