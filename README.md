@@ -100,6 +100,18 @@ And run this with your AUR helper (example with yay):
 yay -S spicetify-cli vscodium-bin zen-browser-bin peaclock bibata-cursor-theme kripton-theme-git
 ```
 
+### XDG base directories
+
+> [!WARNING]  
+> My config files change [XDG base user directories](https://wiki.archlinux.org/title/XDG_Base_Directory#User_directories).
+> Instead of having `~/Desktop`, `~/Downloads`, `~/Pictures` I use `~/wsp`, `~/dow`, `~/med/pictures` ...
+> This means that some of your previous settings might be screwed up!
+
+You can change these configurations here:
+- [user-dirs.dirs](https://github.com/cebem1nt/dotfiles/blob/main/.config/user-dirs.dirs)
+- [environ.conf](https://github.com/cebem1nt/dotfiles/blob/main/.config/hypr/configs/environ.conf#L53)
+- [.zshrc](https://github.com/cebem1nt/dotfiles/blob/main/.config/zsh/.zshrc#L26)
+
 ### Bluegrey folders
 For this, install `papirus-folders` cli tool, or download and install icon pack with bluegrey folders [directly](https://www.gnome-look.org/p/1166289)
 
