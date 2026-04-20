@@ -29,7 +29,7 @@
 	<name>Set as wallpaper</name>
 	<submenu></submenu>
 	<unique-id>1722348939040143-1</unique-id>
-	<command>python3 ~/.local/bin/auto_walls/set_exact.py %f</command>
+	<command>python3 ~/.local/bin/auto_walls set %f</command>
 	<description>sets picture as wallpaper</description>
 	<range>*</range>
 	<patterns>*</patterns>

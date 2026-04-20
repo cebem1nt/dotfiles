@@ -14,7 +14,7 @@ awww img $DEFAULT_WALLPAPER
 notify-send "Generating thumbnails for wallpapers" "Please wait..." \
     --icon="preferences-desktop-wallpaper" --app-name=$0
 
-python3 $SCRIPTS/auto_walls/rofi_selector.py --gen-thumbnails
+python3 $SCRIPTS/auto_walls rofi --gen-thumbnails
 
 notify-send "Thumbnails were generated!" \
     --icon="preferences-desktop-wallpaper" --app-name=$0
