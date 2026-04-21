@@ -20,6 +20,7 @@ window {
     width:                  750px;
     margin:                 0px;
     padding:                0px;
+    y-offset:               10px;
     border-radius:          15px;
     background-color:       @background;
 }

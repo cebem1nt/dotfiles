@@ -18,6 +18,7 @@ window {
     location:           south;
     width:              750px;
     border-radius:      15px;
+    y-offset:           20px;
     background-color:   @background;
 }
 

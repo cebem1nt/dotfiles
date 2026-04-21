@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Eye of GNOME
+Comment=Browse and rotate images
+TryExec=eog
+Exec=eog --fullscreen %U
+Icon=org.gnome.eog
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=GNOME;GTK;Graphics;2DGraphics;RasterGraphics;Viewer;
+X-GNOME-DocPath=eog/eog.xml
+MimeType=image/avif;image/bmp;image/gif;image/heic;image/jpeg;image/jpg;image/jxl;image/pjpeg;image/png;image/tiff;image/webp;image/x-bmp;image/x-gray;image/x-icb;image/x-ico;image/x-png;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-xbitmap;image/x-xpixmap;image/x-pcx;image/svg+xml;image/svg+xml-compressed;image/vnd.wap.wbmp;image/x-icns;
+Keywords=Picture;Slideshow;Graphics;Photo;Photography;Image;Viewer;
