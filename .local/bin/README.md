@@ -2,9 +2,9 @@ Scripts used on my system. `startup` is a directory with scripts that are execut
 
 ## Full list
 
-- `at_startup`: script that is executed from `~/.config/hypr/configs/exec.conf`, just looks `startup` dir, executes all scripts except the ones that begin with **_** or end with **.bak**
+- `at_startup`: script that is executed from `~/.config/hypr/configs/exec.conf`, just iterates `startup` dir, executes all scripts except the ones that begin with **_** or end with **.bak**
 
-- `auto_walls`: a symlink to `~/.local/share/auto_walls/auto_walls.py`. It is the main application that is responsible for wallpaper: wallpaper menu, atomatic timer once in N minutes, random wallpapers, etc. [See the repo](https://github.com/cebem1nt/auto_walls)
+- `auto_walls`: a symlink to `~/.local/share/auto_walls/auto_walls.py`. It is the main application that is responsible for wallpapers handling: wallpaper menu, atomatic timer once in N minutes, random wallpapers, etc. [See the repo](https://github.com/cebem1nt/auto_walls)
 
 - `bookmarks`: looks at `~/docs/bookmarks`, parses them and pipes into rofi menu.
 
