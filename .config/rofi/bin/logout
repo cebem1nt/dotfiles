@@ -15,7 +15,8 @@ NO=''
 
 # Rofi CMD
 rofi_cmd() {
-	rofi -dmenu -sync -theme ${theme}
+	rofi -dmenu -sync -theme ${theme} \
+         #-theme-str 'mainbox {children: [ "message", "listview" ];}'
 }
 
 # Confirmation CMD
@@ -61,7 +62,7 @@ run_cmd() {
 				i3-msg exit
 			elif [[ "$DESKTOP_SESSION" == 'plasma' ]]; then
 				qdbus org.kde.ksmserver /KSMServer logout 0 0 0
-			elif [[ "$XDG_SESSION_DESKTOP" == 'Hyprland' ]]; then
+            else
                 pkill gammastep
                 hyprctl dispatch exit
 			fi
@@ -72,22 +73,27 @@ run_cmd() {
 }
 
 # Actions
-chosen="$(run_rofi)"
-case ${chosen} in
-    $SHUTDOWN)
-		run_cmd --shutdown
-        ;;
-    $REBOOT)
-		run_cmd --reboot
-        ;;
-    $LOCK)
-		sleep 0.1 # Make rofi menu dissapear
-		loginctl lock-session
-        ;;
-    $SUSPEND)
-		run_cmd --suspend
-        ;;
-    $LOGOUT)
-		run_cmd --logout
-        ;;
-esac
+if [[ $# -ne 0 ]]; then
+    run_cmd $1
+else 
+    choice="$(run_rofi)"
+    case ${choice} in
+        $SHUTDOWN)
+		    run_cmd --shutdown
+            ;;
+        $REBOOT)
+		    run_cmd --reboot
+            ;;
+        $LOCK)
+		    sleep 0.1 # Make rofi menu dissapear
+		    loginctl lock-session
+            ;;
+        $SUSPEND)
+		    run_cmd --suspend
+            ;;
+        $LOGOUT)
+		    run_cmd --logout
+            ;;
+    esac
+fi
+
