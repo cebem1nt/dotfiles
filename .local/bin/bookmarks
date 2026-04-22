@@ -2,6 +2,12 @@
 import os, subprocess
 from sys import exit
 
+# Format:
+#
+# [placeholder] Any content stored
+# [placeholder] Some other bookmark 
+#
+
 DIR = os.path.expanduser("~/docs/bookmarks") 
 FILE = os.path.join(DIR, "bookmarks.txt")
 ROFI_THEME = os.path.expanduser("~/.config/rofi/themes/bookmarks.rasi")

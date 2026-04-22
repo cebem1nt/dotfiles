@@ -1,0 +1,59 @@
+Scripts used on my system. `startup` is a directory with scripts that are executed at startup. This directory is added to `$PATH` so you can call them from your terminal.
+
+## Full list
+
+- `at_startup`: script that is executed from `~/.config/hypr/configs/exec.conf`, just looks `startup` dir, executes all scripts except the ones that begin with **_** or end with **.bak**
+
+- `auto_walls`: a symlink to `~/.local/share/auto_walls/auto_walls.py`. It is the main application that is responsible for wallpaper: wallpaper menu, atomatic timer once in N minutes, random wallpapers, etc. [See the repo](https://github.com/cebem1nt/auto_walls)
+
+- `bookmarks`: looks at `~/docs/bookmarks`, parses them and pipes into rofi menu.
+
+- `brightness`: main script that simplifies brightness controll and sends OSD like notification
+
+- `caffeine`: my tiny implementation of an idle inhibitor. Uses systemd-inhibit under the hood, can also prevent laptop from sleep when closing the lid. example: `caffeine handle-lid-switch`. Used from swaync and `startup/auto_caffeine.sh`
+
+- `change_waybar_layout`: swtich between `with_music.json` and `with_window.json` waybar layouts. See [.config/waybar](https://github.com/cebem1nt/dotfiles/tree/main/.config/waybar)
+
+- `clear_notifications`: clears all notifications and sends a notification about that :)
+
+- `cycle_layout`: cycles layout (scrolling, dwindle, master, monocle) for current workspace. Hyprland only
+
+- `cycle_profile`: tool to cycle power profiles. Written for **asusctl**, but with some tweaks might be modified for power-profiles-daemon
+
+- `genid`: "you give me a string, I give you md5sum hash of it"
+
+- `perforun`: Also an **asusctl** related tool, executes provided aruments to it in performance mode, inhibits sleep and when finished restores previous power profile. I use it for games
+
+- `playerctl_volume`: Increase / decrease volume for the current active player (not the system sound), for example if spotify is playing, running `playerctl_volume 0.1+` will increase spotify volume by 10%
+
+- `powersafe`: Turn on extra powersafe mode (still WIP)
+
+- `ppjson`: pretty prints raw json strings.
+
+- `resize_gaps`: modify inner / outer gaps at runtime (Hyprland only)
+
+- `restart_waybar`: restarts waybar
+
+- `scase`: covnerts given file name or string to given case (by default to snake case), used from thunar. example: `scase -f "file with spaces"` will rename `./file\ with\ spaces` to `./file_with_spaces`. Also can set to kebab case or camel case (experimental)
+
+- `screenshot`: screenhots the screen. If `--select` is passed, uses flameshot (if found) or slurp to select area
+
+- `themesw`: the script used to switch between light and dark theme. Basically just stores next theme in `~/.config/themesw/next` and when executed, runs every sub script (unit) from `~/.config/themesw/units` and passes the theme name as an argument. These units do the actual theme switching see [.config/themesw/units](https://github.com/cebem1nt/dotfiles/tree/main/.config/themesw/units) (some of them are underscored in order to not kill themselves because of using pgrep/pkill inside)
+
+- `toggle_bluetooth`: Toggles bluetooth on/off, when turning off, also turns the music off. When turning on, tries to connect to the last or preferred device. To set preferred device, run `bluetoothctl devices Paired` and put the line with the device you want to `~/.config/.toggle-bluetooth.pref`.
+
+- `toggle_dnd`: Toggles "do not disturb" mode on/off and sends notification about it :)
+
+- `toggle_microphone`: Toggles microphone state on/off and sends notification with current state
+
+- `toggle_recording`: similar to `screenshot`, with no argument starts to record your screen, with `--select` firstly lets you select the recording area. If you run it when recording is already on, will end recording
+
+- `toggle_rofi`: wrapper script to provide any rofi related menu / script with the toggle functionality (close if already running) executes provided arguments. Example: `toggle_rofi auto_walls rofi`
+
+- `una`: extracts any kind of archive so you dont have to memorize "how the hell do I extract a .zip, .tar or .rar"
+
+- `update`: updates your system, cleans up some unnecessary .desktop entries from `/usr/share/applications` (see definitions inside script), removes orphans packages afterwards and also prompts you to reboot after an update. You can pass arguments to the underlying pacman with --. Optionally you can pass --reboot or --no-reboot to avoid prompt
+
+- `volume`: similar to `brightness` - increases / decreases the volume and sends fancy OSD like notification
+
+- `xdg-terminal-exec`: direct definition of the xdg-terminal handler. Some apps use it to determine which terminal emulator you use and execute something inside it

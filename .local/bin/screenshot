@@ -3,7 +3,12 @@
 FILE=$XDG_PICTURES_DIR/screenshots/"$(date +"%Y-%m-%d_%H-%M-%S").png"
 
 if [[ "$1" == "--select" ]]; then
-    flameshot gui --path $FILE
+    if which flameshot >/dev/null 2>&1; then
+        flameshot gui --path $FILE
+    else
+        grim -g "$(slurp)" $FILE
+    fi
+
     STATUS=$?
 else
     grim $FILE

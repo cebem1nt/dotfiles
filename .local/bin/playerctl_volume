@@ -2,7 +2,6 @@
 
 playerctl volume $1
 
-# Check if the command was successful
 if [ $? -eq 0 ]; then
     icon=$(playerctl -l | head -n 1 | cut -d '.' -f 1)
     volume=$(playerctl volume)

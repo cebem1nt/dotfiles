@@ -30,7 +30,7 @@ def main(option: str, modifier: int):
 if __name__ == '__main__':
   if len(argv) < 2:
     print("Not enough aruments.")
-    print("Usage : resize_gaps.py gaps_type : [in, out], modifier : [number]")
+    print(f"Usage : {argv[0]} gaps_type : [in, out], modifier : [number]")
     exit(1)
 
   if argv[1] in ('in', 'out'):
