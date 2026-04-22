@@ -1,15 +1,14 @@
 # My dotfiles
 My archlinux dotfiles, some scripts and wallpapers 
 
-## Info
-
+## Quick info
 - Panel: waybar
-- All the menus (except notifications): rofi
 - Notifications: swaync
+- Menus: rofi
 - Terminal: alacritty
-- Shell: zsh
+- Shell: zsh (+ohmyzsh)
 - Font: Cascadia Code
-- GTK theme: [kripton](https://github.com/EliverLara/Kripton)
+- GTK theme: [kripton](https://github.com/EliverLara/Kripton) / [Tokyonight](https://github.com/Fausto-Korpsvart/Tokyonight-GTK-Theme) (Light theme)
 - Icon theme: [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 - fetch: [mine :)](https://github.com/cebem1nt/sillyfetch)
 
@@ -50,37 +49,9 @@ Big thanks to this [collection of rofi themes](https://github.com/adi1090x/rofi)
   </table>
 </details>
 
-## Structure
-```
-~/.config/hypr                        # Hyprland configuration
-├── configs
-│   ├── animations.conf 
-│   ├── binds.conf
-│   ├── environ.conf                  # Environment variables
-│   ├── exec.conf                     # Startup chores 
-│   ├── rules.conf                    # Window/layer rules
-│   └── settings.conf                 # Misc settings
-├── hypridle.conf
-├── hyprland.conf                     # Monitor configuration is here
-└── hyprlock.conf
+## About
+Dotfiles I daily drive. The goal is an extensible configuration with modular and independent style, while trying to keep it simple. This repo migh be used as a ***wiki for styling / problems solving*** in the same envionment. Majority of the directories in this repo are documented with a README, to not leave you with doubts like "What the hell is this one doing?" and "Why would I need it?". 
 
-~/.config/waybar                      # Waybar configuration files
-├── colors                            # Color paletes
-│   ├── colors.css -> colors.dark.css # Symlink to current palete
-│   ├── colors.dark.css
-│   └── colors.light.css
-├── context                           # Context menus for some modules
-│   ├── ctlcenter.xml
-│   └── network.xml
-├── layouts                           # Different waybar layouts
-│   ├── with_music.jsonc
-│   └── with_window.jsonc
-├── config.jsonc                      # Main config file
-├── modules.jsonc                     # Wabar module configs
-└── style.css                         # Main css
-```
-
-### Misc
 You can find some usefull scripts in `~/.local/bin` they are added to path by default in `~/.config/zsh/.zshrc`. If you have a keyboard with backlight, you can setup auto_walls to automatically set best matching color, see `.config/auto_walls/config.json`  
 
 ## Installation
