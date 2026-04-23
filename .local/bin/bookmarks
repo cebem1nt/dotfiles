@@ -8,7 +8,7 @@ from sys import exit
 # [placeholder] Some other bookmark 
 #
 
-DIR = os.path.expanduser("~/docs/bookmarks") 
+DIR = os.path.expanduser("~/doc/bookmarks") 
 FILE = os.path.join(DIR, "bookmarks.txt")
 ROFI_THEME = os.path.expanduser("~/.config/rofi/themes/bookmarks.rasi")
 
