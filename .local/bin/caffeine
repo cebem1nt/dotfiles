@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
 
-ACTION=""   # "on", "off", or empty (toggle)
+ACTION="" # "on", "off", "check", or empty (toggle)
 WHAT="idle"
 
 for arg in "$@"; do
     case "$arg" in
         --on) ACTION="on" ;;
         --off) ACTION="off" ;;
+        --is-running) ACTION="check" ;;
         --help|-h)
-            echo "Usage: $0 [--on|--off] [what]"
+            echo "Usage: $0 [--on|--off|--is-running] [what]"
             exit 0
         ;;
         *) WHAT="$arg" ;;
@@ -26,7 +27,7 @@ start() {
         return
     fi
 
-    notify-send  -i caffeine-cup-full -a caffeine \
+     notify-send  -i caffeine-cup-full -a caffeine \
         "Preventing sleep..." "Enabled inhibiting for $WHAT"
 
     nohup bash -c "$GREP" >/dev/null 2>&1 &
@@ -47,6 +48,8 @@ if [[ "$ACTION" == "on" ]]; then
     start
 elif [[ "$ACTION" == "off" ]]; then
     stop
+elif [[ "$ACTION" == "check" ]]; then
+    if is_running; then echo true; else echo false; fi
 else
     if is_running; then stop; else start; fi
 fi

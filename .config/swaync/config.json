@@ -66,14 +66,14 @@
                 {
                     "label": "",
                     "type": "toggle",
-                    "command": "bash -c $HOME/.config/swaync/scripts/inhibit.sh",
-                    "update-command": "sh -c $HOME/.config/swaync/scripts/update_inhibit.sh"
+                    "command": "bash -c '$HOME/.local/bin/caffeine'",
+                    "update-command": "bash -c '$HOME/.local/bin/caffeine --is-running'"
                 },
                 {
                     "label": "",
                     "type": "toggle",
-                    "command": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
-                    "update-command": "sh -c $HOME/.config/swaync/scripts/update_mic.sh"
+                    "command": "bash -c '$HOME/.local/bin/mictoggle --silent'",
+                    "update-command": "bash -c '$HOME/.local/bin/mictoggle --is-muted'"
                 },
                 {
                     "label": "",
@@ -82,8 +82,8 @@
                 {
                     "label": "󰃟",
                     "type": "toggle",
-                    "command": "sh -c $HOME/.local/bin/themesw",
-                    "update-command": "sh -c $HOME/.config/swaync/scripts/update_themesw.sh"
+                    "command": "bash -c '$HOME/.local/bin/themesw'",
+                    "update-command": "bash -c '[ $($HOME/.local/bin/themesw --current) = light ] && echo true || echo false'"
                 },
                 {
                     "label": "",
