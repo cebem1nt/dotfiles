@@ -49,11 +49,6 @@ Big thanks to this [collection of rofi themes](https://github.com/adi1090x/rofi)
   </table>
 </details>
 
-## About
-Dotfiles I daily drive. The goal is an extensible configuration with modular and independent style, while trying to keep it simple. This repo migh be used as a ***wiki for styling / problems solving*** in the same envionment. Majority of the directories in this repo are documented with a README, to not leave you with doubts like "What the hell is this one doing?" and "Why would I need it?". 
-
-You can find some usefull scripts in `~/.local/bin` they are added to path by default in `~/.config/zsh/.zshrc`. If you have a keyboard with backlight, you can setup auto_walls to automatically set best matching color, see `.config/auto_walls/config.json`  
-
 ## Installation
 
 > [!WARNING]  
