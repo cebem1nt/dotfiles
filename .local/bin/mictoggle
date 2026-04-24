@@ -25,18 +25,15 @@ pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 IS_MUTED=$(pactl get-source-mute @DEFAULT_SOURCE@)
 
-if [[ $IS_SILENT == 1 ]]; then
-    exit 0
-fi
+[[ $IS_SILENT == 1 ]] && exit 0
 
 if [[ $IS_MUTED == *"no" ]]; then
-    notify-send --hint string:x-canonical-private-synchronous:microphone \
-                --icon=notification-microphone-sensitivity-high \
-                --app-name="$0" \
-                "Changed microphone state" "Microphone is unmuted"
+    MESSAGE="Microphone is unmuted"
 else
-    notify-send --hint string:x-canonical-private-synchronous:microphone \
-                --icon=notification-microphone-sensitivity-muted \
-                --app-name="$0" \
-                "Changed microphone state" "Microphone is muted"
+    MESSAGE="Microphone is muted"
 fi
+
+notify-send --hint string:x-canonical-private-synchronous:microphone \
+            --icon=notification-microphone-sensitivity-high \
+            --app-name="$0" \
+            "Changed microphone state" $MESSAGE
