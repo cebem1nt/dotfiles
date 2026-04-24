@@ -1,0 +1,102 @@
+#!/bin/bash
+
+GET_CURRENT=0
+TOGGLE_QUIET=0
+IS_QUIET=0
+
+PROFILE="next" # next or exact profile name
+
+for arg in "$@"; do
+    case "$arg" in
+        --get) GET_CURRENT=1 ;;
+        --toggle-quiet) TOGGLE_QUIET=1 ;;
+        --is-quiet) IS_QUIET=1 ;;
+        --help|-h)
+            echo "Usage: $0 [--get|--toggle-quiet|--is-quiet] [profile]"
+            exit 0
+        ;;
+        *) PROFILE="$arg" ;;
+    esac
+done
+
+if which asusctl >/dev/null 2>&1 ; then 
+    BACKEND="asusctl"
+elif which powerprofilesctl >/dev/null 2>&1; then
+    BACKEND="powerprofilesctl"
+else
+    echo "You don't have asusctl nor powerprofilesctl."
+    echo "Power profiles are not supported"
+    exit 1
+fi
+
+get_current() {
+    if [[ $BACKEND == "powerprofilesctl" ]]; then 
+        powerprofilesctl get 
+    else
+        PROFILE=$(asusctl profile get | grep "Active profile")
+        echo "${PROFILE##* }"
+    fi
+}
+
+notify() {
+    PROFILE=$(get_current)
+
+    if [[ "$PROFILE" == "Quiet" ]]; then
+        ICON="asus_notif_blue"
+    elif [[ "$PROFILE" == "Balanced" ]]; then
+        ICON="asus_notif_white"
+    elif [[ "$PROFILE" == "Performance" ]]; then
+        ICON="asus_notif_red"
+    else
+        # If we get here, that means that BACKEND is powerprofilesctl
+        # their icons are easy, we can just do power-profile-<profile>-symbolic
+        ICON="power-profile-$PROFILE-symbolic"
+    fi
+
+    notify-send --icon $ICON --app-name $0 \
+                "Profile changed" "Current profile: $PROFILE" \
+                -h "string:x-canonical-private-synchronous:$0"
+}
+
+CURRENT=$(get_current)
+
+# Check arguments 
+if [[ $GET_CURRENT == 1 ]]; then 
+    echo $CURRENT
+    exit 0
+elif [[ $IS_QUIET == 1 ]]; then
+    [[ "$CURRENT" == "power-saver" ]] || [[ "$CURRENT" == "Quiet" ]] && \
+        echo "true" || echo "false" 
+
+    exit 0
+elif [[ $TOGGLE_QUIET == 1 ]]; then 
+    if [[ $BACKEND == "asusctl" ]]; then
+        [[ "$CURRENT" == "Quiet" ]] && asusctl profile set Balanced || \
+                                       asusctl profile set Quiet
+    else
+        [[ "$CURRENT" == "power-saver" ]] && powerprofilesctl set balanced || \
+                                             powerprofilesctl set power-saver
+    fi
+
+    notify
+    exit 0
+fi
+
+if [[ $BACKEND == "powerprofilesctl" ]]; then 
+    if [[ $PROFILE == "next" ]]; then 
+        PROFILES=(power-saver balanced performance)
+
+        for i in "${!PROFILES[@]}"; do
+            if [[ "${PROFILES[$i]}" = "${CURRENT}" ]]; then
+                NEXT=$(( (i + 1) % ${#PROFILES[@]} ))
+                PROFILE="${PROFILES[$NEXT]}"
+            fi
+        done
+    fi
+
+    powerprofilesctl set $PROFILE
+else
+    asusctl profile $PROFILE
+fi
+
+notify

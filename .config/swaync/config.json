@@ -60,8 +60,8 @@
                 {
                     "label": "󰌪",
                     "type": "toggle",
-                    "command": "bash -c $HOME/.config/swaync/scripts/quiet.sh",
-                    "update-command": "bash -c $HOME/.config/swaync/scripts/update_quiet.sh"
+                    "command": "bash -c '$HOME/.local/bin/powerprofile --toggle-quiet'",
+                    "update-command": "bash -c '$HOME/.local/bin/powerprofile --is-quiet'"
                 },
                 {
                     "label": "",
