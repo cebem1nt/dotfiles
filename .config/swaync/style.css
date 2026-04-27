@@ -224,7 +224,7 @@
 .widget-dnd {
 	padding: 10px 15px; 
 	border-radius: var(--border-radius);
-	background: @background;
+	background: @background-alt;
 	box-shadow: var(--shadow);
 	color: @text;
 }
@@ -260,7 +260,7 @@
 	border-radius: var(--border-radius);
 	padding: 5px 15px;
 	margin-bottom: 5px;
-	background: @background;
+	background: @background-alt;
 	box-shadow: var(--shadow);
 }
 

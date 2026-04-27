@@ -1,8 +1,8 @@
 @define-color center-bg                 rgba(8, 8, 11, 0.8);
 @define-color notification-bg           rgba(8, 8, 11, 0.9);
-@define-color center-notification-bg    rgba(8, 8, 11, 1.0);
+@define-color center-notification-bg    #101014;
 @define-color background                rgba(8, 8, 11, 0.9);
-@define-color background-alt            #0e0e14;
+@define-color background-alt            #101014;
 @define-color text                      #acb0d0;
 @define-color text-alt                  #787c99;
 @define-color selected                  alpha(@text-alt, .4);

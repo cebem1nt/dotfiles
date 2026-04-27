@@ -1,9 +1,10 @@
 * {
     background:     #d6d8dfe5;
-    background-alt: #acb0bfFF;
+    background-alt: #d6d8dfff;
     background-sec: #acb0bfe5;
-    foreground:     #717998ff;
+    foreground:     #343B58ff;
     selected:       #acb0bfff;
     active:         #41a6b5ff;
     urgent:         #f7768eff;
+    highlight:      rgba(112, 114, 128, 0.16);
 }

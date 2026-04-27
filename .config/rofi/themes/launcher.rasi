@@ -10,7 +10,7 @@
 
 configuration {
     show-icons:                 true;
-	drun-display-format:        "{name}";
+	drun-display-format:        "{name} \n<span size='x-small' color='grey'><i>{exec}</i></span>";
 }
 
 * {
@@ -32,8 +32,8 @@ window {
 mainbox {
     border-radius:               0;
     margin:                      0;
-    spacing:                     20px;
-    padding:                     40px;
+    spacing:                     10px;
+    padding:                     10px;
     background-color:            transparent;
     children:                    [ "inputbar", "message", "listview", "mode-switcher"];
 }
@@ -41,9 +41,9 @@ mainbox {
 inputbar {
     spacing:                     10px;
     margin:                      0px;
-    padding:                     10px;
+    padding:                     15px;
     border:                      0px;
-    border-radius:               4px;
+    border-radius:               16px;
     background-color:            @background-alt;
     color:                       @foreground;
     children:                    [ "entry" ];
@@ -58,7 +58,6 @@ entry {
 
 listview {
     columns:                     1;
-    lines:                       10;
     dynamic:                     true;
     scrollbar:                   false;
     layout:                      vertical;
@@ -67,9 +66,9 @@ listview {
     fixed-columns:               true;
     spacing:                     5px;
     margin:                      0px;
-    padding:                     0px;
-    border-radius:               0px;
-    background-color:            transparent;
+    padding:                     10px 8px;
+    border-radius:               16px;
+    background-color:            @background-alt;
     color:                       @foreground;
 }
 
@@ -77,22 +76,22 @@ element {
     enabled:                     true;
     spacing:                     8px;
     margin:                      0px;
-    padding:                     8px;
-    border-radius:               4px;
+    padding:                     3px 10px;
+    border-radius:               16px;
     background-color:            transparent;
     color:                       @foreground;
     cursor:                      pointer;
 }
 
 element selected.normal {
-    background-color:            @foreground;
-    text-color:                  @background;
+    background-color:            @highlight;
 }
 
 element-icon {
     background-color:            transparent;
+    size:                        26px;
+    margin:                      0 5px 0 0;
     color:                       inherit;
-    size:                        24px;
     cursor:                      inherit;
 }
 
@@ -100,32 +99,38 @@ element-text {
     background-color:            transparent;
     color:                       inherit;
     cursor:                      inherit;
-    vertical-align:              0.7;
-    padding:                     0 0 0 4px;
+    padding:                     10px 0;
+    vertical-align:              0.5;
 }
 
-mode-switcher{
+mode-switcher {
     enabled:                     true;
     spacing:                     8px;
     margin:                      0px;
-    padding:                     0px;
-    border-radius:               4px;
+    border-radius:               16px;
+    padding:                     8px 18px;
     background-color:            @background-alt;
     color:                       @foreground;
 }
 
 button {
     font:                       "CaskaydiaCove Nerd Font Propo, bold 12";
-    padding:                     8px;
+    padding:                     10px;
+    margin:                      0;
     border:                      0px solid;
-    border-radius:               4px;
-    background-color:            transparent;
+    border-radius:               16px;
+    background-color:            @highlight;
     color:                       inherit;
     cursor:                      pointer;
 }
 
 button selected {
     background-color:            @foreground;
+    color:                       @background;
+}
+
+button hover {
+    background-color:            red;
     color:                       @background;
 }
 
