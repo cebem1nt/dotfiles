@@ -41,8 +41,7 @@ mainbox {
 inputbar {
     spacing:                     10px;
     margin:                      0px;
-    padding:                     15px;
-    border:                      0px;
+    padding:                     10px 15px;
     border-radius:               16px;
     background-color:            @background-alt;
     color:                       @foreground;

@@ -4,9 +4,10 @@ configuration {
 	cycle: true;
 	normalize-match: true;
 	show-icons: true;
-	icon-theme: "Papirus";
 	matching: "normal";
 	tokenize: true;
+
+    kb-cancel: "Escape,MousePrimary";
 
 	/*---------- Drun settings ----------*/
 	drun-match-fields: "name,exec,generic,comment";

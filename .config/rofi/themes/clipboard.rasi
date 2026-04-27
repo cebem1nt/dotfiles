@@ -35,8 +35,8 @@ mainbox {
 inputbar {
     spacing:                10px;
     margin:                 0 0 10px 0;
-    padding:                10px;
-    border-radius:          15px;
+    padding:                10px 15px;
+    border-radius:          16px;
     background-color:       @background-alt;
     text-color:             @foreground;
     children:               [ "entry" ];
@@ -54,8 +54,9 @@ listview {
     scrollbar:              true;
     fixed-height:           true;
     spacing:                5px;
-    padding:                1px;
-    background-color:       @background;
+    padding:                5px;
+    border-radius:          16px;
+    background-color:       @background-alt;
     text-color:             @foreground;
 }
 
@@ -69,22 +70,16 @@ scrollbar {
 element {
     spacing:                8px;
     margin:                 0px;
-    padding:                8px;
+    padding:                8px 10px;
     border:                 0px solid;
-    border-radius:          4px;
+    border-radius:          16px;
     cursor:                 pointer;
     background-color:       transparent;
     text-color:             @foreground;
 }
 
-element normal.normal {
-    background-color:       @background;
-    text-color:             @foreground;
-}
-
 element selected.normal {
-    background-color:       @foreground;
-    text-color:             @background;
+    background-color:       @highlight;
 }
 
 element-icon {

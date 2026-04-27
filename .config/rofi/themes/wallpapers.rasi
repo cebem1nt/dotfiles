@@ -29,9 +29,8 @@ mainbox {
 inputbar {
     background-color:   @background-alt;
     spacing:            8px;
-    border:             2px;
-    border-radius:      15px;
-    padding:            8px 16px;
+    border-radius:      16px;
+    padding:            10px 15px;
     children:           [entry];
 }
 
@@ -49,19 +48,21 @@ listview {
     margin:             15px 0;
     lines:              4;  
     columns:            6;  
-    fixed-height:       true;  
+    border-radius:      16px;
+    fixed-height:       true;
+    background-color:   @background-alt;
 }
 
 element {
-    padding:            0px 11px; 
-    margin:             2px;
-    border-radius:      18px;  
+    padding:            0px 13px; 
+    border-radius:      16px;  
     cursor:             pointer;
     color:              @foreground;
 }
 
 element-text {
-    padding:            35px 15px;
+    margin:             0 0 0 15px;
+    vertical-align:     0.5;
     color:              inherit;
 }
 
@@ -72,6 +73,5 @@ element-icon {
 
 element selected normal,
 element selected active {
-    background-color:   @foreground;  
-    text-color:         @background; 
+    background-color:   @highlight;  
 }
