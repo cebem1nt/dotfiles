@@ -74,17 +74,6 @@
 	<video-files/>
 </action>
 <action>
-	<icon>autocorrection</icon>
-	<name>Anotate with swappy</name>
-	<submenu></submenu>
-	<unique-id>1751212733196377-1</unique-id>
-	<command>swappy -f %f</command>
-	<description>Make some anotations on picture with swappy</description>
-	<range>*</range>
-	<patterns>*</patterns>
-	<image-files/>
-</action>
-<action>
 	<icon>link</icon>
 	<name>Create symlink</name>
 	<submenu></submenu>
@@ -101,14 +90,15 @@
 	<video-files/>
 </action>
 <action>
-	<icon></icon>
-	<name>Snake case file name</name>
-	<submenu></submenu>
+	<icon>format-text-smaller</icon>
+	<name>snake_ case</name>
+	<submenu>Change Case</submenu>
 	<unique-id>1765940212176490-1</unique-id>
 	<command>~/.local/bin/scase -f %f</command>
-	<description>Rename filename to snake cased name</description>
+	<description>Rename file to snake cased name</description>
 	<range>*</range>
 	<patterns>*</patterns>
+	<directories/>
 	<audio-files/>
 	<image-files/>
 	<other-files/>
@@ -116,14 +106,51 @@
 	<video-files/>
 </action>
 <action>
-	<icon></icon>
-	<name>Mark as executable</name>
-	<submenu></submenu>
-	<unique-id>1767547969518283-1</unique-id>
-	<command>chmod +x %f</command>
-	<description>Mark selected script/file as executable (chmod +x)</description>
+	<icon>format-text-smaller</icon>
+	<name>kebab-case</name>
+	<submenu>Change Case</submenu>
+	<unique-id>1777649251663823-2</unique-id>
+	<command>~/.local/bin/scase -f %f -c kebab</command>
+	<description>Rename file to kebab cased name</description>
 	<range>*</range>
 	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
 	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>format-text-smaller</icon>
+	<name>camelCase</name>
+	<submenu>Change Case</submenu>
+	<unique-id>1777649285826995-3</unique-id>
+	<command>~/.local/bin/scase -f %f -c camel</command>
+	<description>Rename file to camel cased name</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>format-text-smaller</icon>
+	<name>space case</name>
+	<submenu>Change Case</submenu>
+	<unique-id>1777649312323907-4</unique-id>
+	<command>~/.local/bin/scase -f %f -c space</command>
+	<description>Rename file to usual case</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
 </action>
 </actions>
