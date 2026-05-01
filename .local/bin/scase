@@ -1,84 +1,76 @@
-#!/bin/bash
+#!/usr/bin/env python3
+import sys, argparse, os
 
-show_help() {
-    echo "Usage: $0 [-f|--file] [--case=\"snake,camel,kebab\"|-c <case>] <operand>"
-    exit 1
-}
+def get_words(cased: str):
+    if ' ' in cased: return cased.split(' ')
+    if '_' in cased: return cased.split('_')
+    if '-' in cased: return cased.split('-')
+    
+    # Camel case
+    words = []
+    word = ""
 
-convert_case() {
-    case "$CASE" in
-        kebab) printf '%s\n' "${s//[[:space:]]/-}" ;;
-        snake) printf '%s\n' "${s//[[:space:]]/_}" ;;
-        camel)
-            local out="" first=true WORD head tail
-            for WORD in $s; do
-                if $first; then
-                    out="$(printf '%s' "$WORD" | tr '[:upper:]' '[:lower:]')"
-                    first=false
-                else
-                    head="${WORD:0:1}"
-                    tail="${WORD:1}"
-                    out+="${head^^}${tail}"
-                fi
-            done
-            printf '%s\n' "$out"
-            ;;
-        *)
-            printf 'Error: use kebab|snake|camel\n' >&2
-            return 2
-            ;;
-    esac
-}
+    for char in cased:
+        if char.islower():
+            word += char
+            continue
 
-IS_FILE=0
-CASE="snake"
-OPERAND=""
+        words.append(word)
+        word = char.lower()
+    
+    words.append(word)
+    return words
 
-while [[ $# -gt 0 ]]; do
-    case "$1" in
-        --case=*) CASE="${1#*=}" ;;
-        -f|--file) IS_FILE=1 ;;
-        -h|--help) show_help ;;
-        -c|--case)
-            if [ -n "$2" ] && [ "${2#-}" = "$2" ]; then
-                CASE="$2"; shift
-            else
-                echo "Error: --case requires a value." >&2; show_help
-            fi
-            ;;
+def convert(words: list[str], to_case: str):
+    if to_case == "space": 
+        return ' '.join(words)
+    if to_case == "snake": 
+        return '_'.join(words)
+    if to_case == "kebab": 
+        return '-'.join(words)
 
-        *)
-            if [[ -z "$OPERAND" ]]; then
-                OPERAND="$1"
-            else
-                OPERAND="$OPERAND $1"
-            fi
-            ;;
-    esac
-    shift
-done
+    # Camel case
+    out = None
 
-if [[ -z "$OPERAND" ]]; then
-    show_help
-fi
+    for word in words:
+        if out is None:
+            out = word
+        else:
+            out += word.capitalize()
 
-if [[ $IS_FILE -eq 1 ]]; then
-    [[ -f "$OPERAND" ]] || { echo "File \"$OPERAND\" doesn't exist" >&2; exit 1; }
+    return out
 
-    dir="${OPERAND%/*}"
-    base="${OPERAND##*/}"
-    [[ "$dir" == "$OPERAND" ]] && dir=""
+def main(args: argparse.Namespace):
+    if not args.file:
+        words = get_words(args.cased)
+        converted = convert(words, args.case)
+        return print(converted)
 
-    s="$base"
-    newbase="$(convert_case)"
-    newbase="${newbase%%$'\n'}"
-    target=${dir:+$dir/}$newbase
+    if not os.path.exists(args.cased):
+        sys.stderr.write(f'File "{args.cased}" does not exist\n')
+        exit(1)
 
-    [[ "$target" == "$OPERAND" ]] && { printf '%s\n' "$target"; exit 0; }
-    [[ -e "$target" ]] && { echo "Target already exists: $target" >&2; exit 1; }
+    head, tail = os.path.split(args.cased)
+    filename, ext = os.path.splitext(tail)
 
-    mv -v "$OPERAND" "$target" || { echo "Failed to rename \"$OPERAND\" -> \"$target\"" >&2; exit 1; }
-else
-    s="$OPERAND"
-    convert_case
-fi
+    words = get_words(filename)
+    converted = convert(words, args.case)
+
+    if ext:
+        converted += ext
+
+    final = os.path.join(head, converted)
+    os.rename(args.cased, final)
+    print(final)
+
+if __name__ == '__main__':
+    p = argparse.ArgumentParser(
+        description="Convert a string to different cases (snake_case kebab-case camelCase)"
+    )
+
+    p.add_argument("cased", metavar="STRING/FILE")
+    p.add_argument("-f", "--file", action="store_true", help="treat given argument as file path, rename file instead")
+    p.add_argument("-c", "--case", type=str, default="snake", choices=("snake", "kebab", "camel", "space"), help="case to convert to")
+
+    args = p.parse_args()
+    main(args)
