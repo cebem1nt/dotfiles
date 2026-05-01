@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [[ $# == 0 ]]; then
+    echo "Sends notification after given command was finished"
+    echo "Usage: $0 <command>"
+    exit 1
+fi
+
+$@
+
+notify-send --icon="emblem-information" \
+            --app-name="$0" -u critical \
+            "Command finished" \
+            "Execution of $* is done"
