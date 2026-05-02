@@ -1,15 +1,21 @@
 #!/bin/bash
 
-PREVIOUS_PROFILE=$(asusctl profile -p | grep 'Active profile is' | cut -d' ' -f4)
+if ! which powerprofilesctl >/dev/null 2>&1; then
+    echo "You don't have powerprofilesctl."
+    echo "Power profiles are not supported"
+    exit 1
+fi
+
+PREVIOUS_PROFILE=$(powerprofilesctl get)
 PROFILE_CHANGED=0
 
-if [ "$PREVIOUS_PROFILE" != "Performance" ]; then
-    asusctl profile -P Performance
+if [ "$PREVIOUS_PROFILE" != "performance" ]; then
+    powerprofilesctl set performance
     PROFILE_CHANGED=1
 fi
 
 systemd-inhibit --what=idle -- "$@"
 
 if [ "$PROFILE_CHANGED" = 1 ]; then
-    asusctl profile -P "$PREVIOUS_PROFILE"
+    powerprofilesctl set "$PREVIOUS_PROFILE"
 fi
