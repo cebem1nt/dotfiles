@@ -112,27 +112,32 @@ Just run `restore` script, it will restore all your previous config files stored
 ```
 
 ## Binds
+<table>
+  <tr><td>General</td><td>Menus & Navigation</td><td>Misc/Hacky</td></tr>
+  <tr>
+  <td>
 
-### General
 | Bind                  | Description              |
 |---------------------- |--------------------------|
-| `SUPER + ;`           | Open terminal            |
-| `SUPER + n`           | Open browser             |
+| `SUPER + ;`           | Open alacritty           |
+| `SUPER + SHIFT ;`     | Open alacritty in floating mode |
+| `SUPER + n`           | Open zen                 |
 | `SUPER + m`           | Open vscodium            |
 | `SUPER + b`           | Open thunar              |
-| `SUPER + q`           | close window             |
-| `SUPER SHIFT + q`     | kill window              |
-| `SUPER + w`           | center window            |
-| `SUPER + f`           | toggle floating window   |
-| `SUPER SHIFT + f`     | fullscreen window        |
-| `SUPER + u`           | pin window               |
-| `SUPER + o`           | toggle windows grouping  |
+| `SUPER + q`           | Close window             |
+| `SUPER SHIFT + q`     | Kill window              |
+| `SUPER + w`           | Center window            |
+| `SUPER + f`           | Toggle floating window   |
+| `SUPER SHIFT + f`     | Fullscreen window        |
+| `SUPER + u`           | Pin window               |
+| `SUPER + o`           | Toggle windows grouping  |
 | `SUPER CTRL  + r`     | Reload hyprland config   |
-| `SUPER SHIFT + >`     | Cycle next wallpaper     |
-| `SUPER SHIFT + <`     | Cycle prev wallpaper     |
-| `SUPER SHIFT + /`     | Toggle wallpapes cycle   |
-
-### Menus
+| `SUPER + z`           | Make active window a bit smaller |
+| `SUPER + c`           | Make active window a bit bigger |
+    
+  </td>
+  <td>
+    
 | Bind                  | Description              |
 |---------------------- |--------------------------|
 | `SUPER + r`           | Drun (app runner)        |
@@ -144,17 +149,37 @@ Just run `restore` script, it will restore all your previous config files stored
 | `SUPER SHIFT + v`     | Glyphs selector          |
 | `SUPER SHIFT + r`     | Shell commands runner    |
 | `SUPER SHIFT + e`     | Bookmarks                |
-
-### Navigation
-| Bind                  | Description              |
-|---------------------- |--------------------------|
 | `SUPER + arrow keys`  | move focus in direction  |
 | `SUPER + 1...6`       | go to workspace          |
 | `SUPER SHIFT + 1...6` | move to workspace        |
 | `SUPER CTRL + 1...6`  | move & go to workspace   |
 | `SUPER + s`           | toggle special workspace |
 | `SUPER SHIFT + s`     | move to special workspace|
+  
+  </td>
+  <td>
 
+| Bind                  | Description              |
+|---------------------- |--------------------------|
+| `SUPER + tab`         | Cycle workspace layout (dwindle, scrolling, ...) |
+| `SUPER + SHIFT tab`   | Cycle previous workspace layout |
+| `SUPER + >`           | Play next song           |
+| `SUPER + >`           | Play previous song       |
+| `SUPER + p`           | Pseudotile window        |
+| `SUPER + x`           | Hide window (A.K.A "minimize") |
+| `SUPER + o`           | Create a window group    |
+| `SUPER + ]`           | Select next window in group |
+| `SUPER + [`           | Select previous window in group |
+| `SUPER SHIFT + >`     | Cycle next wallpaper     |
+| `SUPER SHIFT + <`     | Cycle prev wallpaper     |
+| `SUPER SHIFT + /`     | Toggle wallpapes cycle   |
+| `SUPER SHIFT + y`     | Switch between light and dark theme |
+| `SUPER + space`       | Hide/show dock           |
+| `SUPER SHIFT + space` | Reload waybar            |
+
+  </td>
+  </tr>
+</table>
 
 > [!NOTE]
 > For more detailed info see `.config/hypr/configs/binds.conf`. It's well commented, you can find more fancy keybinds like: next/prev song, hide waybar, record video, increase/decrease volume or change them
