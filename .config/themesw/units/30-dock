@@ -10,4 +10,4 @@ fi
 
 killall nwg-dock-hyprland
 
-nwg-dock-hyprland -p left -d -w 5 -nolauncher -ml 5 -l top -hl bottom &
+nwg-dock-hyprland -p left -d -w 5 -nolauncher -ml 5 -l top -hl bottom -i 40 &

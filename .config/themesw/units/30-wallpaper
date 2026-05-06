@@ -13,4 +13,5 @@ CURRENT_WALLPAPER=$(awww query -j | jq -r '.[""][].displaying.image')
 
 if [[ $CURRENT_WALLPAPER != $WALLPAPER ]]; then
     ~/.local/bin/auto_walls set $WALLPAPER &
+    exit 0
 fi
