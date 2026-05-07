@@ -2,11 +2,11 @@
 set -e
 
 BACKUP_DIR="$HOME/.local/old"
-if [ -e "$BACKUP_DIR" ]; then
+if [ -e "$BACKUP_DIR" ] && [ "$(ls -A "$BACKUP_DIR")" ]; then
     i=1
     while :; do
-        CANDIDATE="${BACKUP_DIR}_${i}"
-        if [ ! -e "$CANDIDATE" ]; then
+        CANDIDATE="${BACKUP_DIR}-${i}"
+        if [ ! -e "$CANDIDATE" ] && [ "$(ls -A "$BACKUP_DIR")" ]; then
             BACKUP_DIR="$CANDIDATE"
             break
         fi
@@ -16,6 +16,11 @@ fi
 
 SRC=$(dirname "$0")
 DEST=${DEST:-$HOME}
+LOG_FILE="install.log"
+
+_info() { 
+    printf '\033[32m[INFO]\033[0m %s\n' "$*"
+}
 
 prompt() {
     read -r -p "$1"$'\033[32m [Y/n] \033[0m' CHOICE
@@ -29,9 +34,8 @@ prompt() {
     fi
 }
 
-_info() { 
-    printf '\033[32m[INFO]\033[0m %s\n' "$*"; 
-}
+echo "===== Beginning of the installation =====" >> $LOG_FILE
+cat /etc/os-release >> $LOG_FILE
 
 cat <<'EOF'
                ,
@@ -89,16 +93,30 @@ export BACKUP_DIR
 export SRC
 export DEST
 
-mkdir -p $BACKUP_DIR/.config
-mkdir -p $BACKUP_DIR/.local
-
-mkdir -p $DEST/.config # Just in case
-mkdir -p $DEST/.local
-mkdir -p $DEST/.local/share/applications
-mkdir -p $DEST/.local/share/templates
+mkdir -p "$BACKUP_DIR"
+mkdir -p "$DEST"/.config # Just in case
+mkdir -p "$DEST"/.local
+mkdir -p "$DEST"/.local/share/applications
+mkdir -p "$DEST"/.local/share/templates
 
 for SCRIPT in "${SCRIPTS[@]}"; do
     clear -x
     _info "Running script - $SCRIPT"
-    ./install/"$SCRIPT"
+    ./install/"$SCRIPT" 2>&1 | tee -a $LOG_FILE
 done
+
+echo "===== End of the installation =====" >> $LOG_FILE
+
+echo -ne "\e[34m"
+cat <<'EOF'
+   ___   ____     __              __
+  / _ | / / / ___/ /__  ___  ___ / /
+ / __ |/ / / / _  / _ \/ _ \/ -_)_/ 
+/_/ |_/_/_/  \_,_/\___/_//_/\__(_)  
+
+EOF
+echo -e "\e[0m"
+
+echo "Experienced some errors/problems with the installer?"
+echo "Feel free to post an issue: https://github.com/cebem1nt/dotfiles/issues"
+echo "Please, provide the log file ($LOG_FILE)"

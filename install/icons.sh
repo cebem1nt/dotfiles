@@ -26,6 +26,7 @@ papirus-folders -C bluegrey
 check_status $?
 
 # Uninstall after changing colors
+_info "Uninstalling papirus-folders ..."
 wget -qO- https://git.io/papirus-folders-install | env uninstall=true sh
 
 if [[ -n $AUR ]]; then
@@ -38,21 +39,18 @@ if [[ -n $AUR ]]; then
     fi
 else
     # Manual bibata cursor installation
-    if ls -d /usr/share/icons/Bibata-* 2>/dev/null; then
+    if ls -d /usr/share/icons/Bibata-Modern-Ice 2>/dev/null; then
         _info "Cursor theme is allready installed."
         _done "All icons were installed"
         exit
     fi
 
     _info "Installing bibata-cursor manually..."
-    wget https://github.com/ful1e5/Bibata_Cursor/releases/download/v2.0.7/Bibata.tar.xz
+    wget https://github.com/ful1e5/Bibata_Cursor/releases/latest/download/Bibata-Modern-Ice.tar.xz 
 
-    tar -xvf Bibata.tar.xz
-
-    _info "sudo mv Bibata-* /usr/share/icons/"
-    sudo mv Bibata-* /usr/share/icons/ >/dev/null 2>&1
-
-    rm Bibata.tar.xz
+    echo_and_exec tar -xvf Bibata-Modern-Ice.tar.xz
+    echo_and_exec sudo mv Bibata-Modern-Ice /usr/share/icons/
+    echo_and_exec rm ./Bibata-Modern-Ice.tar.xz
 fi
 
 _done "All icons were installed"

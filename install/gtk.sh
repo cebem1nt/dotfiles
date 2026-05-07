@@ -3,7 +3,7 @@ source $(dirname "$0")/_install_base.sh
 _script "Installing GTK themes..."
 
 # Arch based distro, install gtk themes from aur.
-# I could not find a remote source of these pre-built themes.
+# I could not find a remote source with these pre-built themes.
 if [[ -z $AUR ]]; then
     _error "No AUR helper found. Please install GTK themes manually:"
     echo "         - kripton: https://github.com/EliverLara/Kripton"

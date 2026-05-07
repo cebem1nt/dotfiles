@@ -9,7 +9,7 @@ git submodule init
 
 if [ -e "$DEST/.local/bin" ]; then
     ensure_backup_dir
-
+    
     mv "$DEST/.local/bin" "$BACKUP_DIR"/.local/bin
 fi
 

@@ -8,11 +8,11 @@ elif which paru >/dev/null 2>&1; then
     AUR=paru
 fi
 
-_error()   { printf '\033[31m[ERROR]\033[0m %s\n' "$*"; }
-_info()    { printf '\033[32m[INFO]\033[0m %s\n' "$*"; }
+_error()   { printf '\033[31m[ERROR]\033[0m %s\n' "$*";  }
+_info()    { printf '\033[32m[INFO]\033[0m %s\n' "$*";   }
 _script()  { printf '\033[34m[SCRIPT]\033[0m %s\n' "$*"; }
-_done()    { printf '\033[34m[DONE]\033[0m %s\n' "$*"; }
-_warning() { printf '\033[33m[WARNING]\033[0m %s\n' "$*"; }
+_done()    { printf '\033[34m[DONE]\033[0m %s\n' "$*";   }
+_warning() { printf '\033[33m[WARNING]\033[0m %s\n' "$*";}
 
 check_status() {
     local message=${2:-"Something went wrong."}

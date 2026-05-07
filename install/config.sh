@@ -18,6 +18,8 @@ for CONFIG_PATH in $SRC/.config/*; do
 
     if [ -e "$DEST/.config/$NAME" ]; then
         _info "$DEST/.config/$NAME found, backing up..."
+
+        mkdir -p "$BACKUP_DIR"/.config
         mv "$DEST/.config/$NAME" "$BACKUP_DIR"/.config
     fi
 
@@ -27,14 +29,10 @@ done
 # Instead of replacing, just add content of these 
 _info "Installing applications, templates from $SRC/.local ..."
 
-# Save previous anyways
-cp -r "$SRC/.local/share/applications/" "$BACKUP_DIR/.local/share/"
-cp -r "$SRC/.local/share/templates/" "$BACKUP_DIR/.local/share/"
-
 cp "$SRC"/.local/share/applications/* "$DEST"/.local/share/applications
 cp "$SRC"/.local/share/templates/* "$DEST"/.local/share/templates
 
-for LOCAL_SHARE_PATH in $SRC/.local/share/*; do
+for LOCAL_SHARE_PATH in "$SRC"/.local/share/*; do
     NAME=$(basename $LOCAL_SHARE_PATH)
 
     if [ "$NAME" = "applications" ] || [ "$NAME" = "templates" ]; then
@@ -44,6 +42,7 @@ for LOCAL_SHARE_PATH in $SRC/.local/share/*; do
     _info "Installing $NAME ..."
     
     if [ -e "$DEST/.local/share/$NAME" ]; then
+        mkdir -p "$BACKUP_DIR"/.local/share
         mv "$DEST/.local/share/$NAME" "$BACKUP_DIR"/.local/share
     fi
 
