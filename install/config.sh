@@ -10,7 +10,7 @@ for CONFIG_PATH in $SRC/.config/*; do
     NAME=$(basename $CONFIG_PATH)
 
     # These are excluded, because of separate scripts
-    if [ $NAME = "waybar" ] || [ $NAME = "spicetify" ] || [ $NAME = "zsh" ]; then
+    if [ $NAME = "waybar" ] || [ $NAME = "spicetify" ] || [ $NAME = "zsh" ] || [ $NAME = "rofi" ] || [ $NAME = "swaync" ]; then
         continue
     fi
     

@@ -65,11 +65,12 @@ SCRIPTS=()
 if [ $(prompt "Would you like a complete installation?") = 1 ]; then
     SCRIPTS+=(
         "config.sh" "gtk.sh" "icons.sh" "scripts.sh" "spicetify.sh" "vscodium.sh" "wallpapers.sh" "waybar.sh" "zen.sh" "zsh.sh"
+        "rofi.sh" "swaync.sh"
     )
 else
-    declare -A SCRIPTS_DEFINITIONS
+    declare -A SCRIPT_PROMPTS
 
-    SCRIPTS_DEFINITIONS=(
+    SCRIPT_PROMPTS=(
         ["config.sh"]="Install allmost all the configuration files from .config and .local?" 
         ["gtk.sh"]="Install GTK themes?"
         ["icons.sh"]="Install icon and cursor themes?"
@@ -80,11 +81,17 @@ else
         ["waybar.sh"]="Install waybar configurations?"
         ["zen.sh"]="Install small zen theme?"
         ["zsh.sh"]="Install zsh configs, oh-my-zsh? with modified lukerandall theme?"
+        ["rofi.sh"]="Install rofi themes/applets?"
+        ["swaync.sh"]="Install swaync configuration files?"
     )
 
-    for SCRIPT in "${!SCRIPTS_DEFINITIONS[@]}"; do
-        if [ $(prompt "${SCRIPTS_DEFINITIONS[$SCRIPT]}") = 1 ]; then
-            SCRIPTS+=($SCRIPT)
+    for SCRIPT in $SRC/install/*; do
+        NAME=$(basename $SCRIPT)
+        
+        [[ $NAME == _* ]] && continue
+
+        if [ $(prompt "${SCRIPT_PROMPTS[$NAME]}") = 1 ]; then
+            SCRIPTS+=($NAME)
         fi
     done
 fi
@@ -102,13 +109,15 @@ mkdir -p "$DEST"/.local/share/templates
 for SCRIPT in "${SCRIPTS[@]}"; do
     clear -x
     _info "Running script - $SCRIPT"
-    ./install/"$SCRIPT" 2>&1 | tee -a $LOG_FILE
+    "$SRC"/install/"$SCRIPT" 2>&1 | tee -a $LOG_FILE
 done
 
 echo "===== End of the installation =====" >> $LOG_FILE
 
+clear -x
 echo -ne "\e[34m"
 cat <<'EOF'
+
    ___   ____     __              __
   / _ | / / / ___/ /__  ___  ___ / /
  / __ |/ / / / _  / _ \/ _ \/ -_)_/ 
@@ -120,3 +129,6 @@ echo -e "\e[0m"
 echo "Experienced some errors/problems with the installer?"
 echo "Feel free to post an issue: https://github.com/cebem1nt/dotfiles/issues"
 echo "Please, provide the log file ($LOG_FILE)"
+echo ""
+echo "You can find your previous configuration files here: ($BACKUP_DIR)"
+echo ""
