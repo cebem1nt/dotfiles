@@ -1,10 +1,25 @@
 source $(dirname "$0")/_install_base.sh
 
-_script "Installing oh-my-zsh..."
+_script "Installing zsh related configs..."
+
+if [[ -e "$DEST/.config/zsh" ]] || [[ -e "$DEST/.zshrc" ]]; then
+    _info "Previous zsh config found, backing up..."
+
+    ensure_backup_dir
+
+    mkdir -p "$BACKUP_DIR"/.config
+    
+    mv 2>/dev/null "$DEST/.config/zsh" "$BACKUP_DIR/.config/"
+    mv 2>/dev/null "$DEST/.zshrc" "$BACKUP_DIR/"
+fi
+
+mkdir -p "$DEST/.config"
+cp -r "$SRC/.config/zsh" "$DEST/.config/"
 
 export ZSH="$DEST/.config/oh-my-zsh"
 export RUNZSH=no
 
+_info "Installing oh-my-zsh..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 check_status $?
 
@@ -38,8 +53,6 @@ ZSH_THEME_GIT_PROMPT_UNMERGED="?"
 EOF
 
 _info "Adding .zshenv ..."
-cp $SRC/.zshenv $DEST
-
-
+cp "$SRC"/.zshenv "$DEST"
 
 _done "zsh and oh-my-zsh were installed!"
