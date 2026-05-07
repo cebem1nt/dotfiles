@@ -1,0 +1,13 @@
+# Packages from AUR
+# Apps used by default
+vscodium-bin 
+zen-browser-bin 
+peaclock 
+
+# Gtk themes
+kripton-theme-git
+tokyonight-gtk-theme-git
+
+# Optional, will be installed from source otherwise
+spicetify-cli 
+bibata-cursor-theme 

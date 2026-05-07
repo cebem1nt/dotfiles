@@ -1,0 +1,50 @@
+# Base
+hyprland 
+hyprlock 
+hypridle 
+xdg-desktop-portal-gtk 
+xdg-desktop-portal-hyprland 
+
+# Base shell components
+waybar 
+swaync 
+rofi
+nwg-dock-hyprland
+awww 
+
+# Optional shell. Some configurations might not work
+# due to env variables in .config/zsh/.zshrc
+zsh 
+
+# Terminal emulator, file browser, spotify and neovim. 
+alacritty 
+thunar
+spotify-launcher
+neovim 
+
+# Misc applications/libs used in scripts
+# or referred/used in some context menus 
+cava
+pavucontrol
+eza 
+fzf 
+htop 
+jq 
+wtype 
+nvtop 
+flameshot 
+grim 
+slurp 
+python-psutil
+qt6ct 
+kvantum
+powertop 
+nwg-look 
+mission-center 
+
+# Fonts and icons.
+papirus-icon-theme
+noto-fonts 
+noto-fonts-emoji
+ttf-cascadia-code 
+ttf-cascadia-code-nerd

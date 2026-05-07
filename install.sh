@@ -18,8 +18,15 @@ SRC=$(dirname "$0")
 DEST=${DEST:-$HOME}
 LOG_FILE="install.log"
 
+_error()   { printf '\033[31m[ERROR]\033[0m %s\n' "$*";  }
+
+
 _info() { 
     printf '\033[32m[INFO]\033[0m %s\n' "$*"
+}
+
+_warning() { 
+    printf '\033[33m[WARNING]\033[0m %s\n' "$*"
 }
 
 prompt() {
@@ -31,6 +38,64 @@ prompt() {
             n|N|No|no ) echo 0;;
             y|Y|* ) echo 1;;
         esac
+    fi
+}
+
+check_packges() {
+    while IFS= read -r LINE; do
+        if [[ -z "$LINE" ]] || [[ ${LINE# } == \#* ]]; then 
+            continue
+        fi
+
+        PKG="${LINE//[[:space:]]/}"
+
+        if ! pacman -Q "$PKG" >/dev/null 2>&1 ; then
+            echo -n "$PKG "
+        fi
+    done < $1
+}
+
+verify_packages() {
+    _info "Verifying necessary packages...."
+
+    if which pacman >/dev/null 2>&1; then
+        MISSING=$(check_packges "$SRC/packages.txt") 
+        MISSING_AUR=$(check_packges "$SRC/packages.aur.txt") 
+
+        if [[ -n "$MISSING" ]]; then
+            _warning "The following packages are not insalled:"
+            echo "    $MISSING"
+            _warning "If you know what you're doing, skip"
+
+            if [[ $(prompt "Install missing packages?") == 1 ]]; then
+                sudo pacman -Syu $MISSING
+            fi
+        fi
+
+        if [[ -n "$MISSING_AUR" ]]; then
+            _warning "The following AUR packages are not insalled:"
+            echo "    $MISSING_AUR"
+            _warning "If you know what you're doing, skip"
+
+            if [[ $(prompt "Install missing packages?") == 1 ]]; then
+                if which yay >/dev/null 2>&1; then
+                    yay -S $MISSING_AUR
+                elif which paru >/dev/null 2>&1; then
+                    paru -S $MISSING_AUR
+                else
+                    _error "No AUR helper found, could not install."
+                    read -r -p "Press ENTER to continue..."
+                fi
+            fi
+        fi
+    else
+        _warning "You're not using an arch/arch based distro."
+        _warning "Installer might not work as expected"
+        _info "Please make sure to install these packages acording to your distribution: "
+        
+        cat "$SRC/packages.txt" "$SRC/packages.aur.txt"
+
+        read -r -p "Press ENTER to continue..."
     fi
 }
 
@@ -95,6 +160,8 @@ else
         fi
     done
 fi
+
+verify_packages | tee -a $LOG_FILE
 
 export BACKUP_DIR
 export SRC
