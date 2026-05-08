@@ -1,18 +1,5 @@
 # My dotfiles
-My archlinux dotfiles, some scripts and wallpapers 
-
-## Quick info
-- Panel: waybar
-- Notifications: swaync
-- Menus: rofi
-- Terminal: alacritty
-- Shell: zsh (+ohmyzsh)
-- Font: Cascadia Code
-- GTK theme: [kripton](https://github.com/EliverLara/Kripton) / [Tokyonight](https://github.com/Fausto-Korpsvart/Tokyonight-GTK-Theme) (Light theme)
-- Icon theme: [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
-- fetch: [mine :)](https://github.com/cebem1nt/sillyfetch)
-
-Big thanks to this [collection of rofi themes](https://github.com/adi1090x/rofi)
+My daily drive archlinux dotfiles including scripts, wallpapers pack and some other tweaks. The "shell" is built using classic `rofi`, `swaync` and `waybar`.
 
 ## Previews
 
@@ -22,7 +9,8 @@ Big thanks to this [collection of rofi themes](https://github.com/adi1090x/rofi)
 
 > [!IMPORTANT]
 > Installer script was tested on Arch linux.
-> Other distros are still supported, but some things might not work as expected.
+> 
+> ***On another distro, some things might not work as expected.***
 >
 > If you're on another distro, ***please install these packages*** based on your distro package manager:
 >   1) [Packages](https://github.com/cebem1nt/dotfiles/blob/main/packages.txt) (oficial repos on Arch)
