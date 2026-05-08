@@ -29,6 +29,19 @@ done
 # Instead of replacing, just add content of these 
 _info "Installing applications, templates from $SRC/.local ..."
 
+if [[ -d "$DEST/.local/share/applications" ]]; then 
+    _info "Previous applications found, backing up..."
+    mkdir -p "$BACKUP_DIR/.local/share/"
+    mv "$DEST"/.local/share/applications "$BACKUP_DIR/.local/share/"
+fi
+
+if [[ -d "$DEST/.local/share/templates" ]]; then 
+    _info "Previous templates found, backing up..."
+    mkdir -p "$BACKUP_DIR/.local/share/"
+    mv "$DEST"/.local/share/templates "$BACKUP_DIR/.local/share/"
+fi
+
+mkdir -p "$DEST"/.local/share
 cp "$SRC"/.local/share/applications/* "$DEST"/.local/share/applications
 cp "$SRC"/.local/share/templates/* "$DEST"/.local/share/templates
 

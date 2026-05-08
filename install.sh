@@ -170,8 +170,6 @@ export DEST
 mkdir -p "$BACKUP_DIR"
 mkdir -p "$DEST"/.config # Just in case
 mkdir -p "$DEST"/.local
-mkdir -p "$DEST"/.local/share/applications
-mkdir -p "$DEST"/.local/share/templates
 
 for SCRIPT in "${SCRIPTS[@]}"; do
     clear -x
