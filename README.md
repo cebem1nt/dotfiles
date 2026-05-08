@@ -1,9 +1,60 @@
 # My dotfiles
 My daily drive archlinux dotfiles including scripts, wallpapers pack and some other tweaks. The "shell" is built using classic `rofi`, `swaync` and `waybar`.
 
-## Previews
+<details open>
+  <summary>Info</summary>
 
-<img width="1920" height="1080" alt="preview" src="https://github.com/user-attachments/assets/606e4699-0a4b-4137-85ad-2a5a9c412517" />
+- WM: Hyprland
+- Fonts: [Cascadia Code](https://github.com/microsoft/cascadia-code) and [Caskaydia Cove](https://github.com/eliheuer/caskaydia-cove) (Nerd font version)
+- GTK themes: [Kripton](https://github.com/EliverLara/Kripton) and [Tokyonight](https://github.com/Fausto-Korpsvart/Tokyonight-GTK-Theme) (For the light theme)
+- Icon theme: [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
+- Shell: zsh with [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) 
+
+"Shell" Components:
+
+- `Rofi`: Runner, tiny top file browser, wallpapers selector, logout menu, clipboard
+- `Waybar`: Top panel
+- `Swaync`: Notification daemon and menu
+- `nwg-dock-hyprland`: The dock at the left
+
+Misc applications used:
+
+- Alacritty: Terminal emultator
+- Zen: Web browser
+- Thunar: File browser 
+- Vscodium: text editor 
+- Neovim: another text editor
+
+</details>
+
+## Screenshots
+
+<img alt="preview" src="https://github.com/user-attachments/assets/606e4699-0a4b-4137-85ad-2a5a9c412517" />
+
+## Important notes
+
+### Default terminal emulator
+
+Default terminal emulator is `alacritty` make sure it is installed. To spawn it use `SUPER + ;`. For more bindings list see [Binds](#binds)
+
+### Hyprland coniguration
+
+Hyprland configuration files are located in [`~/.config/hypr/`](.config/hypr/) and are splitted into sub-configs that are located under `configs/`. Each one has a link to the wiki page related to it at the top. 
+
+### XDG Base directories
+
+I use slightly different XDG directories on my system: 
+
+- Instead of `~/Downloads` - `~/dow`
+- Instead of `~/Desktop` - `~/wsp`
+- Instead of `~/Pictures` - `~/med/pictures`
+- Instead of `~/Videos` - `~/med/videos`
+
+Please keep that in mind before running the installation. This might screw up some of your things. Anyways, you always can change it, here:
+
+- `~/.config/user-dirs.dirs`
+- `~/.config/hypr/configs/environ.conf`
+- `~/.config/zsh/.zshrc`
 
 ## Installation
 
@@ -111,7 +162,29 @@ Alternatively, you can install components separately by running scripts from `in
 </table>
 
 > [!NOTE]
-> For more detailed info see `.config/hypr/configs/binds.conf`. It's well commented, you can find more fancy keybinds like: next/prev song, hide waybar, record video, increase/decrease volume or change them
+> For more detailed info see [`~/.config/hypr/configs/binds.conf`](.config/hypr/configs/binds.conf). It's well commented, you can find more fancy keybinds like: next/prev song, hide waybar, record video, increase/decrease volume or change them
+
+## Scripts
+
+I have a huge collection of scripts for the usage on my system. You can find them in [`~/.local/bin`](.local/bin/). Some of them are used from [`~/.config/hypr/configs/binds.conf`](.config/hypr/configs/binds.conf) others are used from waybar modules config in [`~/.config/waybar/modules.jsonc`](.config/waybar/modules.jsonc). Some are used from swaync buttons config in [`~/.config/swaync/config.json`](.config/swaync/config.json).
+
+You can see full scripts cheatsheet [here](.local/bin/README.md)
+
+### Wallpapers menu / daemon
+
+The main script responsible for anything wallpapers related is [auto_walls](https://github.com/cebem1nt/auto_walls). It can:
+
+- Pipe wallpapers menu to rofi
+- Set keyboard backlight color based on dominant wallpaper color
+- Set next/previous wallpapers
+- Set next wallpaper once in N minutes
+
+For more info / setup guide see [README](https://github.com/cebem1nt/auto_walls#auto-walls)
+
+### Light/Dark theme
+
+[`themesw`](.local/bin/themesw) is responsible for the theme switching. It stores name of the next theme in [`~/.config/themesw/next`](.config/themesw/next) and basically just runns sub-scripts that switch theme for each individual application. Sub scripts are located at [`~/.config/themesw/units`](.config/themesw/units/)
 
 ## Something doesn't work / is missing ? 
+
 Feel free to post an issue or contribute!
