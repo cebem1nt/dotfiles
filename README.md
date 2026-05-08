@@ -49,7 +49,7 @@ Big thanks to this [collection of rofi themes](https://github.com/adi1090x/rofi)
   </table>
 </details>
 
-## Installationnd:
+## Installation
 
 > [!IMPORTANT]
 > Installer script was tested on Arch linux.
