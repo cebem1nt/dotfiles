@@ -1,5 +1,5 @@
 # Installs papirus-icon theme and bibata-cursors
-source $(dirname "$0")/_install_base.sh
+source $(dirname "$0")/__base.sh
 
 _script "Installing icon themes..."
 

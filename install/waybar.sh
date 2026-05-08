@@ -1,5 +1,5 @@
 # Install waybar config files
-source $(dirname "$0")/_install_base.sh
+source $(dirname "$0")/__base.sh
 
 _script "Installing waybar config files..."
 

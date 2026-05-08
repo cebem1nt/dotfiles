@@ -182,7 +182,7 @@ Or you can install components separately by running scripts from `install/` dire
 
 ## Scripts
 
-I have a huge collection of scripts for the usage on my system. You can find them in [`~/.local/bin`](.local/bin/). Some of them are used from [`~/.config/hypr/configs/binds.conf`](.config/hypr/configs/binds.conf) others are used from waybar modules config in [`~/.config/waybar/modules.jsonc`](.config/waybar/modules.jsonc). Some are used from swaync buttons config in [`~/.config/swaync/config.json`](.config/swaync/config.json).
+I have a huge collection of scripts for the usage on my system. You can find them in [`~/.local/bin`](.local/bin/). Some of them are used from [hyprland binds config](.config/hypr/configs/binds.conf) others are used from [waybar modules config](.config/waybar/modules.jsonc). Some are used from [swaync buttons config](.config/swaync/config.json).
 
 You can see full scripts cheatsheet [here](.local/bin/README.md)
 
@@ -200,6 +200,8 @@ For more info / setup guide see [README](https://github.com/cebem1nt/auto_walls#
 ### Light/Dark theme
 
 [`themesw`](.local/bin/themesw) is responsible for the theme switching. It stores name of the next theme in [`~/.config/themesw/next`](.config/themesw/next) and basically just runns sub-scripts that switch theme for each individual application. Sub scripts are located at [`~/.config/themesw/units`](.config/themesw/units/)
+
+
 
 ## Something doesn't work / is missing ? 
 

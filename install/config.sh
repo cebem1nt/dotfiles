@@ -1,5 +1,5 @@
 # Installs "almost everything" from .config and .local
-source $(dirname "$0")/_install_base.sh
+source $(dirname "$0")/__base.sh
 
 _script "Installing config files"
 _info "Installing everything from $SRC/.config ..."

@@ -1,5 +1,5 @@
 # Installs scripts.
-source $(dirname "$0")/_install_base.sh
+source $(dirname "$0")/__base.sh
 
 _script "Installing scripts from $SRC/.local/bin ..."
 
