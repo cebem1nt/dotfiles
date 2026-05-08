@@ -16,40 +16,9 @@ Big thanks to this [collection of rofi themes](https://github.com/adi1090x/rofi)
 
 ## Previews
 
-<table>
-  <tr>
-    <td><img width="400" alt="1" src="https://github.com/user-attachments/assets/2342eb64-6afc-4cba-b7b4-4ef87644c829" /></td>
-    <td><img width="400" alt="2" src="https://github.com/user-attachments/assets/77863272-fe9b-4a0d-9463-60a9f5e94523" /></td>
-  </tr>
-  <tr>
-    <td><img width="400" alt="3" src="https://github.com/user-attachments/assets/f5e5ea6a-d045-4c43-9ce8-9a57c223602b" /></td>
-    <td><img width="400" alt="4" src="https://github.com/user-attachments/assets/f44a8b82-fb4c-43a2-b5f6-bba86b34f110" /></td>
-  </tr>
-  <tr>
-    <td><img width="400" alt="5" src="https://github.com/user-attachments/assets/37ce0c4f-5b6d-4d30-af42-5eb6a9f80823" /></td>
-    <td><img width="400" alt="6" src="https://github.com/user-attachments/assets/a85ae20f-ce46-48b3-9d75-197e465115dd" /></td>
-  </tr>
-</table>
+<img width="1920" height="1080" alt="preview" src="https://github.com/user-attachments/assets/606e4699-0a4b-4137-85ad-2a5a9c412517" />
 
-<details>
-  <summary><h2>Light theme (flashbang!)</h2></summary>
-  <table>
-    <tr>
-      <td><img width="400" alt="2026-04-17_00-59-13" src="https://github.com/user-attachments/assets/fe7372cf-1623-4558-845f-bd2bf571172a" /></td>
-      <td><img width="400" alt="2026-04-03_19-10-48" src="https://github.com/user-attachments/assets/266b55ff-e570-4b63-a1cd-d0bca158d00a" /></td>
-    </tr>
-    <tr>
-      <td><img width="400" alt="2026-04-03_19-14-03" src="https://github.com/user-attachments/assets/e0c4dfbe-e9b2-4cb7-8efd-199e87d7e0d1" /></td>
-      <td><img width="400" alt="2026-04-05_15-45-57" src="https://github.com/user-attachments/assets/8add4fd4-f36b-4c91-8738-ecc5886f33e1" /></td>
-    </tr>
-    <tr>
-      <td><img width="400" alt="2026-04-03_19-18-33" src="https://github.com/user-attachments/assets/14287c46-ecb3-4d73-8b00-3190c5603641" /></td>
-      <td><img width="400" alt="2026-04-18_15-50-04" src="https://github.com/user-attachments/assets/d8092246-eff8-4a3d-b379-a9e74217e1a8" /></td>
-    </tr>
-  </table>
-</details>
-
-## Installationnd:
+## Installation
 
 > [!IMPORTANT]
 > Installer script was tested on Arch linux.
