@@ -36,17 +36,17 @@ cd dotfiles
 ./install.sh # DO NOT run as super user!
 ```
 
-Alternatively, you can install some components separately from `install/` directory:
+Alternatively, you can install components separately by running scripts from `install/` directory:
 
 ```sh
-./install/waybar.sh # install waybar configuration
-./install/spicetify.sh # install spotify theme
-./install/scripts.sh # Install scripts
-./install/config.sh # Install "almost all" configuration files
+./install/waybar.sh      # Waybar configuration
+./install/spicetify.sh   # Spotify theme
+./install/scripts.sh     # Scripts
+./install/config.sh      # "Almost all" configuration files
 ```
 
 ## Uninstallation
-Work in progress.
+**Your previous config files are stored in** `~/.local/old` (or `~/.local/old-N` based on N times executed the install.sh script). Or in another backup directory you entered. You can restore necessary config files manually or using `./restore.sh` script:
 
 ```sh
 ./restore.sh
