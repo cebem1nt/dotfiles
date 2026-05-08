@@ -29,7 +29,7 @@ Misc applications used:
 
 ## Screenshots
 
-<img alt="ezgif-736b23fe5a910dad" src="https://github.com/user-attachments/assets/6040c07a-9b9c-4f2d-be78-4ad3fe19ba17" />
+<img alt="preview" src="https://github.com/user-attachments/assets/422b1acf-e19b-4404-8f9e-f891aa72128c" />
 
 ## Important notes
 
