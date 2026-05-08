@@ -63,11 +63,27 @@ Please keep that in mind before running the installation. This might screw up so
 > 
 > ***On another distro, some things might not work as expected.***
 >
-> If you're on another distro, ***please install these packages*** based on your distro package manager:
->   1) [Packages](https://github.com/cebem1nt/dotfiles/blob/main/packages.txt) (oficial repos on Arch)
->   2) [Packages](https://github.com/cebem1nt/dotfiles/blob/main/packages.aur.txt) (Arch User Repository packages)
+> If you're on another distro, ***please install these packages*** based on your package manager:
+>   1) [Packages](./packages.txt) (oficial repos on Arch)
+>   2) [Packages](./packages.aur.txt) (Arch User Repository packages)
 
-Clone the repo & run the installer:
+---
+
+Before running the installer, install the necessary packages. On archlinux, you can copy & paste this: 
+
+```sh
+sudo pacman -S hyprland hyprlock hypridle xdg-desktop-portal-gtk xdg-desktop-portal-hyprland waybar swaync rofi nwg-dock-hyprland awww zsh alacritty thunar spotify-launcher neovim cava pavucontrol eza fzf htop jq wtype nvtop flameshot grim slurp python-psutil qt6ct kvantum powertop nwg-look mission-center papirus-icon-theme noto-fonts noto-fonts-emoji ttf-cascadia-code ttf-cascadia-code-nerd
+```
+
+Also, **make sure that you have an AUR helper** like yay installed. With an AUR helper install these:
+
+```sh
+yay -S vscodium-bin zen-browser-bin peaclock kripton-theme-git tokyonight-gtk-theme-git spicetify-cli bibata-cursor-theme
+```
+
+Altenatively, you can inspect [packages.txt](./packages.txt) and [packages.aur.txt](./packages.aur.txt), And install manually the packages you think are needed
+
+Now clone the repo & run the installer:
 
 ```sh
 git clone https://github.com/cebem1nt/dotfiles.git --depth=1
@@ -75,7 +91,7 @@ cd dotfiles
 ./install.sh # DO NOT run as super user!
 ```
 
-Alternatively, you can install components separately by running scripts from `install/` directory:
+Or you can install components separately by running scripts from `install/` directory:
 
 ```sh
 ./install/waybar.sh      # Waybar configuration
