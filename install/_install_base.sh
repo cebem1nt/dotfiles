@@ -37,7 +37,7 @@ ensure_backup_dir() {
         mkdir -p "$BACKUP_DIR"
 
         if [[ ! -d "$BACKUP_DIR" ]]; then
-            red "[ERROR]" "Could not create directory. Try again."
+            _error "Could not create directory. Try again."
         fi
     done
 }
