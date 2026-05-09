@@ -148,6 +148,7 @@ else
         ["zsh.sh"]="Install zsh configs, oh-my-zsh? with modified lukerandall theme?"
         ["rofi.sh"]="Install rofi themes/applets?"
         ["swaync.sh"]="Install swaync configuration files?"
+        ["fonts.sh"]="Install fonts and fontconfig?"
     )
 
     for SCRIPT in $SRC/install/*; do
