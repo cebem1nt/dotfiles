@@ -1,10 +1,10 @@
 {
     "hyprland/workspaces": {
         "format": "{icon}",
-        "on-scroll-down": "hyprctl dispatch workspace e+1",
-        "on-scroll-up": "hyprctl dispatch workspace e-1",
+        "on-scroll-down": "hyprctl dispatch \"hl.dsp.focus({workspace = 'e+1'}\")",
+        "on-scroll-up":   "hyprctl dispatch \"hl.dsp.focus({workspace = 'e-1'}\")",
         "persistent-workspaces": { "*": 5 },
-        "cursor" : true,
+        "cursor": true,
         "format-icons": {
             "active": "󰮯",
             "persistent": "",
@@ -17,6 +17,7 @@
         "cursor" : true,
         "on-scroll-up": "niri msg action focus-workspace-up",
         "on-scroll-down": "niri msg action focus-workspace-down",
+        "hide-empty": true,
         "format-icons": {
             "active": "󰮯",
             "default": "",
@@ -76,11 +77,11 @@
     "pulseaudio": {
         "format": "{icon}",
         "format-bluetooth": "{icon}",
-        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-click-right": "hyprctl dispatch exec 'pavucontrol -t 4'",
         "tooltip-format": "{volume}%",
         "format-muted": "<span size='12pt'>󰝟</span>",
         "scroll-step": 2,
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "hyprctl dispatch \"hl.dsp.exec_cmd('pavucontrol -t 4')\"",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -100,7 +101,7 @@
         "min": 0,
         "max": 100,
         "cursor": true,
-        "on-click-right": "hyprctl dispatch exec 'pavucontrol -t 4'"
+        "on-click-right": "hyprctl dispatch \"hl.dsp.exec_cmd('pavucontrol -t 4')\""
     },
 
     "backlight/slider": {
@@ -121,8 +122,8 @@
         "menu-actions": {
   			"action-1": "nmcli radio wifi off",
   			"action-2": "nmcli radio wifi on",
-            "action-3": "hyprctl dispatch exec '[float] alacritty -e nmtui'",
-            "action-4": "hyprctl dispatch exec nm-connection-editor"
+            "action-3": "hyprctl dispatch \"hl.dsp.exec_cmd('alacritty -e nmtui')\"",
+            "action-4": "hyprctl dispatch \"hl.dsp.exec_cmd('nm-connection-editor')\""
   		}
     },
 
@@ -137,7 +138,7 @@
         "tooltip-format-enumerate-connected": "{device_alias}",
         "tooltip-format-enumerate-connected-battery": "{device_alias}   {device_battery_percentage}%",
         "on-click": "~/.local/bin/toggle_bluetooth &",
-        "on-click-right": "hyprctl dispatch exec blueman-manager"
+        "on-click-right": "hyprctl dispatch \"hl.dsp.exec_cmd('blueman-manager')\""
     },
 
     "battery": {
@@ -159,17 +160,17 @@
         "timezone": "America/Argentina/Buenos_Aires",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%H:%M %d %B %Y}",
-        "on-click-right": "hyprctl dispatch exec 'alacritty --class=peaclock -e peaclock'",
+        "on-click-right": "hyprctl dispatch \"hl.dsp.exec_cmd('alacritty --class=peaclock -e peaclock')\"",
         "calendar": {
             "mode": "year",
             "weeks-pos": "right",
             "mode-mon-col": 3,
             "format": {
-                "months": "<span color='#acb0d0'><b>{}</b></span>",
-                "days": "<span color='#acb0d0'><b>{}</b></span>",
-                "weeks": "<span color='#7aa2f7'><b>W{}</b></span>",
+                "months":   "<span color='#acb0d0'><b>{}</b></span>",
+                "weeks":    "<span color='#7aa2f7'><b>W{}</b></span>",
                 "weekdays": "<span color='#e0af68'><b>{}</b></span>",
-                "today": "<span color='#41a6b5'><b><u>{}</u></b></span>"
+                "days":     "<span color='#acb0d0'><b>{}</b></span>",
+                "today":    "<span color='#41a6b5'><b><u>{}</u></b></span>"
             }
         }
     },
@@ -206,19 +207,19 @@
         "menu": "on-click-right",
         "menu-file": "~/.config/waybar/context/ctlcenter.xml",
         "menu-actions": {
-            "action-1-1": "hyprctl dispatch exec '[float] alacritty -e htop'",
-            "action-1-2": "hyprctl dispatch exec '[float] alacritty -e nvtop'",
-            "action-1-3": "hyprctl dispatch exec '[float] alacritty -e pkexec powertop'",
-            "action-1-4": "hyprctl dispatch exec '[float] missioncenter'",
+            "action-1-1": "hyprctl dispatch \"hl.dsp.exec_cmd( 'alacritty -e htop' )\"",
+            "action-1-2": "hyprctl dispatch \"hl.dsp.exec_cmd( 'alacritty -e nvtop' )\"",
+            "action-1-3": "hyprctl dispatch \"hl.dsp.exec_cmd( 'alacritty -e pkexec powertop')\"",
+            "action-1-4": "hyprctl dispatch \"hl.dsp.exec_cmd( 'missioncenter' )\"",
 
-            "action-2-1": "hyprctl dispatch exec nwg-look",
-            "action-2-2": "hyprctl dispatch exec qt6ct",
-            "action-2-3": "hyprctl dispatch exec kvantummanager",
+            "action-2-1": "hyprctl dispatch \"hl.dsp.exec_cmd( 'nwg-look' )\"",
+            "action-2-2": "hyprctl dispatch \"hl.dsp.exec_cmd( 'qt6ct' )\"",
+            "action-2-3": "hyprctl dispatch \"hl.dsp.exec_cmd( 'kvantummanager' )\"",
 
 
-            "action-3-1": "hyprctl keyword monitor 'eDP-1,1920x1080@60, auto,1'",
-  			"action-3-2": "hyprctl keyword monitor 'eDP-1,1920x1080@90, auto,1'",
-  			"action-3-3": "hyprctl keyword monitor 'eDP-1,1920x1080@144,auto,1'",
+            "action-3-1": "hyprctl eval \"hl.monitor({ output = 'eDP-2', mode = '1920x1080@60' })\"",
+  			"action-3-2": "hyprctl eval \"hl.monitor({ output = 'eDP-2', mode = '1920x1080@90' })\"",
+  			"action-3-3": "hyprctl eval \"hl.monitor({ output = 'eDP-2', mode = '1920x1080@144'})\"",
 
             "action-4-1": "~/.local/bin/caffeine shutdown",
             "action-4-2": "~/.local/bin/caffeine handle-lid-switch",
@@ -244,7 +245,8 @@
         "orientation": "horizontal",
         "drawer": {
             "transition-duration": 600,
-            "transition-left-to-right": true
+            "transition-left-to-right": true,
+            "reveal-delay": 450
         },
         "modules" : [
             "pulseaudio", "pulseaudio/slider"
@@ -255,7 +257,8 @@
         "orientation": "horizontal",
         "drawer": {
             "transition-duration": 600,
-            "transition-left-to-right": true
+            "transition-left-to-right": true,
+            "reveal-delay": 450
         },
         "modules" : [
             "backlight", "backlight/slider"
