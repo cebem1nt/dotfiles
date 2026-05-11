@@ -43,12 +43,14 @@ Hyprland configuration files are located in [`~/.config/hypr/`](.config/hypr/) a
 
 ### XDG Base directories
 
-I use slightly different XDG directories on my system: 
+> [!WARNING]
+> I use slightly different XDG directories on my system: 
+> 
+> - Instead of `~/Downloads` - `~/dow`
+> - Instead of `~/Desktop` - `~/wsp`
+> - Instead of `~/Pictures` - `~/med/pictures`
+> - Instead of `~/Videos` - `~/med/videos`
 
-- Instead of `~/Downloads` - `~/dow`
-- Instead of `~/Desktop` - `~/wsp`
-- Instead of `~/Pictures` - `~/med/pictures`
-- Instead of `~/Videos` - `~/med/videos`
 
 Please keep that in mind before running the installation. This might screw up some of your things. Anyways, you always can change it, here:
 
