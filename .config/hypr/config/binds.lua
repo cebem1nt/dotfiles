@@ -28,8 +28,8 @@ end
 -- Generates layout specific binds to avoid error warnings
 local function layout_bind(bind_table)
     return function ()
-        local layout = hl.get_config("general.layout")
-   
+        local layout = hl.get_active_workspace().tiled_layout
+
         if bind_table[layout] then
             hl.dispatch(bind_table[layout])
         end
@@ -161,10 +161,17 @@ hl.bind("SUPER + CTRL + up",    hl.dsp.window.move({ direction = "up" }))
 hl.bind("SUPER + CTRL + down",  hl.dsp.window.move({ direction = "down" }))
 
 -- Swap windows
-hl.bind("SUPER + CTRL + SHIFT + left",  hl.dsp.window.swap({ direction = "left" }))
-hl.bind("SUPER + CTRL + SHIFT + right", hl.dsp.window.swap({ direction = "right" }))
-hl.bind("SUPER + CTRL + SHIFT + up",    hl.dsp.window.swap({ direction = "up" }))
-hl.bind("SUPER + CTRL + SHIFT + down",  hl.dsp.window.swap({ direction = "down" }))
+hl.bind("SUPER + SHIFT + left",  hl.dsp.window.swap({ direction = "left" }))
+hl.bind("SUPER + SHIFT + right", hl.dsp.window.swap({ direction = "right" }))
+hl.bind("SUPER + SHIFT + up",    hl.dsp.window.swap({ direction = "up" }))
+hl.bind("SUPER + SHIFT + down",  hl.dsp.window.swap({ direction = "down" }))
+
+-- Resize active window
+hl.bind("SUPER + CTRL + SHIFT + left",  hl.dsp.window.resize({ x = -70, y = 0,   relative = true }))
+hl.bind("SUPER + CTRL + SHIFT + right", hl.dsp.window.resize({ x =  70, y = 0,   relative = true }))
+hl.bind("SUPER + CTRL + SHIFT + up",    hl.dsp.window.resize({ x =   0, y = -70, relative = true }))
+hl.bind("SUPER + CTRL + SHIFT + down",  hl.dsp.window.resize({ x =   0, y = 70,  relative = true }))
+
 
 -- Switch workspaces: SUPER + [1-workspaces]
 -- Move active window to workspace: SUPER + SHIFT [1-workspaces]

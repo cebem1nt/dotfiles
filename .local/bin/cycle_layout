@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-LAYOUTS=(dwindle scrolling monocle master)
+LAYOUTS=(scrolling dwindle monocle)
 
 INFO=$(hyprctl activeworkspace -j)
 
@@ -23,7 +23,7 @@ else
   TARGET=$(( (i + 1) % ${#LAYOUTS[@]} ))
 fi
 
-hyprctl keyword workspace "$WORKSPACE_ID", layout:"${LAYOUTS[$TARGET]}" > /dev/null
+hyprctl eval "hl.workspace_rule({ workspace = '$WORKSPACE_ID', layout = '${LAYOUTS[$TARGET]}' })" > /dev/null
 
 notify-send --icon state-information \
             --app-name $0 \
