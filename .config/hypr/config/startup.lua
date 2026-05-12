@@ -7,7 +7,7 @@
 -- https://wiki.hypr.land/Configuring/Basics/Autostart/   
 
 hl.on("hyprland.start", function()
-    local cmds = {
+    local startup = {
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP",  -- Update some dbus variables
         "gsettings set org.gnome.desktop.interface cursor-theme Bibata-Modern-Ice", -- Set cursor theme in gsettings 
         "hyprctl setcursor Bibata-Modern-Ice 24", -- Set cursor theme for hyprland 
@@ -25,8 +25,7 @@ hl.on("hyprland.start", function()
         "~/.local/bin/at_startup" -- Misc user defined custom shell scripts
     }
 
-    for i = 1, #cmds do
-        local cmd = cmds[i]
-        hl.exec_cmd(cmd)
+    for i = 1, #startup do
+        hl.exec_cmd(startup[i])
     end
 end)
