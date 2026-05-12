@@ -37,7 +37,7 @@ These are the configuration files for waybar. To use just copy, paste this direc
 
 ### What is `./layouts` used for?
 
-I have script to toggle between the two modes, the one that gives control over the current track (mpris module) and the one showing current window title. [You can find the script here](https://github.com/cebem1nt/dotfiles/blob/main/.local/bin/change_waybar_layout).
+I have script to toggle between the two modes, the one that gives control over the current track (mpris module) and the one showing current window title. [You can find the script here](../../.local/bin/change_waybar_layout).
 
 ### Context menus? 
 
@@ -45,7 +45,7 @@ Take a look at `./context`, these are GTK builder xml definitions. For more info
 
 ### What is `./colors` used for?
 
-This directory contains different gtk css colors definitions the `style.css` uses. `style.css` by default imports `./colors/colors.css`, which currently is a symlink to `./colors/colors.dark.css`. You can remove symlinks, and use the one you like directly. Why there are two color schemes? [I have a script to switch between the light and dark theme](https://github.com/cebem1nt/dotfiles/blob/main/.local/bin/themesw)
+**This directory contains light/dark color schemes** `style.css` imports `./colors/colors.css`, which currently is a symlink to `./colors/colors.dark.css`. You can remove symlinks, and use the scheme you like directly. Why there are two color schemes? [I have a script to switch between the light and dark theme](../../.local/bin/themesw)
 
 ### Expanding drawers? 
 

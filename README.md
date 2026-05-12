@@ -10,21 +10,6 @@ My daily drive archlinux dotfiles including scripts, wallpapers pack and some ot
 - Icon theme: [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 - Shell: zsh with [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) 
 
-"Shell" Components:
-
-- `Rofi`: Runner, tiny top file browser, wallpapers selector, logout menu, clipboard
-- `Waybar`: Top panel
-- `Swaync`: Notification daemon and menu
-- `nwg-dock-hyprland`: The dock at the left
-
-Misc applications used:
-
-- Alacritty: Terminal emultator
-- Zen: Web browser
-- Thunar: File browser 
-- Vscodium: text editor 
-- Neovim: another text editor
-
 </details>
 
 ## Screenshots
@@ -35,11 +20,11 @@ Misc applications used:
 
 ### Default terminal emulator
 
-Default terminal emulator is `alacritty` make sure it is installed. To spawn it use `SUPER + ;`. For more bindings list see [Binds](#binds)
+Default terminal emulator is `alacritty` make sure it is installed. Press `SUPER + ;` to run it. For more bindings list see [Binds](#binds)
 
 ### Hyprland coniguration
 
-Hyprland configuration files are located in [`~/.config/hypr/`](.config/hypr/) and are splitted into sub-configs that are located under `configs/`. Each one has a link to the wiki page related to it at the top. 
+**Hyprland configuration files are located** in [`~/.config/hypr/`](.config/hypr/) and are splitted into sub-configs that are located under `config/`. Each one has a link to the wiki page related to it at the top. 
 
 ### XDG Base directories
 
@@ -52,13 +37,18 @@ Hyprland configuration files are located in [`~/.config/hypr/`](.config/hypr/) a
 > - Instead of `~/Videos` - `~/med/videos`
 
 
-Please keep that in mind before running the installation. This might screw up some of your things. Anyways, you always can change it, here:
+Please keep that in mind before running the installation. This might screw up some of your things. You can change it, here:
 
-- `~/.config/user-dirs.dirs`
-- `~/.config/hypr/configs/environ.conf`
-- `~/.config/zsh/.zshrc`
+- [`~/.config/user-dirs.dirs`](.config/user-dirs.dirs)
+- [`~/.config/hypr/config/env.lua`](.config/hypr/config/env.lua)
+- [`~/.config/zsh/.zshrc`](.config/zsh/.zshrc)
 
 ## Installation
+
+> [!NOTE]
+> ***Please consider using this repo as a guide, example or an inspiration to create your own dotfiles*** 
+>
+> Author strongly recommends **not installing other's dotfiles blindly**
 
 > [!IMPORTANT]
 > Installer script was tested on Arch linux.
@@ -66,8 +56,8 @@ Please keep that in mind before running the installation. This might screw up so
 > ***On another distro, some things might not work as expected.***
 >
 > If you're on another distro, ***please install these packages*** based on your package manager:
->   1) [Packages](./packages.txt) (oficial repos on Arch)
->   2) [Packages](./packages.aur.txt) (Arch User Repository packages)
+>   1) [packages.txt](./packages.txt) (oficial repos on Arch)
+>   2) [packages.aur.txt](./packages.aur.txt) (Arch User Repository packages)
 
 ---
 
@@ -83,9 +73,9 @@ Also, **make sure that you have an AUR helper** like yay installed. With an AUR 
 yay -S vscodium-bin zen-browser-bin peaclock kripton-theme-git tokyonight-gtk-theme-git spicetify-cli bibata-cursor-theme
 ```
 
-Altenatively, you can inspect [packages.txt](./packages.txt) and [packages.aur.txt](./packages.aur.txt), And install manually the packages you think are needed
+Altenatively, see [packages.txt](./packages.txt) and [packages.aur.txt](./packages.aur.txt), install manually the packages you think are needed
 
-Now clone the repo & run the installer:
+Clone the repo & run the installer:
 
 ```sh
 git clone https://github.com/cebem1nt/dotfiles.git --depth=1
@@ -93,7 +83,7 @@ cd dotfiles
 ./install.sh # DO NOT run as super user!
 ```
 
-Or you can install components separately by running scripts from `install/` directory:
+Or install components separately by running scripts from `install/` directory:
 
 ```sh
 ./install/waybar.sh      # Waybar configuration
@@ -103,7 +93,7 @@ Or you can install components separately by running scripts from `install/` dire
 ```
 
 ## Uninstallation
-**Your previous config files are stored in** `~/.local/old` (or `~/.local/old-N` based on N times executed the install.sh script). Or in another backup directory you entered. You can restore necessary config files manually or using `./restore.sh` script:
+**Your previous config files are stored in** `~/.local/old` (or `~/.local/old-N` based on N times executed the install.sh script). You can restore necessary config files manually or using `./restore.sh` script:
 
 ```sh
 ./restore.sh
@@ -180,11 +170,11 @@ Or you can install components separately by running scripts from `install/` dire
 </table>
 
 > [!NOTE]
-> For more detailed info see [`~/.config/hypr/configs/binds.conf`](.config/hypr/configs/binds.conf). It's well commented, you can find more fancy keybinds like: next/prev song, hide waybar, record video, increase/decrease volume or change them
+> For more detailed info see [`~/.config/hypr/config/binds.lua`](.config/hypr/config/binds.lua). It's well commented, you can find more fancy keybinds like: next/prev song, hide waybar, record video, increase/decrease volume
 
 ## Scripts
 
-I have a huge collection of scripts for the usage on my system. You can find them in [`~/.local/bin`](.local/bin/). Some of them are used from [hyprland binds config](.config/hypr/configs/binds.conf) others are used from [waybar modules config](.config/waybar/modules.jsonc). Some are used from [swaync buttons config](.config/swaync/config.json).
+I have a huge collection of scripts for the usage on my system. You can find them in [`~/.local/bin`](.local/bin/). Some of them are used from [hyprland binds config](.config/hypr/config/binds.lua) others are used from [waybar modules config](.config/waybar/modules.jsonc). Some are used from [swaync buttons config](.config/swaync/config.json).
 
 You can see full scripts cheatsheet [here](.local/bin/README.md)
 
