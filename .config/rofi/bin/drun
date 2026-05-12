@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# I have a custom patch for rofi that adds categories for drun 
-# appliactions you can click and select games, utils, etc.
+# I have a custom patch for rofi that adds categories for drun appliactions.
+# You can click and select shown only games, utils, etc.
 # if you want those, take a look here: https://github.com/cebem1nt/rofi/releases/tag/patch
 #
-# And replace with this one
+# And replace with this one:
 #
 # rofi -theme ~/.config/rofi/themes/launcher.rasi \
 #      -show drun \

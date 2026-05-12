@@ -197,8 +197,24 @@ For more info / setup guide see [README](https://github.com/cebem1nt/auto_walls#
 
 I have a **"software patching"** hobby, that's why there are configs for a bit modified programs in my dotfiles. To be exact:
 
-- `rofi`: [4 addittional drun modes, with pre categorized desktop entries](https://github.com/cebem1nt/rofi/releases/tag/patch)
-- `nwg-dock-hyprland`: [A complete fork: dock reveal on left click instead of hover, won't reveal if there is an app in fullscreen, Misc right click actions reorganization, hyprland v0.55 support](https://github.com/cebem1nt/nwg-dock-hyprland)
+- `rofi`: [4 addittional drun modes](https://github.com/cebem1nt/rofi/releases/tag/patch), with pre categorized desktop entries
+    See [`~/.config/rofi/bin/drun`](.config/rofi/bin/drun)
+  
+    ```sh
+     rofi -theme ~/.config/rofi/themes/launcher.rasi \
+          -show drun \
+          -modi "drun,drun-utils,drun-games,drun-network,drun-media" \
+          -drun-exclude-categories "Game" \
+          -display-drun "" \
+          -display-drun-games "󰊴" \
+          -display-drun-utils "" \
+          -display-drun-network "󰭹" \
+          -display-drun-media "󰲍" \
+    ```
+    
+    <img width="437" height="56" alt="image" src="https://github.com/user-attachments/assets/d11d9a6e-1feb-42e4-b0d5-0950ba7ccbe8" />
+  
+- `nwg-dock-hyprland`: [A complete fork](https://github.com/cebem1nt/nwg-dock-hyprland): dock reveal on left click instead of hover, won't reveal if there is an app in fullscreen, Misc right click actions reorganization, hyprland v0.55 support
 
 ## Something doesn't work / need help ? 
 
