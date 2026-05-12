@@ -193,8 +193,13 @@ For more info / setup guide see [README](https://github.com/cebem1nt/auto_walls#
 
 [`themesw`](.local/bin/themesw) is responsible for the theme switching. It stores name of the next theme in [`~/.config/themesw/next`](.config/themesw/next) and basically just runns sub-scripts that switch theme for each individual application. Sub scripts are located at [`~/.config/themesw/units`](.config/themesw/units/)
 
+## Patched programs
 
+I have a **"software patching"** hobby, that's why there are configs for a bit modified programs in my dotfiles. To be exact:
 
-## Something doesn't work / is missing ? 
+- `rofi`: [4 addittional drun modes, with pre categorized desktop entries](https://github.com/cebem1nt/rofi/releases/tag/patch)
+- `nwg-dock-hyprland`: [A complete fork: dock reveal on left click instead of hover, won't reveal if there is an app in fullscreen, Misc right click actions reorganization, hyprland v0.55 support](https://github.com/cebem1nt/nwg-dock-hyprland)
 
-Feel free to post an issue or contribute!
+## Something doesn't work / need help ? 
+
+Feel free to post an issue, open discussion or contribute!
