@@ -20,7 +20,7 @@ window {
     location:                    east;
     anchor:                      east;
     fullscreen:                  false;
-    width:                       80px;
+    width:                       65px;
     x-offset:                    -7px;
     y-offset:                    0px;
     margin:                      0px;
@@ -126,7 +126,7 @@ listview {
 element {
     enabled:                     true;
     margin:                      0px;
-    padding:                     15px 0;
+    padding:                     10px 0;
     border:                      0px solid;
     border-radius:               100%;
     border-color:                @selected;
@@ -136,7 +136,7 @@ element {
 }
 
 element-text {
-    font: "CaskaydiaCove Nerd Font Propo, bold 19";
+    font: "CaskaydiaCove Nerd Font Propo, bold 16";
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;

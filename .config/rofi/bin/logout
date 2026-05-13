@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-# Current Theme
-theme="$HOME/.config/rofi/themes/logout_menu.rasi"
+THEME="$HOME/.config/rofi/themes/logout.rasi"
 
 # Options
 SHUTDOWN=''
@@ -15,8 +14,7 @@ NO=''
 
 # Rofi CMD
 rofi_cmd() {
-	rofi -dmenu -sync -theme ${theme} \
-         #-theme-str 'mainbox {children: [ "message", "listview" ];}'
+	rofi -dmenu -sync -theme "$THEME"
 }
 
 # Confirmation CMD
@@ -28,7 +26,7 @@ confirm_cmd() {
 		 -theme-str 'textbox {horizontal-align: 0.5;}' \
 		 -mesg 'Are you Sure?' \
 		 -p 'Confirmation' \
-		 -theme ${theme} \
+		 -theme "$THEME" \
 		 -dmenu \
          -sync
 }

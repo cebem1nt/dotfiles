@@ -87,16 +87,16 @@ hl.config({
     decoration = {
         rounding = 15,
 
-        dim_inactive = true,
+        dim_inactive = false,
         dim_strength = 0.12,
 
         blur = {
-            enabled = true,
+            enabled = false,
             passes = 2,
         },
         
         shadow = {
-            enabled = true,
+            enabled = false,
         }
     },
 
@@ -180,7 +180,7 @@ hl.config({
     render = {
         -- Whether the color management pipeline should be enabled or not 
         -- (requires a restart of Hyprland to fully take effect)
-        cm_enabled = true,
+        cm_enabled = false,
 
         -- Report content type to allow monitor profile autoswitch 
         -- (may result in a black screen during the switch)
