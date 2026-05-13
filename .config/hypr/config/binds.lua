@@ -22,6 +22,7 @@ local function run(cmd, window_rules)
     return hl.dsp.exec_cmd(cmd, window_rules)
 end
 
+-- Runs script with given name
 local function run_script(script_name)
     return hl.dsp.exec_cmd(scripts .. script_name)        
 end

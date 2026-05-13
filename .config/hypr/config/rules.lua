@@ -115,14 +115,13 @@ hl.window_rule({
     center = true,
 })
 
-
 hl.window_rule({
-    name = "Full scrolling width",
+    name = "Scrolling almost full width",
     match = {
         class = "codium|vesktop|zen",
     },
     
-    scrolling_width = 1.0
+    scrolling_width = 0.95
 })
 
 hl.window_rule({

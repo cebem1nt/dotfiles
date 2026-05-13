@@ -47,7 +47,14 @@ hl.config({
         -- a given fraction of it is visible for focus to follow. [0.0 - 1.0]
         -- 1.0 -> follow only on hard input
         follow_min_visible = 1.0,
-        focus_fit_method = 0,
+
+        -- When a column is focused, what method should be used to bring it into view. 
+        -- 0: center,
+        -- 1: fit
+        focus_fit_method = 1,
+
+        -- When enabled, causes hl.dsp.layoutmsg("swapcol l/r") to wrap around at the beginning and end.
+        wrap_swapcol = false,
     },
 
     group = {
@@ -79,16 +86,17 @@ hl.config({
 
     decoration = {
         rounding = 15,
-        dim_inactive = false,
-        dim_strength = 0.2,
+
+        dim_inactive = true,
+        dim_strength = 0.12,
 
         blur = {
-            enabled = false,
+            enabled = true,
             passes = 2,
         },
         
         shadow = {
-            enabled = false,
+            enabled = true,
         }
     },
 
