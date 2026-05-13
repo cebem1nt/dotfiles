@@ -81,7 +81,7 @@
         "format-muted": "<span size='12pt'>󰝟</span>",
         "scroll-step": 2,
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-click-right": "hyprctl dispatch \"hl.dsp.exec_cmd('pavucontrol -t 4')\"",
+        "on-click-right": "hyprctl eval \"hl.exec_cmd('pavucontrol -t 4')\"",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -101,7 +101,7 @@
         "min": 0,
         "max": 100,
         "cursor": true,
-        "on-click-right": "hyprctl dispatch \"hl.dsp.exec_cmd('pavucontrol -t 4')\""
+        "on-click-right": "hyprctl eval \"hl.exec_cmd('pavucontrol -t 4')\""
     },
 
     "backlight/slider": {
@@ -122,8 +122,8 @@
         "menu-actions": {
   			"action-1": "nmcli radio wifi off",
   			"action-2": "nmcli radio wifi on",
-            "action-3": "hyprctl dispatch \"hl.dsp.exec_cmd('alacritty -e nmtui')\"",
-            "action-4": "hyprctl dispatch \"hl.dsp.exec_cmd('nm-connection-editor')\""
+            "action-3": "hyprctl eval \"hl.exec_cmd('alacritty -e nmtui')\"",
+            "action-4": "hyprctl eval \"hl.exec_cmd('nm-connection-editor')\""
   		}
     },
 
@@ -138,7 +138,7 @@
         "tooltip-format-enumerate-connected": "{device_alias}",
         "tooltip-format-enumerate-connected-battery": "{device_alias}   {device_battery_percentage}%",
         "on-click": "~/.local/bin/toggle_bluetooth &",
-        "on-click-right": "hyprctl dispatch \"hl.dsp.exec_cmd('blueman-manager')\""
+        "on-click-right": "hyprctl eval \"hl.exec_cmd('blueman-manager')\""
     },
 
     "battery": {
@@ -160,7 +160,7 @@
         "timezone": "America/Argentina/Buenos_Aires",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%H:%M %d %B %Y}",
-        "on-click-right": "hyprctl dispatch \"hl.dsp.exec_cmd('alacritty --class=peaclock -e peaclock')\"",
+        "on-click-right": "hyprctl eval \"hl.exec_cmd('alacritty --class=peaclock -e peaclock')\"",
         "calendar": {
             "mode": "year",
             "weeks-pos": "right",
@@ -207,14 +207,14 @@
         "menu": "on-click-right",
         "menu-file": "~/.config/waybar/context/ctlcenter.xml",
         "menu-actions": {
-            "action-1-1": "hyprctl dispatch \"hl.dsp.exec_cmd( 'alacritty -e htop' )\"",
-            "action-1-2": "hyprctl dispatch \"hl.dsp.exec_cmd( 'alacritty -e nvtop' )\"",
-            "action-1-3": "hyprctl dispatch \"hl.dsp.exec_cmd( 'alacritty -e pkexec powertop')\"",
-            "action-1-4": "hyprctl dispatch \"hl.dsp.exec_cmd( 'missioncenter' )\"",
+            "action-1-1": "hyprctl eval \"hl.exec_cmd('alacritty -e htop')\"",
+            "action-1-2": "hyprctl eval \"hl.exec_cmd('alacritty -e nvtop')\"",
+            "action-1-3": "hyprctl eval \"hl.exec_cmd('alacritty -e pkexec powertop')\"",
+            "action-1-4": "hyprctl eval \"hl.exec_cmd('missioncenter' )\"",
 
-            "action-2-1": "hyprctl dispatch \"hl.dsp.exec_cmd( 'nwg-look' )\"",
-            "action-2-2": "hyprctl dispatch \"hl.dsp.exec_cmd( 'qt6ct' )\"",
-            "action-2-3": "hyprctl dispatch \"hl.dsp.exec_cmd( 'kvantummanager' )\"",
+            "action-2-1": "hyprctl eval \"hl.exec_cmd('nwg-look')\"",
+            "action-2-2": "hyprctl eval \"hl.exec_cmd('qt6ct')\"",
+            "action-2-3": "hyprctl eval \"hl.exec_cmd('kvantummanager')\"",
 
 
             "action-3-1": "hyprctl eval \"hl.monitor({ output = 'eDP-2', mode = '1920x1080@60' })\"",
