@@ -40,8 +40,15 @@ end
 -- Generates layout specific binds to avoid hyprland warnings
 local function layout_bind(bind_table)
     return function ()
-        local layout = hl.get_active_workspace().tiled_layout
+        local workspace = hl.get_active_special_workspace() or
+                          hl.get_active_workspace()
 
+        if not workspace then
+            return
+        end
+
+        local layout = workspace.tiled_layout
+                
         if bind_table[layout] then
             hl.dispatch(bind_table[layout])
         end
@@ -128,7 +135,6 @@ hl.bind("SUPER + E",              toggle_rofi_script("filebrowser"))            
 hl.bind("SUPER + ESCAPE",         toggle_rofi_script("logout"))                 -- Logout menu
 hl.bind("SUPER + SHIFT + R",      toggle_rofi_script("run"))                    -- Raw commands launcher
 hl.bind("SUPER + SHIFT + V",      toggle_rofi_script("icons"))                  -- Nerd font glyphs picker
-hl.bind("SUPER + SHIFT + E",      toggle_rofi(scripts .. "bookmarks"))          -- Bookmarks selector
 hl.bind("SUPER + Y",              toggle_rofi(scripts .. "auto_walls rofi"))    -- Wallpapers menu
 
 -- Misc bindings 
