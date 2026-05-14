@@ -67,9 +67,9 @@ hl.env("DESKTOP_SESSION", "Hyprland")
 hl.env("XCURSOR_THEME", "Bibata-Modern-Ice")
 hl.env("XDG_SESSION_TYPE", "wayland")
 
--- Setting nvidia as opengl provider
-hl.env("VKD3D_FILTER_DEVICE_NAME", "NVIDIA")
-hl.env("VK_ICD_FILENAMES", "/usrshare/vulkan/icd.d/nvidia_icd.json")
+-- Vulkan and nvidia related things
+hl.env("VKD3D_FILTER_DEVICE_NAME", "NVIDIA") -- Force nvidia for VKD3D
+hl.env("VK_ICD_FILENAMES", "/usr/share/vulkan/icd.d/nvidia_icd.json") -- Vulkan was unable to find my nvidia card, this one fixed it
 
 -- User queue suppor for amd mesa dirvers.
 -- https://www.phoronix.com/news/Mesa-25.0-AMDGPU-User-Queue
@@ -80,10 +80,9 @@ hl.env("AMD_USERQ", "1")
 hl.env("GSK_RENDERER", "opengl")
 
 -- Nvidia cache related variables
-hl.env("__GL_SHADER_DISK_CACHE", "1")
-hl.env("__GL_SHADER_DISK_CACHE_PATH", XDG_CACHE_HOME .. "/nv")
-hl.env("__GL_SHADER_DISK_CACHE_SKIP_CLEANUP", "1")
-hl.env("__GL_THREADED_OPTIMIZATIONS", "0")
+hl.env("__GL_SHADER_DISK_CACHE", "1")                           -- Force caching. It might not cache shaders sometimes
+hl.env("__GL_SHADER_DISK_CACHE_PATH", XDG_CACHE_HOME .. "/nv")  -- Store shaders cache here
+hl.env("__GL_SHADER_DISK_CACHE_SKIP_CLEANUP", "1")              -- Do not cleanup nvidia shaders cache
 
 -- Qt related environment variables
 hl.env("QT_QPA_PLATFORM", "wayland")
