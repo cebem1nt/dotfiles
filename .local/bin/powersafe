@@ -1,8 +1,34 @@
 #!/bin/bash
 
-# re-run as root
+if [[ -v HYPRLAND_INSTANCE_SIGNATURE ]] && [ "$(id -u)" -ne 0 ]; then # We better not do this things as root
+    # We're on hyprland, apply some things
+    hyprctl eval "hl.config({ decoration = { blur { enabled = false } } })"     # Disable blur
+    hyprctl eval "hl.config({ decoration = { shadow = { enabled = false } } })" # Disable shadows
+
+    # Lower monitor refresh rate to 60hz.
+    # This one should be working on any monitor (if it supports 60hz)
+    LUA="
+    local monitor = hl.get_active_monitor()
+
+    if not monitor.is_mirror then
+        hl.monitor({
+            output = monitor.name,
+            mode = monitor.width..'x'..monitor.height..'@60'
+        })
+    end
+    "
+
+    hyprctl eval "$LUA"
+fi
+
+# re-run as root, next cmmands require sudo  
 if [ "$(id -u)" -ne 0 ]; then
-    pkexec "$0" "$@"
+    if [[ -v HYPRLAND_INSTANCE_SIGNATURE ]]; then
+        hyprctl eval "hl.exec_cmd('pkexec \"$0\"')"
+    else
+        pkexec "$0"
+    fi
+
     exit
 fi
 

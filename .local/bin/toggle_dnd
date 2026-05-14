@@ -1,9 +1,0 @@
-#!/bin/bash
-
-IS_DND=$(swaync-client --toggle-dnd)
-
-if [[ $IS_DND == "true" ]]; then
-    notify-send "DND is on" "Notifications mode changed" -i indicator-notification-read-dnd -a swaync
-else 
-    notify-send "DND is off" "Notifications mode changed" -i indicator-notification-read -a swaync
-fi

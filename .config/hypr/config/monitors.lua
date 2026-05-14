@@ -13,6 +13,7 @@ hl.monitor({
     scale    = "1",
 })
 
+-- Mirror eDP-2 to all plugged monitors
 hl.monitor({  
     output   = "",  
     mode     = "preferred",  

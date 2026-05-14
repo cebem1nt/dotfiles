@@ -132,9 +132,9 @@ hl.bind("SUPER + SHIFT + E",      toggle_rofi(scripts .. "bookmarks"))          
 hl.bind("SUPER + Y",              toggle_rofi(scripts .. "auto_walls rofi"))    -- Wallpapers menu
 
 -- Misc bindings 
-hl.bind("SUPER + SHIFT + Y",      run_script("themesw"))                         -- Switch between dark/light mode
-hl.bind("SUPER + SHIFT + SPACE",  run_script("restart_waybar"))                  -- Restart waybar
+hl.bind("SUPER + SHIFT + SPACE",  run("killall waybar ; waybar &"))              -- Restart waybar
 hl.bind("SUPER + CTRL + SPACE",   run_script("change_waybar_layout"))            -- Switch current waybar layout 
+hl.bind("SUPER + SHIFT + Y",      run_script("themesw"))                         -- Switch between dark/light mode
 hl.bind("SUPER + MINUS",          run_script("volume -2"), {repeating = true})   -- Decrease volume by 2
 hl.bind("SUPER + EQUAL",          run_script("volume +2"), {repeating = true})   -- Increase volume by 2
 
