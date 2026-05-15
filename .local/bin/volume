@@ -19,11 +19,11 @@ fi
 pactl set-sink-volume @DEFAULT_SINK@ ${NEW_VOL}%
 
 if [ "$NEW_VOL" -gt 70 ]; then
-    ICON="audio-volume-high"
+    ICON="notification-audio-volume-high"
 elif [ "$NEW_VOL" -lt 40 ]; then
-    ICON="audio-volume-low"
+    ICON="notification-audio-volume-low"
 else
-    ICON="audio-volume-medium"
+    ICON="notification-audio-volume-medium"
 fi
 
 notify-send --app-name $0 --icon $ICON \

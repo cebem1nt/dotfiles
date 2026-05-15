@@ -12,7 +12,7 @@ if [[ ! -d "$THEMESW_DIR" ]]; then
     mkdir -p $THEMESW_DIR
     mkdir -p "$THEMESW_DIR/units"
 
-    notify-send --icon state-information \
+    notify-send --icon emblem-information \
                 --app-name $0 \
                 "themesw was not set up, please add units into" "$THEMESW_DIR/units"
 
@@ -48,9 +48,9 @@ for UNIT in "$THEMESW_DIR"/units/*; do
         wait "$PID"
 
         if [[ $? -ne 0 ]]; then
-            notify-send --icon state-information \
-                        --app-name $0 \
-                        "Unit failed!" "$UNIT"
+            notify-send --icon gtk-dialog-error \
+                        --app-name "$0" \
+                        'Unit failed!' "$UNIT"
             exit 1
         fi
     fi
@@ -59,8 +59,8 @@ for UNIT in "$THEMESW_DIR"/units/*; do
 done
 
 if [[ $i == 0 ]]; then 
-    notify-send --icon state-information \
-                --app-name $0 \
+    notify-send --icon emblem-information \
+                --app-name "$0" \
                 "No units, could not change theme" "$THEMESW_DIR/units"
 else
     [[ "$NEXT_THEME" == "dark" ]] && NEXT="light" || NEXT="dark"

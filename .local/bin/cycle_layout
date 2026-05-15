@@ -25,8 +25,7 @@ fi
 
 hyprctl eval "hl.workspace_rule({ workspace = '$WORKSPACE_ID', layout = '${LAYOUTS[$TARGET]}' })" > /dev/null
 
-notify-send --icon state-information \
+notify-send --icon preferences-system-symbolic \
             --app-name $0 \
             -h "string:x-canonical-private-synchronous:$0" \
             "Workspace layout was changed" "Layout for workspace $WORKSPACE_NAME: - ${LAYOUTS[$TARGET]}"
-

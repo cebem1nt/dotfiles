@@ -1,7 +1,9 @@
 #!/bin/bash
+set -e
 
 do_reboot=false
 do_not_reboot=false
+pacman_args=""
 
 while (( "$#" )); do
   case "$1" in
@@ -9,22 +11,23 @@ while (( "$#" )); do
       do_reboot=true
       shift
       ;;
-    -n|--no-reboot)
+    -n|-nr|--no-reboot)
       do_not_reboot=true
       shift
       ;;
-    --)
+    -nc|--noconfirm)
+      pacman_args+="--noconfirm "
       shift
-      break
       ;;
     *)
+      echo "Usage: $0 [-r|--reboot] [-n|-nr|--no-reboot] [-nc|--noconfirm]"
       echo "Unknown option \"$1\""
       exit 1
       ;;
   esac
 done
 
-pacman -Syu "$@"
+pacman $pacman_args -Syu
 
 i_dont_need_those=(
     "/usr/share/applications/lstopo.desktop"
@@ -63,7 +66,7 @@ orphaned_packages=$(pacman -Qdtq)
 
 if [[ -n "$orphaned_packages" ]]; then
     echo "Removing orphaned packages..."
-    pacman -Rns $orphaned_packages
+    pacman $pacman_args -Rns $orphaned_packages
 fi
 
 if [[ "$do_reboot" = true ]]; then

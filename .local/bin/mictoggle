@@ -29,11 +29,13 @@ IS_MUTED=$(pactl get-source-mute @DEFAULT_SOURCE@)
 
 if [[ $IS_MUTED == *"no" ]]; then
     MESSAGE="Microphone is unmuted"
+    ICON="notification-microphone-sensitivity-high"
 else
     MESSAGE="Microphone is muted"
+    ICON="notification-microphone-sensitivity-muted"
 fi
 
 notify-send --hint string:x-canonical-private-synchronous:microphone \
-            --icon=notification-microphone-sensitivity-high \
+            --icon="$ICON" \
             --app-name="$0" \
-            "Changed microphone state" $MESSAGE
+            "Changed microphone state" "$MESSAGE"

@@ -6,7 +6,6 @@ for SCRIPT in $STARTUP_SCRIPTS/*; do
     SCRIPT_NAME="${SCRIPT##*/}"
 
     if [[ $SCRIPT_NAME == _* ]] || [[ $SCRIPT_NAME =~ \.bak$ ]]; then
-        echo "Ignorring $SCRIPT_NAME"
         continue
     fi
 

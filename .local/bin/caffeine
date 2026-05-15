@@ -27,7 +27,7 @@ start() {
         return
     fi
 
-     notify-send  -i caffeine-cup-full -a caffeine \
+     notify-send  -i my-caffeine-off-symbolic -a caffeine \
         "Preventing sleep..." "Enabled inhibiting for $WHAT"
 
     nohup bash -c "$GREP" >/dev/null 2>&1 &
@@ -38,7 +38,7 @@ stop() {
         return
     fi
 
-    notify-send  -i caffeine-cup-empty -a caffeine \
+    notify-send  -i my-caffeine-on-symbolic -a caffeine \
         "Disabling preventing..." "Disabling inhibiting for $WHAT"
 
     pkill -f -- "$GREP"

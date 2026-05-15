@@ -18,6 +18,7 @@ fi
 if [[ $STATUS -eq 0 ]]; then
     wl-copy < $FILE &
 
-    notify-send --app-name $0 --icon applets-screenshooter \
+    notify-send --app-name "$0" \
+                --icon "$FILE" \
                 "New screenshot" "$FILE"
 fi
