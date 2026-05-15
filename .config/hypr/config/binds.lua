@@ -74,17 +74,22 @@ hl.bind("SUPER + CTRL + R",    run("hyprctl reload"))
 -- Window actions
 hl.bind("SUPER + Q",           hl.dsp.window.close())  -- Close window
 hl.bind("SUPER + SHIFT + Q",   hl.dsp.window.kill())   -- Kill window
-hl.bind("SUPER + P",           hl.dsp.window.pseudo()) -- Pseudotiles window
 hl.bind("SUPER + W",           hl.dsp.window.center()) -- Centers window if it is floating
 hl.bind("SUPER + U",           hl.dsp.window.pin())    -- Pins floating window
 hl.bind("SUPER + Z",           hl.dsp.window.resize({x = -80, y = -75, relative = true})) -- Make window x-80 y-75 smaller 
 hl.bind("SUPER + C",           hl.dsp.window.resize({x =  80, y =  75, relative = true})) -- Make window x+80 y+75 bigger
 hl.bind("SUPER + SHIFT + F",   hl.dsp.window.fullscreen({ action = "toggle" }))
+
 hl.bind("SUPER + F", function ()
-    -- Toggle window floating state and center it.
     hl.dispatch(hl.dsp.window.float({ action = "toggle" }))
     hl.dispatch(hl.dsp.window.center())
-end)
+end) -- Toggle window floating state and center it.
+
+hl.bind("SUPER + P", function ()
+    hl.dispatch(hl.dsp.window.float({ action = "off" }))
+    hl.dispatch(hl.dsp.window.pseudo())
+end) -- Pseudotiles window, ensure it's tiled
+
 
 -- Current workspace layout based bindings 
 hl.bind("SUPER + W", layout_bind({ 
