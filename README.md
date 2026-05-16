@@ -14,7 +14,26 @@ My daily drive archlinux dotfiles including scripts, wallpapers pack and some ot
 
 ## Screenshots
 
-<img alt="preview" src="https://github.com/user-attachments/assets/422b1acf-e19b-4404-8f9e-f891aa72128c" />
+
+<table>
+  <tr>
+    <td><img width="1920" height="1080" alt="1" src="https://github.com/user-attachments/assets/6a9b8a5e-e8da-4cf6-aa9a-ce2fa253adfe" /></td>
+    <td><img width="1920" height="1080" alt="2" src="https://github.com/user-attachments/assets/1a126ed2-1c1c-4a2a-a7e1-0f086618c9c9" /></td>
+  </tr>
+  <tr>
+    <td><img width="1920" height="1080" alt="3" src="https://github.com/user-attachments/assets/06f7454e-0d82-47ea-a9ad-7355782f97f1" /></td>
+    <td><img width="1920" height="1080" alt="4" src="https://github.com/user-attachments/assets/8f47eec0-5c68-448b-aeaa-e3f85ad16118" /></td>
+  </tr>
+  <tr>
+    <td><img width="1920" height="1080" alt="5" src="https://github.com/user-attachments/assets/2592345b-7805-436c-ae58-7a7339580350" /></td>
+    <td><img width="1920" height="1080" alt="6" src="https://github.com/user-attachments/assets/eaf3fe44-141c-44bd-b248-f1f20b7c9e75" /></td>
+  </tr>
+  <tr>
+    <td><img width="1920" height="1080" alt="7" src="https://github.com/user-attachments/assets/900b8b36-8b24-4630-93a8-b2595dbeabe3" /></td>
+    <td><img width="1920" height="1080" alt="8" src="https://github.com/user-attachments/assets/9f005e48-8d57-4b69-a5ae-3468155896da" /></td>
+  </tr>
+
+</table>
 
 ## Important notes
 
