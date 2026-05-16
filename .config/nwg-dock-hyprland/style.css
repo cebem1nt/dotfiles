@@ -7,12 +7,14 @@
 }
 
 window {
-    background: @background;
     border-radius: 30px;
+    background: transparent;
 }
 
 #box {
 	padding: 10px 5px;
+    background: @background;
+    border-radius: 30px;
 }
 
 button, image {
@@ -37,7 +39,7 @@ button:focus {
 
 tooltip {
     border-radius: 15px;
-    background: @background;
+    background: transparent;
     border: none;
     outline: none;
     box-shadow: none;
@@ -59,12 +61,12 @@ menu {
     padding: 0;
 }
 
-menu * {
+menu > * {
     padding: 3px 0px;
-    color: @fg;
+    min-width: 5px;
 }
 
-menu *:hover {
+menu > *:hover {
     border-radius: 10px;
     background-color: @highlight;
     border: none;

@@ -5,6 +5,7 @@
 @define-color inactive      #787c99;
 @define-color fg            #acb0d0;
 @define-color workspace-fg  @fg;
+@define-color highlight     @inactive;
 
 @define-color red           #f7768e;
 @define-color blue          #7aa2f7;

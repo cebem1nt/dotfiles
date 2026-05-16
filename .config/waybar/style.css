@@ -157,20 +157,20 @@ tooltip label {
     outline: none;
 }
 
-menu, menu {
+menu {
     border-radius: 10px;
     font-weight: 700;
     color: @fg;
     background: @tooltip-bg;
 }
 
-menu > *, menu > * {
+menu > * {
     padding: 3px 0px;
 }
 
-menu > *:hover, menu > *:hover{
+menu > *:hover {
     border-radius: 10px;
-    background-color: @inactive;
+    background-color: @highlight;
 }
 
 /* Sliders */
@@ -190,5 +190,5 @@ trough {
 trough highlight {
     border-radius: 8px;
     background-color: @fg;
-    background-image: none;
+    background-image: none; /* Some gtk themes set an svg for background. */
 }
