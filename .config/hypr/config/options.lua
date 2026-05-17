@@ -40,7 +40,7 @@ hl.config({
     },
 
     scrolling = {
-        explicit_column_widths = "0.5, 0.6, 1.0",
+        explicit_column_widths = "0.5, 0.6, 0.9, 1.0",
         column_width = 0.6,
 
         -- when a window is focused, require that at least 
@@ -51,7 +51,7 @@ hl.config({
         -- When a column is focused, what method should be used to bring it into view. 
         -- 0: center,
         -- 1: fit
-        focus_fit_method = 1,
+        focus_fit_method = 0,
 
         -- When enabled, causes hl.dsp.layoutmsg("swapcol l/r") to wrap around at the beginning and end.
         wrap_swapcol = false,
@@ -180,7 +180,7 @@ hl.config({
     render = {
         -- Whether the color management pipeline should be enabled or not 
         -- (requires a restart of Hyprland to fully take effect)
-        cm_enabled = false,
+        cm_enabled = true,
 
         -- Report content type to allow monitor profile autoswitch 
         -- (may result in a black screen during the switch)
