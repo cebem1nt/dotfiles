@@ -1,6 +1,6 @@
 # Swaync
 
-Configuration files for swaync. To use copy & paste to your `~/.config`, ***but***[see the note bellow](#buttons-grid)
+Configuration files for swaync. To use copy & paste to your `~/.config`, ***but*** [see the note bellow](#buttons-grid)
 
 <table>
   <tr>
@@ -11,9 +11,8 @@ Configuration files for swaync. To use copy & paste to your `~/.config`, ***but*
 
 ## buttons-grid
 
-`buttons-grid` module uses four of [my scripts](../../.local/bin/). ***That means you can't really just copy it and it will work out of the box.***
-
-### What should I do?
+> [!IMPORTANT]
+> `buttons-grid` module uses four of [my scripts](../../.local/bin/). ***That means you can't really just copy it and it will work out of the box.***
 
 By default, `config.json` will look to `~/.local/bin/` for these scripts:
 
