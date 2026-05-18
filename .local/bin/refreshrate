@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Hyprland only script. 
+# Sets given refresh rate for active monitor   
+
+if [[ "$#" -ne 1 ]]; then
+    echo "Usage: $0 <refresh rate>"
+    exit 1
+fi
+
+LUA="
+local monitor = hl.get_active_monitor()
+
+if not monitor.is_mirror then
+    hl.monitor({
+        output = monitor.name,
+        mode = monitor.width..'x'..monitor.height..'@$1'
+    })
+end
+"
+
+hyprctl eval "$LUA"
