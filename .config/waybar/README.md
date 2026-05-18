@@ -14,31 +14,60 @@ Configuration files for waybar. To use just copy, paste this directory to your `
 ├── context                             # Context menu definitions for some modules
 │   ├── ctlcenter.xml                   # Context menu for the control center
 │   └── network.xml                     # For the network module
-├── layouts                             # Different waybar layouts
-│   ├── with_music.jsonc                # Layout with the mpris module at left side
-│   └── with_window.jsonc               # Layout with the current window title (hyprland/window)
 ├── config.jsonc                        # Main config file
-├── modules.jsonc                       # Waybar module configs
+├── modules.jsonc                       # Waybar modules configuration
 └── style.css                           # Main css
 ```
 
-- The main css styles are defined in `style.css`. It imports `./colors/colors.css` with current color scheme definitions.
-- The modules configs are defined in `./modules.jsonc`
-- The `config.jsonc` includes current layout (see note below)
+> [!NOTE]
+> - `config.jsonc` is the main configuration file with position, modules layout, etc 
+> - Waybar modules are configured in `modules.jsonc`. `config.jsonc` imports it 
+> - CSS styles are defined in `style.css`, it imports `colors/colors.css` with current color scheme definitions. There are two presets: light/dark
+
+## Usage
+
+> [!IMPORTANT]
+> ***Unfortunately, if you copy & paste this configuration, it won't work out of the box***
+
+### Applications & tools
+
+In orded to make modules actions work, install these applications and tools:
+
+> [!NOTE]
+> **All the GUI/TUI applications are executed using `hyprctl`** that means, **apps won't spawn if you're not on Hyprland**
+
+- `pavucontrol`
+- `pactl`
+- `nmcli`
+- `blueman-manager`
+- `peaclock`
+- `alacritty`
+- `playerctl`
+- `swaync`
+
+### Scripts
+
+Some waybar modules from `modules.jsonc` use the following scripts (on click/context menu actions). Please copy them to `~/.local/bin/` (or alternatively, tweak modules configurations based on your needs):
+
+- [`toggle_bluetooth`](../../.local/bin/toggle_bluetooth)
+- [`refreshrate`](../../.local/bin/refreshrate)
+- [`caffeine`](../../.local/bin/caffeine)
+- [`powersafe`](../../.local/bin/powersafe) 
 
 
-### What is `./layouts` used for?
+## FAQ
 
-I have script to toggle between the two modes, the one that gives control over the current track (mpris module) and the one showing current window title. [You can find the script here](../../.local/bin/change_waybar_layout).
+### What is `colors/` used for?
+
+**This directory contains light/dark color schemes** `style.css` imports `colors/colors.css`, which currently is a symlink to `colors/colors.dark.css`. You can remove symlinks, and use the scheme you like directly. 
+
+Why are there two color schemes? [I have a script to switch between the light and dark theme](../../.local/bin/themesw)
 
 ### Context menus? 
 
-Take a look at `./context`, these are GTK builder xml definitions. For more info [check this waybar wiki page](https://github.com/Alexays/Waybar/wiki/Module:-Custom:-Menu) 
+Take a look at `context/`, there are GTK builder xml files. For more info [check this waybar wiki page](https://github.com/Alexays/Waybar/wiki/Module:-Custom:-Menu)
 
-### What is `./colors` used for?
-
-**This directory contains light/dark color schemes** `style.css` imports `./colors/colors.css`, which currently is a symlink to `./colors/colors.dark.css`. You can remove symlinks, and use the scheme you like directly. Why there are two color schemes? [I have a script to switch between the light and dark theme](../../.local/bin/themesw)
 
 ### Expanding drawers? 
 
-You can take a look at their definitions in [./layouts/with_music.jsonc](https://github.com/cebem1nt/dotfiles/blob/main/.config/waybar/layouts/with_music.jsonc#L41) or [./layouts/with_window.jsonc](https://github.com/cebem1nt/dotfiles/blob/main/.config/waybar/layouts/with_window.jsonc#L40) (they are equal)
+You can take a look at their definitions in [config.jsonc](https://github.com/cebem1nt/dotfiles/blob/main/.config/waybar/config.jsonc#L41)

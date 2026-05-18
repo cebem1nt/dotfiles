@@ -217,9 +217,9 @@
             "action-2-3": "hyprctl eval \"hl.exec_cmd('kvantummanager')\"",
 
 
-            "action-3-1": "hyprctl eval \"hl.monitor({ output = 'eDP-2', mode = '1920x1080@60' })\"",
-  			"action-3-2": "hyprctl eval \"hl.monitor({ output = 'eDP-2', mode = '1920x1080@90' })\"",
-  			"action-3-3": "hyprctl eval \"hl.monitor({ output = 'eDP-2', mode = '1920x1080@144'})\"",
+            "action-3-1": "~/.local/bin/refreshrate 60",
+  			"action-3-2": "~/.local/bin/refreshrate 90",
+  			"action-3-3": "~/.local/bin/refreshrate 144",
 
             "action-4-1": "~/.local/bin/caffeine shutdown",
             "action-4-2": "~/.local/bin/caffeine handle-lid-switch",
