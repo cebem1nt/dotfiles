@@ -189,7 +189,23 @@ Or install components separately by running scripts from `install/` directory:
 </table>
 
 > [!NOTE]
-> For more detailed info see [`~/.config/hypr/config/binds.lua`](.config/hypr/config/binds.lua). It's well commented, you can find more fancy keybinds like: next/prev song, hide waybar, record video, increase/decrease volume
+> For more detailed info see [`~/.config/hypr/config/binds.lua`](.config/hypr/config/binds.lua).
+
+## Documentation
+
+Documentation is provided via `README.md` files in different subdirectories.
+
+**Index:**
+  - [Sway notification center](.config/swaync/README.md)
+  - [Waybar config documentation](.config/waybar/README.md)
+  - [Startup scripts](.local/bin/startup/README.md)
+  - [Scripts cheatsheet](.local/bin/README.md)
+  - [Note on .local/share/applications](.local/share/applications/README.md)
+  - [Zen browser theme note](.zen/README.md)
+  - [Misc configuration files](etc/README.md)
+    - [Display manager/greeter info (ly) ](etc/ly/README.md)
+    - [xdg-desktop-portal note](etc/xdg-desktop-portal/README.md)
+    - [kernel modules configs](etc/modprobe.d/README.md)
 
 ## Scripts
 
