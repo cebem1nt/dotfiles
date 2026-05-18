@@ -1,0 +1,11 @@
+#!/bin/bash
+
+cd $HOME/.config/hypr/config/colors
+
+if [[ "$1" == "dark" ]]; then
+    ln -fs colors.dark.lua init.lua
+else
+    ln -fs colors.light.lua init.lua
+fi
+
+hyprctl reload config-only

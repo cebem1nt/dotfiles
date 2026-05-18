@@ -6,7 +6,7 @@
 --
 -- https://wiki.hypr.land/Configuring/Basics/Variables/
 
--- TODO: Add hyprland config to themesw
+local colors = require("config.colors") -- Dynamic color scheme for border/misc colors
 
 hl.config({
     general = {
@@ -15,8 +15,8 @@ hl.config({
         border_size = 0,
 
         col = {
-            active_border = "rgb(787c99)",
-            inactive_border = "rgba(0a0a0ddb)",
+            active_border = colors.border.active,
+            inactive_border = colors.border.inactive,
         },
 
         -- if true, will not fall back to the next available window 
@@ -59,14 +59,14 @@ hl.config({
 
     group = {
         col = {
-            border_active = "0x00000000",
-            border_inactive = "0x00000000",
+            border_active = colors.group.active,
+            border_inactive = colors.group.inactive,
         },
 
         groupbar = {
             col = {
-                active = "0xE6080B00",
-                inactive = "0xB3080B00",
+                active = colors.groupbar.active,
+                inactive = colors.groupbar.inactive,
             },
 
             font_weight_active = "bold",
@@ -76,7 +76,7 @@ hl.config({
             font_size = 14,
             height = 24,
             gradient_rounding = 10,
-            text_color = "rgb(acb0d0)",
+            text_color = colors.group.text,
 
             indicator_height = 0,
             indicator_gap = 2,

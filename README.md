@@ -60,7 +60,6 @@ Please keep that in mind before running the installation. This might screw up so
 
 - [`~/.config/user-dirs.dirs`](.config/user-dirs.dirs)
 - [`~/.config/hypr/config/env.lua`](.config/hypr/config/env.lua)
-- [`~/.config/zsh/.zshrc`](.config/zsh/.zshrc)
 
 ## Installation
 
@@ -196,6 +195,7 @@ Or install components separately by running scripts from `install/` directory:
 Documentation is provided via `README.md` files in different subdirectories.
 
 **Index:**
+
   - [Sway notification center](.config/swaync/README.md)
   - [Waybar config documentation](.config/waybar/README.md)
   - [Startup scripts](.local/bin/startup/README.md)

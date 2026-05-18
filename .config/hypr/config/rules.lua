@@ -4,7 +4,7 @@
 -- ▐█▌██▐█▌▐█▌██▐█▌██. ██ ▐█▌██▐█▌    ▐█•█▌▐█▄█▌▐█▌▐▌▐█▄▄▌▐█▄▪▐█
 --  ▀▀▀▀ ▀▪▀▀▀▀▀ █▪▀▀▀▀▀•  ▀▀▀▀ ▀▪    .▀  ▀ ▀▀▀ .▀▀▀  ▀▀▀  ▀▀▀▀ 
 --
--- https://wiki.hyprland.org/Configuring/Window-Rules/
+-- https://wiki.hypr.land/Configuring/Basics/Window-Rules/
 
 -- Workspace rules
 hl.workspace_rule({ workspace = "special:magic", layout = "dwindle"})
