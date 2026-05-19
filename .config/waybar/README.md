@@ -1,6 +1,6 @@
 # Waybar config
 
-Configuration files for waybar. To use just copy, paste this directory to your `~/.config/waybar`
+Configuration files for waybar. To use just copy, paste this directory to your `~/.config/waybar` ***but see [the note below](#usage)***
 
 <img width="1919" height="40" alt="waybar-preview" src="https://github.com/user-attachments/assets/2db3baae-dee3-4f55-bc83-a3bc00d2993a" />
 
