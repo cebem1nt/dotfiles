@@ -39,7 +39,7 @@ button:focus {
 
 tooltip {
     border-radius: 15px;
-    background: transparent;
+    background: @background;
     border: none;
     outline: none;
     box-shadow: none;

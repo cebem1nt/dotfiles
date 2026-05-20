@@ -14,8 +14,8 @@ source $ZSH/oh-my-zsh.sh
 zstyle ':completion:*' special-dirs true
 setopt autocd
 
-export PATH="$HOME/.local/bin/:$HOME/.config/npm/bin:$HOME/.local/share/go/bin:$PATH"
 export SCRIPTS="$HOME/.local/bin"
+export PATH="$SCRIPTS:$HOME/.config/npm/bin:$HOME/.local/share/go/bin:$PATH"
 
 export LESS="--ignore-case"
 
@@ -32,7 +32,7 @@ alias ht='htop'
 alias code='codium'
 alias g='grep'
 alias y='yazi'
-alias aur="pacget --storage-dir $XDG_SRC_HOME"
+alias aur="pacget --storage-dir=$HOME/.local/src/"
 
 alias vimzshrc="vim $XDG_CONFIG_HOME/zsh/.zshrc"
 alias vimsudo='sudo -E nvim /etc/sudoers'
