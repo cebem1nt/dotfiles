@@ -1,37 +1,25 @@
 #!/bin/bash
-
-if [[ -e "$XDG_CONFIG_HOME/.toggle-bluetooth.pref" ]]; then
-    LAST_DEVICE=$(<"$XDG_CONFIG_HOME/.toggle-bluetooth.pref")
-else 
-    LAST_DEVICE=$(bluetoothctl devices Paired | grep "Device" | head -n 1)
-fi
-
-MAC=${LAST_DEVICE:7:17} 
-
-# Check if a device was not found/empty
-if [ -z "$MAC" ]; then
-    cleanup $1
-fi
-
-IS_CONNECTED=$(bluetoothctl info $MAC | grep Connected:)
-
-IFS="$MAC" read -ra elements <<< "$LAST_DEVICE"
-DEVICE_NAME=$(echo "${elements[-1]}" | sed 's/^[ \t]*//')
-
-if [[ $IS_CONNECTED == *"yes" ]]; then
-    exit 1
-fi
+# Connect to the last / preferred bluetooth device at startup
+# If could not, turn bluetooth off
 
 cleanup() {
-    if [[ "$1" == "--no-cleanup" ]]; then
-        exit 0
-    fi
-
-    playerctl pause
     bluetoothctl power off
     rfkill block bluetooth
-    exit 1
+    exit
 }
+
+if [[ -z "$BLUETOOTH_PREFERRED_DEV" ]]
+    MAC=$BLUETOOTH_PREFERRED_DEV
+elif [[ -e "$HOME/.config/.bluetooth.pref" ]]; then
+    MAC=$(<"$HOME/.config/.bluetooth.pref")
+else 
+    LAST_DEVICE=$(bluetoothctl devices Paired | grep "Device" | head -n 1)
+    MAC=${LAST_DEVICE:7:17} 
+fi
+
+if [[ -z "$MAC" ]]; then
+    cleanup
+fi
 
 rfkill unblock bluetooth
 sleep 1
@@ -39,10 +27,11 @@ sleep 1
 bluetoothctl power on
 bluetoothctl connect "$MAC"
 
-# Check if the connection was not successful
-if [ $? -ne 0 ]; then
-    cleanup $1
+if [[ $? -ne 0 ]]; then
+    cleanup
 fi
+
+DEVICE_NAME=$(bluetoothctl info "$MAC" | sed -n 's/^[[:space:]]*Alias:[[:space:]]*//p')
 
 notify-send --icon=bluetooth \
             --app-name=bluetooth \

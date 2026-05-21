@@ -1,62 +1,57 @@
 #!/usr/bin/env python3
-import subprocess
-from time import sleep
-from os.path import exists, expanduser
 
-# Preferred device to connect to.
-# run `bluetoothctl devices Paired`
-# put line with preferred device into this file.
-PREFERRED = "~/.config/.toggle-bluetooth.pref"
+# Toggles bluetooth on/off, but:
+# If it was a media device, turn off the music,
+# When turning bluetooth on, looks for MAC adress with preferred device in:
+#   - BLUETOOTH_PREFERRED_DEV envrionment variable or
+#   - ~/.config/.bluetooth.pref file
+# And tries to connect to device with this mac.
+
+import subprocess, os
+from time import sleep
+
+PREFERRED = "~/.config/.bluetooth.pref"
 
 def run(command: str) -> str:
-    proc = subprocess.run(
-        command.split(), 
-        capture_output=True, text=True, check=True
-    )
-
+    proc = subprocess.run(command, capture_output=True, text=True)
     return proc.stdout
 
-try:
-    out = run("bluetoothctl show")
-    is_bluetooth_active = "Powered: yes" in out
+def get_device_mac(line: str):
+    return line.split()[1].strip()
+
+if "Powered: yes" in run(["bluetoothctl", "show"]):
+    out = run(["bluetoothctl", "devices", "Connected"])
     
-except subprocess.CalledProcessError:
-    is_bluetooth_active = False
+    if len(out) > 0:
+        device_line = out.splitlines()[0]
+        device_mac = get_device_mac(device_line)
+        device_info = run(["bluetoothctl", "info", device_mac])
+        
+        if "Icon: audio" in device_info: # An audio device, stop the music
+            run(["playerctl", "pause"])
 
-if is_bluetooth_active:
-    out = run("bluetoothctl devices Connected").strip()
-
-    # Check if there is a connection to a device
-    try:
-        if out.splitlines()[0].startswith("Device"):
-            run("playerctl pause")
-    except:
-        pass
-
-    run("bluetoothctl power off")
-    run("rfkill block bluetooth")
-
+    run(["bluetoothctl", "power", "off"])
+    run(["rfkill", "block", "bluetooth"])
 else:
-    run("rfkill unblock bluetooth")
+    run(["rfkill", "unblock", "bluetooth"]) 
     sleep(1)
-    run("bluetoothctl power on")
+    run(["bluetoothctl", "power", "on"])
     
-    last_device = None
-    prefered = expanduser(PREFERRED)
+    device_mac = os.environ.get("BLUETOOTH_PREFERRED_DEV")
+    prefered_f = os.path.expanduser(PREFERRED)
 
-    if exists(prefered):
-        f = open(prefered)
-        last_device = f.read()
-        f.close()
+    if device_mac:
+        pass
+    elif os.path.exists(prefered_f):
+        with open(prefered_f) as f:
+            device_mac = f.read()
     else:
-        out = run("bluetoothctl devices Paired")
+        out = run(["bluetoothctl", "devices", "Paired"])
         out_lines = out.splitlines()
 
         if not len(out_lines):
-            exit(1)
+            exit(0)
             
-        last_device = out_lines[0]
+        device_mac = get_device_mac(out_lines[0])
 
-    device_mac = last_device.split()[1]
-    print(device_mac)
-    subprocess.run(['bluetoothctl', 'connect', device_mac])
+    os.system(f"bluetoothctl connect {device_mac}")
