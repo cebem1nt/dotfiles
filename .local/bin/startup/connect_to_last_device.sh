@@ -8,7 +8,7 @@ cleanup() {
     exit
 }
 
-if [[ -z "$BLUETOOTH_PREFERRED_DEV" ]]
+if [[ ! -z "$BLUETOOTH_PREFERRED_DEV" ]]; then
     MAC=$BLUETOOTH_PREFERRED_DEV
 elif [[ -e "$HOME/.config/.bluetooth.pref" ]]; then
     MAC=$(<"$HOME/.config/.bluetooth.pref")
