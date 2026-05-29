@@ -13,7 +13,7 @@
 
     body {
         --border-radius-medium: 14px !important;
-        --size-item-large: 38px !important;
+        --size-item-large: 40px !important;
         --space-xsmall: 0.200rem !important;
     }
 
@@ -21,8 +21,12 @@
         border: none !important;
     }
 
-    .search-wrapper .logo-and-wordmark {
+    .logo-and-wordmark {
         display: none !important;
+    }
+
+    .nova-enabled.logo-in-content .content {
+        grid-row: 4/span 2 !important;
     }
 }
 
@@ -64,8 +68,12 @@
         margin-bottom: 6rem !important;
     }
 
-    .ds-top-sites, 
-    .ds-highlights {
+    .ds-top-sites, .ds-highlights,
+    .top-sites-list {
         display: none !important;
+    }
+
+    .nova-enabled.logo-in-content .content {
+        grid-row: 6/span 2 !important;
     }
 }
