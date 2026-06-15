@@ -1,6 +1,4 @@
 #!/bin/bash
-set -e
-
 do_reboot=false
 do_not_reboot=false
 pacman_args=""
@@ -47,7 +45,6 @@ i_dont_need_those=(
     "/usr/share/applications/rofi-theme-selector.desktop"
     "/usr/share/applications/org.flameshot.Flameshot.desktop"
     "/usr/share/applications/cmake-gui.desktop"
-    "/usr/share/applications/codium-wayland.desktop"
     "/usr/share/applications/avahi-discover.desktop"
     "/usr/share/applications/bssh.desktop"
     "/usr/share/applications/bvnc.desktop"
