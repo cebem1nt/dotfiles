@@ -1,0 +1,20 @@
+#!/bin/bash
+# Tiny script to start ssh session and add given identities
+
+# hack from https://stackoverflow.com/questions/2683279
+(return 0 2>/dev/null) && SOURCED=1 || SOURCED=0
+
+if [[ "$#" -lt 1 ]] || [[ $SOURCED == 0 ]]; then
+    echo "Usage: source $0 IDENTITY ..."
+    exit 1
+fi
+
+if [[ -z "$SSH_AUTH_SOCK" ]] || [[ ! -S "$SSH_AUTH_SOCK" ]]; then
+    eval "$(ssh-agent -s)"
+
+    for IDENT in "$@"; do 
+        ssh-add "$IDENT"
+    done
+fi
+
+
