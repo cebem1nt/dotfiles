@@ -60,38 +60,38 @@
                 {
                     "label": "󰌪",
                     "type": "toggle",
-                    "command": "bash -c '$HOME/.local/bin/powerprofile --toggle-quiet'",
-                    "update-command": "bash -c '$HOME/.local/bin/powerprofile --is-quiet'"
+                    "command": "$HOME/.local/bin/powerprofile --toggle-quiet",
+                    "update-command": "$HOME/.local/bin/powerprofile --is-quiet"
                 },
                 {
                     "label": "",
                     "type": "toggle",
-                    "command": "bash -c '$HOME/.local/bin/caffeine'",
-                    "update-command": "bash -c '$HOME/.local/bin/caffeine --is-running'"
+                    "command": "$HOME/.local/bin/caffeine",
+                    "update-command": "$HOME/.local/bin/caffeine --is-running"
                 },
                 {
                     "label": "",
                     "type": "toggle",
-                    "command": "bash -c '$HOME/.local/bin/mictoggle --silent'",
-                    "update-command": "bash -c '$HOME/.local/bin/mictoggle --is-muted'"
+                    "command": "$HOME/.local/bin/mictoggle --silent",
+                    "update-command": "$HOME/.local/bin/mictoggle --is-muted"
                 },
                 {
                     "label": "",
-                    "command": "hyprctl dispatch exec alacritty -- -e htop ; swaync-client -cp"
+                    "command": "$HOME/.config/swaync/scripts/htop"
                 },
                 {
                     "label": "󰃟",
                     "type": "toggle",
-                    "command": "bash -c '$HOME/.local/bin/themesw'",
-                    "update-command": "bash -c '[ $($HOME/.local/bin/themesw --current) = light ] && echo true || echo false'"
+                    "command": "$HOME/.local/bin/themesw",
+                    "update-command": "[ $($HOME/.local/bin/themesw --current) = light ] && echo true || echo false"
                 },
                 {
                     "label": "",
-                    "command": "hyprctl dispatch exec nwg-look ; swaync-client -cp"
+                    "command": "$HOME/.config/swaync/scripts/nwg-look"
                 },
                 {
                     "label": "",
-                    "command": "swaync-client -cp ; bash -c $HOME/.config/rofi/bin/logout"
+                    "command": "swaync-client -cp ; $HOME/.config/rofi/bin/logout"
                 }
             ]
         }

@@ -1,0 +1,7 @@
+#!/bin/bash
+# Swaync semicolons and colons parsing seems to be broken, 
+# that's why there is a separate script for it
+
+hyprctl eval "hl.exec_cmd('alacritty -e htop')"
+
+swaync-client -cp
