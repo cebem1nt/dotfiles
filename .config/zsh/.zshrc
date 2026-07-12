@@ -22,9 +22,9 @@ export LESS="--ignore-case"
 # eza -al format ouput to diference permissions
 export EZA_COLORS="ur=32:uw=32:ux=32:gr=36:gw=36:gx=36:tr=31:tw=31:tx=31"
 
-alias ls='eza -a --git --icons=automatic --group-directories-first'
+alias ls='eza -a --git --icons=auto --group-directories-first'
 alias ll='eza -al'
-alias lt='eza -a --tree --level=2 --group-directories-first --icons=automatic'
+alias lt='eza -a --tree --level=2 --group-directories-first --icons=auto'
 
 alias man="COLUMNS=100 man"
 alias vim='nvim'
@@ -38,6 +38,7 @@ alias vimzshrc="vim $XDG_CONFIG_HOME/zsh/.zshrc"
 alias vimsudo='sudo -E nvim /etc/sudoers'
 alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
 alias mv='mv -v'
+alias perfrun='perforun'
 
 bindkey '^H' backward-kill-word
 bindkey -r '^S'
