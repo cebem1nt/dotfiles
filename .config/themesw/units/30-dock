@@ -8,4 +8,6 @@ else
     ln -fs colors.light.css colors.css
 fi
 
-pkill -f nwg-dock-hyprland ; nwg-dock-hyprland -p left -d -w 5 -nolauncher -ml 5 -l top -hl bottom -i 38 &
+pkill -f nwg-dock-hyprland
+
+"$HOME/.local/bin/dock" &

@@ -19,8 +19,8 @@ local startup = {
     "gammastep-indicator", -- Bluelight filter
     "/usr/lib/xfce-polkit/xfce-polkit", -- Policy manager (prompts for sudo access if app requests)
     "hypridle", -- "Idle daemon"
-    "nwg-dock-hyprland -p left -d -w 5 -nolauncher -ml 5 -l top -hl bottom -i 38", -- dock
     "brightnessctl -s -d asus::kbd_backlight", -- Stores current backlight state so hypridle can use it.
+    "~/.local/bin/dock", -- dock
     "~/.local/bin/at_startup" -- Misc user defined custom shell scripts
 }
 

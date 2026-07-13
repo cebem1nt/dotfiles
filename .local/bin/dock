@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# A shortcut script for nwg-dock-hyprland, it has too much options
+# and changing some option is a pain, you'll have to replace it in too many places
+
+nwg-dock-hyprland \
+    -p left \
+    -d -w 5 -ml 5 \
+    -l top -hl bottom \
+    -i 38 \
+    -c "$HOME/.local/bin/toggle_rofi $HOME/.config/rofi/bin/drun"
