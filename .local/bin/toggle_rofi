@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#
 # A script to toggle rofi based menus. Will execute passed arguments 
 # If rofi is not running. Else, will kill it
 
@@ -7,10 +7,10 @@ if [ "$#" -lt 1 ]; then
     exit 1
 fi
 
-script_name=$(realpath "$0")
-args="$*"
+SCRIPT=$(realpath "$0")
+ARGS="$*"
 
-if pgrep -af "$script_name" | grep -v "$args" ; then
+if pgrep -af "/bin/bash $SCRIPT" | grep -v "$ARGS"$ ; then
     pkill -x rofi
     "$@"
 elif pgrep -x rofi > /dev/null; then
@@ -18,3 +18,4 @@ elif pgrep -x rofi > /dev/null; then
 else
     "$@"
 fi
+
