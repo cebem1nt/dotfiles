@@ -6,7 +6,7 @@
 #
 # And replace with this one:
 #
-# rofi -theme ~/.config/rofi/themes/launcher.rasi \
+# rofi -theme $THEME \
 #      -show drun \
 #      -modi "drun,drun-utils,drun-games,drun-network,drun-media" \
 #      -drun-exclude-categories "Game" \
@@ -16,7 +16,13 @@
 #      -display-drun-network "󰭹" \
 #      -display-drun-media "󰲍" \
 
-rofi -theme ~/.config/rofi/themes/launcher.rasi \
+THEME="$HOME/.config/rofi/themes/launcher.rasi"
+
+if [[ "$1" == "--alternative" ]]; then
+     THEME="$HOME/.config/rofi/themes/launcher-alternative.rasi"
+fi
+
+rofi -theme $THEME \
      -show drun \
      -modi "drun,run,filebrowser" \
      -display-drun "" \

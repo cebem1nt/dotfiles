@@ -8,4 +8,4 @@ nwg-dock-hyprland \
     -d -w 5 -ml 5 \
     -l top -hl bottom \
     -i 38 \
-    -c "$HOME/.local/bin/toggle_rofi $HOME/.config/rofi/bin/drun"
+    -c "$HOME/.local/bin/toggle_rofi $HOME/.config/rofi/bin/drun --alternative" $@
