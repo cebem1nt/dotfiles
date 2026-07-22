@@ -12,5 +12,5 @@ spicetify refresh
 
 if pgrep -x "spotify" ; then
     pkill -x "spotify"
-    hyprctl dispatch exec '[workspace 5 silent] spotify-launcher'
+    hyprctl dispatch 'hl.dsp.exec_raw("spotify-launcher")'
 fi
