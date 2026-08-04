@@ -55,7 +55,7 @@ hl.window_rule({
     match = { 
         class = "blueman-manager|blueman-services|nwg-look|rog-control-center|org.qbittorrent.qBittorrent|kvantummanager|\
                  org.gnome.seahorse.Application|xfce-polkit|org.polymc.PolyMC|engrampa|nm-connection-editor|system-config-printer|hyprland-share-picker|\
-                 org.bleachbit.BleachBit|vlc|exo-desktop-item-edit|xdg-desktop-portal-gtk|org.gnome.eog|qt6ct|spotify|Spotify|xfce-polkit"
+                 org.bleachbit.BleachBit|vlc|exo-desktop-item-edit|xdg-desktop-portal-gtk|org.gnome.eog|qt6ct|xfce-polkit"
     },
 
     float = true,
@@ -141,8 +141,8 @@ hl.window_rule({
         class = "^(zen)(.*)$",
     },
 
-    size = "250 140",
-    move = "1650 50",
+    size = "300 200",
+    move = "1600 50",
     border_size = 2,
     pin = true,
     float = true,
@@ -152,12 +152,24 @@ hl.window_rule({
 })
 
 hl.window_rule({
+    -- TODO fullscreens all wine apps
     name = "Games in fullscreen",
     match = {
         class = "steam_app_.*",
     },
     
     fullscreen = true
+})
+
+hl.window_rule({
+    name = "Spotify pseudotile", -- Extra gaps for Spotify
+    match = {
+       class = "spotify|Spotify" 
+    },
+
+    pseudo = true,
+    size = "1850 1000",
+    scrolling_width = 1
 })
 
 hl.window_rule({
