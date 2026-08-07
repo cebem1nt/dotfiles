@@ -6,7 +6,8 @@ shopt -s nullglob dotglob
 # that switch theme for some apps. Such scripts are called units
 
 THEMESW_DIR="$HOME/.config/themesw/"
-THEMESW_NEXT="$THEMESW_DIR/next"
+THEMESW_CURRENT="$THEMESW_DIR/current"
+THEMESW_SCHEMES="$THEMESW_DIR/schemes" # A file with color schemes names separated by newlines
 
 if [[ ! -d "$THEMESW_DIR" ]]; then
     mkdir -p $THEMESW_DIR
@@ -19,19 +20,33 @@ if [[ ! -d "$THEMESW_DIR" ]]; then
     exit 1
 fi
 
-if [[ ! -f "$THEMESW_NEXT" || ! -s "$THEMESW_NEXT" ]]; then 
-    echo "dark" > $THEMESW_NEXT
+if [[ ! -s "$THEMESW_CURRENT" ]]; then 
+    echo "dark" > $THEMESW_CURRENT
 fi
 
-NEXT_THEME=$(<$THEMESW_NEXT)
-i=0
+if [[ ! -s "$THEMESW_SCHEMES" ]]; then 
+    echo "dark" > $THEMESW_SCHEMES
+    echo "light" > $THEMESW_SCHEMES
+fi
+
+CURRENT_SCHEME=$(< $THEMESW_CURRENT)
+mapfile -t SCHEMES < $THEMESW_SCHEMES
+
+for i in "${!SCHEMES[@]}"; do
+  if [[ "${SCHEMES[$i]}" == "$CURRENT_SCHEME" ]]; then
+    NEXT_SCHEME="${SCHEMES[$(( (i + 1) % ${#SCHEMES[@]} ))]}"
+    break
+  fi
+done
 
 if [[ $1 == "--current" ]]; then
-    [[ "$NEXT_THEME" == "dark" ]] && echo "light" || echo "dark"
+    echo $CURRENT_SCHEME
     exit 0
 elif [[ -n $1 ]]; then
-    NEXT_THEME=$1
+    NEXT_SCHEME=$1
 fi
+
+echo "$NEXT_SCHEME" > $THEMESW_CURRENT
 
 for UNIT in "$THEMESW_DIR"/units/*; do
     UNIT_NAME="${UNIT##*/}"
@@ -42,7 +57,7 @@ for UNIT in "$THEMESW_DIR"/units/*; do
     fi
 
     if [[ -f "$UNIT" && -x "$UNIT" ]]; then 
-        "$UNIT" "$NEXT_THEME" >/dev/null 2>&1 &
+        "$UNIT" "$NEXT_SCHEME" >/dev/null 2>&1 &
 
         PID=$!
         wait "$PID"
@@ -62,8 +77,4 @@ if [[ $i == 0 ]]; then
     notify-send --icon emblem-information \
                 --app-name "$0" \
                 "No units, could not change theme" "$THEMESW_DIR/units"
-else
-    [[ "$NEXT_THEME" == "dark" ]] && NEXT="light" || NEXT="dark"
-
-    echo $NEXT > $THEMESW_NEXT
 fi
