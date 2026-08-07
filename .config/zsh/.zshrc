@@ -17,7 +17,7 @@ setopt autocd
 export SCRIPTS="$HOME/.local/bin"
 export PATH="$SCRIPTS:$HOME/.config/npm/bin:$HOME/.local/share/go/bin:$PATH"
 
-export LESS="--ignore-case"
+export LESS="-R --ignore-case"
 
 # eza -al format ouput to diference permissions
 export EZA_COLORS="ur=32:uw=32:ux=32:gr=36:gw=36:gx=36:tr=31:tw=31:tx=31"
@@ -27,6 +27,7 @@ alias ll='eza -al'
 alias lt='eza -a --tree --level=2 --group-directories-first --icons=auto'
 
 alias man="COLUMNS=100 man"
+alias vi='nvim'
 alias vim='nvim'
 alias ht='htop'
 alias code='codium'
