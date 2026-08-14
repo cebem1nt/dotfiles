@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-LAYOUTS=(scrolling dwindle monocle)
+LAYOUTS=(dwindle scrolling monocle)
 
 INFO=$(hyprctl activeworkspace -j)
 

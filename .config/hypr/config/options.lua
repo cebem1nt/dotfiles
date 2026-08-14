@@ -22,7 +22,8 @@ hl.config({
         -- if true, will not fall back to the next available window 
         -- when moving focus in a direction where no window was found
         no_focus_fallback = true,
-        layout = "scrolling",
+        layout = "dwindle",
+        -- layout = "scrolling",
     },
 
     dwindle = {
@@ -51,7 +52,7 @@ hl.config({
         -- When a column is focused, what method should be used to bring it into view. 
         -- 0: center,
         -- 1: fit
-        focus_fit_method = 0,
+        focus_fit_method = 1,
 
         -- When enabled, causes hl.dsp.layoutmsg("swapcol l/r") to wrap around at the beginning and end.
         wrap_swapcol = false,
@@ -101,7 +102,7 @@ hl.config({
     },
 
     input = {
-        follow_mouse = 1,
+        follow_mouse = 2,
         sensitivity = -0.2,
         numlock_by_default = true,
 
