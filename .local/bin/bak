@@ -12,8 +12,8 @@ for DIR in "$@"; do
     fi
 
     if [[ "$DIR" == *.bak ]]; then
-        mv -v "$DIR" "${DIR%.bak}"
+        mv -vi "$DIR" "${DIR%.bak}"
     else
-        mv -v "$DIR" "$DIR.bak"
+        mv -vi "$DIR" "$DIR.bak"
     fi
 done
