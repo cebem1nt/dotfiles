@@ -3,7 +3,13 @@
 # A shortcut script for nwg-dock-hyprland, it has too much options
 # and changing some option is a pain, you'll have to replace it in too many places
 
-nwg-dock-hyprland \
+if [[ "$MANGO_INSTANCE_SIGNATURE" ]]; then
+    DOCK="dock-mango"
+else 
+    DOCK="nwg-dock-hyprland"
+fi
+
+$DOCK \
     -p left \
     -d -w 5 -ml 5 \
     -l top -hl bottom \
