@@ -70,4 +70,4 @@ Take a look at `context/`, there are GTK builder xml files. For more info [check
 
 ### Expanding drawers? 
 
-You can take a look at their definitions in [config.jsonc](https://github.com/cebem1nt/dotfiles/blob/main/.config/waybar/config.jsonc#L41)
+You can take a look at their definitions in [modules.jsonc](https://github.com/cebem1nt/dotfiles/blob/main/.config/waybar/modules.hyprland.jsonc#L10)
