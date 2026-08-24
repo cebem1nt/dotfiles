@@ -13,14 +13,13 @@ local startup = {
     "wl-clip-persist --clipboard regular", -- Enables clipboard persistence
     "wl-paste --type text --watch cliphist -max-items=35 store", -- Enable clipboard for text
     "wl-paste --type image --watch cliphist -max-items=10 store", -- Enable clipboard for images
+    "~/.local/bin/at_startup" -- Misc user defined custom shell scripts
     "awww-daemon", -- Wallpapers daemon
     "waybar", -- waybar
     "swaync", -- swaync
     "gammastep-indicator", -- Bluelight filter
     "/usr/lib/xfce-polkit/xfce-polkit", -- Policy manager (prompts for sudo access if app requests)
     "hypridle", -- "Idle daemon"
-    "~/.local/bin/dock", -- dock
-    "~/.local/bin/at_startup" -- Misc user defined custom shell scripts
 }
 
 hl.on("hyprland.start", function()
