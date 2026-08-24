@@ -1,0 +1,11 @@
+#!/bin/bash
+
+cd $HOME/.config/mango/colors/
+
+if [[ "$1" == "dark" ]]; then
+    ln -fs colors.dark.conf colors.conf
+else
+    ln -fs colors.light.conf colors.conf
+fi
+
+mmsg dispatch reload_config
