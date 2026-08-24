@@ -1,0 +1,4 @@
+[screencast]
+max_fps=144
+chooser_type=dmenu
+chooser_cmd=rofi -dmenu -theme ~/.config/rofi/themes/wlr-picker.rasi
