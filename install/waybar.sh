@@ -21,12 +21,12 @@ if which powerprofilesctl >/dev/null 2>&1; then
     _info "Replacing 'custom/start' module with power-profiles-daemon ..."
     
     WAYBAR_FILES=(
-        "$DEST/.config/waybar/layouts/with_music.jsonc"
-        "$DEST/.config/waybar/layouts/with_window.jsonc"
+        "$DEST/.config/waybar/modules.hyprland.jsonc"
+        "$DEST/.config/waybar/modules.mango.jsonc"
     )
     
     for FILE in "${WAYBAR_FILES[@]}"; do
-        sed -i 's|custom/start|power-profiles-daemon|g' "$FILE"
+        sed -i '/"modules"[[:space:]]*:/ s/"custom\/start"/"power-profiles-daemon"/g' "$FILE"
     done
 else
     _warning "powerprofilesctl is not installed, 'custom/start' module will be used instead"
@@ -37,7 +37,14 @@ _info "Changing clock timezone..."
 # Change timezone in waybar clock module
 TIMEZONE=$(readlink -f /etc/localtime | sed 's|.*/zoneinfo/||')
 
-sed -i "s/\"timezone\": *\"[^\"]*\"/\"timezone\": \"${TIMEZONE//\//\\/}\"/" \
-    "$DEST/.config/waybar/modules.jsonc"
+WAYBAR_FILES=(
+    "$DEST/.config/waybar/modules.hyprland.jsonc"
+    "$DEST/.config/waybar/modules.mango.jsonc"
+)
+
+for FILE in "${WAYBAR_FILES[@]}"; do
+    sed -i "s/\"timezone\": *\"[^\"]*\"/\"timezone\": \"${TIMEZONE//\//\\/}\"/" \
+        "$DEST/.config/waybar/modules.jsonc"
+done
 
 _done "Waybar config was successfully installed!"
