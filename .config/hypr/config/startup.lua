@@ -13,7 +13,7 @@ local startup = {
     "wl-clip-persist --clipboard regular", -- Enables clipboard persistence
     "wl-paste --type text --watch cliphist -max-items=35 store", -- Enable clipboard for text
     "wl-paste --type image --watch cliphist -max-items=10 store", -- Enable clipboard for images
-    "~/.local/bin/at_startup" -- Misc user defined custom shell scripts
+    "~/.local/bin/at_startup", -- Misc user defined custom shell scripts
     "awww-daemon", -- Wallpapers daemon
     "waybar", -- waybar
     "swaync", -- swaync
