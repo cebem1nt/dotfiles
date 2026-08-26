@@ -7,14 +7,15 @@
 }
 
 window {
-    border-radius: 30px;
+    border-radius: 29px;
     background: transparent;
 }
 
 #box {
-	padding: 10px 5px;
+	padding: 8px 4px;
     background: @background;
-    border-radius: 30px;
+    border-radius: 29px;
+    border: 1px solid @border;
 }
 
 button, image {
@@ -40,9 +41,9 @@ button:focus {
 tooltip {
     border-radius: 15px;
     background: @background;
-    border: none;
     outline: none;
     box-shadow: none;
+    border: 1px solid @border;
 }
 
 tooltip label {
@@ -54,6 +55,7 @@ tooltip label {
 }
 
 menu {
+    border: 1px solid @border;
     border-radius: 10px;
     font-weight: 700;
     background: @menu-bg;

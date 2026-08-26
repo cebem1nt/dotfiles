@@ -63,10 +63,12 @@
 #right, 
 #left,
 #right-hidden-top, 
-#left-hidden-top {
+#left-hidden-top,
+#clock  {
     padding: 2px 10px;
     border-radius: 15px;
     background: @module-bg;
+    border: 1px solid @border;
 }
 
 #right-hidden-top,
@@ -79,9 +81,7 @@
 }
 
 #clock {
-    background: @module-bg;
-    padding: 1px 18px;
-    border-radius: 15px;
+    padding: 2px 18px;
 }
 
 #custom-ctlcenter {
@@ -126,6 +126,7 @@
     border-radius: 100%;
     padding: 0 2px;
     margin: 0 3px;
+    min-width: 16px;
 }
 /* 
 #workspaces button.empty:not(.active) {
@@ -141,9 +142,17 @@
 }
 
 /* ---<==== Misc ====>--- */
-tooltip {
+
+tooltip,
+tooltip.background {
+    background-image: none;
     border-radius: 15px;
     background: @tooltip-bg;
+    box-shadow: none;
+}
+
+tooltip {
+    border: 1px solid @border;
 }
 
 tooltip label {
@@ -163,6 +172,7 @@ menu {
     font-weight: 700;
     color: @fg;
     background: @tooltip-bg;
+    border: 1px solid @border;
 }
 
 menu > * {
