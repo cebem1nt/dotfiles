@@ -2,6 +2,10 @@
 # Swaync semicolons and colons parsing seems to be broken, 
 # that's why there is a separate script for it
 
-hyprctl eval "hl.exec_cmd('alacritty -e htop')"
+if [[ "$MANGO_INSTANCE_SIGNATURE" ]]; then
+    mmsg dispatch spawn, "alacritty -e htop"
+else
+    hyprctl eval "hl.exec_cmd('alacritty -e htop')"
+fi
 
 swaync-client -cp

@@ -2,6 +2,10 @@
 # Swaync semicolons and colons parsing seems to be broken, 
 # that's why there is a separate script for it
 
-hyprctl eval "hl.exec_cmd('nwg-look')"
+if [[ "$MANGO_INSTANCE_SIGNATURE" ]]; then
+    mmsg dispatch spawn, nwg-look
+else
+    hyprctl eval "hl.exec_cmd('nwg-look')"
+fi
 
 swaync-client -cp

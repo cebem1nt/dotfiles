@@ -28,7 +28,7 @@ window {
 mainbox {
     width:                      inherit;
     spacing:                    5px;
-    padding:                    5px;
+    padding:                    3px 5px;
     orientation:                horizontal;
     background-color:           @background;
     border:                     1px solid;

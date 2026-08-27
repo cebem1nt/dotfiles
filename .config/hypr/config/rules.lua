@@ -169,7 +169,8 @@ hl.window_rule({
 
     pseudo = true,
     size = "1850 1000",
-    scrolling_width = 1
+    scrolling_width = 1,
+    workspace = 5
 })
 
 hl.window_rule({
