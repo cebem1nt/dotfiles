@@ -27,6 +27,8 @@ window {
     width:                       450px;
     height:                      100%;
     background-color:            @background;
+    border:                      1px solid;
+    border-color:                @color-border;
 }
 
 mainbox {
@@ -113,7 +115,7 @@ mode-switcher {
 }
 
 button {
-    font:                       "CaskaydiaCove Nerd Font Propo, bold 12";
+    font:                        "CaskaydiaCove Nerd Font Propo, bold 12";
     padding:                     10px;
     margin:                      0;
     border:                      0px solid;
@@ -125,11 +127,6 @@ button {
 
 button selected {
     background-color:            @foreground;
-    color:                       @background;
-}
-
-button hover {
-    background-color:            red;
     color:                       @background;
 }
 

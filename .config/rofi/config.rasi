@@ -9,6 +9,12 @@ configuration {
 
     kb-cancel: "Escape,MousePrimary";
 
+	// Scroll full page on mouse scroll instead of one element
+	kb-page-prev: "ScrollUp";
+	kb-page-next: "ScrollDown";
+	ml-row-down: "";
+	ml-row-up: "";
+
 	/*---------- Drun settings ----------*/
 	drun-match-fields: "name,exec,generic,comment";
 	drun-display-format: "{name} \n[<span size='small'><i>{comment}</i></span>]";
@@ -63,15 +69,15 @@ configuration {
     }
 
     
-     /* Highlight an entry under the mouse pointer */
-     hover-select: true;
+	/* Highlight an entry under the mouse pointer */
+	hover-select: true;
 
-     /* Disable MousePrimary as an entry selector */
-     /* Without this setting you won't be able to set MousePrimary as an entry
-     acceptor. */
-     me-select-entry: "";
+	/* Disable MousePrimary as an entry selector */
+	/* Without this setting you won't be able to set MousePrimary as an entry
+	acceptor. */
+	me-select-entry: "";
 
-     /* Use either LMB single click or RMB single click or LMB double click
-     to accept an entry */
-     me-accept-entry: [ MousePrimary ];
+	/* Use either LMB single click or RMB single click or LMB double click
+	to accept an entry */
+	me-accept-entry: [ MousePrimary ];
 }

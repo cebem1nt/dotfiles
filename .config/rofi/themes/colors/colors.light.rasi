@@ -7,4 +7,5 @@
     active:         #41a6b5ff;
     urgent:         #f7768eff;
     highlight:      rgba(112, 114, 128, 0.16);
+    color-border:   rgba(190, 192, 198, 0.9);
 }

@@ -24,6 +24,7 @@
 	margin: 8px;
 	padding: 0;
 	/* box-shadow: none; */
+	border: 1px solid @border;
 }
 
 .notification-background .close-button {
@@ -110,11 +111,13 @@
 	border-radius: var(--border-radius);
 	margin: 5px;
 	padding: 5px 5px 0 5px;
+	border: 1px solid @border;
 }
 
 .control-center .notification-background {
 	background: @center-notification-bg;
 	box-shadow: var(--shadow);
+	border: none;
 }
 
 /* Remove close buttons in notification center */

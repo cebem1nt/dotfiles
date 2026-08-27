@@ -23,6 +23,8 @@ window {
     y-offset:               10px;
     border-radius:          15px;
     background-color:       @background;
+    border:                 1px solid;
+    border-color:           @color-border;
 }
 
 mainbox {

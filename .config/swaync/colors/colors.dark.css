@@ -8,3 +8,4 @@
 @define-color selected                  alpha(@text-alt, .4);
 @define-color hover                     alpha(@selected, .4);
 @define-color urgent                    @text-alt;
+@define-color border                    #252525;

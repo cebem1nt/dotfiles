@@ -18,9 +18,7 @@ configuration {
 window {
     transparency:               "real";
     location:                   north;
-    anchor:                     north;
     width:                      1920px;
-    enabled:                    true;
     margin:                     5px;
     border-radius:              15px;
     y-offset:                   -37px;
@@ -33,6 +31,8 @@ mainbox {
     padding:                    5px;
     orientation:                horizontal;
     background-color:           @background;
+    border:                     1px solid;
+    border-color:               @color-border;
     children:                   [ "prompt", "entry", "listview" ];
 }
 

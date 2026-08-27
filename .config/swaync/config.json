@@ -6,6 +6,8 @@
     "control-center-width": 450,
     "fit-to-screen": true,
 
+    "layer-shell-cover-screen": false,
+
     "notification-window-width": 400,
     "notification-icon-size": 40,
     "notification-body-image-height": 500,
