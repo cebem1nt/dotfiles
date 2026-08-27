@@ -9,5 +9,6 @@ else
 fi
 
 pkill -f nwg-dock-hyprland
+pkill -f dock-mango
 
 "$HOME/.local/bin/dock" &

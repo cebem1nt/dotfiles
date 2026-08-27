@@ -41,7 +41,7 @@
     --background-tinted-press: var(--accent-alternative) !important;
 }
 
-.encore-dark-theme {
+.encore-dark-theme, .encore-dark-theme .encore-over-media-set {
     --text-bright-accent: var(--accent-alternative) !important;
 
     /* Text color */
@@ -49,7 +49,7 @@
     --text-subdued: #363c4d !important;
     --sort-box-text-color: var(--text-base) !important;
 
-    --background-highlight: #979db87f !important;
+    --background-highlight: #979db85b !important;
     --encore-icon-fill: var(--text-base);
     --background-elevated-base: var(--background-elevated) !important;
 }
@@ -90,9 +90,11 @@
     --carousel-end-chevron-gradient: #12121210 !important;
 }
 
+/* Artist, playlist, album title color */
 .main-entityHeader-headerText span,
-.main-entityHeader-title h1 {
-    color: var(--text-base);
+.main-entityHeader-title h1,
+.main-entityHeader-metaDataText a:not([data-encore-id]) {
+    color: var(--background-elevated);
 }
 
 /* N more releases album page button */
@@ -110,9 +112,23 @@
     background: #fff9;
 }
 
-.main-trackList-rowMainContentTitle,
-a:not([data-encore-id]) {
+.main-trackList-rowMainContentTitle, .main-trackList-rowMainContent a, 
+.main-trackList-rowSectionVariable a,
+.main-trackInfo-name a, .main-nowPlayingView-section a {
     color: var(--text-base) !important;
+}
+
+/* About the artist button */
+.main-nowPlayingView-sectionHeaderText button {
+    color: var(--background-elevated)
+}
+
+a:not([data-encore-id]) {
+    color: var(--text-base);
+}
+
+main-trackInfo-overlay a:not([data-encore-id]):hover, a:not([data-encore-id]):focus {
+    text-decoration-color: var(--text-base);
 }
 
 .main-nowPlayingView-mainWrapper {
@@ -123,13 +139,14 @@ a:not([data-encore-id]) {
     color: var(--text-base) !important;
 }
 
-.main-entityHeader-metaDataText {
+button.main-contextMenu-menuItemButton, .main-contextMenu-menuItem a {
     color: var(--text-base) !important;
 }
 
-button.main-contextMenu-menuItemButton {
-    color: var(--text-alpha) !important;
-}
+button.main-contextMenu-menuItemButton:hover, .main-contextMenu-menuItem:hover a {
+    background-color: #979db85b !important;
+} 
+
 
 .x-sortBox-sortDropdown:focus, .x-sortBox-sortDropdown:hover {
     color: var(--text-subdued) !important;
@@ -281,4 +298,26 @@ input:checked~.x-toggle-indicatorWrapper {
 
 div.search-searchCategory-carouselButton svg.e-10180-icon {
     --text-base: #000;
+}
+
+/* Search bar keybind block at right */
+.main-globalNav-searchInputTextWrapper span kbd {
+    color: var(--text-base);
+}
+
+/* Tracklist elements hover  */
+.main-trackList-trackListRow:hover, .main-trackList-trackListRow:focus-within {
+    background-color: #979db85b !important;
+}
+
+/* Copyright notice, playlist bottom content (find more, etc.) */
+.playlist-playlist-findMoreButton, .playlist-playlist-sectionTitleWrapper *, 
+.ntFavMVp184DyweP p, section.WX8YaUbSAkU5l7KZ * {
+    color: var(--text-alpha) !important;
+}
+
+section.WX8YaUbSAkU5l7KZ input, 
+section.WX8YaUbSAkU5l7KZ ::placeholder,
+.main-trackList-trackListContainer * , .M8rXyTyUZtEIuYXG p{
+    color: var(--text-base);
 }
