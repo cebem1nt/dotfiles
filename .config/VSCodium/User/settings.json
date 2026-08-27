@@ -32,6 +32,12 @@
     "undefined-global",
     "trailing-space"
   ],
+  "Lua.workspace.library": [
+    "/usr/share/hypr/stubs"
+  ],
+  "Lua.diagnostics.globals": [
+    "hl"
+  ],
   "git.confirmSync": false,
   "window.customTitleBarVisibility": "never",
   "window.density.editorTabHeight": "compact",
@@ -51,6 +57,7 @@
   "color-highlight.languages": [
     "*",
     "!css",
+    "!lua",
     "!toml",
     "!c",
     "!rasi"
@@ -96,5 +103,8 @@
   "clangd.arguments": [
     "--header-insertion=never"
   ],
-  "terminal.integrated.enableMultiLinePasteWarning": "never"
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "editor.codeActionsOnSave": {},
+  "diffEditor.ignoreTrimWhitespace": false,
+  "go.toolsManagement.autoUpdate": true
 }
