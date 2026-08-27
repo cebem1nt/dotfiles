@@ -8,4 +8,6 @@ else
     ln -fs colors.light.lua init.lua
 fi
 
-hyprctl reload config-only
+if [[ "$HYPRLAND_INSTANCE_SIGNATURE" ]]; then
+    hyprctl reload config-only
+fi

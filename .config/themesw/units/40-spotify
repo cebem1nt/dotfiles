@@ -12,5 +12,10 @@ spicetify refresh
 
 if pgrep -x "spotify" ; then
     pkill -x "spotify"
-    hyprctl dispatch 'hl.dsp.exec_raw("spotify-launcher")'
+
+    if [[ "$MANGO_INSTANCE_SIGNATURE" ]]; then 
+        mmsg dispatch spawn, spotify-launcher
+    else 
+        hyprctl dispatch 'hl.dsp.exec_raw("spotify-launcher")'
+    fi
 fi
