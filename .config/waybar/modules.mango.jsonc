@@ -21,7 +21,7 @@
 
     "group/left-hidden-top" : {
         "orientation": "horizontal",
-        "modules" : [ "custom/start", "group/left-hidden" ]
+        "modules" : [ "power-profiles-daemon", "group/left-hidden" ]
     },
 
     "group/right" : {
@@ -111,7 +111,7 @@
         "format": "{icon}",
         "format-bluetooth": "{icon}",
         "tooltip-format": "{volume}%",
-        "format-muted": "<span size='12pt'>󰝟</span>",
+        "format-muted": "",
         "scroll-step": 2,
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "on-click-right": "mmsg dispatch spawn, pavucontrol -t 4",
@@ -123,9 +123,9 @@
             "portable": "",
             "car": "",
             "default": [
-                "<span size='12pt'>󰕿</span>",
-                "<span size='12pt'>󰖀</span>",
-                "<span size='12pt'>󰕾</span>"
+                "",
+                "",
+                ""
             ]
         }
     },
