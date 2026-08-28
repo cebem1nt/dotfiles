@@ -1,6 +1,21 @@
 #!/bin/bash
+  
+SELECTION=$(
+    cliphist list | \
+        rofi -theme ~/.config/rofi/themes/clipboard.rasi \
+             -dmenu -sync -display-columns 2 \
+             -kb-accept-alt "" -kb-custom-1 "Shift+Return"
+)
 
-cliphist list \
-    | rofi -theme ~/.config/rofi/themes/clipboard.rasi -dmenu -sync -display-columns 2 \
-    | cliphist decode \
-    | wl-copy
+RET=$?
+
+if [[ $RET == 1 ]]; then
+    exit 1
+fi
+
+echo "$SELECTION" | cliphist decode | wl-copy
+
+if [[ $RET == 10 ]]; then
+    # Paste directly if shift + enter
+    wl-paste -n | wtype - 
+fi
