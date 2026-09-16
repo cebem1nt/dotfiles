@@ -6,6 +6,7 @@
     "control-center-width": 450,
     "fit-to-screen": true,
 
+    "control-center-layer": "overlay",
     "layer-shell-cover-screen": false,
 
     "notification-window-width": 400,
