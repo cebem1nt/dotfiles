@@ -153,10 +153,9 @@
         "menu": "on-click-right",
         "menu-file": "~/.config/waybar/context/network.xml",
         "menu-actions": {
-  			"action-1": "nmcli radio wifi off",
-  			"action-2": "nmcli radio wifi on",
-            "action-3": "mmsg dispatch spawn, alacritty -e nmtui",
-            "action-4": "mmsg dispatch spawn, nm-connection-editor"
+  			"action-1": "[[ $(nmcli radio wifi) == enabled ]] && nmcli radio wifi off || nmcli radio wifi on",
+            "action-2": "mmsg dispatch spawn, alacritty -e nmtui",
+            "action-3": "mmsg dispatch spawn, nm-connection-editor"
   		}
     },
 
@@ -193,7 +192,7 @@
         "timezone": "America/Argentina/Buenos_Aires",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%H:%M %d %B %Y}",
-        "on-click-right": "mmsg dispatch spawn, alacritty --class=peaclock -e peaclock",
+        "on-click-right": "mmsg dispatch spawn, alacritty --class=Alacritty-Floating-Peaclock -e peaclock",
         "calendar": {
             "mode": "year",
             "weeks-pos": "right",

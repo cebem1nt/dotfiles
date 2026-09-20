@@ -183,10 +183,9 @@
         "menu": "on-click-right",
         "menu-file": "~/.config/waybar/context/network.xml",
         "menu-actions": {
-  			"action-1": "nmcli radio wifi off",
-  			"action-2": "nmcli radio wifi on",
-            "action-3": "hyprctl eval \"hl.exec_cmd('alacritty -e nmtui')\"",
-            "action-4": "hyprctl eval \"hl.exec_cmd('nm-connection-editor')\""
+  			"action-1": "[[ $(nmcli radio wifi) == enabled ]] && nmcli radio wifi off || nmcli radio wifi on",
+            "action-2": "hyprctl eval \"hl.exec_cmd('alacritty -e nmtui')\"",
+            "action-3": "hyprctl eval \"hl.exec_cmd('nm-connection-editor')\""
   		}
     },
 
