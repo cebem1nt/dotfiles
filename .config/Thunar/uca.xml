@@ -153,4 +153,20 @@
 	<text-files/>
 	<video-files/>
 </action>
+<action>
+	<icon>indicator-trashindicator</icon>
+	<name>.bak</name>
+	<submenu></submenu>
+	<unique-id>1789874191121208-1</unique-id>
+	<command>~/.local/bin/bak %f</command>
+	<description>Add or remove .bak to file</description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
 </actions>
