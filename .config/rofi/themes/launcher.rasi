@@ -23,7 +23,7 @@ window {
     anchor:                      west;
     padding:                     0;
     margin:                      5px;
-    border-radius:               15px;
+    border-radius:               16px;
     width:                       450px;
     height:                      100%;
     background-color:            @background;

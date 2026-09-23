@@ -11,3 +11,6 @@ tokyonight-gtk-theme-git
 # Optional, will be installed from source otherwise
 spicetify-cli 
 bibata-cursor-theme 
+
+# Wifi mode for rofi
+rofi-wifi

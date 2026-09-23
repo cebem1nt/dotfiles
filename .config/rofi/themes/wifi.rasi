@@ -7,47 +7,43 @@
 
 @import "colors/colors.rasi"
 
-* {
-    font:                        "CaskaydiaCove Nerd Font, bold 12";
-}
 
 configuration {
-    show-icons:                  false;
+    show-icons:                 true;
+	drun-display-format:        "{name} \n<span size='x-small' color='grey'><i>{exec}</i></span>";
+}
+
+* {
+    font:                       "CaskaydiaCove Nerd Font, bold 12";
 }
 
 window {
     transparency:                "real";
-    location:                    center;
-    anchor:                      center;
-    width:                       600px;
-    x-offset:                    0px;
-    y-offset:                    0px;
-    enabled:                     true;
-    margin:                      0px;
-    padding:                     0px;
-    border:                      0px solid;
-    border-radius:               15px;
-    cursor:                      "default";
+    location:                    east;
+    anchor:                      east;
+    padding:                     0;
+    margin:                      5px;
+    border-radius:               16px;
+    width:                       450px;
+    height:                      100%;
     background-color:            @background;
     border:                      1px solid;
     border-color:                @color-border;
 }
 
 mainbox {
-    enabled:                     true;
+    border-radius:               0;
+    margin:                      0;
     spacing:                     10px;
-    margin:                      0px;
     padding:                     10px;
-    border:                      0px solid;
-    border-radius:               0px 0px 0px 0px;
     background-color:            transparent;
     children:                    [ "inputbar", "message", "listview" ];
 }
 
 inputbar {
-    margin:                      0px;
     spacing:                     10px;
-    padding:                     5px 15px;
+    margin:                      0px;
+    padding:                     10px 15px;
     border-radius:               16px;
     background-color:            @background-alt;
     color:                       @foreground;
@@ -55,38 +51,14 @@ inputbar {
 }
 
 entry {
-    enabled:                     true;
     background-color:            inherit;
     color:                       inherit;
     placeholder-color:           inherit;
     placeholder:                 "Search for network:";
-    vertical-align:              0.5;   
-}
-
-button {
-    font:                        "CaskaydiaCove Nerd Font Propo, bold 12";
-    padding:                     10px 15px;
-    margin:                      0px;
-    border:                      0px;
-    border-radius:               16px;
-    background-color:            @highlight;
-    color:                       inherit;
-    cursor:                      pointer;
-    horizontal-align:            0.5;
-    width:                       45px;
-    height:                      45px;
-    vertical-align:              0.5;
-}
-
-button selected {
-    background-color:            @foreground;
-    color:                       @background;
 }
 
 listview {
     columns:                     1;
-    lines:                       8;
-    cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
     layout:                      vertical;
@@ -95,16 +67,16 @@ listview {
     fixed-columns:               true;
     spacing:                     5px;
     margin:                      0px;
-    border:                      0px solid;
     padding:                     10px 8px;
     border-radius:               16px;
     background-color:            @background-alt;
     color:                       @foreground;
 }
 
+
 element {
     enabled:                     true;
-    spacing:                     10px;
+    spacing:                     0px;
     margin:                      0px;
     padding:                     3px 10px;
     border:                      0px;
@@ -120,8 +92,8 @@ element selected.normal {
 
 element-icon {
     background-color:            transparent;
+    size:                        0px;
     color:                       inherit;
-    size:                        24px;
     cursor:                      inherit;
 }
 
@@ -129,30 +101,36 @@ element-text {
     background-color:            transparent;
     color:                       inherit;
     cursor:                      inherit;
-    padding:                     10px 0;
+    padding:                     5px 0;
     vertical-align:              0.5;
+}
+
+mode-switcher {
+    enabled:                     false;
+    spacing:                     8px;
+    margin:                      0px;
+    border-radius:               16px;
+    padding:                     8px 18px;
+    background-color:            @background-alt;
+    color:                       @foreground;
 }
 
 message {
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
-    border:                      0px solid;
-    border-radius:               0px 0px 0px 0px;
+    border-radius:               0px;
     background-color:            transparent;
     color:                       @foreground;
 }
 
 textbox {
-    padding:                     8px 10px;
-    border:                      0px solid;
-    border-radius:               10px;
+    padding:                     8px;
+    border-radius:               4px;
     background-color:            @background-alt;
     color:                       @foreground;
-    vertical-align:              0.5;
-    horizontal-align:            0.0;
-    highlight:                   none;
     placeholder-color:           @foreground;
+    vertical-align:              0.5;
     blink:                       true;
     markup:                      true;
 }
