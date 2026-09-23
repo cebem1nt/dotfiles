@@ -188,7 +188,7 @@
         "menu": "on-click-right",
         "menu-file": "~/.config/waybar/context/network.xml",
         "menu-actions": {
-  			"action-1": "[[ $(nmcli radio wifi) == enabled ]] && nmcli radio wifi off || nmcli radio wifi on",
+            "action-1": "~/.local/bin/toggle_rofi ~/.config/rofi/bin/wifi &",
             "action-2": "mmsg dispatch spawn, alacritty -e nmtui",
             "action-3": "mmsg dispatch spawn, nm-connection-editor"
   		}
@@ -264,7 +264,7 @@
 
     "custom/start": {
         "format": "",
-        "on-click": "~/.config/rofi/bin/drun &"
+        "on-click": "~/.local/bin/toggle_rofi ~/.config/rofi/bin/drun &"
     },
 
     "custom/ctlcenter" : {

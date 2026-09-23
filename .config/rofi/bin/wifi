@@ -1,0 +1,5 @@
+#!/bin/bash
+
+rofi -modi wifi -show wifi -iface wlo1 \
+     -theme ~/.config/rofi/themes/wifi.rasi \
+     -display-wifi ""
