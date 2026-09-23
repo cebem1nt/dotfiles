@@ -5,9 +5,10 @@ shopt -s nullglob dotglob
 # the dark and light theme. By it self just manages other scripts 
 # that switch theme for some apps. Such scripts are called units
 
-THEMESW_DIR="$HOME/.config/themesw/"
+THEMESW_DIR="$HOME/.config/themesw"
 THEMESW_CURRENT="$THEMESW_DIR/current"
-THEMESW_SCHEMES="$THEMESW_DIR/schemes" # A file with color schemes names separated by newlines
+THEMESW_SCHEMES="$THEMESW_DIR/schemes"
+LOCKFILE="$THEMESW_DIR/.lock"
 
 if [[ ! -d "$THEMESW_DIR" ]]; then
     mkdir -p $THEMESW_DIR
@@ -19,6 +20,14 @@ if [[ ! -d "$THEMESW_DIR" ]]; then
 
     exit 1
 fi
+
+exec 200>"$LOCKFILE"
+flock -n 200 || {
+    echo "themesw is already running"
+    exit 1
+}
+
+trap 'rm -f "$LOCKFILE"' EXIT
 
 if [[ ! -s "$THEMESW_CURRENT" ]]; then 
     echo "dark" > $THEMESW_CURRENT
