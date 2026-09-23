@@ -25,18 +25,15 @@
 #mpris,
 #window,
 #cpu, 
-#load {
+#load,
+#backlight,
+#pulseaudio {
     padding: 1px 7px;
 }
 
 #network, 
 #tray {
     padding: 1px 6px;
-}
-
-#backlight,
-#pulseaudio {
-    padding: 1px 8px;
 }
 
 #pulseaudio {
@@ -62,7 +59,7 @@
 
 #right, 
 #left,
-#right-hidden-top, 
+#right-hidden-top,
 #left-hidden-top,
 #clock  {
     padding: 2px 10px;

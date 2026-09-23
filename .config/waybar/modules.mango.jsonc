@@ -111,7 +111,7 @@
         "format": "{icon}",
         "format-bluetooth": "{icon}",
         "tooltip-format": "{volume}%",
-        "format-muted": "",
+        "format-muted": "<span size='9.5pt'></span>",
         "scroll-step": 2,
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "on-click-right": "mmsg dispatch spawn, pavucontrol -t 4",
@@ -123,9 +123,10 @@
             "portable": "",
             "car": "",
             "default": [
-                "",
-                "",
-                ""
+                "<span size='9.5pt'></span>",
+                "<span size='9.5pt'></span>",
+                "<span size='9.5pt'></span>",
+                "<span size='9.5pt'></span>"
             ]
         }
     },
@@ -148,8 +149,12 @@
         "format-disabled": "",
         "format-disconnected": "",
         "format-wifi": "",
-        "format-ethernet": "",
+        "format-ethernet": "󰈀",
         "tooltip-format": "{essid}\n\nFrequency: {frequency}GHz\nStrength: {signalStrength}%\n\n{bandwidthUpBytes}   {bandwidthDownBytes}",
+        "tooltip-format-ethernet": "{bandwidthUpBytes}   {bandwidthDownBytes}",
+        "tooltip-format-disconnected": "No network connection!",
+        "tooltip-format-disabled": "No network connection!",
+        "on-click": "[[ $(nmcli radio wifi) == enabled ]] && nmcli radio wifi off || nmcli radio wifi on",
         "menu": "on-click-right",
         "menu-file": "~/.config/waybar/context/network.xml",
         "menu-actions": {

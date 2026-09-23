@@ -4,7 +4,7 @@
 
     <child>
       <object class="GtkMenuItem" id="action-1">
-          <property name="label">Toggle wifi on/off</property>
+          <property name="label">Toggle on/off</property>
       </object>
     </child>
 
