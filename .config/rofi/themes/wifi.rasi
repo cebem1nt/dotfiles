@@ -9,7 +9,6 @@
 
 
 configuration {
-    show-icons:                 true;
 	drun-display-format:        "{name} \n<span size='x-small' color='grey'><i>{exec}</i></span>";
 }
 
@@ -47,14 +46,13 @@ inputbar {
     border-radius:               16px;
     background-color:            @background-alt;
     color:                       @foreground;
-    children:                    [ "entry" ];
+    children:                    [ "prompt", "entry" ];
 }
 
-entry {
+prompt, entry {
     background-color:            inherit;
     color:                       inherit;
     placeholder-color:           inherit;
-    placeholder:                 "Search for network:";
 }
 
 listview {
