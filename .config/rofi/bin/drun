@@ -1,5 +1,11 @@
 #!/bin/bash
 
+THEME="$HOME/.config/rofi/themes/launcher.rasi"
+
+if [[ "$1" == "--alternative" ]]; then
+     THEME="$HOME/.config/rofi/themes/launcher-alternative.rasi"
+fi
+
 # I have a custom patch for rofi that adds categories for drun appliactions.
 # You can click and select shown only games, utils, etc.
 # if you want those, take a look here: https://github.com/cebem1nt/rofi/releases/tag/patch
@@ -9,6 +15,7 @@
 # rofi -theme $THEME \
 #      -show drun \
 #      -modi "drun,drun-utils,drun-games,drun-network,drun-media" \
+#      -theme-str 'entry { placeholder: "Search..."; }' \
 #      -drun-exclude-categories "Game" \
 #      -display-drun "" \
 #      -display-drun-games "󰊴" \
@@ -16,14 +23,9 @@
 #      -display-drun-network "󰭹" \
 #      -display-drun-media "󰲍" \
 
-THEME="$HOME/.config/rofi/themes/launcher.rasi"
-
-if [[ "$1" == "--alternative" ]]; then
-     THEME="$HOME/.config/rofi/themes/launcher-alternative.rasi"
-fi
-
 rofi -theme $THEME \
      -show drun \
+     -theme-str 'entry { placeholder: "Search..."; }' \
      -modi "drun,run,filebrowser" \
      -display-drun "" \
      -display-run "" \

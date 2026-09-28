@@ -59,7 +59,7 @@ entry {
     background-color:            inherit;
     color:                       inherit;
     placeholder-color:           inherit;
-    placeholder:                 "Select a source to share:";
+    placeholder:                 "Select a source to share...";
     vertical-align:              0.5;   
 }
 

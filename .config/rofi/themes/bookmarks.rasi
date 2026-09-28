@@ -36,7 +36,7 @@ inputbar {
 }
 
 entry {
-    placeholder:            "Search:";
+    placeholder:            "Search...";
     text-color:             @foreground; 
 }
 

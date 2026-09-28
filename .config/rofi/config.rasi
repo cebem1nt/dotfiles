@@ -28,7 +28,7 @@ configuration {
     }
 
 	/*---------- Run settings ----------*/
-	run-command: "{cmd}";
+	run-command: "zsh -ic {cmd}";
 	run-shell-command: "{terminal} -e {cmd}";
 
 	/*---------- Fallback Icon ----------*/

@@ -45,7 +45,7 @@ inputbar {
 }
 
 entry {
-    placeholder:            "Search:";
+    placeholder:            "Search...";
     background-color:       inherit;
     text-color:             inherit;
 }
