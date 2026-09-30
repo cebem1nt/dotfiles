@@ -18,7 +18,6 @@ configuration {
 	/*---------- Drun settings ----------*/
 	drun-match-fields: "name,exec,generic,comment";
 	drun-display-format: "{name} \n[<span size='small'><i>{comment}</i></span>]";
-	drun-url-launcher: "xdg-open";
 	drun-show-actions: false;
 	drun-use-desktop-cache: false;
 	drun-reload-desktop-cache: false;
@@ -27,20 +26,13 @@ configuration {
 		parse-system: true;
     }
 
-	/*---------- Run settings ----------*/
-	run-command: "zsh -ic {cmd}";
-	run-shell-command: "{terminal} -e {cmd}";
 
 	/*---------- Fallback Icon ----------*/
 	run, drun {
 		fallback-icon: "application-default-icon";
 	}
 
-	filebrowser {
-		fallback-icon: "application-x-zerosize";
-	}
-
-	/*---------- Window switcher settings ----------*/
+    /*---------- Window switcher settings ----------*/
 	window-match-fields: "title,class,role,name,desktop";
 	window-command: "wmctrl -i -R {window}";
 	window-format: "{w} - {c} - {t:0}";
@@ -48,7 +40,6 @@ configuration {
 
 	
 	disable-history: false;
-	sorting-method: "normal";
 
 	/*---------- Misc setting ----------*/
 	terminal: "alacritty";
@@ -58,14 +49,15 @@ configuration {
 	/*---------- File browser settings ----------*/
     filebrowser {
       show-hidden: true;
+      fallback-icon: "application-x-zerosize";
       directories-first: true;
-      sorting-method:    "mtime";
+      sorting-method: "mtime";
     }
 
 	/*---------- Other settings ----------*/
     timeout {
       action: "kb-cancel";
-      delay:  0;
+      delay:  20;
     }
 
     

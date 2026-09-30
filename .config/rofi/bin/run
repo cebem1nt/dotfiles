@@ -4,4 +4,6 @@ rofi -theme ~/.config/rofi/themes/launcher.rasi \
      -theme-str 'mainbox {children: [ "inputbar", "message", "listview"];}' \
      -theme-str 'entry { placeholder: "Run command..."; }' \
      -no-show-icons \
+     -run-shell-command "{terminal} -e {cmd}" \
+     -run-command "zsh -ic {cmd}" \
      -modi run -show run \
