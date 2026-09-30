@@ -299,6 +299,7 @@ Documentation is provided via `README.md` files in different subdirectories.
 
   - [Sway notification center](.config/swaync/README.md)
   - [Waybar config documentation](.config/waybar/README.md)
+  - [Rofi configs and scripts](.config/rofi/README.md)
   - [Startup scripts](.local/bin/startup/README.md)
   - [Scripts cheatsheet](.local/bin/README.md)
   - [Note on .local/share/applications](.local/share/applications/README.md)
@@ -310,7 +311,7 @@ Documentation is provided via `README.md` files in different subdirectories.
 
 ## Scripts
 
-I have a huge collection of scripts for the usage on my system. You can find them in [`~/.local/bin`](.local/bin/). Some of them are used from [hyprland binds config](.config/hypr/config/binds.lua) others are used from [waybar modules config](.config/waybar/modules.jsonc). Some are used from [swaync buttons config](.config/swaync/config.json).
+I have a huge collection of scripts for the usage on my system. You can find them in [`~/.local/bin`](.local/bin/). Some of these scripts are used from: [hyprland binds config](.config/hypr/config/binds.lua), [mango binds config](.config/mango/binds.conf), [waybar modules config](.config/waybar/modules.jsonc), [swaync buttons config](.config/swaync/config.json).
 
 You can see full scripts cheatsheet [here](.local/bin/README.md)
 

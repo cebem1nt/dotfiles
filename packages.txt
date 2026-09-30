@@ -5,6 +5,11 @@ hypridle
 xdg-desktop-portal-gtk 
 xdg-desktop-portal-hyprland 
 
+# Clipboard
+cliphist
+wl-clip-persist
+wl-clipboard
+
 # Base shell components
 waybar 
 swaync 
