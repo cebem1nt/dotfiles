@@ -4,7 +4,7 @@ My daily drive archlinux dotfiles including scripts, wallpapers pack and some ot
 <details open>
   <summary>Info</summary>
 
-- WM: Hyprland
+- WM: Mango, Hyprland
 - Fonts: [Cascadia Code](https://github.com/microsoft/cascadia-code) and [Caskaydia Cove](https://github.com/eliheuer/caskaydia-cove) (Nerd font version)
 - GTK themes: [Kripton](https://github.com/EliverLara/Kripton) and [Tokyonight](https://github.com/Fausto-Korpsvart/Tokyonight-GTK-Theme) (For the light theme)
 - Icon theme: [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
@@ -37,13 +37,16 @@ My daily drive archlinux dotfiles including scripts, wallpapers pack and some ot
 
 ## Important notes
 
+### Hyprland coniguration
+
+Hyprland configuration files are located in [`~/.config/hypr/`](.config/hypr/) and are splitted into sub-configs that are located under `config/`. Each one has a link to the wiki page related to it at the top.
+
+> [!NOTE]
+> **Hyprland config files are not actively maintained**, I switched to [mango](#mangowm)  
+
 ### Default terminal emulator
 
 Default terminal emulator is `alacritty` make sure it is installed. Press `SUPER + ;` to run it. For more bindings list see [Binds](#binds)
-
-### Hyprland coniguration
-
-**Hyprland configuration files are located** in [`~/.config/hypr/`](.config/hypr/) and are splitted into sub-configs that are located under `config/`. Each one has a link to the wiki page related to it at the top. 
 
 ### XDG Base directories
 
@@ -55,11 +58,11 @@ Default terminal emulator is `alacritty` make sure it is installed. Press `SUPER
 > - Instead of `~/Pictures` - `~/med/pictures`
 > - Instead of `~/Videos` - `~/med/videos`
 
-
-Please keep that in mind before running the installation. This might screw up some of your things. You can change it, here:
+**Please keep that in mind before running installer!** This might screw up some of your things. You can change it, here:
 
 - [`~/.config/user-dirs.dirs`](.config/user-dirs.dirs)
 - [`~/.config/hypr/config/env.lua`](.config/hypr/config/env.lua)
+- [`~/.config/mango/env.conf`](.config/mango/env.conf)
 
 ## Installation
 
@@ -67,15 +70,6 @@ Please keep that in mind before running the installation. This might screw up so
 > ***Please consider using this repo as a guide, example or an inspiration to create your own dotfiles*** 
 >
 > Author strongly **advises against installing other people's dotfiles blindly.**
-
-> [!IMPORTANT]
-> Installer script was tested on Arch linux.
-> 
-> ***On another distro, some things might not work as expected.***
->
-> If you're using another distro, ***please install these packages*** based on your package manager:
->   1) [packages.txt](./packages.txt) (oficial repos on Arch)
->   2) [packages.aur.txt](./packages.aur.txt) (Arch User Repository packages)
 
 ---
 
@@ -95,6 +89,15 @@ Altenatively, see [packages.txt](./packages.txt) and [packages.aur.txt](./packag
 
 Clone the repo & run the installer:
 
+> [!IMPORTANT]
+> Installer script was tested on Arch linux.
+> 
+> ***On another distro, some things might not work as expected.***
+>
+> If you're using another distro, ***please install these packages*** based on your package manager:
+>   1) [packages.txt](./packages.txt) (oficial repos on Arch)
+>   2) [packages.aur.txt](./packages.aur.txt) (Arch User Repository packages)
+
 ```sh
 git clone https://github.com/cebem1nt/dotfiles.git --depth=1
 cd dotfiles
@@ -111,6 +114,7 @@ Or install components separately by running scripts from `install/` directory:
 ```
 
 ## Uninstallation
+
 **Your previous config files are stored in** `~/.local/old` (or `~/.local/old-N` based on N times executed the install.sh script). You can restore necessary config files manually or using `./restore.sh` script:
 
 ```sh
@@ -132,84 +136,6 @@ To use dock in mangowm, install [dock-mango](https://github.com/cebem1nt/dock-ma
 ## Binds
 
 <details open>
-  <summary>
-    <h3><img src="https://wiki.hypr.land/favicon.svg" width="20" height="20"> Hyprland</h3>
-  </summary>
-
-<table>
-  <tr><td>General</td><td>Menus & Navigation</td><td>Misc/Hacky</td></tr>
-  <tr>
-  <td>
-
-| Bind                  | Description              |
-|---------------------- |--------------------------|
-| `SUPER + ;`           | Open alacritty           |
-| `SUPER SHIFT + ;`     | Open alacritty in floating mode |
-| `SUPER + n`           | Open zen                 |
-| `SUPER + m`           | Open vscodium            |
-| `SUPER + b`           | Open thunar              |
-| `SUPER + q`           | Close window             |
-| `SUPER SHIFT + q`     | Kill window              |
-| `SUPER + f`           | Toggle floating window   |
-| `SUPER SHIFT + f`     | Fullscreen window        |
-| `SUPER + u`           | Pin window               |
-| `SUPER + w`           | Center floating / Cycle scrolling proption |
-| `SUPER SHIFT + w`     | Cycle scrolling proption back|
-| `SUPER CTRL + r`      | Reload hyprland config   |
-| `SUPER + z`           | Make active window a bit smaller |
-| `SUPER + c`           | Make active window a bit bigger |
-    
-  </td>
-  <td>
-    
-| Bind                  | Description              |
-|---------------------- |--------------------------|
-| `SUPER + r`           | Drun (app runner)        |
-| `SUPER + t`           | Notification center      |
-| `SUPER + v`           | Clipboard                |
-| `SUPER + y`           | Wallpapers               |
-| `SUPER + ESCAPE`      | Logout menu              |
-| `SUPER + e`           | File browser menu        |
-| `SUPER SHIFT + v`     | Glyphs selector          |
-| `SUPER SHIFT + r`     | Shell commands runner    |
-| `SUPER + arrow keys`  | move focus in direction  |
-| `SUPER + 1...5`       | go to workspace          |
-| `SUPER SHIFT + 1...5` | move to workspace        |
-| `SUPER CTRL + 1...5`  | move & go to workspace   |
-| `SUPER + s`           | toggle special workspace |
-| `SUPER SHIFT + s`     | move to special workspace|
-| `SUPER CTRL + s`      | move & go to special workspace|
-
-  </td>
-  <td>
-
-| Bind                  | Description              |
-|---------------------- |--------------------------|
-| `SUPER + tab`         | Cycle workspace layout (dwindle, scrolling, ...) |
-| `SUPER SHIFT tab`     | Cycle previous workspace layout |
-| `SUPER + .`           | Play next song           |
-| `SUPER + ,`           | Play previous song       |
-| `SUPER + p`           | Pseudotile window        |
-| `SUPER + x`           | Hide window (A.K.A "minimize") |
-| `SUPER + o`           | Create a window group    |
-| `SUPER + ]`           | Select next window in group |
-| `SUPER + [`           | Select previous window in group |
-| `SUPER SHIFT + .`     | Cycle next wallpaper     |
-| `SUPER SHIFT + ,`     | Cycle prev wallpaper     |
-| `SUPER SHIFT + /`     | Toggle wallpapes cycle   |
-| `SUPER SHIFT + y`     | Switch between light and dark theme |
-| `SUPER + space`       | Hide/show dock           |
-| `SUPER SHIFT + space` | Reload waybar            |
-
-  </td>
-  </tr>
-</table>
-
-> For more detailed info see [`~/.config/hypr/config/binds.lua`](.config/hypr/config/binds.lua).
-
-</details>
-
-<details>
   <summary>
     <h3><img src="https://mangowm.github.io/logo.svg" width="20" height="20"> Mango</h3>
   </summary>
@@ -284,6 +210,84 @@ To use dock in mangowm, install [dock-mango](https://github.com/cebem1nt/dock-ma
 </table>
 
 > For more detailed info see [`~/.config/mango/binds.conf`](.config/mango/binds.conf).
+
+</details>
+
+<details>
+  <summary>
+    <h3><img src="https://wiki.hypr.land/favicon.svg" width="20" height="20"> Hyprland</h3>
+  </summary>
+
+<table>
+  <tr><td>General</td><td>Menus & Navigation</td><td>Misc/Hacky</td></tr>
+  <tr>
+  <td>
+
+| Bind                  | Description              |
+|---------------------- |--------------------------|
+| `SUPER + ;`           | Open alacritty           |
+| `SUPER SHIFT + ;`     | Open alacritty in floating mode |
+| `SUPER + n`           | Open zen                 |
+| `SUPER + m`           | Open vscodium            |
+| `SUPER + b`           | Open thunar              |
+| `SUPER + q`           | Close window             |
+| `SUPER SHIFT + q`     | Kill window              |
+| `SUPER + f`           | Toggle floating window   |
+| `SUPER SHIFT + f`     | Fullscreen window        |
+| `SUPER + u`           | Pin window               |
+| `SUPER + w`           | Center floating / Cycle scrolling proption |
+| `SUPER SHIFT + w`     | Cycle scrolling proption back|
+| `SUPER CTRL + r`      | Reload hyprland config   |
+| `SUPER + z`           | Make active window a bit smaller |
+| `SUPER + c`           | Make active window a bit bigger |
+    
+  </td>
+  <td>
+    
+| Bind                  | Description              |
+|---------------------- |--------------------------|
+| `SUPER + r`           | Drun (app runner)        |
+| `SUPER + t`           | Notification center      |
+| `SUPER + v`           | Clipboard                |
+| `SUPER + y`           | Wallpapers               |
+| `SUPER + ESCAPE`      | Logout menu              |
+| `SUPER + e`           | File browser menu        |
+| `SUPER SHIFT + v`     | Glyphs selector          |
+| `SUPER SHIFT + r`     | Shell commands runner    |
+| `SUPER + arrow keys`  | move focus in direction  |
+| `SUPER + 1...5`       | go to workspace          |
+| `SUPER SHIFT + 1...5` | move to workspace        |
+| `SUPER CTRL + 1...5`  | move & go to workspace   |
+| `SUPER + s`           | toggle special workspace |
+| `SUPER SHIFT + s`     | move to special workspace|
+| `SUPER CTRL + s`      | move & go to special workspace|
+
+  </td>
+  <td>
+
+| Bind                  | Description              |
+|---------------------- |--------------------------|
+| `SUPER + tab`         | Cycle workspace layout (dwindle, scrolling, ...) |
+| `SUPER SHIFT tab`     | Cycle previous workspace layout |
+| `SUPER + .`           | Play next song           |
+| `SUPER + ,`           | Play previous song       |
+| `SUPER + p`           | Pseudotile window        |
+| `SUPER + x`           | Hide window (A.K.A "minimize") |
+| `SUPER + o`           | Create a window group    |
+| `SUPER + ]`           | Select next window in group |
+| `SUPER + [`           | Select previous window in group |
+| `SUPER SHIFT + .`     | Cycle next wallpaper     |
+| `SUPER SHIFT + ,`     | Cycle prev wallpaper     |
+| `SUPER SHIFT + /`     | Toggle wallpapes cycle   |
+| `SUPER SHIFT + y`     | Switch between light and dark theme |
+| `SUPER + space`       | Hide/show dock           |
+| `SUPER SHIFT + space` | Reload waybar            |
+
+  </td>
+  </tr>
+</table>
+
+> For more detailed info see [`~/.config/hypr/config/binds.lua`](.config/hypr/config/binds.lua).
 
 </details>
 
