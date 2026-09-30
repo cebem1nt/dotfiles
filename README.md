@@ -117,10 +117,24 @@ Or install components separately by running scripts from `install/` directory:
 ./restore.sh
 ```
 
+## Mangowm
+
+In order to use mangowm instead of hyprland, just install it, all the configuration files will be installed by `install.sh`. On arch you can use any AUR helper:
+
+```sh
+yay -S mangowm-git
+```
+
+### Dock
+
+To use dock in mangowm, install [dock-mango](https://github.com/cebem1nt/dock-mango/releases). You can build it from source, using `makepkg` or directly install `.pkg.tar.zst` with `pacman -U`
+
 ## Binds
 
 <details open>
-  <summary><h3>Hyprland</h3></summary>
+  <summary>
+    <h3>Hyprland <img src="https://wiki.hypr.land/favicon.svg" width="30" height="30"></h3>
+  </summary>
 
 <table>
   <tr><td>General</td><td>Menus & Navigation</td><td>Misc/Hacky</td></tr>
@@ -196,7 +210,9 @@ Or install components separately by running scripts from `install/` directory:
 </details>
 
 <details>
-  <summary><h3>Mango</h3></summary>
+  <summary>
+    <h3>Mango<img src="https://mangowm.github.io/logo.svg" width="30" height="30"></h3>
+  </summary>
 
 <table>
   <tr><td>General</td><td>Menus & Navigation</td><td>Misc/Hacky</td></tr>
@@ -311,9 +327,9 @@ For more info / setup guide see [README](https://github.com/cebem1nt/auto_walls#
 
 ## Patched programs
 
-I have a **"software patching"** hobby, that's why there are configs for a bit modified programs in my dotfiles. To be exact:
+Patched versions of these programs are used in my dotfiles. dots will work fine with original versions, but in order to acvhieve the same experience, you can install these on archlinux: (not in AUR, links to PKGBUILDs provided) 
 
-- `rofi`: [4 addittional drun modes](https://github.com/cebem1nt/rofi/releases/tag/patch), with pre categorized desktop entries
+- `rofi`: [PKGBUILD](https://github.com/cebem1nt/rofi/releases/download/patch/PKGBUILD) [4 addittional drun modes](https://github.com/cebem1nt/rofi/releases/tag/patch) with pre categorized desktop entries
     See [`~/.config/rofi/bin/drun`](.config/rofi/bin/drun)
   
     ```sh
@@ -330,7 +346,7 @@ I have a **"software patching"** hobby, that's why there are configs for a bit m
     
     <img width="437" height="56" alt="image" src="https://github.com/user-attachments/assets/d11d9a6e-1feb-42e4-b0d5-0950ba7ccbe8" />
   
-- `nwg-dock-hyprland`: [A complete fork](https://github.com/cebem1nt/nwg-dock-hyprland): dock reveal on left click instead of hover, won't reveal if there is an app in fullscreen, Misc right click actions reorganization, hyprland v0.55 support
+- `nwg-dock-hyprland`: [PKGBUILD](https://github.com/cebem1nt/dock-hyprland/releases/download/v1.0.0/PKGBUILD) [dock-hyprland](https://github.com/cebem1nt/dock-hyprland) a complete fork: dock reveal on left click instead of hover, won't reveal if there is an app in fullscreen, Misc right click actions reorganization, hover bugfixes
 
 ## Something doesn't work / need help ? 
 
