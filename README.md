@@ -329,24 +329,35 @@ For more info / setup guide see [README](https://github.com/cebem1nt/auto_walls#
 
 Patched versions of these programs are used in my dotfiles. dots will work fine with original versions, but in order to acvhieve the same experience, you can install these on archlinux: (not in AUR, links to PKGBUILDs provided) 
 
-- `rofi`: [PKGBUILD](https://github.com/cebem1nt/rofi/releases/download/patch/PKGBUILD) [4 addittional drun modes](https://github.com/cebem1nt/rofi/releases/tag/patch) with pre categorized desktop entries
-    See [`~/.config/rofi/bin/drun`](.config/rofi/bin/drun)
+### rofi 
+
+[PKGBUILD](https://github.com/cebem1nt/rofi/releases/download/patch/PKGBUILD) 
+
+---
+
+[4 addittional drun modes](https://github.com/cebem1nt/rofi/releases/tag/patch) with pre categorized desktop entries. For setup See [`~/.config/rofi/bin/drun`](.config/rofi/bin/drun)
   
-    ```sh
-     rofi -theme ~/.config/rofi/themes/launcher.rasi \
-          -show drun \
-          -modi "drun,drun-utils,drun-games,drun-network,drun-media" \
-          -drun-exclude-categories "Game" \
-          -display-drun "" \
-          -display-drun-games "󰊴" \
-          -display-drun-utils "" \
-          -display-drun-network "󰭹" \
-          -display-drun-media "󰲍" \
-    ```
-    
-    <img width="437" height="56" alt="image" src="https://github.com/user-attachments/assets/d11d9a6e-1feb-42e4-b0d5-0950ba7ccbe8" />
+```sh
+rofi -theme ~/.config/rofi/themes/launcher.rasi \
+     -show drun \
+     -modi "drun,drun-utils,drun-games,drun-network,drun-media" \
+     -drun-exclude-categories "Game" \
+     -display-drun "" \
+     -display-drun-games "󰊴" \
+     -display-drun-utils "" \
+     -display-drun-network "󰭹" \
+     -display-drun-media "󰲍" \
+```
+
+<img width="437" height="56" alt="image" src="https://github.com/user-attachments/assets/d11d9a6e-1feb-42e4-b0d5-0950ba7ccbe8" />
   
-- `nwg-dock-hyprland`: [PKGBUILD](https://github.com/cebem1nt/dock-hyprland/releases/download/v1.0.0/PKGBUILD) [dock-hyprland](https://github.com/cebem1nt/dock-hyprland) a complete fork: dock reveal on left click instead of hover, won't reveal if there is an app in fullscreen, Misc right click actions reorganization, hover bugfixes
+### nwg-dock-hyprland 
+
+[PKGBUILD](https://github.com/cebem1nt/dock-hyprland/releases/download/v1.0.0/PKGBUILD) 
+
+---
+
+[dock-hyprland](https://github.com/cebem1nt/dock-hyprland) a complete fork: dock reveal on left click instead of hover, won't reveal if there is an app in fullscreen, Misc right click actions reorganization, hover bugfixes
 
 ## Something doesn't work / need help ? 
 
