@@ -133,7 +133,7 @@ To use dock in mangowm, install [dock-mango](https://github.com/cebem1nt/dock-ma
 
 <details open>
   <summary>
-    <h3>Hyprland <img src="https://wiki.hypr.land/favicon.svg" width="30" height="30"></h3>
+    <h3><img src="https://wiki.hypr.land/favicon.svg" width="20" height="20"> Hyprland</h3>
   </summary>
 
 <table>
@@ -211,7 +211,7 @@ To use dock in mangowm, install [dock-mango](https://github.com/cebem1nt/dock-ma
 
 <details>
   <summary>
-    <h3>Mango<img src="https://mangowm.github.io/logo.svg" width="30" height="30"></h3>
+    <h3><img src="https://mangowm.github.io/logo.svg" width="20" height="20"> Mango</h3>
   </summary>
 
 <table>
