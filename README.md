@@ -131,7 +131,11 @@ yay -S mangowm-git
 
 ### Dock
 
-To use dock in mangowm, install [dock-mango](https://github.com/cebem1nt/dock-mango/releases). You can build it from source, using `makepkg` or directly install `.pkg.tar.zst` with `pacman -U`
+To use dock in mangowm, install [dock-mango](https://github.com/cebem1nt/dock-mango). 
+
+```sh
+yay -S dock-mango
+```
 
 ## Binds
 
