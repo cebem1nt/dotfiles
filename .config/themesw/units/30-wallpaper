@@ -6,14 +6,10 @@ WALLPAPER_DARK_DEF="$HOME/med/pictures/wallpapers/rain_road_tree_foggy_bush_flow
 WALLPAPER_LIGHT="${WALLPAPER_LIGHT:-$WALLPAPER_LIGHT_DEF}"
 WALLPAPER_DARK="${WALLPAPER_DARK:-$WALLPAPER_DARK_DEF}"
 
-# We'll create a kind of a convention that there might be 
-# wallpaper.last.light or/and wallpaper.last.dark in AUTO_WALLS_DIR.
-# if it is set, we will use that last wallpaper for this scheme
-AUTO_WALLS_DIR="$HOME/.local/state/auto_walls"
+THEMESW_DIR="$HOME/.config/themesw/"
 
-if [[ -f "$AUTO_WALLS_DIR/wallpaper.last.$1" ]]; then
-    echo "taken"
-    WALLPAPER=$(< "$AUTO_WALLS_DIR/wallpaper.last.$1")
+if [[ -f "$THEMESW_DIR/wallpaper.last.$1" ]]; then
+    WALLPAPER=$(< "$THEMESW_DIR/wallpaper.last.$1")
 else
     if [[ $1 == "dark" ]]; then
         WALLPAPER=$WALLPAPER_DARK
@@ -22,7 +18,6 @@ else
     fi
 fi
 
-echo "$WALLPAPER"
 CURRENT_WALLPAPER=$(awww query -j | jq -r '.[""][].displaying.image')
 
 if [[ $CURRENT_WALLPAPER != $WALLPAPER ]]; then
