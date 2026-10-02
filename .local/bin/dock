@@ -12,6 +12,6 @@ fi
 $DOCK \
     -p left \
     -d -w 5 -ml 5 \
-    -l top -hl bottom \
+    -l overlay -hl bottom \
     -i 38 \
     -c "$HOME/.local/bin/toggle_rofi $HOME/.config/rofi/bin/drun --alternative" $@
