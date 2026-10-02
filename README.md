@@ -95,7 +95,7 @@ Clone the repo & run the installer:
 > ***On another distro, some things might not work as expected.***
 >
 > If you're using another distro, ***please install these packages*** based on your package manager:
->   1) [packages.txt](./packages.txt) (oficial repos on Arch)
+>   1) [packages.txt](./packages.txt) (official repos on Arch)
 >   2) [packages.aur.txt](./packages.aur.txt) (Arch User Repository packages)
 
 ```sh
@@ -123,7 +123,9 @@ Or install components separately by running scripts from `install/` directory:
 
 ## Mangowm
 
-In order to use mangowm instead of hyprland, just install it, all the configuration files will be installed by `install.sh`. On arch you can use any AUR helper:
+In order to use mangowm instead of hyprland, just install it, all the configuration files will be installed by `install.sh`. 
+
+On arch you can install it from official repos:
 
 ```sh
 yay -S mangowm-git
