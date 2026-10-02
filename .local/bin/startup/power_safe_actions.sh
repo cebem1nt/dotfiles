@@ -6,8 +6,24 @@
 CAFFEINE="$HOME/.local/bin/caffeine"
 KEYBOARD_DEVICE="asus::kbd_backlight"
 
-if [[ $(powerprofilesctl get) != "power-saver" ]] ; then
-    "$CAFFEINE" --on & 
+power_safe_actions() {
+    "$CAFFEINE" --off &
+    brightnessctl -d "$KEYBOARD_DEVICE" -s set 0 
+}
+
+power_normal_actions() {
+    "$CAFFEINE" --on &
+
+    brightnessctl -d "$KEYBOARD_DEVICE" -r        
+    if [[ "$(brightnessctl -d $KEYBOARD_DEVICE g)" == "0" ]]; then
+        brightnessctl -d "$KEYBOARD_DEVICE" set 1
+    fi
+}
+
+if [[ $(powerprofilesctl get) == "power-saver" ]] ; then
+    power_safe_actions
+else
+    power_normal_actions
 fi
 
 gdbus monitor \
@@ -21,16 +37,9 @@ while IFS= read -r LINE; do
         PROFILE=$(printf "%s\n" "$LINE" | awk -F"<'|'>" '/ActiveProfile/{print $2}')
         
         if [[ "$PROFILE" == "power-saver" ]]; then 
-            "$CAFFEINE" --off &
-            brightnessctl -d "$KEYBOARD_DEVICE" -s set 0
+            power_safe_actions
         else
-            "$CAFFEINE" --on &
-
-            brightnessctl -d "$KEYBOARD_DEVICE" -r
-            
-            if [[ "$(brightnessctl -d $KEYBOARD_DEVICE g)" == "0" ]]; then
-                brightnessctl -d "$KEYBOARD_DEVICE" set 1
-            fi
+            power_normal_actions
         fi
         ;;
     esac
