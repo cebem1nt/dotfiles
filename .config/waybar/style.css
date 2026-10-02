@@ -158,14 +158,13 @@ tooltip label {
 	font-weight: 700;
 }
 
-.popup * {
+.popup > * {
     box-shadow: none;
     outline: none;
-    border-radius: 10px;
+    border-radius: 14px;
 }
 
 menu {
-    border-radius: 10px;
     font-weight: 700;
     color: @fg;
     background: @tooltip-bg;
@@ -174,11 +173,25 @@ menu {
 
 menu > * {
     padding: 3px 0px;
+    min-width: 5px;
+    border-radius: 6px;
+}
+
+menu > *:last-child {
+    border-radius: 0 0 14px 14px;
+}
+
+menu > *:first-child {
+    border-radius: 14px 14px 0 0;
+}
+
+menu > *:last-child:first-child {
+    border-radius: 14px;
 }
 
 menu > *:hover {
-    border-radius: 10px;
     background-color: @highlight;
+    color: @fg;
 }
 
 /* Sliders */
