@@ -128,7 +128,7 @@ In order to use mangowm instead of hyprland, just install it, all the configurat
 On arch you can install it from official repos:
 
 ```sh
-yay -S mangowm-git
+sudo pacman -S mangowm
 ```
 
 ### Dock

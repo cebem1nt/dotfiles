@@ -5,8 +5,12 @@
 
 if [[ "$MANGO_INSTANCE_SIGNATURE" ]]; then
     DOCK="dock-mango"
-else 
-    DOCK="nwg-dock-hyprland"
+else
+    if which dock-hyprland >/dev/null 2>&1; then
+        DOCK="dock-hyprland"
+    else 
+        DOCK="nwg-dock-hyprland"
+    fi
 fi
 
 $DOCK \

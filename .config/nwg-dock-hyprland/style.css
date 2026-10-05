@@ -38,6 +38,10 @@ button:focus {
     background: @button-bg;
 }
 
+button.minimized image {
+    -gtk-icon-effect: dim;
+}
+
 tooltip {
     border-radius: 15px;
     background: @background;
