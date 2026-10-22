@@ -1,7 +1,7 @@
 #!/bin/bash
 do_reboot=false
 do_not_reboot=false
-pacman_args=""
+pacman_args="--noconfirm "
 
 while (( "$#" )); do
   case "$1" in
@@ -11,10 +11,6 @@ while (( "$#" )); do
       ;;
     -n|-nr|--no-reboot)
       do_not_reboot=true
-      shift
-      ;;
-    -nc|--noconfirm)
-      pacman_args+="--noconfirm "
       shift
       ;;
     *)

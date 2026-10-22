@@ -22,3 +22,5 @@ if [[ $STATUS -eq 0 ]]; then
                 --icon "$FILE" \
                 "New screenshot" "$FILE"
 fi
+
+echo "$FILE"
