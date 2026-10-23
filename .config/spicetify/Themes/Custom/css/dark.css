@@ -31,8 +31,12 @@
     --background-tinted-press: var(--accent-alternative) !important;
 }
 
-.encore-dark-theme {
+.encore-dark-theme, .encore-dark-theme .encore-base-set  {
     --text-bright-accent: var(--accent-alternative) !important;
+    --essential-bright-accent: var(--accent) !important;
+    --background-elevated-base: var(--background-elevated) !important;
+    --background-elevated-highlight: #161618 !important;
+    --background-highlight: var(--background-elevated-highlight) !important;
 }
 
 div[data-testid="progress-bar"] {
@@ -90,9 +94,25 @@ div[data-testid="progress-bar"] {
     display: none;
 }
 
+/* Library search bar max width */
+.YourLibraryX input.x-filterBox-filterInput {
+    width: 100% !important;
+}
+
+#context-menu .T9PeUdj60NcYqJnOwkUP {
+    background-color: var(--background-elevated);
+}
+
+.fmmygDM45MTS7I35OyLh[role=menuitemradio][aria-checked=true] {
+    color: var(--accent) !important;
+}
+
 /* Make mini equalizers match color scheme */
-.view-homeShortcutsGrid-equaliser img, .main-trackList-rowMarker img,
-img.H70qcBekoGWOlskuON5R, img.X_HqPouENflGygaUXNus {
+.view-homeShortcutsGrid-equaliser img, 
+.main-trackList-rowMarker img,
+img.H70qcBekoGWOlskuON5R, 
+img.X_HqPouENflGygaUXNus,
+img.bUVkyYuHPJ19V664vzfA {
     filter: invert(85%) 
             sepia(2%) 
             saturate(50%) 
@@ -102,19 +122,19 @@ img.H70qcBekoGWOlskuON5R, img.X_HqPouENflGygaUXNus {
 }
 
 /* Colors for additional control elements (lyrics, queue)  */
-div.main-nowPlayingBar-extraControls button.main-genericButton-buttonActive {
+div.main-nowPlayingBar-extraControls button.e-10860-legacy-button-tertiary[aria-pressed="true"] {
     color: var(--accent);
 }
 
 /* Dot after additional controls */
-div.main-nowPlayingBar-extraControls button.main-genericButton-buttonActive::after {
+div.main-nowPlayingBar-extraControls button.e-10860-legacy-button-tertiary[aria-pressed="true"]::after {
     background-color: var(--accent);
 }
 
 /* Focus, active and hover colors for control buttons */
-div.main-nowPlayingBar-extraControls button.main-genericButton-buttonActive:hover,
-div.main-nowPlayingBar-extraControls button.main-genericButton-buttonActive:focus,
-div.main-nowPlayingBar-extraControls button.main-genericButton-buttonActive:active:focus {
+div.main-nowPlayingBar-extraControls button.e-10860-legacy-button-tertiary:hover,
+div.main-nowPlayingBar-extraControls button.e-10860-legacy-button-tertiary:focus,
+div.main-nowPlayingBar-extraControls button.e-10860-legacy-button-tertiary:active:focus {
     color: var(--accent-alternative);
 }
 
@@ -131,7 +151,6 @@ div.main-nowPlayingBar-extraControls button.main-genericButton-buttonActive:acti
     border-radius: 15px;
 }
 
-
 /* Settings page */
 input:checked~.x-toggle-indicatorWrapper {
     background-color: var(--accent) !important;
@@ -144,4 +163,8 @@ input:checked~.x-toggle-indicatorWrapper {
 
 div.search-searchCategory-carouselButton svg.e-10180-icon {
     --text-base: #000;
+}
+
+div.main-yourLibraryX-collapseButton.L8BqvioGh2h_qh1G4CX0 {
+    margin-inline-end: unset;
 }
