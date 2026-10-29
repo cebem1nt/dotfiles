@@ -22,22 +22,17 @@ hl.config({
         -- if true, will not fall back to the next available window 
         -- when moving focus in a direction where no window was found
         no_focus_fallback = true,
-        layout = "dwindle",
-        -- layout = "scrolling",
+        -- layout = "dwindle",
+        layout = "scrolling",
     },
 
     dwindle = {
         preserve_split = true,
-
-        -- specifies the scale factor of windows on the special workspace
-        -- AKA extra gaps for special workspaces
-        special_scale_factor = 0.95,
     },
 
     master = {
         new_on_top = true,
         new_status = "master",
-        special_scale_factor = 0.95,
     },
 
     scrolling = {
@@ -102,7 +97,7 @@ hl.config({
     },
 
     input = {
-        follow_mouse = 2,
+        follow_mouse = 1,
         sensitivity = -0.2,
         numlock_by_default = true,
 
@@ -119,7 +114,7 @@ hl.config({
         focus_on_close = 1,
 
         touchpad = {
-            scroll_factor = 0.2,
+            scroll_factor = 0.5,
             natural_scroll = true,
             disable_while_typing = false,
 
@@ -196,7 +191,7 @@ hl.config({
 
     gestures = {
         workspace_swipe_distance = 1000,
-        workspace_swipe_min_speed_to_force = 1000,
+        workspace_swipe_min_speed_to_force = 200,
         workspace_swipe_direction_lock = false,
         workspace_swipe_create_new = false,
         workspace_swipe_cancel_ratio = 0.1,

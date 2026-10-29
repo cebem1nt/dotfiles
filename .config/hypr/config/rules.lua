@@ -7,7 +7,12 @@
 -- https://wiki.hypr.land/Configuring/Basics/Window-Rules/
 
 -- Workspace rules
-hl.workspace_rule({ workspace = "special:magic", layout = "dwindle"})
+hl.workspace_rule({ 
+    workspace = "special:magic", 
+    layout = "dwindle",
+    gaps_in = 5,
+    gaps_out = 35,
+})
 
 -- Layer rules
 hl.layer_rule({
