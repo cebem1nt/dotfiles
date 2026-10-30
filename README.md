@@ -143,7 +143,7 @@ yay -S dock-mango
 
 <details open>
   <summary>
-    <h3><img src="https://mangowm.github.io/logo.svg" width="20" height="20"> Mango</h3>
+    <h3><img src="https://mangowm.github.io/assets/mangowm-DlEy5W_d.svg" width="20" height="20"> Mango</h3>
   </summary>
 
 <table>
