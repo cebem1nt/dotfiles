@@ -140,7 +140,7 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    name = "Zen/firefox Picture in Picture",
+    name = "Zen Picture in Picture",
     match = {
         title = "Picture-in-Picture",
         class = "^(zen)(.*)$",
@@ -157,16 +157,6 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    -- TODO fullscreens all wine apps
-    name = "Games in fullscreen",
-    match = {
-        class = "steam_app_.*",
-    },
-    
-    fullscreen = true
-})
-
-hl.window_rule({
     name = "Spotify pseudotile", -- Extra gaps for Spotify
     match = {
        class = "spotify|Spotify" 
@@ -175,7 +165,7 @@ hl.window_rule({
     pseudo = true,
     size = "1850 1000",
     scrolling_width = 1,
-    workspace = 5
+    workspace = "5 silent"
 })
 
 hl.window_rule({
@@ -218,4 +208,22 @@ hl.window_rule({
     
     float = true,
     no_initial_focus = true
+})
+
+hl.window_rule({
+    name = "Codium 2nd workspace",
+    match = {
+        class = "codium"
+    },
+
+    workspace = "2 silent"
+})
+
+hl.window_rule({
+    name = "Zen 3rd workspace",
+    match = {
+        class = "^(zen)(.*)$"
+    },
+
+    workspace = "3 silent"
 })

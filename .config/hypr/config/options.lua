@@ -156,6 +156,8 @@ hl.config({
 
         -- Disable "App not responding" dialog
         enable_anr_dialog = false,
+
+        font_family = "Cascadia Code"
     },
 
 

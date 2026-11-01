@@ -72,6 +72,8 @@ hl.bind("SUPER + SHIFT + tab", run_script("cycle_layout --prev"))
 hl.bind("SUPER + CTRL + R",    run("hyprctl reload"))
 
 -- Window actions
+hl.bind("SUPER + A",           hl.dsp.focus({ direction = "left" }))
+hl.bind("SUPER + D",           hl.dsp.focus({ direction = "right" }))
 hl.bind("SUPER + Q",           hl.dsp.window.close())  -- Close window
 hl.bind("SUPER + SHIFT + Q",   hl.dsp.window.kill())   -- Kill window
 hl.bind("SUPER + W",           hl.dsp.window.center()) -- Centers window if it is floating
@@ -101,14 +103,14 @@ hl.bind("SUPER + SHIFT + W", layout_bind({
     scrolling = hl.dsp.layout("colresize -conf"),  -- Scrolling: set previous column width from config
 }))
 
-hl.bind("SUPER + A", layout_bind({
+hl.bind("SUPER + SHIFT + A", layout_bind({
     scrolling = hl.dsp.layout("swapcol l"),  -- Scrolling: swap column with left one
     dwindle   = hl.dsp.layout("swapsplit"),  -- Dwindle: swap window split 
     monocle   = hl.dsp.layout("cycleprev"),  -- Monocle and master: cycle prev window
     master    = hl.dsp.layout("cycleprev"),
 }))
 
-hl.bind("SUPER + D", layout_bind({
+hl.bind("SUPER + SHIFT + D", layout_bind({
     scrolling = hl.dsp.layout("swapcol r"),   -- Scrolling: swap column with right one
     dwindle   = hl.dsp.layout("togglesplit"), -- Dwindle: toggle window split 
     monocle   = hl.dsp.layout("cyclenext"),   -- Monocle and master: cycle next window
@@ -132,6 +134,7 @@ hl.bind("SUPER + bracketright", hl.dsp.group.next())   -- Show next window in gr
 
 -- Toggle swaync
 hl.bind("SUPER + T",              run("swaync-client -t"))
+hl.bind("SUPER + SHIFT + T",      toggle_rofi_script("wifi"))
 
 -- Rofi menus
 hl.bind("SUPER + R",              toggle_rofi_script("drun"))                   -- Application launcher
@@ -142,19 +145,20 @@ hl.bind("SUPER + SHIFT + R",      toggle_rofi_script("run"))                    
 hl.bind("SUPER + SHIFT + V",      toggle_rofi_script("icons"))                  -- Nerd font glyphs picker
 hl.bind("SUPER + Y",              toggle_rofi(scripts .. "auto_walls rofi"))    -- Wallpapers menu
 
--- Misc bindings 
+-- Misc bindings
 hl.bind("SUPER + SHIFT + SPACE",  run("killall waybar ; waybar &"))              -- Restart waybar
 hl.bind("SUPER + SHIFT + Y",      run_script("themesw"))                         -- Switch between dark/light mode
+hl.bind("SUPER + RETURN",         run_script("friday --converse"))               -- My friday voice assistant binding
 hl.bind("SUPER + MINUS",          run_script("volume -2"), {repeating = true})   -- Decrease volume by 2
-hl.bind("SUPER + EQUAL",          run_script("volume +2"), {repeating = true})   -- Increase volume by 2
-
-hl.bind("SUPER + SPACE",          run("pkill -SIGRTMIN+1 -f nwg-dock-hyprland")) -- Hide / show dock 
+hl.bind("SUPER + EQUAL",          run_script("volume +2"), {repeating = true})   -- Increase volume by 2                                       
 hl.bind("SUPER + period",         run("playerctl next"))                         -- Play next song
 hl.bind("SUPER + comma",          run("playerctl previous"))                     -- Play previous song
 hl.bind("SUPER + slash",          run("playerctl play-pause"))                   -- Play or pause song
 hl.bind("SUPER + SHIFT + slash",  run_script("auto_walls toggle"))               -- Toggle wallpapers cycling 
 hl.bind("SUPER + SHIFT + period", run_script("auto_walls next"))                 -- Set next wallpaper
 hl.bind("SUPER + SHIFT + comma",  run_script("auto_walls prev"))                 -- Set previous wallpaper
+hl.bind("SUPER + SPACE",          run("pkill -SIGRTMIN+1 -f dock-hyprland || \
+                                       pkill -SIGRTMIN+1 -f nwg-dock-hyprland")) -- Hide / show dock
 
 hl.bind("Print",                  run_script("screenshot"))                      -- Screenshot
 hl.bind("SHIFT + Print",          run_script("screenshot --select"))             -- Screenshot selected area
