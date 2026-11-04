@@ -68,4 +68,5 @@ hl.gesture({
     fingers = 4,
     direction = "vertical",
     action = "special",
+    workspace_name = "magic"
 })
