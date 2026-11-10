@@ -14,9 +14,11 @@
     --background-press: var(--background) !important;
 
     /* Spotify related tweaks */
-    --encore-body-font-stack: "CaskaydiaCove Nerd Font Propo";
-    --encore-title-font-stack: "CaskaydiaCove Nerd Font Propo";
-    --encore-variable-font-stack: "CaskaydiaCove Nerd Font Propo";
+    --encore-body-font-stack: "CaskaydiaCove Nerd Font Propo" !important;
+    --encore-title-font-stack: "CaskaydiaCove Nerd Font Propo" !important;
+    --encore-variable-font-stack: "CaskaydiaCove Nerd Font Propo" !important;
+    --encore-bodyMono-font-stack: "CaskaydiaCove Nerd Font Mono" !important;
+
     --background-base: var(--background) !important;
     --text-bright-accent: var(--accent-alternative) !important;
     --essential-bright-accent: var(--accent-alternative) !important;
@@ -52,6 +54,14 @@
     --background-highlight: #979db85b !important;
     --encore-icon-fill: var(--text-base);
     --background-elevated-base: var(--background-elevated) !important;
+}
+
+@layer fonts {
+    html:root.spotify-mix-non-latin {
+        --encore-body-font-stack: "CaskaydiaCove Nerd Font Propo", sans-serif !important;
+        --encore-variable-font-stack: "CaskaydiaCove Nerd Font Propo", sans-serif !important;
+        --encore-title-font-stack: "CaskaydiaCove Nerd Font Propo", sans-serif !important;
+    }
 }
 
 .Root__globalNav, 
@@ -147,6 +157,13 @@ button.main-contextMenu-menuItemButton:hover, .main-contextMenu-menuItem:hover a
     background-color: #979db85b !important;
 } 
 
+.EmXZMILXH0bP7U461Va6, .G0r21Xb5HbCgpzJwqiev, .PbMBx95owTmQYYdfnp3j {
+    background-color: var(--background-secondary) !important;
+}
+
+.main-trackList-trackListRow.TqTm7pjhN6tgNyT4c7pi {
+    background-color: var(--background-secondary) !important;
+}
 
 .x-sortBox-sortDropdown:focus, .x-sortBox-sortDropdown:hover {
     color: var(--text-subdued) !important;
@@ -233,8 +250,11 @@ div[data-testid="progress-bar"] {
 }
 
 /* Make mini equalizers match color scheme */
-.view-homeShortcutsGrid-equaliser img, .main-trackList-rowMarker img,
-img.H70qcBekoGWOlskuON5R, img.X_HqPouENflGygaUXNus {
+.view-homeShortcutsGrid-equaliser img, 
+.main-trackList-rowMarker img,
+img.H70qcBekoGWOlskuON5R, 
+img.X_HqPouENflGygaUXNus,
+img.view-homeShortcutsGrid-equaliserImage {
     filter: invert(85%) 
             sepia(2%) 
             saturate(50%) 
@@ -320,4 +340,13 @@ section.WX8YaUbSAkU5l7KZ input,
 section.WX8YaUbSAkU5l7KZ ::placeholder,
 .main-trackList-trackListContainer * , .M8rXyTyUZtEIuYXG p{
     color: var(--text-base);
+}
+
+div.main-yourLibraryX-collapseButton.L8BqvioGh2h_qh1G4CX0 {
+    margin-inline-end: unset;
+}
+
+/* Library search bar max width */
+.YourLibraryX input.x-filterBox-filterInput {
+    width: 100% !important;
 }

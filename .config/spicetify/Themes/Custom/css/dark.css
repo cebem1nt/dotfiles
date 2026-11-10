@@ -5,11 +5,7 @@
     --accent-alternative: #acb0d0;
     --background: #0a0a0d;
     --background-elevated: #101014;
-
-    /* Spotify related tweaks */
-    --encore-body-font-stack: "CaskaydiaCove Nerd Font Propo";
-    --encore-title-font-stack: "CaskaydiaCove Nerd Font Propo";
-    --encore-variable-font-stack: "CaskaydiaCove Nerd Font Propo";
+    
     --background-base: var(--background) !important;
     --text-bright-accent: var(--accent-alternative) !important;
     --essential-bright-accent: var(--accent-alternative) !important;
@@ -17,6 +13,14 @@
     /* Chevrons colors */
     --chevrons-button-color: #a1a5c0 !important;
     --chevrons-button-hover-color: #a1a5c0c4 !important;
+}
+
+@layer fonts {
+    html:root.spotify-mix-non-latin {
+        --encore-body-font-stack: "CaskaydiaCove Nerd Font Propo", sans-serif !important;
+        --encore-variable-font-stack: "CaskaydiaCove Nerd Font Propo", sans-serif !important;
+        --encore-title-font-stack: "CaskaydiaCove Nerd Font Propo", sans-serif !important;
+    }
 }
 
 .encore-dark-theme .encore-bright-accent-set {
@@ -112,7 +116,8 @@ div[data-testid="progress-bar"] {
 .main-trackList-rowMarker img,
 img.H70qcBekoGWOlskuON5R, 
 img.X_HqPouENflGygaUXNus,
-img.bUVkyYuHPJ19V664vzfA {
+img.bUVkyYuHPJ19V664vzfA,
+img.view-homeShortcutsGrid-equaliserImage {
     filter: invert(85%) 
             sepia(2%) 
             saturate(50%) 
