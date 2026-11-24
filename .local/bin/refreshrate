@@ -17,7 +17,7 @@ if [[ $MANGO_INSTANCE_SIGNATURE ]]; then
                 | @tsv'
     )
 
-    mmsg dispatch setoption, monitorrule, \
+    mmsg dispatch setoption, monitor_rule, \
         "name:$ACTIVE_MONITOR, width:$ACTIVE_WIDTH, height:$ACTIVE_HEIGHT, refresh:$1"
 else
     LUA="
